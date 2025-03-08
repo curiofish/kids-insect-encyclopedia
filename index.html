@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>유치원 어린이를 위한 신나는 곤충 백과사전</title>
+    <title>유치원 어린이를 위한 곤충 백과사전</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         :root {
             --primary-color: #8bc34a;
@@ -42,10 +43,17 @@
             gap: 2rem;
         }
 
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
         .category-card {
             background-color: var(--card-color);
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px var(--shadow-color);
             overflow: hidden;
             transition: transform 0.3s ease;
         }
@@ -72,6 +80,7 @@
 
         .category-description {
             margin-bottom: 1.5rem;
+            color: var(--text-color);
         }
 
         .category-link {
@@ -95,91 +104,124 @@
             padding: 2rem;
             margin-top: 2rem;
         }
+
+        @media (max-width: 768px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem 0;
+            }
+        }
     </style>
 </head>
 <body>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="nav-menu" aria-label="메인 메뉴">
+        <ul>
+            <li><a href="index.html" aria-current="page">🏠 처음으로</a></li>
+            <li><a href="butterflies.html">🦋 나비와 나방</a></li>
+            <li><a href="beetles.html">🪲 딱정벌레</a></li>
+            <li><a href="orthoptera.html">🦗 메뚜기와 귀뚜라미</a></li>
+            <li><a href="dragonflies.html">🦋 잠자리</a></li>
+            <li><a href="hymenoptera.html">🐝 벌과 개미</a></li>
+            <li><a href="hemiptera.html">🐛 노린재와 매미</a></li>
+            <li><a href="quiz.html">🎯 곤충 퀴즈</a></li>
+            <li><a href="not-insects.html">❗ 곤충이 아닌 동물들</a></li>
+        </ul>
+    </nav>
+
     <header>
         <h1>🐞 신나는 곤충 백과사전 🦋</h1>
         <div class="subtitle">유치원 친구들을 위한 신기한 곤충 이야기</div>
     </header>
 
     <div class="container">
-        <div class="category-card">
-            <img src="images/butterflies/호랑나비.png" alt="나비와 나방" class="category-image">
-            <div class="category-content">
-                <h2 class="category-title">나비와 나방 🦋</h2>
-                <p class="category-description">아름다운 날개를 가진 나비와 나방들을 만나보세요!</p>
-                <a href="butterflies.html" class="category-link">더 알아보기</a>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="images/insects/호랑나비.png" alt="나비와 나방" class="category-image" loading="lazy">
+                <div class="category-content">
+                    <h2 class="category-title">나비와 나방 🦋</h2>
+                    <p class="category-description">아름다운 날개를 가진 나비와 나방들을 만나보세요!</p>
+                    <a href="butterflies.html" class="category-link">더 알아보기</a>
+                </div>
             </div>
-        </div>
 
-        <div class="category-card">
-            <img src="images/beetles/무당벌레.png" alt="딱정벌레" class="category-image">
-            <div class="category-content">
-                <h2 class="category-title">딱정벌레 🪲</h2>
-                <p class="category-description">단단한 날개를 가진 딱정벌레들의 세계로 떠나볼까요?</p>
-                <a href="beetles.html" class="category-link">더 알아보기</a>
+            <div class="category-card">
+                <img src="images/insects/무당벌레.png" alt="딱정벌레" class="category-image" loading="lazy">
+                <div class="category-content">
+                    <h2 class="category-title">딱정벌레 🪲</h2>
+                    <p class="category-description">단단한 날개를 가진 딱정벌레들의 세계로 떠나볼까요?</p>
+                    <a href="beetles.html" class="category-link">더 알아보기</a>
+                </div>
             </div>
-        </div>
 
-        <div class="category-card">
-            <img src="images/grasshoppers/메뚜기.png" alt="메뚜기와 귀뚜라미" class="category-image">
-            <div class="category-content">
-                <h2 class="category-title">메뚜기와 귀뚜라미 🦗</h2>
-                <p class="category-description">뛰어다니고 노래하는 곤충들을 만나보세요!</p>
-                <a href="orthoptera.html" class="category-link">더 알아보기</a>
+            <div class="category-card">
+                <img src="images/insects/메뚜기.png" alt="메뚜기와 귀뚜라미" class="category-image" loading="lazy">
+                <div class="category-content">
+                    <h2 class="category-title">메뚜기와 귀뚜라미 🦗</h2>
+                    <p class="category-description">뛰어다니고 노래하는 곤충들을 만나보세요!</p>
+                    <a href="orthoptera.html" class="category-link">더 알아보기</a>
+                </div>
             </div>
-        </div>
 
-        <div class="category-card">
-            <img src="images/dragonflies/잠자리.png" alt="잠자리" class="category-image">
-            <div class="category-content">
-                <h2 class="category-title">잠자리 🦋</h2>
-                <p class="category-description">하늘의 헬리콥터, 잠자리의 세계로 떠나볼까요?</p>
-                <a href="dragonflies.html" class="category-link">더 알아보기</a>
+            <div class="category-card">
+                <img src="images/insects/잠자리.png" alt="잠자리" class="category-image" loading="lazy">
+                <div class="category-content">
+                    <h2 class="category-title">잠자리 🦋</h2>
+                    <p class="category-description">하늘의 헬리콥터, 잠자리의 세계로 떠나볼까요?</p>
+                    <a href="dragonflies.html" class="category-link">더 알아보기</a>
+                </div>
             </div>
-        </div>
 
-        <div class="category-card">
-            <img src="images/bees_moths/꿀벌.png" alt="벌과 개미" class="category-image">
-            <div class="category-content">
-                <h2 class="category-title">벌과 개미 🐝</h2>
-                <p class="category-description">부지런하고 협동하는 곤충들의 이야기를 들어볼까요?</p>
-                <a href="hymenoptera.html" class="category-link">더 알아보기</a>
+            <div class="category-card">
+                <img src="images/insects/꿀벌.png" alt="벌과 개미" class="category-image" loading="lazy">
+                <div class="category-content">
+                    <h2 class="category-title">벌과 개미 🐝</h2>
+                    <p class="category-description">부지런하고 협동하는 곤충들의 이야기를 들어볼까요?</p>
+                    <a href="hymenoptera.html" class="category-link">더 알아보기</a>
+                </div>
             </div>
-        </div>
 
-        <div class="category-card">
-            <img src="images/bees_moths/매미.png" alt="노린재와 매미" class="category-image">
-            <div class="category-content">
-                <h2 class="category-title">노린재와 매미 🐛</h2>
-                <p class="category-description">여름을 대표하는 곤충들을 만나보세요!</p>
-                <a href="hemiptera.html" class="category-link">더 알아보기</a>
+            <div class="category-card">
+                <img src="images/insects/매미.png" alt="노린재와 매미" class="category-image" loading="lazy">
+                <div class="category-content">
+                    <h2 class="category-title">노린재와 매미 🐛</h2>
+                    <p class="category-description">여름을 대표하는 곤충들을 만나보세요!</p>
+                    <a href="hemiptera.html" class="category-link">더 알아보기</a>
+                </div>
             </div>
-        </div>
 
-        <div class="category-card">
-            <img src="images/quiz/quiz.png" alt="곤충 퀴즈" class="category-image">
-            <div class="category-content">
-                <h2 class="category-title">곤충 퀴즈 🎯</h2>
-                <p class="category-description">재미있는 곤충 퀴즈를 풀어보세요!</p>
-                <a href="quiz.html" class="category-link">퀴즈 풀기</a>
+            <div class="category-card">
+                <img src="images/quiz/quiz.png" alt="곤충 퀴즈" class="category-image" loading="lazy">
+                <div class="category-content">
+                    <h2 class="category-title">곤충 퀴즈 🎯</h2>
+                    <p class="category-description">재미있는 곤충 퀴즈를 풀어보세요!</p>
+                    <a href="quiz.html" class="category-link">퀴즈 풀기</a>
+                </div>
             </div>
-        </div>
 
-        <div class="category-card">
-            <img src="images/not-insects/거미.png" alt="곤충이 아닌 동물들" class="category-image">
-            <div class="category-content">
-                <h2 class="category-title">곤충이 아닌 동물들 ❗</h2>
-                <p class="category-description">곤충처럼 보이지만 곤충이 아닌 동물들을 알아보아요!</p>
-                <a href="not-insects.html" class="category-link">더 알아보기</a>
+            <div class="category-card">
+                <img src="images/not-insects/거미.png" alt="곤충이 아닌 동물들" class="category-image" loading="lazy">
+                <div class="category-content">
+                    <h2 class="category-title">곤충이 아닌 동물들 ❗</h2>
+                    <p class="category-description">곤충처럼 보이지만 곤충이 아닌 동물들을 알아보아요!</p>
+                    <a href="not-insects.html" class="category-link">더 알아보기</a>
+                </div>
             </div>
         </div>
     </div>
+
+    <button class="scroll-top" aria-label="맨 위로 이동">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <footer>
         <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
         <p>더 많은 곤충 친구들을 알고 싶다면, 곤충도감이나 자연 관찰을 해보세요!</p>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html> 

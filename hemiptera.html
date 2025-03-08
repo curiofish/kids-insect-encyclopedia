@@ -6,136 +6,26 @@
     <title>노린재와 매미 - 곤충 백과사전</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #8bc34a;
-            --secondary-color: #689f38;
-            --background-color: #f0f9e8;
-            --card-color: #ffffff;
-            --text-color: #333333;
-            --accent-color: #ff9800;
-        }
-
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background-color: var(--background-color);
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            line-height: 1.7;
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .back-to-home {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 20px;
-            text-decoration: none;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .back-to-home:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .insect-card {
-            background-color: var(--card-color);
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-            overflow: hidden;
-        }
-
-        .insect-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1.5rem;
-        }
-
-        .insect-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 2rem;
-            padding: 2rem;
-        }
-
-        .insect-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .insect-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .info-section {
-            background-color: rgba(139, 195, 74, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-        }
-
-        .info-section h3 {
-            color: var(--secondary-color);
-            margin-top: 0;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-        }
-
-        .fun-fact {
-            background-color: #fff3e0;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--accent-color);
-        }
-
-        .fun-fact h3 {
-            color: var(--accent-color);
-            margin-top: 0;
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .insect-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a href="index.html" class="back-to-home">
-        <i class="fas fa-arrow-left"></i> 처음으로
-    </a>
+    <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="nav-menu" aria-label="메인 메뉴">
+        <ul>
+            <li><a href="index.html">🏠 처음으로</a></li>
+            <li><a href="butterflies.html">🦋 나비와 나방</a></li>
+            <li><a href="beetles.html">🪲 딱정벌레</a></li>
+            <li><a href="orthoptera.html">🦗 메뚜기와 귀뚜라미</a></li>
+            <li><a href="dragonflies.html">🦋 잠자리</a></li>
+            <li><a href="hymenoptera.html">🐝 벌과 개미</a></li>
+            <li><a href="hemiptera.html" aria-current="page">🐛 노린재와 매미</a></li>
+            <li><a href="quiz.html">🎯 곤충 퀴즈</a></li>
+            <li><a href="not-insects.html">❗ 곤충이 아닌 동물들</a></li>
+        </ul>
+    </nav>
 
     <header>
         <h1>🐛 노린재와 매미 🎵</h1>
@@ -148,7 +38,7 @@
                 <h2>시끄러운 매미</h2>
             </div>
             <div class="insect-content">
-                <img src="images/insects/매미.png" alt="매미" class="insect-image">
+                <img src="images/insects/매미.png" alt="매미" class="insect-image" loading="lazy">
                 <div class="insect-info">
                     <div class="info-section">
                         <h3>매미 소개</h3>
@@ -179,7 +69,7 @@
                 <h2>냄새나는 노린재</h2>
             </div>
             <div class="insect-content">
-                <img src="images/insects/노린재.png" alt="노린재" class="insect-image">
+                <img src="images/insects/노린재.png" alt="노린재" class="insect-image" loading="lazy">
                 <div class="insect-info">
                     <div class="info-section">
                         <h3>노린재 소개</h3>
@@ -210,7 +100,7 @@
                 <h2>물에 사는 물노린재</h2>
             </div>
             <div class="insect-content">
-                <img src="images/insects/물노린재.png" alt="물노린재" class="insect-image">
+                <img src="images/insects/물노린재.png" alt="물노린재" class="insect-image" loading="lazy">
                 <div class="insect-info">
                     <div class="info-section">
                         <h3>물노린재 소개</h3>
@@ -237,9 +127,15 @@
         </section>
     </div>
 
+    <button class="scroll-top" aria-label="맨 위로 이동">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <footer>
         <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
         <p>더 많은 곤충 친구들을 알고 싶다면, 곤충도감이나 자연 관찰을 해보세요!</p>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html> 
