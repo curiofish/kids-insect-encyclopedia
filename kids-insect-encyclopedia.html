@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유치원 어린이를 위한 신나는 곤충 백과사전</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #8bc34a;
+            --secondary-color: #689f38;
+            --background-color: #f0f9e8;
+            --card-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #ff9800;
+        }
+
+        body {
+            font-family: 'Nanum Gothic', 'Arial', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            background-color: var(--secondary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Styles */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .insect-card {
+            background-color: var(--card-color);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .insect-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .insect-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .insect-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .insect-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .insect-image {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .insect-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .insect-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .insect-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .info-section {
+            background-color: rgba(139, 195, 74, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .info-section h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .fun-fact {
+            background-color: #fff3e0;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .fun-fact h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .insect-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-button {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🐞 신나는 곤충 백과사전 🦋</h1>
+            <div class="subtitle">유치원 친구들을 위한 신기한 곤충 이야기</div>
+        </div>
+    </header>
+
+    <div class="nav-container">
+        <nav>
+            <button class="nav-button" onclick="location.href='#intro'">소개</button>
+            <button class="nav-button" onclick="location.href='#butterfly'">호랑나비</button>
+            <button class="nav-button" onclick="location.href='#ladybug'">무당벌레</button>
+            <button class="nav-button" onclick="location.href='#stagbeetle'">장수풍뎅이</button>
+            <button class="nav-button" onclick="location.href='#mantis'">사마귀</button>
+            <button class="nav-button" onclick="location.href='#cicada'">매미</button>
+            <button class="nav-button" onclick="location.href='#dragonfly'">잠자리</button>
+            <button class="nav-button" onclick="location.href='#honeybee'">꿀벌</button>
+            <button class="nav-button" onclick="location.href='#cricket'">귀뚜라미</button>
+            <button class="nav-button" onclick="location.href='#grasshopper'">방아깨비</button>
+            <button class="nav-button" onclick="location.href='#longhorn'">하늘소</button>
+        </nav>
+    </div>
+
+    <div class="container">
+        <section id="intro" class="insect-card">
+            <div class="insect-header">
+                <h2>안녕? 곤충 친구들을 만나볼까요?</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/intro/main.png" alt="다양한 곤충들">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>곤충이란?</h3>
+                        <p>안녕하세요, 꼬마 과학자 여러분! 🔍</p>
+                        <p>곤충은 우리 주변에서 가장 많이 볼 수 있는 동물이에요. 땅에서도, 하늘에서도, 물 위에서도 곤충을 만날 수 있답니다!</p>
+                        <p>곤충은 몸이 <strong>머리, 가슴, 배</strong> 세 부분으로 나누어져 있고, <strong>다리가 6개</strong>인 특별한 동물이에요.</p>
+                    </div>
+                    
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>지구에는 무려 100만 종이 넘는 곤충이 살고 있어요! 그건 모든 동물의 80%나 된답니다. 대단하죠?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="butterfly" class="insect-card">
+            <div class="insect-header">
+                <h2>아름다운 호랑나비 🦋</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/butterflies/호랑나비.png" alt="호랑나비">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>호랑나비 소개</h3>
+                        <p>호랑나비는 우리나라에서 가장 크고 아름다운 나비 중 하나예요. 노란색 날개에 검은색 줄무늬가 있어서 마치 호랑이 무늬처럼 보인답니다!</p>
+                        <p>크기는 날개를 펼치면 10cm나 되어요. 정말 큰 나비죠?</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>호랑나비의 한살이</h3>
+                        <p>호랑나비는 신기한 변신을 해요:</p>
+                        <ol>
+                            <li>알 → 작고 동그란 알을 낳아요 🥚</li>
+                            <li>애벌레 → 초록색 몸에 검은색과 주황색 무늬가 있어요 🐛</li>
+                            <li>번데기 → 연두색이나 갈색의 번데기가 돼요</li>
+                            <li>성충 → 마지막으로 아름다운 호랑나비가 되어요! 🦋</li>
+                        </ol>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>호랑나비는 산과 들에 사는 제비꽃을 특히 좋아해요. 애벌레는 제비꽃의 잎을 먹고 자라고, 어른 나비는 제비꽃의 꿀을 먹어요. 그리고 호랑나비는 봄부터 가을까지 볼 수 있답니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ladybug" class="insect-card">
+            <div class="insect-header">
+                <h2>귀여운 무당벌레 🐞</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/beetles/무당벌레.png" alt="무당벌레">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>무당벌레 소개</h3>
+                        <p>무당벌레는 동그란 몸에 빨간색 겉날개와 7개의 검은 점이 있는 아주 귀여운 곤충이에요. 크기는 약 5-8mm로 아주 작답니다!</p>
+                        <p>무당벌레가 걸어다닐 때는 "또각또각" 소리가 나요. 작은 발로 걸어다니는 모습이 정말 귀엽죠?</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>무당벌레는 농부의 친구</h3>
+                        <p>무당벌레는 진딧물을 잡아먹는 <strong>자연의 해충 방제사</strong>예요!</p>
+                        <ul>
+                            <li>하루에 약 50마리의 진딧물을 먹을 수 있어요</li>
+                            <li>진딧물은 식물에 해로운 벌레예요</li>
+                            <li>무당벌레가 진딧물을 잡아먹어서 식물을 보호해줘요</li>
+                            <li>그래서 농부들이 무당벌레를 아주 좋아한답니다</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>무당벌레의 점 개수는 종류에 따라 다르답니다! 2개부터 24개까지 다양한 점을 가진 무당벌레가 있어요. 우리나라에서 가장 흔한 무당벌레는 7개의 점을 가지고 있어요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stagbeetle" class="insect-card">
+            <div class="insect-header">
+                <h2>강한 장수풍뎅이 🪲</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/beetles/장수풍뎅이.png" alt="장수풍뎅이">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>장수풍뎅이 소개</h3>
+                        <p>장수풍뎅이는 우리나라에서 가장 큰 딱정벌레 중 하나예요. 수컷은 머리에 커다란 뿔이 있어서 마치 작은 공룡처럼 보이죠!</p>
+                        <p>몸길이는 3-7cm 정도로, 어른 손바닥만큼 커요. 몸은 반짝반짝 윤이 나는 검은색이랍니다.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>장수풍뎅이의 생활</h3>
+                        <p>장수풍뎅이는 이렇게 살아요:</p>
+                        <ul>
+                            <li>낮에는 나무 속이나 땅 속에서 쉬어요</li>
+                            <li>밤에 활동하면서 나무의 수액을 먹어요</li>
+                            <li>수컷은 큰 뿔로 다른 수컷과 싸워서 영역을 지켜요</li>
+                            <li>여름철에 주로 볼 수 있어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>장수풍뎅이 애벌레는 땅 속에서 3년 동안 자라요! 그동안 썩은 나무를 먹으면서 점점 커진답니다. 그리고 마침내 어른벌레가 되면 단 2-3개월만 살아요. 정말 신기하죠?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mantis" class="insect-card">
+            <div class="insect-header">
+                <h2>멋진 사마귀 🦗</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/grasshoppers/사마귀.png" alt="사마귀">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>사마귀 소개</h3>
+                        <p>사마귀는 앞다리가 낫처럼 생긴 특별한 곤충이에요. 초록색이나 갈색 몸을 가지고 있어서 나뭇잎이나 나뭇가지처럼 보여요.</p>
+                        <p>머리를 180도로 돌릴 수 있어서 뒤에서 다가오는 것도 잘 볼 수 있답니다!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>사마귀의 사냥</h3>
+                        <p>사마귀는 대단한 사냥꾼이에요:</p>
+                        <ul>
+                            <li>날카로운 앞다리로 먹이를 잡아요</li>
+                            <li>나뭇잎처럼 가만히 있다가 먹이가 지나가면 재빨리 잡아요</li>
+                            <li>나비, 파리, 메뚜기 같은 작은 곤충을 잡아먹어요</li>
+                            <li>큰 복안으로 먹이를 잘 찾을 수 있어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>사마귀는 기도하는 것처럼 앞다리를 모으고 있어서 '기도하는 사마귀'라고도 불러요. 하지만 사실 이건 먹이를 잡기 위해 준비하는 자세랍니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cicada" class="insect-card">
+            <div class="insect-header">
+                <h2>시끄러운 매미 🎵</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/bees_moths/매미.png" alt="매미">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>매미 소개</h3>
+                        <p>매미는 여름을 대표하는 곤충이에요. 투명한 날개를 가진 큰 곤충으로, 수컷은 특별한 소리를 낼 수 있어요.</p>
+                        <p>매미는 크기가 3-4cm 정도로 꽤 큰 편이에요. 날개는 유리처럼 투명하고 반짝반짝해요!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>매미의 노래</h3>
+                        <p>매미는 이렇게 노래해요:</p>
+                        <ul>
+                            <li>수컷 매미만 소리를 낼 수 있어요</li>
+                            <li>배 아래쪽에 있는 '발음기'로 소리를 내요</li>
+                            <li>아침부터 저녁까지 "맴맴" 하고 우는 소리를 들을 수 있어요</li>
+                            <li>다른 매미들에게 "나 여기 있어요~" 하고 알리는 거예요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>매미는 땅 속에서 아주 오래 자라요! 어떤 매미는 땅 속에서 7년이나 살다가 어른 매미가 된답니다. 하지만 어른이 되면 단 2주에서 4주 정도만 살아요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dragonfly" class="insect-card">
+            <div class="insect-header">
+                <h2>빠른 잠자리 🦋</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/dragonflies/잠자리.png" alt="잠자리">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>잠자리 소개</h3>
+                        <p>잠자리는 하늘의 헬리콥터라고 불릴 만큼 날기를 잘하는 곤충이에요. 두 쌍의 큰 날개로 자유자재로 날 수 있어요!</p>
+                        <p>몸길이는 4-5cm 정도이고, 날개를 펼치면 7-8cm나 되요. 몸은 파란색, 빨간색, 갈색 등 다양한 색깔을 가지고 있답니다.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>잠자리의 특별한 능력</h3>
+                        <p>잠자리는 이런 능력이 있어요:</p>
+                        <ul>
+                            <li>앞으로, 뒤로, 옆으로, 제자리에서도 날 수 있어요</li>
+                            <li>시속 50km로 날 수 있어요 (자전거보다 빨라요!)</li>
+                            <li>커다란 복안으로 거의 모든 방향을 볼 수 있어요</li>
+                            <li>공중에서 먹이를 잡을 수 있어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>잠자리는 3억 년 전부터 지구에 살았어요! 공룡보다 더 오래전부터 있었던 아주 오래된 곤충이랍니다. 옛날의 잠자리는 지금보다 훨씬 커서 날개 길이가 70cm나 됐대요!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="honeybee" class="insect-card">
+            <div class="insect-header">
+                <h2>부지런한 꿀벌 🐝</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/bees_moths/꿀벌.png" alt="꿀벌">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>꿀벌 소개</h3>
+                        <p>꿀벌은 노란색과 검은색 줄무늬가 있는 작은 곤충이에요. 몸에는 부드러운 털이 나 있고, 날개는 투명해요.</p>
+                        <p>크기는 1.5cm 정도로 작지만, 아주 부지런하게 일하는 곤충이랍니다!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>꿀벌의 일</h3>
+                        <p>꿀벌은 이런 일을 해요:</p>
+                        <ul>
+                            <li>꽃에서 꿀물(화밀)을 모아와요</li>
+                            <li>꽃가루를 다른 꽃으로 옮겨서 식물이 열매를 맺을 수 있게 도와줘요</li>
+                            <li>벌집에서 꿀을 만들어요</li>
+                            <li>여왕벌과 애벌레를 돌봐요</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>꿀벌의 춤</h3>
+                        <p>꿀벌은 춤으로 대화를 해요! 꽃을 찾은 꿀벌이 8자 모양으로 춤을 추면, 다른 꿀벌들은 그 춤을 보고 꽃이 어디에 있는지 알 수 있어요.</p>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>한 마리의 꿀벌이 평생 모을 수 있는 꿀의 양은 겨우 작은 티스푼의 1/12 정도예요. 그래서 많은 꿀벌들이 함께 일해야 우리가 먹는 꿀을 만들 수 있답니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cricket" class="insect-card">
+            <div class="insect-header">
+                <h2>노래하는 귀뚜라미 🦗</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/grasshoppers/귀뚜라미.png" alt="귀뚜라미">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>귀뚜라미 소개</h3>
+                        <p>귀뚜라미는 가을밤을 대표하는 곤충이에요. 검은색이나 갈색 몸을 가진 곤충으로, 수컷은 특별한 소리를 낼 수 있어요.</p>
+                        <p>크기는 2-3cm 정도이고, 긴 더듬이와 뒷다리를 가지고 있어요.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>귀뚜라미의 노래</h3>
+                        <p>귀뚜라미는 이렇게 노래해요:</p>
+                        <ul>
+                            <li>수컷 귀뚜라미만 소리를 낼 수 있어요</li>
+                            <li>날개를 서로 비벼서 "귀뚜르 귀뚜르" 소리를 내요</li>
+                            <li>마치 바이올린을 연주하는 것처럼 날개를 비벼요</li>
+                            <li>밤에 주로 노래를 불러요</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>귀뚜라미의 생활</h3>
+                        <p>귀뚜라미는 풀숲이나 돌 밑, 땅 속에 작은 집을 짓고 살아요. 낮에는 숨어 있다가 밤에 주로 활동한답니다.</p>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>귀뚜라미의 귀는 앞다리에 있어요! 우리처럼 머리에 귀가 있는 게 아니라, 앞다리에 있는 작은 구멍으로 소리를 들어요. 신기하죠?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grasshopper" class="insect-card">
+            <div class="insect-header">
+                <h2>뛰어다니는 방아깨비 🦗</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/grasshoppers/방아깨비.png" alt="방아깨비">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>방아깨비 소개</h3>
+                        <p>방아깨비는 논이나 풀밭에서 사는 메뚜기과의 곤충이에요. 초록색이나 갈색 몸을 가지고 있어요.</p>
+                        <p>크기는 2-3cm 정도로 작지만, 뒷다리가 아주 튼튼해서 멀리 뛸 수 있어요!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>방아깨비의 특징</h3>
+                        <p>방아깨비는 이런 특징이 있어요:</p>
+                        <ul>
+                            <li>뒷다리로 방아 찧는 것처럼 움직여서 '방아깨비'라는 이름이 붙었어요</li>
+                            <li>자기 몸길이의 20배나 되는 거리를 뛸 수 있어요</li>
+                            <li>풀잎을 먹고 살아요</li>
+                            <li>위험할 때는 재빨리 뛰어서 도망가요</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>방아깨비의 생활</h3>
+                        <p>방아깨비는 여름부터 가을까지 볼 수 있어요. 풀이 많은 곳에서 살면서 풀잎을 먹고 자라요.</p>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>방아깨비는 귀를 배에 달고 있어요! 배 양쪽에 있는 작은 구멍으로 소리를 들어요. 또, 알에서 깨어난 아기 방아깨비는 어른 방아깨비가 되기까지 5-6번 허물을 벗어요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="longhorn" class="insect-card">
+            <div class="insect-header">
+                <h2>긴 더듬이를 가진 하늘소 🪲</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/beetles/하늘소.png" alt="하늘소">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>하늘소 소개</h3>
+                        <p>하늘소는 몸길이보다 더 긴 더듬이를 가진 특별한 딱정벌레예요. 검은색이나 갈색 몸에 무늬가 있는 경우도 있어요.</p>
+                        <p>크기는 2-3cm 정도이고, 더듬이는 몸길이의 1.5배에서 2배나 되요!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>하늘소의 특징</h3>
+                        <p>하늘소는 이런 특징이 있어요:</p>
+                        <ul>
+                            <li>긴 더듬이로 주변 환경을 잘 감지해요</li>
+                            <li>단단한 나무도 갉아먹을 수 있는 강한 턱을 가지고 있어요</li>
+                            <li>날 수도 있고, 걸을 수도 있어요</li>
+                            <li>나무 속에서 애벌레로 자라요</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>하늘소의 생활</h3>
+                        <p>하늘소는 주로 숲에서 살아요. 애벌레는 나무 속에서 자라고, 어른벌레는 나뭇잎이나 나무의 수액을 먹어요.</p>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>하늘소라는 이름은 하늘을 나는 소처럼 보인다고 해서 붙여졌어요. 실제로 날 때 내는 소리가 '붕~' 하고 소 우는 소리와 비슷하대요! 또, 하늘소는 위험할 때 '찌익~' 하는 소리를 내기도 한답니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
+        <p>더 많은 곤충 친구들을 알고 싶다면, 곤충도감이나 자연 관찰을 해보세요!</p>
+    </footer>
+</body>
+</html>
