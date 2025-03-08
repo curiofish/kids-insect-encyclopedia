@@ -13,6 +13,9 @@
             --card-color: #ffffff;
             --text-color: #333333;
             --accent-color: #ff9800;
+            --ruler-color: #4caf50;
+            --correct-color: #4caf50;
+            --wrong-color: #f44336;
         }
 
         body {
@@ -192,7 +195,198 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* Size Comparison Styles */
+        .size-comparison {
+            background-color: var(--card-color);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .size-comparison h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .size-ruler {
+            height: 40px;
+            background-color: var(--background-color);
+            position: relative;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .ruler-marks {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        .ruler-mark {
+            position: relative;
+            width: 2px;
+            height: 10px;
+            background-color: var(--ruler-color);
+        }
+
+        .ruler-mark::after {
+            content: attr(data-size);
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: var(--text-color);
+        }
+
+        .insect-markers {
+            position: relative;
+            height: 150px;
+        }
+
+        .insect-marker {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            transform: translateX(-50%);
+        }
+
+        .insect-marker img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .insect-marker span {
+            font-size: 0.8rem;
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        /* Quiz Styles */
+        .quiz-section {
+            background-color: var(--card-color);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .quiz-section h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .quiz-question {
+            background-color: var(--background-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .quiz-question.active {
+            display: block;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .quiz-option {
+            background-color: white;
+            border: 2px solid var(--primary-color);
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .quiz-option:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-option.correct {
+            background-color: var(--correct-color);
+            color: white;
+            border-color: var(--correct-color);
+        }
+
+        .quiz-option.wrong {
+            background-color: var(--wrong-color);
+            color: white;
+            border-color: var(--wrong-color);
+        }
+
+        .quiz-feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .quiz-feedback.correct {
+            display: block;
+            background-color: rgba(76, 175, 80, 0.1);
+            color: var(--correct-color);
+        }
+
+        .quiz-feedback.wrong {
+            display: block;
+            background-color: rgba(244, 67, 54, 0.1);
+            color: var(--wrong-color);
+        }
+
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+
+        .quiz-nav-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-nav-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .quiz-nav-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
     </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -239,6 +433,100 @@
                         <h3>재미있는 사실!</h3>
                         <p>지구에는 무려 100만 종이 넘는 곤충이 살고 있어요! 그건 모든 동물의 80%나 된답니다. 대단하죠?</p>
                     </div>
+                </div>
+            </div>
+
+            <div class="size-comparison">
+                <h3>곤충들의 크기를 비교해볼까요?</h3>
+                <p>각 곤충의 실제 크기를 비교해보세요! (단위: cm)</p>
+                
+                <div class="size-ruler">
+                    <div class="ruler-marks">
+                        <div class="ruler-mark" data-size="0" style="left: 0%"></div>
+                        <div class="ruler-mark" data-size="1" style="left: 10%"></div>
+                        <div class="ruler-mark" data-size="2" style="left: 20%"></div>
+                        <div class="ruler-mark" data-size="3" style="left: 30%"></div>
+                        <div class="ruler-mark" data-size="4" style="left: 40%"></div>
+                        <div class="ruler-mark" data-size="5" style="left: 50%"></div>
+                        <div class="ruler-mark" data-size="6" style="left: 60%"></div>
+                        <div class="ruler-mark" data-size="7" style="left: 70%"></div>
+                        <div class="ruler-mark" data-size="8" style="left: 80%"></div>
+                        <div class="ruler-mark" data-size="9" style="left: 90%"></div>
+                        <div class="ruler-mark" data-size="10" style="left: 100%"></div>
+                    </div>
+                </div>
+
+                <div class="insect-markers">
+                    <div class="insect-marker" style="left: 15%">
+                        <img src="images/bees_moths/꿀벌.png" alt="꿀벌">
+                        <span>꿀벌<br>1.5cm</span>
+                    </div>
+                    <div class="insect-marker" style="left: 25%">
+                        <img src="images/grasshoppers/방아깨비.png" alt="방아깨비">
+                        <span>방아깨비<br>2.5cm</span>
+                    </div>
+                    <div class="insect-marker" style="left: 35%">
+                        <img src="images/beetles/하늘소.png" alt="하늘소">
+                        <span>하늘소<br>3.5cm</span>
+                    </div>
+                    <div class="insect-marker" style="left: 45%">
+                        <img src="images/bees_moths/매미.png" alt="매미">
+                        <span>매미<br>4.5cm</span>
+                    </div>
+                    <div class="insect-marker" style="left: 55%">
+                        <img src="images/dragonflies/잠자리.png" alt="잠자리">
+                        <span>잠자리<br>5.5cm</span>
+                    </div>
+                    <div class="insect-marker" style="left: 65%">
+                        <img src="images/beetles/장수풍뎅이.png" alt="장수풍뎅이">
+                        <span>장수풍뎅이<br>6.5cm</span>
+                    </div>
+                    <div class="insect-marker" style="left: 100%">
+                        <img src="images/butterflies/호랑나비.png" alt="호랑나비">
+                        <span>호랑나비<br>10cm</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-section">
+                <h3>재미있는 곤충 퀴즈</h3>
+                <p>곤충 친구들에 대해 얼마나 알고 있는지 퀴즈를 풀어보세요!</p>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question" data-question="1">
+                        <h4>Q1. 무당벌레는 하루에 몇 마리의 진딧물을 먹을 수 있나요?</h4>
+                        <div class="quiz-options">
+                            <button class="quiz-option" onclick="checkAnswer(1, 0)">20마리</button>
+                            <button class="quiz-option" onclick="checkAnswer(1, 1)">50마리</button>
+                            <button class="quiz-option" onclick="checkAnswer(1, 2)">100마리</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question" data-question="2">
+                        <h4>Q2. 장수풍뎅이 애벌레는 얼마나 오래 자라나요?</h4>
+                        <div class="quiz-options">
+                            <button class="quiz-option" onclick="checkAnswer(2, 0)">6개월</button>
+                            <button class="quiz-option" onclick="checkAnswer(2, 1)">1년</button>
+                            <button class="quiz-option" onclick="checkAnswer(2, 2)">3년</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+
+                    <div class="quiz-question" data-question="3">
+                        <h4>Q3. 잠자리는 얼마나 빨리 날 수 있나요?</h4>
+                        <div class="quiz-options">
+                            <button class="quiz-option" onclick="checkAnswer(3, 0)">시속 20km</button>
+                            <button class="quiz-option" onclick="checkAnswer(3, 1)">시속 50km</button>
+                            <button class="quiz-option" onclick="checkAnswer(3, 2)">시속 80km</button>
+                        </div>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+
+                <div class="quiz-navigation">
+                    <button class="quiz-nav-button" onclick="previousQuestion()" id="prevButton" disabled>이전 문제</button>
+                    <button class="quiz-nav-button" onclick="nextQuestion()" id="nextButton">다음 문제</button>
                 </div>
             </div>
         </section>
@@ -608,5 +896,93 @@
         <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
         <p>더 많은 곤충 친구들을 알고 싶다면, 곤충도감이나 자연 관찰을 해보세요!</p>
     </footer>
+
+    <script>
+        // 퀴즈 관련 변수
+        let currentQuestion = 1;
+        const totalQuestions = 3;
+        const correctAnswers = {
+            1: 1, // 50마리
+            2: 2, // 3년
+            3: 1  // 시속 50km
+        };
+        const feedback = {
+            1: {
+                correct: "정답이에요! 무당벌레는 하루에 50마리나 되는 진딧물을 먹을 수 있어요.",
+                wrong: "아쉽네요. 무당벌레는 하루에 50마리나 되는 진딧물을 먹을 수 있답니다!"
+            },
+            2: {
+                correct: "정답이에요! 장수풍뎅이 애벌레는 3년 동안 자라서 어른벌레가 돼요.",
+                wrong: "아쉽네요. 장수풍뎅이 애벌레는 3년이나 걸려서 자란답니다!"
+            },
+            3: {
+                correct: "정답이에요! 잠자리는 시속 50km로 날 수 있어요. 자전거보다 더 빠르죠!",
+                wrong: "아쉽네요. 잠자리는 시속 50km로 날 수 있어요. 정말 빠르죠?"
+            }
+        };
+
+        // 퀴즈 초기화
+        function initQuiz() {
+            showQuestion(currentQuestion);
+            updateNavigationButtons();
+        }
+
+        // 문제 보여주기
+        function showQuestion(questionNumber) {
+            document.querySelectorAll('.quiz-question').forEach(q => {
+                q.classList.remove('active');
+            });
+            document.querySelector(`[data-question="${questionNumber}"]`).classList.add('active');
+        }
+
+        // 답변 체크
+        function checkAnswer(questionNumber, selectedAnswer) {
+            const question = document.querySelector(`[data-question="${questionNumber}"]`);
+            const options = question.querySelectorAll('.quiz-option');
+            const feedbackDiv = question.querySelector('.quiz-feedback');
+            
+            options.forEach(option => {
+                option.disabled = true;
+            });
+
+            if (selectedAnswer === correctAnswers[questionNumber]) {
+                options[selectedAnswer].classList.add('correct');
+                feedbackDiv.textContent = feedback[questionNumber].correct;
+                feedbackDiv.classList.add('correct');
+            } else {
+                options[selectedAnswer].classList.add('wrong');
+                options[correctAnswers[questionNumber]].classList.add('correct');
+                feedbackDiv.textContent = feedback[questionNumber].wrong;
+                feedbackDiv.classList.add('wrong');
+            }
+        }
+
+        // 다음 문제로 이동
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+                updateNavigationButtons();
+            }
+        }
+
+        // 이전 문제로 이동
+        function previousQuestion() {
+            if (currentQuestion > 1) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+                updateNavigationButtons();
+            }
+        }
+
+        // 네비게이션 버튼 업데이트
+        function updateNavigationButtons() {
+            document.getElementById('prevButton').disabled = currentQuestion === 1;
+            document.getElementById('nextButton').disabled = currentQuestion === totalQuestions;
+        }
+
+        // 페이지 로드 시 퀴즈 초기화
+        document.addEventListener('DOMContentLoaded', initQuiz);
+    </script>
 </body>
 </html>
