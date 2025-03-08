@@ -20,28 +20,45 @@ document.addEventListener('DOMContentLoaded', function() {
             navToggle.setAttribute('aria-expanded', 'false');
         }
     });
-});
 
-// Scroll to Top Button
-document.addEventListener('DOMContentLoaded', function() {
-    const scrollTopBtn = document.querySelector('.scroll-top');
+    // Scroll to Top Button
+    const scrollTopButton = document.querySelector('.scroll-top');
     
-    if (scrollTopBtn) {
+    if (scrollTopButton) {
+        // Initially hide the button
+        scrollTopButton.style.display = 'none';
+        
         // Show/hide button based on scroll position
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('visible');
+        function toggleScrollTopButton() {
+            const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollPosition > 300) {
+                scrollTopButton.classList.add('visible');
+                scrollTopButton.style.display = 'flex';
             } else {
-                scrollTopBtn.classList.remove('visible');
+                scrollTopButton.classList.remove('visible');
+                setTimeout(() => {
+                    if (!scrollTopButton.classList.contains('visible')) {
+                        scrollTopButton.style.display = 'none';
+                    }
+                }, 300);
             }
-        });
+        }
 
-        // Smooth scroll to top
-        scrollTopBtn.addEventListener('click', function() {
+        function scrollToTop() {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
+        }
+
+        // Event listeners for scroll to top button
+        window.addEventListener('scroll', toggleScrollTopButton);
+        scrollTopButton.addEventListener('click', scrollToTop);
+        scrollTopButton.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                scrollToTop();
+            }
         });
     }
 });
