@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>딱정벌레 - 곤충 백과사전</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8bc34a;
+            --secondary-color: #689f38;
+            --background-color: #f0f9e8;
+            --card-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #ff9800;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-home:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .insect-card {
+            background-color: var(--card-color);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .insect-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .insect-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .insect-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .insect-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-section {
+            background-color: rgba(139, 195, 74, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .info-section h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .fun-fact {
+            background-color: #fff3e0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .fun-fact h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .insect-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-home">
+        <i class="fas fa-arrow-left"></i> 처음으로
+    </a>
+
+    <header>
+        <h1>🪲 딱정벌레 🪲</h1>
+        <div class="subtitle">단단한 날개를 가진 친구들을 만나보아요!</div>
+    </header>
+
+    <div class="container">
+        <section class="insect-card">
+            <div class="insect-header">
+                <h2>귀여운 무당벌레</h2>
+            </div>
+            <div class="insect-content">
+                <img src="images/beetles/무당벌레.png" alt="무당벌레" class="insect-image">
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>무당벌레 소개</h3>
+                        <p>무당벌레는 동그란 몸에 빨간색 겉날개와 검은 점이 있는 아주 귀여운 곤충이에요.</p>
+                        <p>크기는 약 5-8mm로 아주 작답니다!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>무당벌레의 생활</h3>
+                        <ul>
+                            <li>하루에 약 50마리의 진딧물을 먹어요</li>
+                            <li>농부의 좋은 친구예요</li>
+                            <li>위험할 때는 노란색 액체를 내보내요</li>
+                            <li>겨울에는 여러 마리가 모여서 겨울잠을 자요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>무당벌레의 점 개수는 종류에 따라 다르답니다! 2개부터 24개까지 다양한 점을 가진 무당벌레가 있어요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="insect-card">
+            <div class="insect-header">
+                <h2>강한 장수풍뎅이</h2>
+            </div>
+            <div class="insect-content">
+                <img src="images/beetles/장수풍뎅이.png" alt="장수풍뎅이" class="insect-image">
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>장수풍뎅이 소개</h3>
+                        <p>장수풍뎅이는 우리나라에서 가장 큰 딱정벌레 중 하나예요. 수컷은 머리에 커다란 뿔이 있어요!</p>
+                        <p>몸길이는 3-7cm 정도로, 어른 손바닥만큼 커요.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>장수풍뎅이의 생활</h3>
+                        <ul>
+                            <li>밤에 활동하는 야행성이에요</li>
+                            <li>나무의 수액을 먹어요</li>
+                            <li>수컷은 뿔로 싸워서 영역을 지켜요</li>
+                            <li>애벌레는 3년 동안 자라요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>장수풍뎅이 애벌레는 땅 속에서 3년 동안 자라요! 하지만 어른벌레가 되면 2-3개월만 살아요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="insect-card">
+            <div class="insect-header">
+                <h2>긴 더듬이의 하늘소</h2>
+            </div>
+            <div class="insect-content">
+                <img src="images/beetles/하늘소.png" alt="하늘소" class="insect-image">
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>하늘소 소개</h3>
+                        <p>하늘소는 몸길이보다 더 긴 더듬이를 가진 특별한 딱정벌레예요.</p>
+                        <p>더듬이는 몸길이의 1.5배에서 2배나 되요!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>하늘소의 생활</h3>
+                        <ul>
+                            <li>나무 속에서 애벌레로 자라요</li>
+                            <li>긴 더듬이로 주변을 탐색해요</li>
+                            <li>위험할 때는 '찌익' 소리를 내요</li>
+                            <li>단단한 나무도 갉아먹을 수 있어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>하늘소라는 이름은 하늘을 나는 소처럼 보인다고 해서 붙여졌어요. 날 때 내는 소리가 소 우는 소리와 비슷하대요!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
+        <p>더 많은 곤충 친구들을 알고 싶다면, 곤충도감이나 자연 관찰을 해보세요!</p>
+    </footer>
+</body>
+</html> 

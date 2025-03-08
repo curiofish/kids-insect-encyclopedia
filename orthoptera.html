@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뚜기와 귀뚜라미 - 곤충 백과사전</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8bc34a;
+            --secondary-color: #689f38;
+            --background-color: #f0f9e8;
+            --card-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #ff9800;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-home:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .insect-card {
+            background-color: var(--card-color);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .insect-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .insect-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .insect-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .insect-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-section {
+            background-color: rgba(139, 195, 74, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .info-section h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .fun-fact {
+            background-color: #fff3e0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .fun-fact h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .insect-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-home">
+        <i class="fas fa-arrow-left"></i> 처음으로
+    </a>
+
+    <header>
+        <h1>🦗 메뚜기와 귀뚜라미 🦗</h1>
+        <div class="subtitle">뛰어다니고 노래하는 친구들을 만나보아요!</div>
+    </header>
+
+    <div class="container">
+        <section class="insect-card">
+            <div class="insect-header">
+                <h2>노래하는 귀뚜라미</h2>
+            </div>
+            <div class="insect-content">
+                <img src="images/grasshoppers/귀뚜라미.png" alt="귀뚜라미" class="insect-image">
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>귀뚜라미 소개</h3>
+                        <p>귀뚜라미는 가을밤을 대표하는 곤충이에요. 검은색이나 갈색 몸을 가진 곤충이에요.</p>
+                        <p>크기는 2-3cm 정도이고, 긴 더듬이와 뒷다리를 가지고 있어요.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>귀뚜라미의 생활</h3>
+                        <ul>
+                            <li>밤에 주로 활동해요</li>
+                            <li>풀이나 나뭇잎을 먹어요</li>
+                            <li>수컷만 소리를 낼 수 있어요</li>
+                            <li>날개를 비벼서 소리를 내요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>귀뚜라미의 귀는 앞다리에 있어요! 우리처럼 머리에 귀가 있는 게 아니라, 앞다리에 있는 작은 구멍으로 소리를 들어요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="insect-card">
+            <div class="insect-header">
+                <h2>뛰어다니는 방아깨비</h2>
+            </div>
+            <div class="insect-content">
+                <img src="images/grasshoppers/방아깨비.png" alt="방아깨비" class="insect-image">
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>방아깨비 소개</h3>
+                        <p>방아깨비는 논이나 풀밭에서 사는 메뚜기과의 곤충이에요. 초록색이나 갈색 몸을 가지고 있어요.</p>
+                        <p>크기는 2-3cm 정도로 작지만, 뒷다리가 아주 튼튼해서 멀리 뛸 수 있어요!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>방아깨비의 생활</h3>
+                        <ul>
+                            <li>풀잎을 먹고 살아요</li>
+                            <li>자기 몸길이의 20배나 되는 거리를 뛸 수 있어요</li>
+                            <li>위험할 때는 재빨리 뛰어서 도망가요</li>
+                            <li>여름부터 가을까지 볼 수 있어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>방아깨비는 귀를 배에 달고 있어요! 배 양쪽에 있는 작은 구멍으로 소리를 들어요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="insect-card">
+            <div class="insect-header">
+                <h2>멋진 사마귀</h2>
+            </div>
+            <div class="insect-content">
+                <img src="images/grasshoppers/사마귀.png" alt="사마귀" class="insect-image">
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>사마귀 소개</h3>
+                        <p>사마귀는 앞다리가 낫처럼 생긴 특별한 곤충이에요. 초록색이나 갈색 몸을 가지고 있어요.</p>
+                        <p>머리를 180도로 돌릴 수 있어서 뒤에서 다가오는 것도 잘 볼 수 있답니다!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>사마귀의 생활</h3>
+                        <ul>
+                            <li>날카로운 앞다리로 먹이를 잡아요</li>
+                            <li>다른 곤충들을 잡아먹어요</li>
+                            <li>나뭇잎처럼 가만히 있다가 먹이를 잡아요</li>
+                            <li>큰 복안으로 먹이를 잘 찾을 수 있어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>사마귀는 기도하는 것처럼 앞다리를 모으고 있어서 '기도하는 사마귀'라고도 불러요. 하지만 사실 이건 먹이를 잡기 위해 준비하는 자세랍니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
+        <p>더 많은 곤충 친구들을 알고 싶다면, 곤충도감이나 자연 관찰을 해보세요!</p>
+    </footer>
+</body>
+</html> 

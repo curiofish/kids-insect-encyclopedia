@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>잠자리 - 곤충 백과사전</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8bc34a;
+            --secondary-color: #689f38;
+            --background-color: #f0f9e8;
+            --card-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #ff9800;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-home:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .insect-card {
+            background-color: var(--card-color);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .insect-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .insect-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .insect-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .insect-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-section {
+            background-color: rgba(139, 195, 74, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .info-section h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .fun-fact {
+            background-color: #fff3e0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .fun-fact h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .insect-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-home">
+        <i class="fas fa-arrow-left"></i> 처음으로
+    </a>
+
+    <header>
+        <h1>🦋 잠자리 🦋</h1>
+        <div class="subtitle">하늘의 헬리콥터를 만나보아요!</div>
+    </header>
+
+    <div class="container">
+        <section class="insect-card">
+            <div class="insect-header">
+                <h2>빠른 잠자리</h2>
+            </div>
+            <div class="insect-content">
+                <img src="images/dragonflies/잠자리.png" alt="잠자리" class="insect-image">
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>잠자리 소개</h3>
+                        <p>잠자리는 하늘의 헬리콥터라고 불릴 만큼 날기를 잘하는 곤충이에요.</p>
+                        <p>몸길이는 4-5cm 정도이고, 날개를 펼치면 7-8cm나 되요!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>잠자리의 생활</h3>
+                        <ul>
+                            <li>시속 50km로 날 수 있어요 (자전거보다 빨라요!)</li>
+                            <li>앞으로, 뒤로, 옆으로, 제자리에서도 날 수 있어요</li>
+                            <li>커다란 복안으로 거의 모든 방향을 볼 수 있어요</li>
+                            <li>공중에서 먹이를 잡아요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>잠자리는 3억 년 전부터 지구에 살았어요! 공룡보다 더 오래전부터 있었던 아주 오래된 곤충이랍니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="insect-card">
+            <div class="insect-header">
+                <h2>작은 실잠자리</h2>
+            </div>
+            <div class="insect-content">
+                <img src="images/dragonflies/실잠자리.png" alt="실잠자리" class="insect-image">
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>실잠자리 소개</h3>
+                        <p>실잠자리는 잠자리보다 작고 가늘어서 실처럼 보여요. 파란색이나 빨간색 몸을 가진 예쁜 곤충이에요.</p>
+                        <p>몸길이는 3-4cm 정도로 작아요.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>실잠자리의 생활</h3>
+                        <ul>
+                            <li>물가 근처에서 살아요</li>
+                            <li>작은 곤충들을 잡아먹어요</li>
+                            <li>날개를 접을 수 있어요</li>
+                            <li>알을 물 속에 낳아요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>실잠자리는 날개를 접을 수 있지만, 잠자리는 날개를 접을 수 없어요. 이게 둘의 가장 큰 차이점이랍니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="insect-card">
+            <div class="insect-header">
+                <h2>잠자리의 한살이</h2>
+            </div>
+            <div class="insect-content">
+                <img src="images/dragonflies/잠자리유충.png" alt="잠자리 유충" class="insect-image">
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>잠자리 애벌레</h3>
+                        <p>잠자리는 물 속에서 애벌레로 자라요. 이때는 아가미로 숨을 쉬고, 입에서 긴 턱을 내밀어 먹이를 잡아요.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>잠자리의 성장</h3>
+                        <ul>
+                            <li>알 → 물 속 애벌레 → 어른 잠자리가 돼요</li>
+                            <li>애벌레는 물 속에서 1년 정도 자라요</li>
+                            <li>어른이 되면 물 밖으로 나와요</li>
+                            <li>허물을 벗고 날개가 생겨요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>잠자리 애벌레는 입에서 긴 턱을 내밀어 먹이를 잡아요. 마치 로봇 팔처럼 빠르게 움직여서 먹이를 잡을 수 있답니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
+        <p>더 많은 곤충 친구들을 알고 싶다면, 곤충도감이나 자연 관찰을 해보세요!</p>
+    </footer>
+</body>
+</html> 
