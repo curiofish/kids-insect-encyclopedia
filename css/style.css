@@ -191,45 +191,60 @@ footer {
 /* Scroll to Top Button */
 .scroll-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--accent-color);
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(145deg, var(--accent-color), #ff6d00);
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: none;
     border-radius: 50%;
     display: none;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 2px 5px var(--shadow-color);
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3),
+                0 2px 5px rgba(0, 0, 0, 0.2);
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 99;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    transform: scale(0.8);
 }
 
 .scroll-top.visible {
     opacity: 1;
+    transform: scale(1);
 }
 
 .scroll-top:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-3px);
+    background: linear-gradient(145deg, #ff6d00, var(--accent-color));
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4),
+                0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .scroll-top:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.3),
+                0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+.scroll-top i {
+    transition: transform 0.3s ease;
+}
+
+.scroll-top:hover i {
+    transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {
     .scroll-top {
-        bottom: 15px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
     }
 }
 
