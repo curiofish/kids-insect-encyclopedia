@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>유치원 어린이를 위한 신나는 곤충 백과사전</title>
+    <!-- 귀여운 한글 폰트 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
         :root {
@@ -16,14 +18,47 @@
             --ruler-color: #4caf50;
             --correct-color: #4caf50;
             --wrong-color: #f44336;
+            --journal-color: #81c784;
+            --delete-color: #e57373;
+            --coloring-color: #9575cd;
+            --scroll-color: #ffa726;
+            --search-color: #7cb342;
         }
 
         body {
-            font-family: 'Nanum Gothic', 'Arial', sans-serif;
+            font-family: 'Gaegu', 'Nanum Gothic', sans-serif;
             background-color: var(--background-color);
             margin: 0;
             padding: 0;
             color: var(--text-color);
+        }
+
+        /* 위로 가기 버튼 스타일 */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--scroll-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-to-top:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .scroll-to-top.visible {
+            display: flex;
         }
 
         /* Header Styles */
@@ -272,6 +307,11 @@
             color: var(--text-color);
         }
 
+        /* 꿀벌 기준으로 위치 조정 */
+        .insect-marker:nth-child(1) {
+            left: 15%;
+        }
+
         /* Quiz Styles */
         .quiz-section {
             background-color: var(--card-color);
@@ -384,17 +424,369 @@
             cursor: not-allowed;
             transform: none;
         }
+
+        /* Journal Styles */
+        .journal-section {
+            background-color: var(--card-color);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .journal-section h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .journal-form {
+            background-color: var(--background-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .journal-button {
+            background-color: var(--journal-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .journal-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .journal-entries {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .journal-entry {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .journal-entry h4 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .entry-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .entry-content {
+            margin-bottom: 1rem;
+        }
+
+        .entry-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background-color: var(--background-color);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .delete-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--delete-color);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .delete-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Coloring Page Styles */
+        .coloring-section {
+            background-color: var(--card-color);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .coloring-section h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .coloring-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .canvas-container {
+            position: relative;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        #coloringCanvas {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            cursor: crosshair;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: var(--background-color);
+            border-radius: 10px;
+        }
+
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+
+        .color-option.selected {
+            border: 3px solid var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .coloring-controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .coloring-button {
+            background-color: var(--coloring-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .coloring-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .brush-size-control {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            justify-content: center;
+        }
+
+        .brush-size-control label {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .brush-size-control input {
+            width: 200px;
+        }
+
+        /* 검색 섹션 스타일 */
+        .search-section {
+            background-color: var(--card-color);
+            padding: 1rem;
+            position: sticky;
+            top: 60px;
+            z-index: 999;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid var(--search-color);
+            border-radius: 20px;
+            font-size: 1rem;
+            font-family: inherit;
+            background-color: white;
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(124, 179, 66, 0.3);
+        }
+
+        .search-button {
+            background-color: var(--search-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .search-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .search-results {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .search-results.visible {
+            display: block;
+        }
+
+        .search-result-item {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-result-item:hover {
+            background-color: var(--background-color);
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .highlight {
+            background-color: rgba(255, 193, 7, 0.3);
+            padding: 0 2px;
+            border-radius: 2px;
+        }
     </style>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- 위로 가기 버튼 추가 -->
+    <div class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <header>
         <div class="header-content">
             <h1>🐞 신나는 곤충 백과사전 🦋</h1>
             <div class="subtitle">유치원 친구들을 위한 신기한 곤충 이야기</div>
         </div>
     </header>
+
+    <!-- 검색 섹션 추가 -->
+    <div class="search-section">
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="찾고 싶은 곤충의 이름을 입력해보세요! (예: 무당벌레, 장수풍뎅이)">
+            <button class="search-button" onclick="searchInsects()">
+                <i class="fas fa-search"></i> 찾기
+            </button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
 
     <div class="nav-container">
         <nav>
@@ -461,25 +853,29 @@
                         <img src="images/bees_moths/꿀벌.png" alt="꿀벌">
                         <span>꿀벌<br>1.5cm</span>
                     </div>
-                    <div class="insect-marker" style="left: 25%">
+                    <div class="insect-marker" style="left: 20%">
+                        <img src="images/beetles/무당벌레.png" alt="무당벌레">
+                        <span>무당벌레<br>2cm</span>
+                    </div>
+                    <div class="insect-marker" style="left: 30%">
                         <img src="images/grasshoppers/방아깨비.png" alt="방아깨비">
-                        <span>방아깨비<br>2.5cm</span>
+                        <span>방아깨비<br>3cm</span>
                     </div>
-                    <div class="insect-marker" style="left: 35%">
+                    <div class="insect-marker" style="left: 40%">
                         <img src="images/beetles/하늘소.png" alt="하늘소">
-                        <span>하늘소<br>3.5cm</span>
+                        <span>하늘소<br>4cm</span>
                     </div>
-                    <div class="insect-marker" style="left: 45%">
+                    <div class="insect-marker" style="left: 50%">
                         <img src="images/bees_moths/매미.png" alt="매미">
-                        <span>매미<br>4.5cm</span>
-                    </div>
-                    <div class="insect-marker" style="left: 55%">
-                        <img src="images/dragonflies/잠자리.png" alt="잠자리">
-                        <span>잠자리<br>5.5cm</span>
+                        <span>매미<br>5cm</span>
                     </div>
                     <div class="insect-marker" style="left: 65%">
+                        <img src="images/dragonflies/잠자리.png" alt="잠자리">
+                        <span>잠자리<br>6.5cm</span>
+                    </div>
+                    <div class="insect-marker" style="left: 80%">
                         <img src="images/beetles/장수풍뎅이.png" alt="장수풍뎅이">
-                        <span>장수풍뎅이<br>6.5cm</span>
+                        <span>장수풍뎅이<br>8cm</span>
                     </div>
                     <div class="insect-marker" style="left: 100%">
                         <img src="images/butterflies/호랑나비.png" alt="호랑나비">
@@ -527,6 +923,101 @@
                 <div class="quiz-navigation">
                     <button class="quiz-nav-button" onclick="previousQuestion()" id="prevButton" disabled>이전 문제</button>
                     <button class="quiz-nav-button" onclick="nextQuestion()" id="nextButton">다음 문제</button>
+                </div>
+            </div>
+
+            <div class="journal-section">
+                <h3>나만의 곤충 관찰 일지 📝</h3>
+                <p>곤충을 관찰하고 기록해보세요! 여러분만의 특별한 곤충 이야기를 만들어보아요.</p>
+
+                <div class="journal-form">
+                    <div class="form-group">
+                        <label for="insectName">어떤 곤충을 보았나요?</label>
+                        <select id="insectName" required>
+                            <option value="">곤충을 선택해주세요</option>
+                            <option value="호랑나비">호랑나비</option>
+                            <option value="무당벌레">무당벌레</option>
+                            <option value="장수풍뎅이">장수풍뎅이</option>
+                            <option value="사마귀">사마귀</option>
+                            <option value="매미">매미</option>
+                            <option value="잠자리">잠자리</option>
+                            <option value="꿀벌">꿀벌</option>
+                            <option value="귀뚜라미">귀뚜라미</option>
+                            <option value="방아깨비">방아깨비</option>
+                            <option value="하늘소">하늘소</option>
+                            <option value="기타">기타</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">어디에서 보았나요?</label>
+                        <input type="text" id="location" placeholder="예: 학교 앞 공원" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weather">날씨는 어땠나요?</label>
+                        <select id="weather" required>
+                            <option value="">날씨를 선택해주세요</option>
+                            <option value="맑음">맑음 ☀️</option>
+                            <option value="흐림">흐림 ☁️</option>
+                            <option value="비">비 🌧️</option>
+                            <option value="구름조금">구름 조금 🌤️</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="observation">무엇을 보았나요? 어떤 행동을 했나요?</label>
+                        <textarea id="observation" placeholder="예: 무당벌레가 나뭇잎 위에서 진딧물을 먹고 있었어요." required></textarea>
+                    </div>
+
+                    <button class="journal-button" onclick="addJournalEntry()">
+                        <i class="fas fa-plus"></i> 관찰 일지 저장하기
+                    </button>
+                </div>
+
+                <div id="journalEntries" class="journal-entries">
+                    <!-- 여기에 관찰 일지가 추가됩니다 -->
+                </div>
+            </div>
+
+            <div class="coloring-section">
+                <h3>곤충 색칠하기 🎨</h3>
+                <p>마음에 드는 색으로 예쁘게 색칠해보세요!</p>
+
+                <div class="coloring-container">
+                    <div class="color-palette">
+                        <div class="color-option" style="background-color: #000000" data-color="#000000"></div>
+                        <div class="color-option" style="background-color: #ff0000" data-color="#ff0000"></div>
+                        <div class="color-option" style="background-color: #00ff00" data-color="#00ff00"></div>
+                        <div class="color-option" style="background-color: #0000ff" data-color="#0000ff"></div>
+                        <div class="color-option" style="background-color: #ffff00" data-color="#ffff00"></div>
+                        <div class="color-option" style="background-color: #ff00ff" data-color="#ff00ff"></div>
+                        <div class="color-option" style="background-color: #00ffff" data-color="#00ffff"></div>
+                        <div class="color-option" style="background-color: #ff9900" data-color="#ff9900"></div>
+                        <div class="color-option" style="background-color: #9900ff" data-color="#9900ff"></div>
+                        <div class="color-option" style="background-color: #ffffff" data-color="#ffffff"></div>
+                    </div>
+
+                    <div class="brush-size-control">
+                        <label for="brushSize">붓의 크기:</label>
+                        <input type="range" id="brushSize" min="1" max="20" value="5">
+                    </div>
+
+                    <div class="canvas-container">
+                        <canvas id="coloringCanvas"></canvas>
+                    </div>
+
+                    <div class="coloring-controls">
+                        <button class="coloring-button" onclick="clearCanvas()">
+                            <i class="fas fa-trash"></i> 다시 그리기
+                        </button>
+                        <button class="coloring-button" onclick="saveDrawing()">
+                            <i class="fas fa-save"></i> 저장하기
+                        </button>
+                        <button class="coloring-button" onclick="changeInsect()">
+                            <i class="fas fa-sync"></i> 다른 곤충 선택
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -981,8 +1472,395 @@
             document.getElementById('nextButton').disabled = currentQuestion === totalQuestions;
         }
 
-        // 페이지 로드 시 퀴즈 초기화
-        document.addEventListener('DOMContentLoaded', initQuiz);
+        // 관찰 일지 관련 코드
+        function addJournalEntry() {
+            const insectName = document.getElementById('insectName').value;
+            const location = document.getElementById('location').value;
+            const weather = document.getElementById('weather').value;
+            const observation = document.getElementById('observation').value;
+
+            if (!insectName || !location || !weather || !observation) {
+                alert('모든 항목을 입력해주세요!');
+                return;
+            }
+
+            const entry = {
+                insectName,
+                location,
+                weather,
+                observation,
+                date: new Date().toLocaleDateString('ko-KR'),
+                time: new Date().toLocaleTimeString('ko-KR')
+            };
+
+            // 로컬 스토리지에서 기존 항목 가져오기
+            let entries = JSON.parse(localStorage.getItem('journalEntries') || '[]');
+            entries.unshift(entry); // 새 항목을 앞에 추가
+            localStorage.setItem('journalEntries', JSON.stringify(entries));
+
+            // 입력 폼 초기화
+            document.getElementById('insectName').value = '';
+            document.getElementById('location').value = '';
+            document.getElementById('weather').value = '';
+            document.getElementById('observation').value = '';
+
+            // 화면 업데이트
+            displayJournalEntries();
+        }
+
+        function deleteJournalEntry(index) {
+            let entries = JSON.parse(localStorage.getItem('journalEntries') || '[]');
+            entries.splice(index, 1);
+            localStorage.setItem('journalEntries', JSON.stringify(entries));
+            displayJournalEntries();
+        }
+
+        function displayJournalEntries() {
+            const entriesContainer = document.getElementById('journalEntries');
+            const entries = JSON.parse(localStorage.getItem('journalEntries') || '[]');
+
+            entriesContainer.innerHTML = entries.map((entry, index) => `
+                <div class="journal-entry">
+                    <h4>${entry.insectName} 관찰 일지</h4>
+                    <div class="entry-date">${entry.date} ${entry.time}</div>
+                    <div class="entry-content">${entry.observation}</div>
+                    <div class="entry-details">
+                        <div class="detail-item">
+                            <span class="detail-label">관찰 장소</span>
+                            <span>${entry.location}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">날씨</span>
+                            <span>${entry.weather}</span>
+                        </div>
+                    </div>
+                    <button class="delete-button" onclick="deleteJournalEntry(${index})">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // 색칠하기 관련 코드
+        let currentColor = '#000000';
+        let isDrawing = false;
+        let canvas = document.getElementById('coloringCanvas');
+        let ctx = canvas.getContext('2d');
+        let lastX = 0;
+        let lastY = 0;
+        let currentInsectIndex = 0;
+
+        // 곤충 그리기 함수들
+        const insects = [
+            {
+                name: '호랑나비',
+                draw: function(ctx) {
+                    ctx.beginPath();
+                    ctx.moveTo(300, 150);
+                    ctx.bezierCurveTo(250, 100, 200, 120, 180, 150);
+                    ctx.bezierCurveTo(160, 180, 170, 220, 200, 250);
+                    ctx.lineTo(300, 300);
+                    ctx.lineTo(400, 250);
+                    ctx.bezierCurveTo(430, 220, 440, 180, 420, 150);
+                    ctx.bezierCurveTo(400, 120, 350, 100, 300, 150);
+                    ctx.moveTo(300, 300);
+                    ctx.lineTo(300, 400);
+                    ctx.bezierCurveTo(280, 420, 260, 420, 240, 400);
+                    ctx.lineTo(220, 380);
+                    ctx.moveTo(300, 400);
+                    ctx.bezierCurveTo(320, 420, 340, 420, 360, 400);
+                    ctx.lineTo(380, 380);
+                    ctx.stroke();
+                }
+            },
+            {
+                name: '무당벌레',
+                draw: function(ctx) {
+                    // 몸통
+                    ctx.beginPath();
+                    ctx.moveTo(300, 200);
+                    ctx.bezierCurveTo(200, 200, 150, 300, 200, 400);
+                    ctx.bezierCurveTo(250, 500, 350, 500, 400, 400);
+                    ctx.bezierCurveTo(450, 300, 400, 200, 300, 200);
+                    ctx.stroke();
+
+                    // 점들
+                    [
+                        [250, 300], [350, 300],
+                        [270, 350], [330, 350],
+                        [300, 400]
+                    ].forEach(([x, y]) => {
+                        ctx.beginPath();
+                        ctx.arc(x, y, 20, 0, Math.PI * 2);
+                        ctx.stroke();
+                    });
+                }
+            },
+            {
+                name: '장수풍뎅이',
+                draw: function(ctx) {
+                    // 몸통
+                    ctx.beginPath();
+                    ctx.moveTo(300, 150);
+                    ctx.bezierCurveTo(250, 150, 220, 180, 220, 220);
+                    ctx.lineTo(220, 400);
+                    ctx.bezierCurveTo(220, 450, 380, 450, 380, 400);
+                    ctx.lineTo(380, 220);
+                    ctx.bezierCurveTo(380, 180, 350, 150, 300, 150);
+                    
+                    // 뿔
+                    ctx.moveTo(260, 150);
+                    ctx.bezierCurveTo(260, 100, 280, 80, 300, 80);
+                    ctx.bezierCurveTo(320, 80, 340, 100, 340, 150);
+                    
+                    // 다리
+                    ctx.moveTo(240, 200);
+                    ctx.lineTo(200, 180);
+                    ctx.moveTo(360, 200);
+                    ctx.lineTo(400, 180);
+                    ctx.moveTo(250, 250);
+                    ctx.lineTo(200, 250);
+                    ctx.moveTo(350, 250);
+                    ctx.lineTo(400, 250);
+                    ctx.moveTo(250, 300);
+                    ctx.lineTo(200, 320);
+                    ctx.moveTo(350, 300);
+                    ctx.lineTo(400, 320);
+                    
+                    ctx.stroke();
+                }
+            }
+        ];
+
+        // 캔버스 크기 설정
+        function setCanvasSize() {
+            canvas.width = 600;
+            canvas.height = 600;
+            ctx.lineJoin = 'round';
+            ctx.lineCap = 'round';
+            ctx.lineWidth = 2;
+            loadInsectDrawing();
+        }
+
+        // 곤충 그리기 로드
+        function loadInsectDrawing() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = '#000000';
+            ctx.lineWidth = 2;
+            insects[currentInsectIndex].draw(ctx);
+        }
+
+        // 색상 선택
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                currentColor = this.dataset.color;
+            });
+        });
+
+        // 그리기 이벤트
+        function startDrawing(e) {
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            ctx.beginPath();
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = document.getElementById('brushSize').value;
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+        }
+
+        // 캔버스 초기화
+        function clearCanvas() {
+            loadInsectDrawing();
+        }
+
+        // 그림 저장
+        function saveDrawing() {
+            const link = document.createElement('a');
+            link.download = '나만의_곤충_그림.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        // 다른 곤충으로 변경
+        function changeInsect() {
+            currentInsectIndex = (currentInsectIndex + 1) % insects.length;
+            loadInsectDrawing();
+        }
+
+        // 이벤트 리스너 등록
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            initQuiz();
+            displayJournalEntries();
+            setCanvasSize();
+            initScrollToTop();
+            initSearch();
+        });
+
+        // 위로 가기 버튼 초기화
+        function initScrollToTop() {
+            const scrollButton = document.querySelector('.scroll-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollButton.classList.add('visible');
+                } else {
+                    scrollButton.classList.remove('visible');
+                }
+            });
+
+            scrollButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // 검색 기능 초기화
+        function initSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+
+            // 검색어 입력 시 실시간 검색
+            searchInput.addEventListener('input', debounce(function() {
+                if (this.value.length >= 1) {
+                    searchInsects();
+                } else {
+                    searchResults.classList.remove('visible');
+                }
+            }, 300));
+
+            // 검색창 외부 클릭 시 결과 숨기기
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.search-section')) {
+                    searchResults.classList.remove('visible');
+                }
+            });
+
+            // Enter 키 입력 시 검색 실행
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchInsects();
+                }
+            });
+        }
+
+        // 디바운스 함수
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func.apply(this, args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // 곤충 검색 함수
+        function searchInsects() {
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const query = searchInput.value.trim().toLowerCase();
+
+            if (query.length < 1) {
+                searchResults.classList.remove('visible');
+                return;
+            }
+
+            // 모든 곤충 카드에서 검색
+            const insectCards = document.querySelectorAll('.insect-card');
+            const results = [];
+
+            insectCards.forEach(card => {
+                const title = card.querySelector('h2').textContent;
+                const content = card.querySelector('.insect-info').textContent;
+                
+                if (title.toLowerCase().includes(query) || 
+                    content.toLowerCase().includes(query)) {
+                    
+                    // 검색어가 포함된 부분 하이라이트
+                    const highlightedTitle = title.replace(
+                        new RegExp(query, 'gi'),
+                        match => `<span class="highlight">${match}</span>`
+                    );
+
+                    results.push({
+                        id: card.id,
+                        title: highlightedTitle,
+                        original: title
+                    });
+                }
+            });
+
+            // 검색 결과 표시
+            if (results.length > 0) {
+                searchResults.innerHTML = results.map(result => `
+                    <div class="search-result-item" onclick="scrollToInsect('${result.id}')">
+                        ${result.title}
+                    </div>
+                `).join('');
+                searchResults.classList.add('visible');
+            } else {
+                searchResults.innerHTML = `
+                    <div class="search-result-item">
+                        검색 결과가 없어요. 다른 곤충 이름으로 검색해보세요!
+                    </div>
+                `;
+                searchResults.classList.add('visible');
+            }
+        }
+
+        // 검색 결과 클릭 시 해당 곤충으로 스크롤
+        function scrollToInsect(id) {
+            const element = document.getElementById(id);
+            const searchResults = document.getElementById('searchResults');
+            const headerOffset = 150;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+
+            searchResults.classList.remove('visible');
+            
+            // 찾아간 곤충 카드 강조 효과
+            element.style.animation = 'highlight 2s';
+            element.addEventListener('animationend', () => {
+                element.style.animation = '';
+            });
+        }
+
+        // 강조 효과 애니메이션
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes highlight {
+                0% { transform: translateY(-5px); box-shadow: 0 0 0 4px var(--search-color); }
+                100% { transform: translateY(0); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
