@@ -1,23 +1,49 @@
 // Navigation Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const mainNav = document.querySelector('.main-nav');
+    const subNavs = document.querySelectorAll('.sub-nav-list');
     
-    if (navToggle && navMenu) {
+    if (navToggle && mainNav) {
         navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            navToggle.setAttribute('aria-expanded', 
-                navMenu.classList.contains('active'));
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+            mainNav.classList.toggle('active');
+            navToggle.innerHTML = isExpanded ? 
+                '<i class="fas fa-bars" aria-hidden="true"></i>' : 
+                '<i class="fas fa-times" aria-hidden="true"></i>';
         });
     }
 
-    // Close menu when clicking outside
+    // 서브 네비게이션 토글
+    document.querySelectorAll('.nav-item').forEach(item => {
+        const subNav = item.querySelector('.sub-nav-list');
+        if (subNav) {
+            const link = item.querySelector('.nav-link');
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                subNav.classList.toggle('active');
+                const isExpanded = link.getAttribute('aria-expanded') === 'true';
+                link.setAttribute('aria-expanded', !isExpanded);
+            });
+        }
+    });
+
+    // 현재 페이지 표시
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+        }
+    });
+
+    // 외부 클릭 시 네비게이션 닫기
     document.addEventListener('click', function(e) {
-        if (navMenu && navMenu.classList.contains('active') &&
-            !navMenu.contains(e.target) && 
-            !navToggle.contains(e.target)) {
-            navMenu.classList.remove('active');
+        if (!mainNav.contains(e.target) && !navToggle.contains(e.target)) {
+            mainNav.classList.remove('active');
             navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
         }
     });
 
@@ -77,25 +103,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Keyboard Navigation
 document.addEventListener('keydown', function(e) {
-    const navMenu = document.querySelector('.nav-menu');
+    const mainNav = document.querySelector('.main-nav');
     const navToggle = document.querySelector('.nav-toggle');
     
     // Toggle menu with Escape key
-    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
+    if (e.key === 'Escape') {
+        mainNav.classList.remove('active');
         navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
     }
-});
-
-// Add active state to current page in navigation
-document.addEventListener('DOMContentLoaded', function() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
-            link.setAttribute('aria-current', 'page');
-        }
-    });
 }); 
