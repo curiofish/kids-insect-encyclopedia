@@ -1,0 +1,299 @@
+/* 카테고리 페이지 스타일 */
+:root {
+    --primary-color: #FF9E1B;
+    --secondary-color: #4CAF50;
+    --accent-color: #FF5722;
+    --light-color: #FFF9C4;
+    --dark-color: #333333;
+    --border-radius: 15px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 공통 스타일 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.rounded-image {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* 소개 섹션 */
+.category-intro-section {
+    background-color: var(--light-color);
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+.intro-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.intro-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.intro-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.intro-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+/* 곤충 종류 섹션 */
+.insect-types-section {
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+.insect-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.insect-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.insect-card:hover {
+    transform: translateY(-5px);
+}
+
+.insect-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.insect-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.insect-card:hover .insect-image img {
+    transform: scale(1.05);
+}
+
+.insect-info {
+    padding: 20px;
+}
+
+.insect-info h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.insect-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detail-item h4 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.detail-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* 생활 섹션 */
+.insect-life-section {
+    background-color: var(--light-color);
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+.life-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.life-text {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+.life-text h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+.life-text h3:first-child {
+    margin-top: 0;
+}
+
+.life-text p, .life-text li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.life-text ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.life-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.life-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+/* 재미있는 사실 섹션 */
+.fun-facts-section {
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.fact-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+}
+
+.fact-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.fact-card h3 {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.fact-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .intro-text p, .life-text p, .life-text li {
+        font-size: 1rem;
+    }
+    
+    .insect-grid, .facts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .fact-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .insect-grid, .facts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .insect-image {
+        height: 180px;
+    }
+}
+
+/* 애니메이션 효과 */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.section-title {
+    animation: bounce 3s ease-in-out infinite;
+}
+
+/* 인쇄 스타일 */
+@media print {
+    .main-header, .main-footer, .scroll-top {
+        display: none;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .section-title {
+        color: black;
+        text-shadow: none;
+    }
+    
+    .insect-card, .fact-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+} 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <path d="M300 150 C250 150 220 180 220 220 L220 400 C220 450 380 450 380 400 L380 220 C380 180 350 150 300 150 Z" fill="none" stroke="black" stroke-width="2"/>
+  <path d="M260 150 C260 100 280 80 300 80 C320 80 340 100 340 150" fill="none" stroke="black" stroke-width="2"/>
+  <path d="M240 200 L200 180 M360 200 L400 180" fill="none" stroke="black" stroke-width="2"/>
+  <path d="M250 250 L200 250 M350 250 L400 250" fill="none" stroke="black" stroke-width="2"/>
+  <path d="M250 300 L200 320 M350 300 L400 320" fill="none" stroke="black" stroke-width="2"/>
+  <path d="M300 150 L300 400" fill="none" stroke="black" stroke-width="2"/>
+</svg> 

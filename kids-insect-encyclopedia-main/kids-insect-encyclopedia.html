@@ -1,0 +1,2335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유치원 어린이를 위한 신나는 곤충 백과사전</title>
+    <!-- 가독성 높은 폰트 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #8bc34a;
+            --secondary-color: #689f38;
+            --background-color: #f0f9e8;
+            --card-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #ff9800;
+            --ruler-color: #4caf50;
+            --correct-color: #4caf50;
+            --wrong-color: #f44336;
+            --journal-color: #81c784;
+            --delete-color: #e57373;
+            --coloring-color: #9575cd;
+            --scroll-color: #ffa726;
+            --search-color: #7cb342;
+            --base-font-size: 16px; /* 기본 폰트 크기 조정 */
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            font-size: var(--base-font-size);
+            line-height: 1.7; /* 줄간격 조정 */
+            letter-spacing: -0.01em; /* 자간 조정 */
+            word-break: keep-all; /* 단어 단위 줄바꿈 */
+        }
+
+        /* 위로 가기 버튼 스타일 */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--scroll-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-to-top:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .scroll-to-top.visible {
+            display: flex;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            font-weight: 500;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            margin-top: 1rem;
+            font-weight: 400;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            background-color: var(--secondary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .nav-button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Styles */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .insect-card {
+            background-color: var(--card-color);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .insect-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .insect-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .insect-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .insect-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            padding: 3rem;
+        }
+
+        .insect-image {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .insect-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .insect-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .insect-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .info-section {
+            background-color: rgba(139, 195, 74, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+        }
+
+        .info-section h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .fun-fact {
+            background-color: #fff3e0;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .fun-fact h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .insect-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-button {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Size Comparison Styles */
+        .size-comparison {
+            background-color: var(--card-color);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .size-comparison h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .size-ruler {
+            height: 40px;
+            background-color: var(--background-color);
+            position: relative;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .ruler-marks {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        .ruler-mark {
+            position: relative;
+            width: 2px;
+            height: 10px;
+            background-color: var(--ruler-color);
+        }
+
+        .ruler-mark::after {
+            content: attr(data-size);
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: var(--text-color);
+        }
+
+        .insect-markers {
+            position: relative;
+            height: 150px;
+        }
+
+        .insect-marker {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            transform: translateX(-50%);
+        }
+
+        .insect-marker img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .insect-marker span {
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        /* 꿀벌 기준으로 위치 조정 */
+        .insect-marker:nth-child(1) {
+            left: 15%;
+        }
+
+        /* Quiz Styles */
+        .quiz-section {
+            background-color: var(--card-color);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .quiz-section h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .quiz-question {
+            background-color: var(--background-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .quiz-question.active {
+            display: block;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .quiz-option {
+            background-color: white;
+            border: 2px solid var(--primary-color);
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+
+        .quiz-option:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quiz-option.correct {
+            background-color: var(--correct-color);
+            color: white;
+            border-color: var(--correct-color);
+        }
+
+        .quiz-option.wrong {
+            background-color: var(--wrong-color);
+            color: white;
+            border-color: var(--wrong-color);
+        }
+
+        .quiz-feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .quiz-feedback.correct {
+            display: block;
+            background-color: rgba(76, 175, 80, 0.1);
+            color: var(--correct-color);
+        }
+
+        .quiz-feedback.wrong {
+            display: block;
+            background-color: rgba(244, 67, 54, 0.1);
+            color: var(--wrong-color);
+        }
+
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+
+        .quiz-nav-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.4rem;
+        }
+
+        .quiz-nav-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .quiz-nav-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Journal Styles */
+        .journal-section {
+            background-color: var(--card-color);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .journal-section h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .journal-form {
+            background-color: var(--background-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            font-size: 1.4rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .journal-button {
+            background-color: var(--journal-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.4rem;
+        }
+
+        .journal-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .journal-entries {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .journal-entry {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .journal-entry h4 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .entry-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .entry-content {
+            margin-bottom: 1rem;
+        }
+
+        .entry-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background-color: var(--background-color);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .delete-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--delete-color);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .delete-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Coloring Page Styles */
+        .coloring-section {
+            background-color: var(--card-color);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .coloring-section h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .coloring-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .canvas-container {
+            position: relative;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        #coloringCanvas {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            cursor: crosshair;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: var(--background-color);
+            border-radius: 10px;
+        }
+
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+
+        .color-option.selected {
+            border: 3px solid var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .coloring-controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .coloring-button {
+            background-color: var(--coloring-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .coloring-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .brush-size-control {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            justify-content: center;
+        }
+
+        .brush-size-control label {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .brush-size-control input {
+            width: 200px;
+        }
+
+        /* 검색 섹션 스타일 */
+        .search-section {
+            background-color: var(--card-color);
+            padding: 1rem;
+            position: sticky;
+            top: 60px;
+            z-index: 999;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--search-color);
+            border-radius: 20px;
+            font-size: 1.4rem;
+            font-family: inherit;
+            background-color: white;
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(124, 179, 66, 0.3);
+        }
+
+        .search-button {
+            background-color: var(--search-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .search-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .search-results {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .search-results.visible {
+            display: block;
+        }
+
+        .search-result-item {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-result-item:hover {
+            background-color: var(--background-color);
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .highlight {
+            background-color: rgba(255, 193, 7, 0.3);
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        .quiz-hint {
+            background-color: #fff3e0;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .quiz-hint::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .not-insect-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .not-insect-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .not-insect-content {
+            flex: 1;
+        }
+
+        .main-desc {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .detail-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .detail-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .detail-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -0.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .not-insect-item {
+                flex-direction: column;
+            }
+
+            .not-insect-image {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        /* 서브메뉴 스타일 */
+        .sub-menu {
+            display: none;
+            background-color: var(--background-color);
+            padding: 0.5rem;
+            border-radius: 10px;
+            margin-top: 0.5rem;
+        }
+
+        .sub-menu.active {
+            display: block;
+        }
+
+        .sub-nav-button {
+            background-color: var(--card-color);
+            color: var(--text-color);
+            border: 1px solid var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.2rem;
+            font-size: 0.9rem;
+        }
+
+        .sub-nav-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 위로 가기 버튼 추가 -->
+    <div class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <header>
+        <div class="header-content">
+        <h1>🐞 신나는 곤충 백과사전 🦋</h1>
+        <div class="subtitle">유치원 친구들을 위한 신기한 곤충 이야기</div>
+        </div>
+    </header>
+    
+    <!-- 검색 섹션 추가 -->
+    <div class="search-section">
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="찾고 싶은 곤충의 이름을 입력해보세요! (예: 무당벌레, 장수풍뎅이)">
+            <button class="search-button" onclick="searchInsects()">
+                <i class="fas fa-search"></i> 찾기
+            </button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </div>
+
+    <div class="nav-container">
+    <nav>
+            <button class="nav-button" onclick="location.href='#intro'">소개</button>
+            
+            <!-- 나비목 -->
+            <button class="nav-button" onclick="toggleSubMenu('butterflies')">나비와 나방 🦋</button>
+            <div class="sub-menu" id="butterflies-menu">
+                <button class="sub-nav-button" onclick="scrollToSection('swallowtail')">호랑나비</button>
+                <button class="sub-nav-button" onclick="scrollToSection('cabbage')">배추흰나비</button>
+                <button class="sub-nav-button" onclick="scrollToSection('atlas')">산누에나방</button>
+            </div>
+
+            <!-- 딱정벌레목 -->
+            <button class="nav-button" onclick="toggleSubMenu('beetles')">딱정벌레 🪲</button>
+            <div class="sub-menu" id="beetles-menu">
+                <button class="sub-nav-button" onclick="scrollToSection('ladybug')">무당벌레</button>
+                <button class="sub-nav-button" onclick="scrollToSection('stagbeetle')">장수풍뎅이</button>
+                <button class="sub-nav-button" onclick="scrollToSection('longhorn')">하늘소</button>
+            </div>
+
+            <!-- 메뚜기목 -->
+            <button class="nav-button" onclick="toggleSubMenu('orthoptera')">메뚜기와 귀뚜라미 🦗</button>
+            <div class="sub-menu" id="orthoptera-menu">
+                <button class="sub-nav-button" onclick="scrollToSection('cricket')">귀뚜라미</button>
+                <button class="sub-nav-button" onclick="scrollToSection('grasshopper')">방아깨비</button>
+                <button class="sub-nav-button" onclick="scrollToSection('mantis')">사마귀</button>
+            </div>
+
+            <!-- 잠자리목 -->
+            <button class="nav-button" onclick="toggleSubMenu('dragonflies')">잠자리 🦋</button>
+            <div class="sub-menu" id="dragonflies-menu">
+                <button class="sub-nav-button" onclick="scrollToSection('dragonfly')">잠자리</button>
+                <button class="sub-nav-button" onclick="scrollToSection('damselfly')">실잠자리</button>
+            </div>
+
+            <!-- 벌목 -->
+            <button class="nav-button" onclick="toggleSubMenu('hymenoptera')">벌과 개미 🐝</button>
+            <div class="sub-menu" id="hymenoptera-menu">
+                <button class="sub-nav-button" onclick="scrollToSection('honeybee')">꿀벌</button>
+                <button class="sub-nav-button" onclick="scrollToSection('ant')">개미</button>
+                <button class="sub-nav-button" onclick="scrollToSection('wasp')">말벌</button>
+            </div>
+
+            <!-- 노린재목 -->
+            <button class="nav-button" onclick="toggleSubMenu('hemiptera')">노린재와 매미 🐛</button>
+            <div class="sub-menu" id="hemiptera-menu">
+                <button class="sub-nav-button" onclick="scrollToSection('stinkbug')">노린재</button>
+                <button class="sub-nav-button" onclick="scrollToSection('cicada')">매미</button>
+            </div>
+
+            <!-- 기타 메뉴 -->
+            <button class="nav-button" onclick="location.href='#quiz'">곤충 퀴즈</button>
+            <button class="nav-button" onclick="location.href='#not-insects'">곤충이 아닌 동물들</button>
+    </nav>
+    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>호랑나비는 산과 들에 사는 제비꽃을 특히 좋아해요. 애벌레는 제비꽃의 잎을 먹고 자라고, 어른 나비는 제비꽃의 꿀을 먹어요. 그리고 호랑나비는 봄부터 가을까지 볼 수 있답니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ladybug" class="insect-card">
+            <div class="insect-header">
+                <h2>귀여운 무당벌레 🐞</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/beetles/무당벌레.png" alt="무당벌레">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>무당벌레 소개</h3>
+                        <p>무당벌레는 동그란 몸에 빨간색 겉날개와 7개의 검은 점이 있는 아주 귀여운 곤충이에요. 크기는 약 5-8mm로 아주 작답니다!</p>
+                        <p>무당벌레가 걸어다닐 때는 "또각또각" 소리가 나요. 작은 발로 걸어다니는 모습이 정말 귀엽죠?</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>무당벌레는 농부의 친구</h3>
+                        <p>무당벌레는 진딧물을 잡아먹는 <strong>자연의 해충 방제사</strong>예요!</p>
+                        <ul>
+                            <li>하루에 약 50마리의 진딧물을 먹을 수 있어요</li>
+                            <li>진딧물은 식물에 해로운 벌레예요</li>
+                            <li>무당벌레가 진딧물을 잡아먹어서 식물을 보호해줘요</li>
+                            <li>그래서 농부들이 무당벌레를 아주 좋아한답니다</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>무당벌레의 점 개수는 종류에 따라 다르답니다! 2개부터 24개까지 다양한 점을 가진 무당벌레가 있어요. 우리나라에서 가장 흔한 무당벌레는 7개의 점을 가지고 있어요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stagbeetle" class="insect-card">
+            <div class="insect-header">
+                <h2>강한 장수풍뎅이 🪲</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/beetles/장수풍뎅이.png" alt="장수풍뎅이">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>장수풍뎅이 소개</h3>
+                        <p>장수풍뎅이는 우리나라에서 가장 큰 딱정벌레 중 하나예요. 수컷은 머리에 커다란 뿔이 있어서 마치 작은 공룡처럼 보이죠!</p>
+                        <p>몸길이는 3-7cm 정도로, 어른 손바닥만큼 커요. 몸은 반짝반짝 윤이 나는 검은색이랍니다.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>장수풍뎅이의 생활</h3>
+                        <p>장수풍뎅이는 이렇게 살아요:</p>
+                        <ul>
+                            <li>낮에는 나무 속이나 땅 속에서 쉬어요</li>
+                            <li>밤에 활동하면서 나무의 수액을 먹어요</li>
+                            <li>수컷은 큰 뿔로 다른 수컷과 싸워서 영역을 지켜요</li>
+                            <li>여름철에 주로 볼 수 있어요</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>장수풍뎅이 애벌레는 땅 속에서 3년 동안 자라요! 그동안 썩은 나무를 먹으면서 점점 커진답니다. 그리고 마침내 어른벌레가 되면 단 2-3개월만 살아요. 정말 신기하죠?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mantis" class="insect-card">
+            <div class="insect-header">
+                <h2>멋진 사마귀 🦗</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/grasshoppers/사마귀.png" alt="사마귀">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>사마귀 소개</h3>
+                        <p>사마귀는 앞다리가 낫처럼 생긴 특별한 곤충이에요. 초록색이나 갈색 몸을 가지고 있어서 나뭇잎이나 나뭇가지처럼 보여요.</p>
+                        <p>머리를 180도로 돌릴 수 있어서 뒤에서 다가오는 것도 잘 볼 수 있답니다!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>사마귀의 사냥</h3>
+                        <p>사마귀는 대단한 사냥꾼이에요:</p>
+                        <ul>
+                            <li>날카로운 앞다리로 먹이를 잡아요</li>
+                            <li>나뭇잎처럼 가만히 있다가 먹이가 지나가면 재빨리 잡아요</li>
+                            <li>나비, 파리, 메뚜기 같은 작은 곤충을 잡아먹어요</li>
+                            <li>큰 복안으로 먹이를 잘 찾을 수 있어요</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>사마귀는 기도하는 것처럼 앞다리를 모으고 있어서 '기도하는 사마귀'라고도 불러요. 하지만 사실 이건 먹이를 잡기 위해 준비하는 자세랍니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cicada" class="insect-card">
+            <div class="insect-header">
+                <h2>시끄러운 매미 🎵</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/bees_moths/매미.png" alt="매미">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>매미 소개</h3>
+                        <p>매미는 여름을 대표하는 곤충이에요. 투명한 날개를 가진 큰 곤충으로, 수컷은 특별한 소리를 낼 수 있어요.</p>
+                        <p>매미는 크기가 3-4cm 정도로 꽤 큰 편이에요. 날개는 유리처럼 투명하고 반짝반짝해요!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>매미의 노래</h3>
+                        <p>매미는 이렇게 노래해요:</p>
+                        <ul>
+                            <li>수컷 매미만 소리를 낼 수 있어요</li>
+                            <li>배 아래쪽에 있는 '발음기'로 소리를 내요</li>
+                            <li>아침부터 저녁까지 "맴맴" 하고 우는 소리를 들을 수 있어요</li>
+                            <li>다른 매미들에게 "나 여기 있어요~" 하고 알리는 거예요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>매미는 땅 속에서 아주 오래 자라요! 어떤 매미는 땅 속에서 7년이나 살다가 어른 매미가 된답니다. 하지만 어른이 되면 단 2주에서 4주 정도만 살아요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dragonfly" class="insect-card">
+            <div class="insect-header">
+                <h2>빠른 잠자리 🦋</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/dragonflies/잠자리.png" alt="잠자리">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>잠자리 소개</h3>
+                        <p>잠자리는 하늘의 헬리콥터라고 불릴 만큼 날기를 잘하는 곤충이에요. 두 쌍의 큰 날개로 자유자재로 날 수 있어요!</p>
+                        <p>몸길이는 4-5cm 정도이고, 날개를 펼치면 7-8cm나 되요. 몸은 파란색, 빨간색, 갈색 등 다양한 색깔을 가지고 있답니다.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>잠자리의 특별한 능력</h3>
+                        <p>잠자리는 이런 능력이 있어요:</p>
+                        <ul>
+                            <li>앞으로, 뒤로, 옆으로, 제자리에서도 날 수 있어요</li>
+                            <li>시속 50km로 날 수 있어요 (자전거보다 빨라요!)</li>
+                            <li>커다란 복안으로 거의 모든 방향을 볼 수 있어요</li>
+                            <li>공중에서 먹이를 잡을 수 있어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>잠자리는 3억 년 전부터 지구에 살았어요! 공룡보다 더 오래전부터 있었던 아주 오래된 곤충이랍니다. 옛날의 잠자리는 지금보다 훨씬 커서 날개 길이가 70cm나 됐대요!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="honeybee" class="insect-card">
+            <div class="insect-header">
+                <h2>부지런한 꿀벌 🐝</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/bees_moths/꿀벌.png" alt="꿀벌">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>꿀벌 소개</h3>
+                        <p>꿀벌은 노란색과 검은색 줄무늬가 있는 작은 곤충이에요. 몸에는 부드러운 털이 나 있고, 날개는 투명해요.</p>
+                        <p>크기는 1.5cm 정도로 작지만, 아주 부지런하게 일하는 곤충이랍니다!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>꿀벌의 일</h3>
+                        <p>꿀벌은 이런 일을 해요:</p>
+                        <ul>
+                            <li>꽃에서 꿀물(화밀)을 모아와요</li>
+                            <li>꽃가루를 다른 꽃으로 옮겨서 식물이 열매를 맺을 수 있게 도와줘요</li>
+                            <li>벌집에서 꿀을 만들어요</li>
+                            <li>여왕벌과 애벌레를 돌봐요</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>꿀벌의 춤</h3>
+                        <p>꿀벌은 춤으로 대화를 해요! 꽃을 찾은 꿀벌이 8자 모양으로 춤을 추면, 다른 꿀벌들은 그 춤을 보고 꽃이 어디에 있는지 알 수 있어요.</p>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>한 마리의 꿀벌이 평생 모을 수 있는 꿀의 양은 겨우 작은 티스푼의 1/12 정도예요. 그래서 많은 꿀벌들이 함께 일해야 우리가 먹는 꿀을 만들 수 있답니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cricket" class="insect-card">
+            <div class="insect-header">
+                <h2>노래하는 귀뚜라미 🦗</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/grasshoppers/귀뚜라미.png" alt="귀뚜라미">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>귀뚜라미 소개</h3>
+                        <p>귀뚜라미는 가을밤을 대표하는 곤충이에요. 검은색이나 갈색 몸을 가진 곤충으로, 수컷은 특별한 소리를 낼 수 있어요.</p>
+                        <p>크기는 2-3cm 정도이고, 긴 더듬이와 뒷다리를 가지고 있어요.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>귀뚜라미의 노래</h3>
+                        <p>귀뚜라미는 이렇게 노래해요:</p>
+                        <ul>
+                            <li>수컷 귀뚜라미만 소리를 낼 수 있어요</li>
+                            <li>날개를 서로 비벼서 "귀뚜르 귀뚜르" 소리를 내요</li>
+                            <li>마치 바이올린을 연주하는 것처럼 날개를 비벼요</li>
+                            <li>밤에 주로 노래를 불러요</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>귀뚜라미의 생활</h3>
+                    <p>귀뚜라미는 풀숲이나 돌 밑, 땅 속에 작은 집을 짓고 살아요. 낮에는 숨어 있다가 밤에 주로 활동한답니다.</p>
+                    </div>
+                    
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>귀뚜라미의 귀는 앞다리에 있어요! 우리처럼 머리에 귀가 있는 게 아니라, 앞다리에 있는 작은 구멍으로 소리를 들어요. 신기하죠?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grasshopper" class="insect-card">
+            <div class="insect-header">
+                <h2>뛰어다니는 방아깨비 🦗</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/grasshoppers/방아깨비.png" alt="방아깨비">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>방아깨비 소개</h3>
+                        <p>방아깨비는 논이나 풀밭에서 사는 메뚜기과의 곤충이에요. 초록색이나 갈색 몸을 가지고 있어요.</p>
+                        <p>크기는 2-3cm 정도로 작지만, 뒷다리가 아주 튼튼해서 멀리 뛸 수 있어요!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>방아깨비의 특징</h3>
+                        <p>방아깨비는 이런 특징이 있어요:</p>
+                        <ul>
+                            <li>뒷다리로 방아 찧는 것처럼 움직여서 '방아깨비'라는 이름이 붙었어요</li>
+                            <li>자기 몸길이의 20배나 되는 거리를 뛸 수 있어요</li>
+                            <li>풀잎을 먹고 살아요</li>
+                            <li>위험할 때는 재빨리 뛰어서 도망가요</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>방아깨비의 생활</h3>
+                        <p>방아깨비는 여름부터 가을까지 볼 수 있어요. 풀이 많은 곳에서 살면서 풀잎을 먹고 자라요.</p>
+                    </div>
+                    
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>방아깨비는 귀를 배에 달고 있어요! 배 양쪽에 있는 작은 구멍으로 소리를 들어요. 또, 알에서 깨어난 아기 방아깨비는 어른 방아깨비가 되기까지 5-6번 허물을 벗어요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="longhorn" class="insect-card">
+            <div class="insect-header">
+                <h2>긴 더듬이를 가진 하늘소 🪲</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/beetles/하늘소.png" alt="하늘소">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>하늘소 소개</h3>
+                        <p>하늘소는 몸길이보다 더 긴 더듬이를 가진 특별한 딱정벌레예요. 검은색이나 갈색 몸에 무늬가 있는 경우도 있어요.</p>
+                        <p>크기는 2-3cm 정도이고, 더듬이는 몸길이의 1.5배에서 2배나 되요!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>하늘소의 특징</h3>
+                        <p>하늘소는 이런 특징이 있어요:</p>
+                        <ul>
+                            <li>긴 더듬이로 주변 환경을 잘 감지해요</li>
+                            <li>단단한 나무도 갉아먹을 수 있는 강한 턱을 가지고 있어요</li>
+                            <li>날 수도 있고, 걸을 수도 있어요</li>
+                            <li>나무 속에서 애벌레로 자라요</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>하늘소의 생활</h3>
+                        <p>하늘소는 주로 숲에서 살아요. 애벌레는 나무 속에서 자라고, 어른벌레는 나뭇잎이나 나무의 수액을 먹어요.</p>
+                    </div>
+                    
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>하늘소라는 이름은 하늘을 나는 소처럼 보인다고 해서 붙여졌어요. 실제로 날 때 내는 소리가 '붕~' 하고 소 우는 소리와 비슷하대요! 또, 하늘소는 위험할 때 '찌익~' 하는 소리를 내기도 한답니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="not-insects" class="insect-card">
+            <div class="insect-header">
+                <h2>❗ 곤충이 아닌 동물 친구들 ❗</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>곤충처럼 보이지만 곤충이 아닌 동물들이에요!</h3>
+                        <p>곤충은 다리가 6개이고, 몸이 머리, 가슴, 배로 나누어져 있어요. 아래 동물들은 곤충처럼 보이지만 다른 특징을 가진 동물들이랍니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="spider" class="insect-card">
+            <div class="insect-header">
+                <h2>영리한 거미 🕷️</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/not-insects/거미.png" alt="거미">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>거미 소개</h3>
+                        <p>거미는 다리가 8개예요! 그리고 몸이 머리가슴과 배, 두 부분으로 나누어져 있답니다.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>거미의 특징</h3>
+                        <ul>
+                            <li>거미줄을 만들어 집을 짓고 먹이를 잡아요</li>
+                            <li>독을 가진 거미도 있지만, 대부분 사람에게 해롭지 않아요</li>
+                            <li>작은 벌레들을 잡아먹어서 자연의 해충을 없애주는 일을 해요</li>
+                            <li>눈이 보통 8개나 있어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>거미는 거미줄로 집도 짓고, 먹이도 잡고, 새끼들을 보호하는 주머니도 만들어요. 거미줄은 자기 몸무게보다 훨씬 무거운 것도 버틸 수 있을 만큼 튼튼하답니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="centipede" class="insect-card">
+            <div class="insect-header">
+                <h2>빠른 지네 🦗</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/not-insects/지네.png" alt="지네">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>지네 소개</h3>
+                        <p>지네는 마디마다 다리가 한 쌍씩 있어서 다리가 아주 많아요. 보통 15쌍에서 173쌍의 다리를 가지고 있답니다!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>지네의 특징</h3>
+                        <ul>
+                            <li>몸이 여러 마디로 되어 있고, 각 마디마다 다리가 있어요</li>
+                            <li>밤에 활동하는 것을 좋아해요</li>
+                            <li>작은 벌레들을 잡아먹어요</li>
+                            <li>땅 속이나 돌 밑에서 살아요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>지네는 태어날 때는 다리가 적지만, 자라면서 점점 더 많은 다리가 생겨요. 그리고 다리가 많아서 아주 빠르게 움직일 수 있답니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="octopus" class="insect-card">
+            <div class="insect-header">
+                <h2>똑똑한 문어 🐙</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/not-insects/문어.png" alt="문어">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>문어 소개</h3>
+                        <p>문어는 다리가 8개인 바다 동물이에요. 연체동물이랍니다!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>문어의 특징</h3>
+                        <ul>
+                            <li>다리에 빨판이 있어서 물건을 잘 잡을 수 있어요</li>
+                            <li>몸 색깔을 바꿀 수 있는 특별한 능력이 있어요</li>
+                            <li>아주 똑똑해서 문제를 해결할 수 있어요</li>
+                            <li>위험할 때는 먹물을 뿜어서 도망갈 수 있어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>문어는 아주 영리한 동물이에요! 병뚜껑을 열 수도 있고, 퍼즐도 풀 수 있어요. 심지어 도구를 사용할 줄도 안답니다!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="scorpion" class="insect-card">
+            <div class="insect-header">
+                <h2>강한 전갈 🦂</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/not-insects/전갈.png" alt="전갈">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>전갈 소개</h3>
+                        <p>전갈은 거미처럼 다리가 8개이고, 집게발이 있어요. 거미와 같은 거미강에 속하는 동물이랍니다.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>전갈의 특징</h3>
+                        <ul>
+                            <li>꼬리 끝에 독침이 있어요</li>
+                            <li>밤에 활동하는 것을 좋아해요</li>
+                            <li>집게발로 먹이를 잡아요</li>
+                            <li>형광등 아래에서 보면 몸이 반짝반짝 빛나요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>전갈은 자외선 아래에서 형광색으로 빛나요! 과학자들은 이 특징을 이용해서 밤에 전갈을 연구한답니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="snail" class="insect-card">
+            <div class="insect-header">
+                <h2>느린 달팽이 🐌</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/not-insects/달팽이.png" alt="달팽이">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>달팽이 소개</h3>
+                        <p>달팽이는 연체동물이에요. 부드러운 몸에 단단한 껍데기를 가지고 있죠!</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>달팽이의 특징</h3>
+                        <ul>
+                            <li>천천히 기어다니면서 점액을 분비해요</li>
+                            <li>위험할 때는 껍데기 안으로 숨을 수 있어요</li>
+                            <li>더듬이로 주변을 살펴요</li>
+                            <li>비가 온 뒤에 많이 볼 수 있어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>달팽이의 이빨은 혀에 있어요! 그리고 이 이빨은 2만 개가 넘는답니다. 이 많은 이빨로 식물을 갉아먹어요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="earthworm" class="insect-card">
+            <div class="insect-header">
+                <h2>부지런한 지렁이 🪱</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/not-insects/지렁이.png" alt="지렁이">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>지렁이 소개</h3>
+                        <p>지렁이는 다리가 없는 환형동물이에요. 몸이 여러 마디로 되어 있답니다.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>지렁이의 특징</h3>
+                        <ul>
+                            <li>땅을 파고 다니면서 흙을 비옥하게 만들어줘요</li>
+                            <li>몸을 늘였다 줄였다 하면서 움직여요</li>
+                            <li>비가 오면 땅 위로 나와요</li>
+                            <li>잘린 몸이 다시 자랄 수 있어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>지렁이는 5개의 심장을 가지고 있어요! 그리고 뇌가 없어도 살 수 있답니다. 대신 신경계가 몸 전체에 퍼져있어요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="crab" class="insect-card">
+            <div class="insect-header">
+                <h2>재미있는 게 🦀</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/not-insects/게.png" alt="게">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>게 소개</h3>
+                        <p>게는 다리가 10개인 갑각류예요. 딱딱한 껍데기로 덮여있답니다.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>게의 특징</h3>
+                        <ul>
+                            <li>옆으로 걸어다녀요</li>
+                            <li>집게발로 먹이를 잡아요</li>
+                            <li>위험할 때는 모래나 바위 밑으로 숨어요</li>
+                            <li>주기적으로 껍데기를 벗고 새로운 껍데기를 만들어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>게는 눈이 막대기처럼 생긴 줄기 위에 있어서 주변을 잘 볼 수 있어요! 그리고 소리는 집게발을 부딪쳐서 낸답니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="starfish" class="insect-card">
+            <div class="insect-header">
+                <h2>신기한 불가사리 ⭐</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/not-insects/불가사리.png" alt="불가사리">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>불가사리 소개</h3>
+                        <p>불가사리는 보통 다섯 개의 팔을 가진 극피동물이에요. 바다에 사는 동물이랍니다.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>불가사리의 특징</h3>
+                        <ul>
+                            <li>팔 아래에 있는 작은 발로 움직여요</li>
+                            <li>잘린 팔이 다시 자랄 수 있어요</li>
+                            <li>바다 속 청소부 역할을 해요</li>
+                            <li>입이 배에 있어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>불가사리는 위가 밖으로 나와서 먹이를 소화시켜요! 그리고 팔이 잘려도 다시 자랄 수 있답니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="jellyfish" class="insect-card">
+            <div class="insect-header">
+                <h2>아름다운 해파리 🎐</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/not-insects/해파리.png" alt="해파리">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>해파리 소개</h3>
+                        <p>해파리는 자포동물이에요. 대부분 투명하고 부드러운 몸을 가지고 있답니다.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>해파리의 특징</h3>
+                        <ul>
+                            <li>몸의 95%가 물로 되어 있어요</li>
+                            <li>촉수로 먹이를 잡아요</li>
+                            <li>바닷물의 흐름을 따라 움직여요</li>
+                            <li>어떤 해파리는 밤에 빛을 낼 수 있어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>해파리는 뇌가 없어요! 대신 신경망이 온몸에 퍼져있어서 주변 환경을 감지할 수 있답니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="woodlouse" class="insect-card">
+            <div class="insect-header">
+                <h2>귀여운 쥐며느리 🪲</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-image">
+                    <img src="images/not-insects/쥐며느리.png" alt="쥐며느리">
+                </div>
+                <div class="insect-info">
+                    <div class="info-section">
+                        <h3>쥐며느리 소개</h3>
+                        <p>쥐며느리는 다리가 14개인 갑각류예요. 땅에 사는 동물이랍니다.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>쥐며느리의 특징</h3>
+                        <ul>
+                            <li>위험할 때는 동그랗게 말 수 있어요</li>
+                            <li>축축하고 어두운 곳을 좋아해요</li>
+                            <li>죽은 식물을 먹어서 자연의 청소부 역할을 해요</li>
+                            <li>단단한 껍데기로 몸을 보호해요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>재미있는 사실!</h3>
+                        <p>쥐며느리는 새끼를 주머니에 넣어서 키워요! 마치 캥거루처럼요. 그리고 위험할 때는 동그랗게 말려서 공처럼 되는 특별한 능력이 있답니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="not-insects-summary" class="insect-card">
+            <div class="insect-header">
+                <h2>곤충이 아닌 동물들의 특별한 점!</h2>
+            </div>
+            <div class="insect-content">
+                <div class="insect-info">
+                    <div class="info-section">
+                        <p>이 동물들은 곤충이 아니지만, 모두 자연에서 중요한 역할을 하는 소중한 동물들이에요.</p>
+                        <ul>
+                            <li>거미는 해충을 잡아먹어서 자연의 균형을 지켜요</li>
+                            <li>지렁이는 흙을 비옥하게 만들어서 식물이 잘 자라게 해요</li>
+                            <li>게와 불가사리는 바다를 깨끗하게 해줘요</li>
+                            <li>쥐며느리는 죽은 식물을 분해해서 새로운 흙을 만들어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="fun-fact">
+                        <h3>기억하세요!</h3>
+                        <p>곤충이 아닌 동물들도 우리와 함께 살아가는 소중한 친구들이에요. 이 동물들을 보면 겁내지 말고, 자연의 신비로운 친구들이라고 생각해주세요! 🌟</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="insect-card">
+            <div class="insect-header">
+                <h2>🎯 재미있는 곤충 퀴즈 🎯</h2>
+            </div>
+            <div class="insect-content">
+                <!-- 문제 1 -->
+                <div class="quiz-question" data-question="1">
+                    <h3>문제 1: 무당벌레는 하루에 몇 마리의 진딧물을 먹을 수 있을까요?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(1, 0)">30마리</button>
+                        <button class="quiz-option" onclick="checkAnswer(1, 1)">50마리</button>
+                        <button class="quiz-option" onclick="checkAnswer(1, 2)">70마리</button>
+                        <button class="quiz-option" onclick="checkAnswer(1, 3)">100마리</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                    <div class="quiz-hint">힌트: 무당벌레는 자연의 해충 방제사예요!</div>
+                </div>
+
+                <!-- 문제 2 -->
+                <div class="quiz-question" data-question="2">
+                    <h3>문제 2: 장수풍뎅이 애벌레는 몇 년 동안 자랄까요?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(2, 0)">1년</button>
+                        <button class="quiz-option" onclick="checkAnswer(2, 1)">2년</button>
+                        <button class="quiz-option" onclick="checkAnswer(2, 2)">3년</button>
+                        <button class="quiz-option" onclick="checkAnswer(2, 3)">4년</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                    <div class="quiz-hint">힌트: 장수풍뎅이는 오래 자라야 해요!</div>
+                </div>
+
+                <!-- 문제 3 ~ 50 추가 -->
+                <div class="quiz-question" data-question="3">
+                    <h3>문제 3: 잠자리는 얼마나 빨리 날 수 있을까요?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(3, 0)">시속 30km</button>
+                        <button class="quiz-option" onclick="checkAnswer(3, 1)">시속 50km</button>
+                        <button class="quiz-option" onclick="checkAnswer(3, 2)">시속 70km</button>
+                        <button class="quiz-option" onclick="checkAnswer(3, 3)">시속 90km</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                    <div class="quiz-hint">힌트: 자전거보다 빨라요!</div>
+                </div>
+
+                <div class="quiz-question" data-question="4">
+                    <h3>문제 4: 한 마리의 꿀벌이 평생 모을 수 있는 꿀의 양은 얼마일까요?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-option" onclick="checkAnswer(4, 0)">작은 티스푼의 1/12</button>
+                        <button class="quiz-option" onclick="checkAnswer(4, 1)">작은 티스푼의 1/6</button>
+                        <button class="quiz-option" onclick="checkAnswer(4, 2)">작은 티스푼의 1/3</button>
+                        <button class="quiz-option" onclick="checkAnswer(4, 3)">작은 티스푼 1개</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                    <div class="quiz-hint">힌트: 생각보다 적은 양이에요!</div>
+                </div>
+
+                <!-- 나머지 46개 문제도 같은 형식으로 추가 -->
+
+                <!-- 네비게이션 버튼 -->
+                <div class="quiz-navigation">
+                    <button id="prevButton" class="quiz-nav-button" onclick="previousQuestion()">
+                        <i class="fas fa-arrow-left"></i> 이전 문제
+                    </button>
+                    <button id="nextButton" class="quiz-nav-button" onclick="nextQuestion()">
+                        다음 문제 <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
+        <p>더 많은 곤충 친구들을 알고 싶다면, 곤충도감이나 자연 관찰을 해보세요!</p>
+    </footer>
+
+    <script>
+        // 퀴즈 관련 변수
+        let currentQuestion = 1;
+        const totalQuestions = 50;
+        const correctAnswers = {
+            1: 1, // 무당벌레의 하루 진딧물 섭취량
+            2: 2, // 장수풍뎅이 애벌레 성장기간
+            3: 1, // 잠자리 비행 속도
+            4: 0, // 꿀벌의 꿀 생산량
+            5: 3, // 매미의 땅속 생활
+            6: 2, // 사마귀의 머리 회전
+            7: 1, // 호랑나비 날개 길이
+            8: 0, // 귀뚜라미의 소리 내는 방법
+            9: 2, // 방아깨비 점프력
+            10: 1, // 하늘소 더듬이 길이
+            11: 3, // 거미의 눈 개수
+            12: 0, // 지네의 다리 수
+            13: 2, // 달팽이의 이빨 수
+            14: 1, // 지렁이의 심장 수
+            15: 3, // 전갈의 특징
+            16: 2, // 문어의 지능
+            17: 0, // 게의 걸음걸이
+            18: 1, // 불가사리의 재생력
+            19: 3, // 해파리의 구성
+            20: 2, // 쥐며느리의 방어
+            21: 0, // 나비의 수명
+            22: 1, // 개미의 힘
+            23: 2, // 말벌의 특징
+            24: 3, // 노린재의 방어
+            25: 0, // 잠자리 눈의 특징
+            26: 1, // 무당벌레의 점 개수
+            27: 2, // 장수풍뎅이의 활동 시간
+            28: 3, // 사마귀의 먹이
+            29: 0, // 매미의 소리
+            30: 1, // 꿀벌의 춤
+            31: 2, // 귀뚜라미의 청각
+            32: 3, // 방아깨비의 이름 유래
+            33: 0, // 하늘소의 소리
+            34: 1, // 나비의 날개 비늘
+            35: 2, // 개미의 사회 구조
+            36: 3, // 말벌의 집
+            37: 0, // 노린재의 냄새
+            38: 1, // 잠자리 유충의 생활
+            39: 2, // 무당벌레의 월동
+            40: 3, // 장수풍뎅이의 뿔
+            41: 0, // 사마귀의 포식
+            42: 1, // 매미의 허물
+            43: 2, // 꿀벌의 역할
+            44: 3, // 귀뚜라미의 활동 시기
+            45: 0, // 방아깨비의 보호색
+            46: 1, // 하늘소의 서식지
+            47: 2, // 나비의 먹이
+            48: 3, // 개미의 페로몬
+            49: 0, // 말벌의 수명
+            50: 1  // 노린재의 특징
+        };
+        const feedback = {
+            1: {
+                correct: "정답이에요! 무당벌레는 하루에 50마리나 되는 진딧물을 먹을 수 있어요.",
+                wrong: "아쉽네요. 무당벌레는 하루에 50마리나 되는 진딧물을 먹을 수 있답니다!"
+            },
+            2: {
+                correct: "정답이에요! 장수풍뎅이 애벌레는 3년 동안 자라서 어른벌레가 돼요.",
+                wrong: "아쉽네요. 장수풍뎅이 애벌레는 3년이나 걸려서 자란답니다!"
+            },
+            3: {
+                correct: "정답이에요! 잠자리는 시속 50km로 날 수 있어요. 자전거보다 더 빠르죠!",
+                wrong: "아쉽네요. 잠자리는 시속 50km로 날 수 있어요. 정말 빠르죠?"
+            },
+            4: {
+                correct: "정답이에요! 꿀벌 한 마리는 평생 작은 티스푼의 1/12 정도의 꿀만 모을 수 있어요.",
+                wrong: "아쉽네요. 꿀벌 한 마리는 평생 작은 티스푼의 1/12 정도의 꿀만 모을 수 있답니다!"
+            },
+            // ... 나머지 46개 문제에 대한 피드백 추가 ...
+        };
+
+        // 퀴즈 초기화
+        function initQuiz() {
+            showQuestion(currentQuestion);
+            updateNavigationButtons();
+        }
+
+        // 문제 보여주기
+        function showQuestion(questionNumber) {
+            document.querySelectorAll('.quiz-question').forEach(q => {
+                q.classList.remove('active');
+                // 문제 상태 초기화
+                const options = q.querySelectorAll('.quiz-option');
+                const feedbackDiv = q.querySelector('.quiz-feedback');
+                
+                options.forEach(option => {
+                    option.classList.remove('correct', 'wrong');
+                    option.disabled = false;
+                });
+                
+                feedbackDiv.textContent = '';
+                feedbackDiv.classList.remove('correct', 'wrong');
+            });
+            document.querySelector(`[data-question="${questionNumber}"]`).classList.add('active');
+        }
+
+        // 답변 체크
+        function checkAnswer(questionNumber, selectedAnswer) {
+            const question = document.querySelector(`[data-question="${questionNumber}"]`);
+            const options = question.querySelectorAll('.quiz-option');
+            const feedbackDiv = question.querySelector('.quiz-feedback');
+            
+            // 이미 답을 선택했는지 확인
+            if (options[0].disabled) {
+                return;
+            }
+            
+            // 모든 옵션 비활성화
+            options.forEach(option => {
+                option.disabled = true;
+            });
+
+            if (selectedAnswer === correctAnswers[questionNumber]) {
+                options[selectedAnswer].classList.add('correct');
+                feedbackDiv.textContent = feedback[questionNumber].correct;
+                feedbackDiv.classList.add('correct');
+            } else {
+                options[selectedAnswer].classList.add('wrong');
+                options[correctAnswers[questionNumber]].classList.add('correct');
+                feedbackDiv.textContent = feedback[questionNumber].wrong;
+                feedbackDiv.classList.add('wrong');
+            }
+        }
+
+        // 다음 문제로 이동
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+                updateNavigationButtons();
+            }
+        }
+
+        // 이전 문제로 이동
+        function previousQuestion() {
+            if (currentQuestion > 1) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+                updateNavigationButtons();
+            }
+        }
+
+        // 네비게이션 버튼 업데이트
+        function updateNavigationButtons() {
+            document.getElementById('prevButton').disabled = currentQuestion === 1;
+            document.getElementById('nextButton').disabled = currentQuestion === totalQuestions;
+        }
+
+        // 관찰 일지 관련 코드
+        function addJournalEntry() {
+            const insectName = document.getElementById('insectName').value;
+            const location = document.getElementById('location').value;
+            const weather = document.getElementById('weather').value;
+            const observation = document.getElementById('observation').value;
+
+            if (!insectName || !location || !weather || !observation) {
+                alert('모든 항목을 입력해주세요!');
+                return;
+            }
+
+            const entry = {
+                insectName,
+                location,
+                weather,
+                observation,
+                date: new Date().toLocaleDateString('ko-KR'),
+                time: new Date().toLocaleTimeString('ko-KR')
+            };
+
+            // 로컬 스토리지에서 기존 항목 가져오기
+            let entries = JSON.parse(localStorage.getItem('journalEntries') || '[]');
+            entries.unshift(entry); // 새 항목을 앞에 추가
+            localStorage.setItem('journalEntries', JSON.stringify(entries));
+
+            // 입력 폼 초기화
+            document.getElementById('insectName').value = '';
+            document.getElementById('location').value = '';
+            document.getElementById('weather').value = '';
+            document.getElementById('observation').value = '';
+
+            // 화면 업데이트
+            displayJournalEntries();
+        }
+
+        function deleteJournalEntry(index) {
+            let entries = JSON.parse(localStorage.getItem('journalEntries') || '[]');
+            entries.splice(index, 1);
+            localStorage.setItem('journalEntries', JSON.stringify(entries));
+            displayJournalEntries();
+        }
+
+        function displayJournalEntries() {
+            const entriesContainer = document.getElementById('journalEntries');
+            const entries = JSON.parse(localStorage.getItem('journalEntries') || '[]');
+
+            entriesContainer.innerHTML = entries.map((entry, index) => `
+                <div class="journal-entry">
+                    <h4>${entry.insectName} 관찰 일지</h4>
+                    <div class="entry-date">${entry.date} ${entry.time}</div>
+                    <div class="entry-content">${entry.observation}</div>
+                    <div class="entry-details">
+                        <div class="detail-item">
+                            <span class="detail-label">관찰 장소</span>
+                            <span>${entry.location}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">날씨</span>
+                            <span>${entry.weather}</span>
+                        </div>
+                    </div>
+                    <button class="delete-button" onclick="deleteJournalEntry(${index})">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // 색칠하기 관련 코드
+        let currentColor = '#000000';
+        let isDrawing = false;
+        let canvas = document.getElementById('coloringCanvas');
+        let ctx = canvas.getContext('2d');
+        let lastX = 0;
+        let lastY = 0;
+        let currentInsectIndex = 0;
+
+        // 곤충 그리기 함수들
+        const insects = [
+            {
+                name: '호랑나비',
+                draw: function(ctx) {
+                    // 몸통
+                    ctx.beginPath();
+                    ctx.moveTo(300, 250);
+                    ctx.lineTo(280, 270);
+                    ctx.lineTo(300, 290);
+                    ctx.lineTo(320, 270);
+                    ctx.closePath();
+                    ctx.stroke();
+
+                    // 날개
+                    // 왼쪽 날개
+                    ctx.beginPath();
+                    ctx.moveTo(280, 270);
+                    ctx.bezierCurveTo(200, 220, 180, 280, 220, 320);
+                    ctx.bezierCurveTo(260, 340, 290, 300, 280, 270);
+                    ctx.stroke();
+
+                    // 오른쪽 날개
+                    ctx.beginPath();
+                    ctx.moveTo(320, 270);
+                    ctx.bezierCurveTo(400, 220, 420, 280, 380, 320);
+                    ctx.bezierCurveTo(340, 340, 310, 300, 320, 270);
+                    ctx.stroke();
+
+                    // 더듬이
+                    ctx.beginPath();
+                    ctx.moveTo(290, 250);
+                    ctx.bezierCurveTo(270, 230, 260, 200, 270, 180);
+                    ctx.moveTo(310, 250);
+                    ctx.bezierCurveTo(330, 230, 340, 200, 330, 180);
+                    ctx.stroke();
+                }
+            },
+            {
+                name: '무당벌레',
+                draw: function(ctx) {
+                    // 몸통
+                    ctx.beginPath();
+                    ctx.ellipse(300, 300, 80, 100, 0, 0, Math.PI * 2);
+                    ctx.stroke();
+
+                    // 머리
+                    ctx.beginPath();
+                    ctx.arc(300, 220, 30, 0, Math.PI * 2);
+                    ctx.stroke();
+
+                    // 날개 구분선
+                    ctx.beginPath();
+                    ctx.moveTo(300, 220);
+                    ctx.lineTo(300, 400);
+                    ctx.stroke();
+
+                    // 점들
+                    const spots = [
+                        [270, 280], [330, 280],
+                        [260, 330], [340, 330],
+                        [280, 370], [320, 370]
+                    ];
+                    spots.forEach(([x, y]) => {
+                        ctx.beginPath();
+                        ctx.arc(x, y, 10, 0, Math.PI * 2);
+                        ctx.stroke();
+                    });
+
+                    // 더듬이
+                    ctx.beginPath();
+                    ctx.moveTo(280, 210);
+                    ctx.bezierCurveTo(260, 190, 250, 160, 260, 140);
+                    ctx.moveTo(320, 210);
+                    ctx.bezierCurveTo(340, 190, 350, 160, 340, 140);
+                    ctx.stroke();
+                }
+            },
+            {
+                name: '꿀벌',
+                draw: function(ctx) {
+                    // 몸통
+                    ctx.beginPath();
+                    ctx.ellipse(300, 300, 60, 80, 0, 0, Math.PI * 2);
+                    ctx.stroke();
+
+                    // 머리
+                    ctx.beginPath();
+                    ctx.arc(300, 240, 30, 0, Math.PI * 2);
+                    ctx.stroke();
+
+                    // 날개
+                    // 왼쪽 날개
+                    ctx.beginPath();
+                    ctx.moveTo(270, 260);
+                    ctx.bezierCurveTo(220, 220, 200, 260, 230, 290);
+                    ctx.stroke();
+
+                    // 오른쪽 날개
+                    ctx.beginPath();
+                    ctx.moveTo(330, 260);
+                    ctx.bezierCurveTo(380, 220, 400, 260, 370, 290);
+                    ctx.stroke();
+
+                    // 더듬이
+                    ctx.beginPath();
+                    ctx.moveTo(285, 230);
+                    ctx.bezierCurveTo(265, 210, 255, 180, 265, 160);
+                    ctx.moveTo(315, 230);
+                    ctx.bezierCurveTo(335, 210, 345, 180, 335, 160);
+                    ctx.stroke();
+
+                    // 줄무늬
+                    const stripes = [280, 320, 360];
+                    stripes.forEach(y => {
+                        ctx.beginPath();
+                        ctx.moveTo(240, y);
+                        ctx.lineTo(360, y);
+                        ctx.stroke();
+                    });
+                }
+            }
+        ];
+
+        // 캔버스 크기 설정
+        function setCanvasSize() {
+            canvas.width = 600;
+            canvas.height = 600;
+            ctx.lineJoin = 'round';
+            ctx.lineCap = 'round';
+            ctx.lineWidth = 2;
+            loadInsectDrawing();
+        }
+
+        // 곤충 그리기 로드
+        function loadInsectDrawing() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = '#000000';
+            ctx.lineWidth = 2;
+            insects[currentInsectIndex].draw(ctx);
+        }
+
+        // 색상 선택
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                currentColor = this.dataset.color;
+            });
+        });
+
+        // 그리기 이벤트
+        function startDrawing(e) {
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            ctx.beginPath();
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = document.getElementById('brushSize').value;
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+        }
+
+        // 캔버스 초기화
+        function clearCanvas() {
+            loadInsectDrawing();
+        }
+
+        // 그림 저장
+        function saveDrawing() {
+            const link = document.createElement('a');
+            link.download = '나만의_곤충_그림.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        // 다른 곤충으로 변경
+        function changeInsect() {
+            currentInsectIndex = (currentInsectIndex + 1) % insects.length;
+            loadInsectDrawing();
+        }
+
+        // 이벤트 리스너 등록
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            initQuiz();
+            displayJournalEntries();
+            setCanvasSize();
+            initScrollToTop();
+            initSearch();
+        });
+
+        // 위로 가기 버튼 초기화
+        function initScrollToTop() {
+            const scrollButton = document.querySelector('.scroll-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollButton.classList.add('visible');
+                } else {
+                    scrollButton.classList.remove('visible');
+                }
+            });
+
+            scrollButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // 검색 기능 초기화
+        function initSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+
+            // 검색어 입력 시 실시간 검색
+            searchInput.addEventListener('input', debounce(function() {
+                if (this.value.length >= 1) {
+                    searchInsects();
+                } else {
+                    searchResults.classList.remove('visible');
+                }
+            }, 300));
+
+            // 검색창 외부 클릭 시 결과 숨기기
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.search-section')) {
+                    searchResults.classList.remove('visible');
+                }
+            });
+
+            // Enter 키 입력 시 검색 실행
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchInsects();
+                }
+            });
+        }
+
+        // 디바운스 함수
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func.apply(this, args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // 곤충 검색 함수
+        function searchInsects() {
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const query = searchInput.value.trim().toLowerCase();
+
+            if (query.length < 1) {
+                searchResults.classList.remove('visible');
+                return;
+            }
+
+            // 모든 곤충 카드에서 검색
+            const insectCards = document.querySelectorAll('.insect-card');
+            const results = [];
+
+            insectCards.forEach(card => {
+                const title = card.querySelector('h2').textContent;
+                const content = card.querySelector('.insect-info').textContent;
+                
+                if (title.toLowerCase().includes(query) || 
+                    content.toLowerCase().includes(query)) {
+                    
+                    // 검색어가 포함된 부분 하이라이트
+                    const highlightedTitle = title.replace(
+                        new RegExp(query, 'gi'),
+                        match => `<span class="highlight">${match}</span>`
+                    );
+
+                    results.push({
+                        id: card.id,
+                        title: highlightedTitle,
+                        original: title
+                    });
+                }
+            });
+
+            // 검색 결과 표시
+            if (results.length > 0) {
+                searchResults.innerHTML = results.map(result => `
+                    <div class="search-result-item" onclick="scrollToInsect('${result.id}')">
+                        ${result.title}
+                    </div>
+                `).join('');
+                searchResults.classList.add('visible');
+            } else {
+                searchResults.innerHTML = `
+                    <div class="search-result-item">
+                        검색 결과가 없어요. 다른 곤충 이름으로 검색해보세요!
+                    </div>
+                `;
+                searchResults.classList.add('visible');
+            }
+        }
+
+        // 검색 결과 클릭 시 해당 곤충으로 스크롤
+        function scrollToInsect(id) {
+            const element = document.getElementById(id);
+            const searchResults = document.getElementById('searchResults');
+            const headerOffset = 150;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+
+            searchResults.classList.remove('visible');
+            
+            // 찾아간 곤충 카드 강조 효과
+            element.style.animation = 'highlight 2s';
+            element.addEventListener('animationend', () => {
+                element.style.animation = '';
+            });
+        }
+
+        // 강조 효과 애니메이션
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes highlight {
+                0% { transform: translateY(-5px); box-shadow: 0 0 0 4px var(--search-color); }
+                100% { transform: translateY(0); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+/* 곤충 상세 페이지 스타일 */
+.insect-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+/* 곤충 헤더 */
+.insect-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.insect-title {
+    color: var(--primary-color);
+    font-size: var(--font-xl);
+    margin-bottom: var(--spacing-xs);
+}
+
+.insect-scientific-name {
+    color: var(--text-color);
+    font-style: italic;
+    font-size: var(--font-md);
+    opacity: 0.8;
+}
+
+/* 갤러리 섹션 */
+.insect-gallery {
+    margin-bottom: var(--spacing-xl);
+}
+
+.main-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: var(--spacing-md);
+}
+
+.insect-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.main-image:hover .insect-image {
+    transform: scale(1.05);
+}
+
+.image-thumbnails {
+    display: flex;
+    gap: var(--spacing-sm);
+    overflow-x: auto;
+    padding-bottom: var(--spacing-sm);
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--background-color);
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: translateY(-2px);
+}
+
+.thumbnail.active {
+    border-color: var(--primary-color);
+}
+
+/* 정보 섹션 */
+.insect-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.info-section {
+    background-color: var(--card-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.info-section h3 {
+    color: var(--primary-color);
+    font-size: var(--font-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.insect-description {
+    font-size: var(--font-base);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-base);
+}
+
+.feature-list li::before {
+    content: "🌟";
+}
+
+.lifestyle-info {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.lifestyle-card {
+    background-color: var(--background-color);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+.fun-facts li {
+    background-color: var(--background-color);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* 인터랙션 섹션 */
+.insect-interaction {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* 퀴즈 섹션 */
+.quiz-section {
+    background-color: var(--card-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.quiz-container {
+    margin-top: var(--spacing-md);
+}
+
+.quiz-question {
+    font-size: var(--font-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.quiz-options {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.quiz-option {
+    padding: var(--spacing-md);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quiz-option:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.quiz-option.correct {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}
+
+.quiz-option.wrong {
+    background-color: #f44336;
+    color: white;
+    border-color: #f44336;
+}
+
+/* 관련 곤충 섹션 */
+.related-insects {
+    background-color: var(--card-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.related-card {
+    background-color: var(--background-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.related-card:hover {
+    transform: translateY(-5px);
+}
+
+.related-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.related-info {
+    padding: var(--spacing-sm);
+    text-align: center;
+}
+
+.related-name {
+    font-size: var(--font-base);
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .insect-content {
+        padding: var(--spacing-md);
+    }
+
+    .insect-title {
+        font-size: var(--font-lg);
+    }
+
+    .main-image {
+        height: 300px;
+    }
+
+    .info-section {
+        padding: var(--spacing-md);
+    }
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.insect-container {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* 접근성 */
+@media (prefers-reduced-motion: reduce) {
+    .insect-container,
+    .insect-image,
+    .related-card {
+        animation: none;
+        transition: none;
+    }
+} 

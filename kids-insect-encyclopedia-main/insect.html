@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 메타 태그 -->
+    <meta name="description" content="유치원 친구들을 위한 신나는 곤충 백과사전 - 곤충 상세 정보">
+    <meta name="keywords" content="곤충, 유치원, 어린이, 백과사전, 곤충 정보">
+    <meta name="author" content="curiofish (이진우)">
+    <meta name="contact" content="fishcurio@gmail.com">
+    <meta name="copyright" content="© 2024 curiofish. All rights reserved.">
+    
+    <title>곤충 상세 정보 - 신나는 곤충 백과사전 🔍</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/insect.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
+    
+    <!-- 헤더 섹션 -->
+    <header class="main-header">
+        <div class="header-logo">
+            <a href="/" class="logo-link">
+                <img src="images/logo.webp" alt="신나는 곤충 백과사전 로고" class="logo-image" width="60" height="60">
+                <h1>🐞 신나는 곤충 백과사전 🦋</h1>
+            </a>
+        </div>
+
+        <div class="header-search">
+            <form class="search-form" role="search" action="/search.html" method="get">
+                <div class="search-wrapper">
+                    <input type="search" 
+                           id="insect-search" 
+                           name="q" 
+                           placeholder="찾고 싶은 곤충 이름을 입력해보세요!"
+                           aria-label="곤충 검색"
+                           autocomplete="off">
+                    <button type="submit" class="search-button">
+                        🔍
+                        <span class="sr-only">검색</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="top-nav">
+            <a href="/" class="home-button" title="홈으로 가기">
+                <span class="home-icon">🏠</span>
+                <span class="home-text">홈</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- 스크롤 진행바 -->
+    <div class="scroll-progress">
+        <div class="progress-bar"></div>
+    </div>
+
+    <!-- 메인 콘텐츠 -->
+    <main id="main-content" class="insect-content">
+        <article class="insect-detail">
+            <!-- 로딩 스피너 -->
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>곤충 정보를 불러오고 있어요...</p>
+            </div>
+
+            <!-- 곤충 정보가 여기에 동적으로 추가됩니다 -->
+            <div class="insect-container hidden">
+                <div class="insect-header">
+                    <h2 class="insect-title"></h2>
+                    <p class="insect-scientific-name"></p>
+                </div>
+
+                <div class="insect-gallery">
+                    <div class="main-image">
+                        <img src="" alt="" class="insect-image">
+                    </div>
+                    <div class="image-thumbnails">
+                        <!-- 추가 이미지 썸네일이 여기에 동적으로 추가됩니다 -->
+                    </div>
+                </div>
+
+                <div class="insect-info">
+                    <section class="info-section">
+                        <h3>곤충 소개</h3>
+                        <p class="insect-description"></p>
+                    </section>
+
+                    <section class="info-section">
+                        <h3>특징</h3>
+                        <ul class="feature-list">
+                            <!-- 특징 목록이 여기에 동적으로 추가됩니다 -->
+                        </ul>
+                    </section>
+
+                    <section class="info-section">
+                        <h3>생활 방식</h3>
+                        <div class="lifestyle-info">
+                            <!-- 생활 방식 정보가 여기에 동적으로 추가됩니다 -->
+                        </div>
+                    </section>
+
+                    <section class="info-section">
+                        <h3>재미있는 사실</h3>
+                        <ul class="fun-facts">
+                            <!-- 재미있는 사실이 여기에 동적으로 추가됩니다 -->
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="insect-interaction">
+                    <div class="quiz-section">
+                        <h3>퀴즈로 배워보아요!</h3>
+                        <div class="quiz-container">
+                            <!-- 퀴즈가 여기에 동적으로 추가됩니다 -->
+                        </div>
+                    </div>
+
+                    <div class="related-insects">
+                        <h3>비슷한 곤충들</h3>
+                        <div class="related-grid">
+                            <!-- 관련 곤충이 여기에 동적으로 추가됩니다 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="main-footer">
+        <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="/">홈으로</a></li>
+                <li><a href="/#intro">소개</a></li>
+                <li><a href="/#quiz">퀴즈</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            <p>© 2024 신나는 곤충 백과사전</p>
+            <p>제작: curiofish (이진우) | 문의: <a href="mailto:fishcurio@gmail.com">fishcurio@gmail.com</a></p>
+            <p>모든 콘텐츠의 저작권은 제작자에게 있습니다.</p>
+        </div>
+    </footer>
+
+    <!-- 스크롤 탑 버튼 -->
+    <button class="scroll-top" aria-label="맨 위로 이동" title="맨 위로 이동">
+        <div class="scroll-icon">
+            <span class="arrow">⬆️</span>
+            <span class="text">위로</span>
+        </div>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/insect.js"></script>
+</body>
+</html> 

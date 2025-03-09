@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>놀라운 곤충의 세계 - 곤충 백과사전</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+        <h1>🌟 놀라운 곤충의 세계 🌟</h1>
+    </header>
+
+    <nav class="main-nav" aria-label="메인 메뉴">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link">🏠 처음으로</a></li>
+            <li class="nav-item"><a href="intro.html" class="nav-link active" aria-current="page">🌟 놀라운 곤충의 세계</a></li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" aria-expanded="false">📚 곤충 도감</a>
+                <ul class="sub-nav-list">
+                    <li><a href="butterflies.html" class="nav-link">나비와 나방</a></li>
+                    <li><a href="beetles.html" class="nav-link">딱정벌레</a></li>
+                    <li><a href="grasshoppers.html" class="nav-link">메뚜기와 귀뚜라미</a></li>
+                    <li><a href="dragonflies.html" class="nav-link">잠자리</a></li>
+                    <li><a href="bees_moths.html" class="nav-link">벌과 개미</a></li>
+                    <li><a href="hemiptera.html" class="nav-link">노린재와 매미</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="not-insects.html" class="nav-link">❗ 곤충이 아닌 동물들</a></li>
+            <li class="nav-item"><a href="quiz.html" class="nav-link">🎯 곤충 퀴즈</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="intro-section">
+                <h2>곤충은 어떤 동물일까요?</h2>
+                <div class="intro-content">
+                    <picture>
+                        <source srcset="images/intro/곤충의특징.webp" type="image/webp">
+                        <img src="images/intro/곤충의특징.png" alt="곤충의 특징" class="intro-image" loading="lazy">
+                    </picture>
+                    <div class="intro-text">
+                        <p>곤충은 우리 주변에서 가장 많이 볼 수 있는 동물이에요. 곤충의 특징을 알아볼까요?</p>
+                        <ul>
+                            <li>몸이 머리, 가슴, 배로 나누어져 있어요</li>
+                            <li>다리가 6개 있어요</li>
+                            <li>더듬이가 2개 있어요</li>
+                            <li>대부분 날개가 있어요</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feature-section">
+                <h2>곤충의 놀라운 능력</h2>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <h3>🦋 변신의 달인</h3>
+                        <picture>
+                            <source srcset="images/intro/변신.webp" type="image/webp">
+                            <img src="images/intro/변신.png" alt="곤충의 변신" class="feature-image" loading="lazy">
+                        </picture>
+                        <p>나비는 애벌레에서 번데기를 거쳐 아름다운 나비가 돼요. 이런 변신을 '완전변태'라고 해요.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <h3>💪 힘이 세요</h3>
+                        <picture>
+                            <source srcset="images/intro/힘.webp" type="image/webp">
+                            <img src="images/intro/힘.png" alt="곤충의 힘" class="feature-image" loading="lazy">
+                        </picture>
+                        <p>장수풍뎅이는 자기 몸무게의 100배나 되는 무게를 들 수 있어요. 사람으로 치면 자동차를 들 수 있는 힘이에요!</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <h3>🎵 소리 내기</h3>
+                        <picture>
+                            <source srcset="images/intro/소리.webp" type="image/webp">
+                            <img src="images/intro/소리.png" alt="곤충의 소리" class="feature-image" loading="lazy">
+                        </picture>
+                        <p>매미와 귀뚜라미는 특별한 방법으로 소리를 내요. 매미는 배에 있는 막을 진동시키고, 귀뚜라미는 날개를 비벼요.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <h3>🏃 빠른 움직임</h3>
+                        <picture>
+                            <source srcset="images/intro/움직임.webp" type="image/webp">
+                            <img src="images/intro/움직임.png" alt="곤충의 움직임" class="feature-image" loading="lazy">
+                        </picture>
+                        <p>메뚜기는 자기 몸길이의 20배나 되는 거리를 뛸 수 있어요. 사람이라면 한 번에 건물을 뛰어넘을 수 있는 거리예요!</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="habitat-section">
+                <h2>곤충은 어디에 살까요?</h2>
+                <div class="habitat-content">
+                    <picture>
+                        <source srcset="images/intro/서식지.webp" type="image/webp">
+                        <img src="images/intro/서식지.png" alt="곤충의 서식지" class="habitat-image" loading="lazy">
+                    </picture>
+                    <div class="habitat-text">
+                        <p>곤충은 정말 다양한 곳에서 살아요:</p>
+                        <ul>
+                            <li>나무와 풀 위에서 살아요</li>
+                            <li>땅 속에 집을 지어요</li>
+                            <li>물 속에서 살아요</li>
+                            <li>꽃에서 꿀을 모아요</li>
+                            <li>심지어 사막이나 눈 위에서도 살아요!</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="importance-section">
+                <h2>곤충은 왜 중요할까요?</h2>
+                <div class="importance-grid">
+                    <article class="importance-card">
+                        <h3>🌺 꽃가루 옮기기</h3>
+                        <p>벌과 나비는 꽃에서 꽃으로 꽃가루를 옮겨요. 덕분에 과일과 채소가 자랄 수 있어요.</p>
+                    </article>
+
+                    <article class="importance-card">
+                        <h3>🌱 자연 청소부</h3>
+                        <p>개미와 딱정벌레는 죽은 식물이나 동물을 먹어서 자연을 깨끗하게 해줘요.</p>
+                    </article>
+
+                    <article class="importance-card">
+                        <h3>🍽️ 먹이가 되어주기</h3>
+                        <p>곤충은 새와 작은 동물들의 중요한 먹이가 돼요.</p>
+                    </article>
+
+                    <article class="importance-card">
+                        <h3>🎨 자연의 아름다움</h3>
+                        <p>나비와 무당벌레처럼 예쁜 곤충들은 자연을 더 아름답게 만들어줘요.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <button class="scroll-top" aria-label="맨 위로 이동">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer class="main-footer">
+        <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
+        <p>더 많은 곤충 친구들을 알고 싶다면, 곤충도감이나 자연 관찰을 해보세요!</p>
+        <nav class="footer-nav" aria-label="하단 메뉴">
+            <a href="terms.html" class="footer-link">이용약관</a>
+            <a href="privacy.html" class="footer-link">개인정보처리방침</a>
+            <a href="contact.html" class="footer-link">문의하기</a>
+        </nav>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

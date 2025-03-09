@@ -1,0 +1,14 @@
+{
+  "name": "insect-encyclopedia",
+  "version": "1.0.0",
+  "description": "Children's insect encyclopedia with AI-generated illustrations",
+  "main": "generate-images.js",
+  "scripts": {
+    "generate": "node generate-images.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "stability-client": "^1.9.0",
+    "node-fetch": "^2.6.1"
+  }
+} 

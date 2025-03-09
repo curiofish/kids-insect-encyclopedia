@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신기한 곤충 100가지 세밀화 도감</title>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #8BC34A;
+            --accent-color: #FFC107;
+            --text-color: #333;
+            --background-color: #F9FBE7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Nanum Round', 'Comic Sans MS', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .book-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .book-cover {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #81C784, #4CAF50);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .book-title {
+            font-size: 2.5em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .book-subtitle {
+            font-size: 1.5em;
+            color: #FFF9C4;
+            margin-bottom: 30px;
+        }
+
+        .category-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .category-button {
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .category-button:hover {
+            transform: scale(1.05);
+            background-color: var(--primary-color);
+        }
+
+        .insect-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .insect-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .insect-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .insect-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .insect-name {
+            font-size: 1.4em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .insect-info {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .fun-fact {
+            background-color: #FFF9C4;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .page-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .page-button {
+            padding: 10px 25px;
+            background-color: var(--accent-color);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        .page-button:hover {
+            background-color: #FFB300;
+        }
+
+        @media (max-width: 768px) {
+            .book-title {
+                font-size: 2em;
+            }
+
+            .book-subtitle {
+                font-size: 1.2em;
+            }
+
+            .insect-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-container">
+        <div class="book-cover">
+            <h1 class="book-title">🦋 신기한 곤충 100가지 세밀화 도감 🐞</h1>
+            <p class="book-subtitle">우리 아이를 위한 첫 번째 곤충 이야기</p>
+        </div>
+
+        <nav class="category-nav">
+            <button class="category-button">전체보기</button>
+            <button class="category-button">나비</button>
+            <button class="category-button">딱정벌레</button>
+            <button class="category-button">잠자리</button>
+            <button class="category-button">메뚜기</button>
+            <button class="category-button">벌과 나방</button>
+        </nav>
+
+        <div class="insect-grid">
+            <!-- 나비 1 -->
+            <div class="insect-card">
+                <img src="images/swallowtail.jpg" alt="호랑나비" class="insect-image">
+                <h2 class="insect-name">호랑나비</h2>
+                <p class="insect-info">
+                    우리나라에서 가장 흔히 볼 수 있는 나비예요. 
+                    노란색 날개에 검은 줄무늬가 있어서 호랑이를 닮았대요.
+                </p>
+                <div class="fun-fact">
+                    <p>🌟 재미있는 사실: 호랑나비는 귤이나 탱자나무의 잎을 먹고 자라요!</p>
+                </div>
+            </div>
+
+            <!-- 무당벌레 -->
+            <div class="insect-card">
+                <img src="images/ladybug.jpg" alt="무당벌레" class="insect-image">
+                <h2 class="insect-name">무당벌레</h2>
+                <p class="insect-info">
+                    빨간 등에 검은 점이 있는 귀여운 곤충이에요.
+                    농부들의 친구랍니다!
+                </p>
+                <div class="fun-fact">
+                    <p>🌟 재미있는 사실: 무당벌레는 하루에 100마리의 진딧물을 먹을 수 있어요!</p>
+                </div>
+            </div>
+
+            <!-- 장수풍뎅이 -->
+            <div class="insect-card">
+                <img src="images/beetle.jpg" alt="장수풍뎅이" class="insect-image">
+                <h2 class="insect-name">장수풍뎅이</h2>
+                <p class="insect-info">
+                    수컷의 머리에 있는 긴 뿔이 특징이에요.
+                    힘이 매우 세서 자기 몸무게의 100배도 들 수 있어요!
+                </p>
+                <div class="fun-fact">
+                    <p>🌟 재미있는 사실: 장수풍뎅이는 수액을 가장 좋아해요!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-controls">
+            <button class="page-button">이전</button>
+            <button class="page-button">다음</button>
+        </div>
+    </div>
+
+    <script>
+        // 곤충 데이터
+        const insects = [
+            {
+                id: 1,
+                name: "호랑나비",
+                category: "나비",
+                description: "우리나라에서 가장 흔히 볼 수 있는 나비예요. 노란색 날개에 검은 줄무늬가 있어서 호랑이를 닮았대요.",
+                funFact: "호랑나비는 귤이나 탱자나무의 잎을 먹고 자라요!",
+                image: "images/swallowtail.jpg"
+            },
+            {
+                id: 2,
+                name: "무당벌레",
+                category: "딱정벌레",
+                description: "빨간 등에 검은 점이 있는 귀여운 곤충이에요. 농부들의 친구랍니다!",
+                funFact: "무당벌레는 하루에 100마리의 진딧물을 먹을 수 있어요!",
+                image: "images/ladybug.jpg"
+            },
+            {
+                id: 3,
+                name: "장수풍뎅이",
+                category: "딱정벌레",
+                description: "수컷의 머리에 있는 긴 뿔이 특징이에요. 힘이 매우 세서 자기 몸무게의 100배도 들 수 있어요!",
+                funFact: "장수풍뎅이는 수액을 가장 좋아해요!",
+                image: "images/beetle.jpg"
+            }
+            // 나머지 곤충 데이터는 이미지 생성 후 추가 예정
+        ];
+
+        // 현재 페이지와 필터 상태
+        let currentPage = 1;
+        const itemsPerPage = 6;
+        let currentCategory = "전체보기";
+
+        // DOM 요소
+        const grid = document.querySelector('.insect-grid');
+        const categoryButtons = document.querySelectorAll('.category-button');
+        const prevButton = document.querySelector('.page-button:first-child');
+        const nextButton = document.querySelector('.page-button:last-child');
+
+        // 카테고리 필터링
+        function filterInsects() {
+            return insects.filter(insect => 
+                currentCategory === "전체보기" || insect.category === currentCategory
+            );
+        }
+
+        // 페이지네이션
+        function getPageInsects() {
+            const filtered = filterInsects();
+            const start = (currentPage - 1) * itemsPerPage;
+            return filtered.slice(start, start + itemsPerPage);
+        }
+
+        // 곤충 카드 HTML 생성
+        function createInsectCard(insect) {
+            return `
+                <div class="insect-card">
+                    <img src="${insect.image}" alt="${insect.name}" class="insect-image">
+                    <h2 class="insect-name">${insect.name}</h2>
+                    <p class="insect-info">${insect.description}</p>
+                    <div class="fun-fact">
+                        <p>🌟 재미있는 사실: ${insect.funFact}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // 그리드 업데이트
+        function updateGrid() {
+            const pageInsects = getPageInsects();
+            grid.innerHTML = pageInsects.map(createInsectCard).join('');
+            
+            // 페이지 버튼 상태 업데이트
+            const filtered = filterInsects();
+            const maxPage = Math.ceil(filtered.length / itemsPerPage);
+            prevButton.disabled = currentPage === 1;
+            nextButton.disabled = currentPage === maxPage;
+        }
+
+        // 이벤트 리스너 설정
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                currentCategory = button.textContent;
+                currentPage = 1;
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                updateGrid();
+            });
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                updateGrid();
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            const filtered = filterInsects();
+            const maxPage = Math.ceil(filtered.length / itemsPerPage);
+            if (currentPage < maxPage) {
+                currentPage++;
+                updateGrid();
+            }
+        });
+
+        // 초기 그리드 표시
+        updateGrid();
+    </script>
+</body>
+</html> 

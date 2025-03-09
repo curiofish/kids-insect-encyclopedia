@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 메타 태그 -->
+    <meta name="description" content="유치원 친구들을 위한 계절별 곤충 가이드 - 계절마다 만날 수 있는 다양한 곤충들을 소개합니다">
+    <meta name="keywords" content="곤충, 유치원, 어린이, 계절, 봄, 여름, 가을, 겨울">
+    <meta name="author" content="curiofish (이진우)">
+    
+    <title>계절별 곤충 가이드 - 신나는 곤충 백과사전 🦋</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/seasonal.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
+    
+    <!-- 헤더 섹션 -->
+    <header class="main-header">
+        <div class="header-logo">
+            <a href="/" class="logo-link">
+                <img src="images/logo.webp" alt="신나는 곤충 백과사전 로고" class="logo-image" width="60" height="60">
+                <h1>🐞 신나는 곤충 백과사전 🦋</h1>
+            </a>
+        </div>
+
+        <div class="header-search">
+            <form class="search-form" role="search" action="/search.html" method="get">
+                <div class="search-wrapper">
+                    <input type="search" 
+                           id="insect-search" 
+                           name="q" 
+                           placeholder="찾고 싶은 곤충 이름을 입력해보세요!"
+                           aria-label="곤충 검색"
+                           autocomplete="off">
+                    <button type="submit" class="search-button">
+                        🔍
+                        <span class="sr-only">검색</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="top-nav">
+            <a href="/" class="home-button" title="홈으로 가기">
+                <span class="home-icon">🏠</span>
+                <span class="home-text">홈</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main id="main-content" class="seasonal-content">
+        <h2 class="page-title">🌸 계절별로 만나는 곤충 친구들 🍁</h2>
+        
+        <!-- 계절 선택 탭 -->
+        <div class="season-tabs">
+            <button class="season-tab active" data-season="spring">
+                🌸 봄
+            </button>
+            <button class="season-tab" data-season="summer">
+                ☀️ 여름
+            </button>
+            <button class="season-tab" data-season="fall">
+                🍁 가을
+            </button>
+            <button class="season-tab" data-season="winter">
+                ❄️ 겨울
+            </button>
+        </div>
+
+        <!-- 계절별 곤충 정보 -->
+        <div class="season-content">
+            <!-- 봄 -->
+            <section id="spring" class="season-section active">
+                <h3>봄에 만나는 곤충들</h3>
+                <div class="season-description">
+                    <p>따뜻한 봄이 오면 겨울잠에서 깨어나는 곤충들을 만날 수 있어요!</p>
+                </div>
+                <div class="insect-grid">
+                    <article class="insect-card">
+                        <img src="images/insects/호랑나비/main.webp" alt="호랑나비" loading="lazy">
+                        <h4>호랑나비</h4>
+                        <p>3월부터 활동을 시작하는 아름다운 나비예요</p>
+                    </article>
+                    <!-- 더 많은 봄 곤충들 추가 -->
+                </div>
+            </section>
+
+            <!-- 여름 -->
+            <section id="summer" class="season-section">
+                <h3>여름에 만나는 곤충들</h3>
+                <div class="season-description">
+                    <p>더운 여름에는 가장 많은 곤충들을 만날 수 있어요!</p>
+                </div>
+                <div class="insect-grid">
+                    <article class="insect-card">
+                        <img src="images/insects/매미/main.webp" alt="매미" loading="lazy">
+                        <h4>매미</h4>
+                        <p>시원한 나무 그늘에서 노래하는 여름의 대표 곤충이에요</p>
+                    </article>
+                    <!-- 더 많은 여름 곤충들 추가 -->
+                </div>
+            </section>
+
+            <!-- 가을 -->
+            <section id="fall" class="season-section">
+                <h3>가을에 만나는 곤충들</h3>
+                <div class="season-description">
+                    <p>선선한 가을에는 특별한 곤충들을 만날 수 있어요!</p>
+                </div>
+                <div class="insect-grid">
+                    <article class="insect-card">
+                        <img src="images/insects/방아깨비/main.webp" alt="방아깨비" loading="lazy">
+                        <h4>방아깨비</h4>
+                        <p>들판에서 뛰어노는 가을의 친구예요</p>
+                    </article>
+                    <!-- 더 많은 가을 곤충들 추가 -->
+                </div>
+            </section>
+
+            <!-- 겨울 -->
+            <section id="winter" class="season-section">
+                <h3>겨울에 만나는 곤충들</h3>
+                <div class="season-description">
+                    <p>추운 겨울에도 활동하는 특별한 곤충들이 있어요!</p>
+                </div>
+                <div class="insect-grid">
+                    <article class="insect-card">
+                        <img src="images/insects/귀뚜라미/main.webp" alt="귀뚜라미" loading="lazy">
+                        <h4>귀뚜라미</h4>
+                        <p>따뜻한 실내에서도 만날 수 있는 겨울 곤충이에요</p>
+                    </article>
+                    <!-- 더 많은 겨울 곤충들 추가 -->
+                </div>
+            </section>
+        </div>
+
+        <!-- 계절별 곤충 달력 -->
+        <section class="insect-calendar">
+            <h3>곤충 달력</h3>
+            <div class="calendar-wrapper">
+                <div class="month-grid">
+                    <!-- 1월 -->
+                    <div class="month-card">
+                        <h4>1월</h4>
+                        <ul>
+                            <li>월동하는 무당벌레</li>
+                            <li>실내의 귀뚜라미</li>
+                        </ul>
+                    </div>
+                    <!-- 나머지 월 추가 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="main-footer">
+        <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="/">홈으로</a></li>
+                <li><a href="/ecosystem.html">곤충 생태계</a></li>
+                <li><a href="/#quiz">퀴즈</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            <p>© 2024 신나는 곤충 백과사전</p>
+            <p>제작: curiofish (이진우) | 문의: <a href="mailto:fishcurio@gmail.com">fishcurio@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <!-- 스크롤 탑 버튼 -->
+    <button class="scroll-top" aria-label="맨 위로 이동" title="맨 위로 이동">
+        <div class="scroll-icon">
+            <span class="arrow">⬆️</span>
+            <span class="text">위로</span>
+        </div>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/seasonal.js"></script>
+</body>
+</html> 
