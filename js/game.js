@@ -96,13 +96,13 @@ const gameState = {
             image: 'images/insects/fire-ant.jpg'
         },
         {
-            name: '일본왕개미',
+            name: '황소개미',
             hints: [
-                '크고 검은색 또는 적갈색을 띠는 개미예요',
-                '나무 속에 집을 짓는 경우가 많아요',
-                '한국에서 흔히 볼 수 있는 큰 개미예요'
+                '작고 검은색을 띠는 개미예요',
+                '정원이나 집 주변에서 흔히 볼 수 있어요',
+                '땅 속에 개미집을 만들고 작은 언덕처럼 보여요'
             ],
-            image: 'images/insects/carpenter-ant.jpg'
+            image: 'images/insects/black-garden-ant.jpg'
         }
     ]
 };
