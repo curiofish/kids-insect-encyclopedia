@@ -199,13 +199,16 @@ function handleCorrectGuess() {
     // 효과음 재생 (선택적)
     playSound('correct');
     
+    // 축하 파티클 생성
+    createConfetti();
+    
     // 애니메이션 종료 후 제거
     setTimeout(() => {
         elements.insectImage.classList.remove('correct-animation');
-    }, 500);
+    }, 800);
 
     // 잠시 후 다음 문제로
-    setTimeout(selectRandomInsect, 1800);
+    setTimeout(selectRandomInsect, 2000);
 }
 
 // 오답일 때 처리
@@ -282,6 +285,46 @@ function resetGame() {
     updateScoreDisplay();
     selectRandomInsect();
     showMessage('게임이 재설정되었습니다!', 'info');
+}
+
+// 축하 파티클 생성 효과
+function createConfetti() {
+    const colors = ['#FF6B6B', '#4CC9F0', '#FFD166', '#06D6A0'];
+    const container = document.querySelector('.game-card');
+    
+    for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.top = '-20px';
+        confetti.style.width = Math.random() * 10 + 5 + 'px';
+        confetti.style.height = Math.random() * 10 + 5 + 'px';
+        confetti.style.opacity = '1';
+        confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+        
+        container.appendChild(confetti);
+        
+        // 애니메이션
+        const animation = confetti.animate([
+            { 
+                transform: 'translateY(0) rotate(' + Math.random() * 360 + 'deg)', 
+                opacity: 1 
+            },
+            { 
+                transform: 'translateY(' + (Math.random() * 200 + 150) + 'px) rotate(' + Math.random() * 360 + 'deg)', 
+                opacity: 0 
+            }
+        ], {
+            duration: Math.random() * 1000 + 1000,
+            easing: 'cubic-bezier(.2,.8,.2,1)',
+            delay: Math.random() * 500
+        });
+        
+        animation.onfinish = () => {
+            confetti.remove();
+        };
+    }
 }
 
 // 게임 시작

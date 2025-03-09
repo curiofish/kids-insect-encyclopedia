@@ -3,43 +3,78 @@
     padding: 2rem 0;
     background-color: var(--color-background-alt);
     min-height: calc(100vh - 200px);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 L25,25 M75,75 L80,80 M20,80 L25,75 M75,20 L80,25" stroke="%234CC9F0" stroke-width="1" opacity="0.2"/><circle cx="50" cy="50" r="2" fill="%23FFD166" opacity="0.2"/></svg>');
 }
 
 .game-intro {
     text-align: center;
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background-color: var(--color-white);
-    border-radius: 15px;
-    box-shadow: var(--shadow-sm);
-    border: 2px solid var(--color-primary-light);
+    background-color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 3px solid transparent;
+    position: relative;
+    background-clip: padding-box;
+    overflow: hidden;
+}
+
+.game-intro::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    z-index: -1;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    border-radius: var(--radius-lg);
 }
 
 .game-description {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 1.6;
     color: var(--color-text);
+    margin: 0;
 }
 
 /* 게임 카드 스타일 */
 .game-container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     padding: 1rem;
 }
 
 .game-card {
-    background-color: var(--color-white);
-    border-radius: 20px;
-    box-shadow: var(--shadow-md);
+    background-color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
     overflow: hidden;
     padding: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 5px solid transparent;
+    position: relative;
+    background-clip: padding-box;
 }
 
-.game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+    border-radius: var(--radius-lg);
+    animation: gradientBorder 3s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradientBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .game-image-wrapper {
@@ -47,10 +82,10 @@
     width: 100%;
     padding-bottom: 75%; /* 4:3 비율 */
     margin-bottom: 2rem;
-    background-color: var(--color-background-alt);
-    border-radius: 15px;
+    background-color: white;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    border: 3px solid var(--color-primary-light);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .game-image-container {
@@ -62,43 +97,73 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><circle cx="10" cy="10" r="1" fill="%23FFD166" opacity="0.2"/><circle cx="25" cy="25" r="1" fill="%234CC9F0" opacity="0.2"/><circle cx="40" cy="40" r="1" fill="%23FF6B6B" opacity="0.2"/></svg>');
 }
 
 .game-image {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 90%;
+    max-height: 90%;
     object-fit: contain;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
 }
 
 .game-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(2deg);
 }
 
 /* 게임 컨트롤 스타일 */
 .game-controls {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.8rem;
 }
 
 .hint-box {
-    background-color: var(--color-secondary-light);
-    padding: 1.2rem;
-    border-radius: 10px;
+    background-color: var(--color-accent-light);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
     text-align: center;
     min-height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--color-secondary);
+    border: 3px dashed var(--color-accent);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.hint-box::after {
+    content: '💡';
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.hint-box:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-style: solid;
 }
 
 .hint {
-    font-size: 1.2rem;
-    color: var(--color-secondary-dark);
+    font-size: 1.3rem;
+    color: var(--color-text);
     margin: 0;
     font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.hint-highlight {
+    animation: popOut 0.3s ease-in-out;
+}
+
+@keyframes popOut {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 .input-group {
@@ -108,17 +173,25 @@
 
 .game-input {
     flex: 1;
-    padding: 0.8rem 1rem;
-    font-size: 1.1rem;
-    border: 2px solid var(--color-gray-300);
-    border-radius: 8px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.2rem;
+    font-family: 'Comic Sans MS', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    border: 3px solid var(--color-primary-light);
+    border-radius: var(--radius-lg);
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .game-input:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.25), inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.game-input::placeholder {
+    color: var(--color-text-lighter);
+    opacity: 0.7;
 }
 
 .result-box {
@@ -130,53 +203,117 @@
 }
 
 .result {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .result.correct {
     color: var(--color-success);
-    animation: pulse 0.5s ease;
+    animation: celebration 1s ease;
+}
+
+@keyframes celebration {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.1) rotate(-3deg); }
+    20% { transform: scale(1.1) rotate(3deg); }
+    30% { transform: scale(1.1) rotate(-3deg); }
+    40% { transform: scale(1.1) rotate(3deg); }
+    50% { transform: scale(1.1) rotate(-3deg); }
+    60% { transform: scale(1.1) rotate(3deg); }
+    70% { transform: scale(1.1) rotate(-3deg); }
+    80% { transform: scale(1.1) rotate(3deg); }
+    90% { transform: scale(1.1) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0); }
 }
 
 .result.wrong {
     color: var(--color-error);
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-10px); }
+    40% { transform: translateX(10px); }
+    60% { transform: translateX(-10px); }
+    80% { transform: translateX(10px); }
 }
 
 .game-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.2rem;
     justify-content: center;
+}
+
+.game-buttons .btn {
+    padding: 1rem 1.8rem;
+    font-size: 1.2rem;
+    min-width: 140px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.game-buttons .btn-secondary {
+    background-color: var(--color-secondary);
+}
+
+.game-buttons .btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.game-buttons .btn:active {
+    transform: translateY(0) scale(0.98);
 }
 
 /* 점수판 스타일 */
 .score-board {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     text-align: center;
 }
 
 .score-container {
     display: inline-flex;
-    gap: 2.5rem;
-    background-color: var(--color-white);
-    padding: 1rem 2.5rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow-sm);
-    border: 2px solid var(--color-primary-light);
+    gap: 3rem;
+    background-color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.score-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary-light), var(--color-secondary-light));
+    opacity: 0.1;
+    z-index: -1;
 }
 
 .score-container p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 0;
-    font-weight: 500;
+    font-weight: 600;
+    position: relative;
 }
 
 .score-container span {
     font-weight: bold;
+    font-size: 1.6rem;
     color: var(--color-primary);
-    font-size: 1.4rem;
+    display: inline-block;
+    margin-left: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.score-container p:first-child span {
+    color: var(--color-success);
 }
 
 /* 반응형 스타일 */
@@ -200,23 +337,41 @@
     .score-container {
         flex-direction: column;
         gap: 0.5rem;
+        padding: 1rem 2rem;
+    }
+    
+    .game-description {
+        font-size: 1.2rem;
+    }
+    
+    .hint {
+        font-size: 1.1rem;
     }
 }
 
 /* 애니메이션 */
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-20px); }
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-10px) rotate(5deg); }
 }
 
 .correct-animation {
-    animation: bounce 0.5s ease;
+    animation: bounce 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 특별 이펙트 */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-primary);
+    opacity: 0;
+    z-index: 100;
 }
 
 /* 접근성 */
@@ -224,16 +379,6 @@
 .btn:focus {
     outline: 3px solid var(--color-primary);
     outline-offset: 2px;
-}
-
-/* 게임 버튼에 호버 효과 추가 */
-.game-buttons .btn {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.game-buttons .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
 }
 
 /* 고대비 모드 */
