@@ -1,0 +1,251 @@
+/* 생태계 교육 페이지 스타일 */
+.ecosystem-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+.page-title {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: var(--font-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* 생태계 소개 */
+.ecosystem-intro {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.ecosystem-intro h3 {
+    color: var(--primary-color);
+    font-size: var(--font-lg);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.intro-text {
+    font-size: var(--font-md);
+    line-height: 1.8;
+}
+
+.intro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+}
+
+/* 곤충의 역할 */
+.insect-roles {
+    margin-bottom: var(--spacing-xl);
+}
+
+.insect-roles h3 {
+    color: var(--primary-color);
+    font-size: var(--font-lg);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.role-card {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+}
+
+.role-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.role-card h4 {
+    color: var(--primary-color);
+    font-size: var(--font-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* 생태계 이야기 */
+.ecosystem-story {
+    margin-bottom: var(--spacing-xl);
+}
+
+.ecosystem-story h3 {
+    color: var(--primary-color);
+    font-size: var(--font-lg);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.story-timeline {
+    display: grid;
+    gap: var(--spacing-xl);
+}
+
+.story-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+}
+
+.story-card:nth-child(even) {
+    direction: rtl;
+}
+
+.story-card:nth-child(even) .story-content {
+    direction: ltr;
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+}
+
+.story-content h4 {
+    color: var(--primary-color);
+    font-size: var(--font-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.story-content p {
+    font-size: var(--font-base);
+    line-height: 1.8;
+}
+
+/* 생태계 보호하기 */
+.ecosystem-protection {
+    margin-bottom: var(--spacing-xl);
+}
+
+.ecosystem-protection h3 {
+    color: var(--primary-color);
+    font-size: var(--font-lg);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.protection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.protection-card {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+}
+
+.protection-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.protection-card h4 {
+    color: var(--primary-color);
+    font-size: var(--font-md);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.protection-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.protection-card li {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-base);
+}
+
+.protection-card li::before {
+    content: "✓";
+    color: var(--primary-color);
+    margin-right: var(--spacing-sm);
+}
+
+/* 퀴즈 섹션 */
+.ecosystem-quiz {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+}
+
+.ecosystem-quiz h3 {
+    color: var(--primary-color);
+    font-size: var(--font-lg);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .ecosystem-content {
+        padding: var(--spacing-md);
+    }
+
+    .intro-content,
+    .story-card {
+        grid-template-columns: 1fr;
+    }
+
+    .story-card:nth-child(even) {
+        direction: ltr;
+    }
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.role-card,
+.story-card,
+.protection-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* 접근성 */
+@media (prefers-reduced-motion: reduce) {
+    .role-card,
+    .story-card,
+    .protection-card {
+        animation: none;
+        transition: none;
+    }
+} 

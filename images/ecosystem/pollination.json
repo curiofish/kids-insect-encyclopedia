@@ -1,0 +1,50 @@
+{
+  "image_info": {
+    "filename": "pollination",
+    "subject": "insect pollination process",
+    "details": "a bee or butterfly collecting nectar and transferring pollen between flowers",
+    "focus": "the relationship between insects and flowers"
+  },
+  "prompt": "Create a child-friendly educational illustration about insect pollination process in vintage scientific illustration style.\n        Key requirements:\n        1. Child-friendly and educational appearance\n        2. Clear, clean lines with educational value\n        3. Use precise fine black ink lines and subtle watercolor washes\n        4. Show a bee or butterfly collecting nectar and transferring pollen between flowers\n        5. Pure white background\n        6. Match the style of 19th century scientific illustration\n        7. Focus on the relationship between insects and flowers\n        \n        Style reference: Classic natural history illustration with educational focus.",
+  "result": {
+    "status": "success",
+    "tip": "Get 20x faster image generation using enterprise plan. Click here : https://stablediffusionapi.com/enterprise",
+    "generationTime": 1.03,
+    "id": 130265862,
+    "output": [
+      "https://modelslab-bom.s3.amazonaws.com/modelslab/b7bba05d-b828-42a5-89aa-bed0fc836a3d-0.jpg"
+    ],
+    "proxy_links": [
+      "https://modelslab-bom.s3.amazonaws.com/modelslab/b7bba05d-b828-42a5-89aa-bed0fc836a3d-0.jpg"
+    ],
+    "nsfw_content_detected": "",
+    "meta": {
+      "base64": "no",
+      "enhance_prompt": "no",
+      "enhance_style": null,
+      "file_prefix": "b7bba05d-b828-42a5-89aa-bed0fc836a3d",
+      "guidance_scale": 0,
+      "height": 512,
+      "id": null,
+      "instant_response": "no",
+      "n_samples": 1,
+      "negative_prompt": "scary details, intimidating features, dark colors, \n        creative interpretation, modern style, digital effects, filters, \n        heavy shading, artistic freedom",
+      "opacity": 0.7,
+      "outdir": "out",
+      "padding_down": 10,
+      "padding_right": 10,
+      "pag_scale": 0.1,
+      "prompt": "Create a child-friendly educational illustration about insect pollination process in vintage scientific illustration style. Key requirements: 1. Child-friendly and educational appearance 2. Clear, clean lines with educational value 3. Use precise fine black ink lines and subtle watercolor washes 4. Show a bee or butterfly collecting nectar and transferring pollen between flowers 5. Pure white background 6. Match the style of 19th century scientific illustration 7. Focus on the relationship between insects and flowers Style reference: Classic natural history illustration with educational focus.",
+      "rescale": "yes",
+      "safety_checker": "yes",
+      "safety_checker_type": "black",
+      "scale_down": 6,
+      "seed": 3346028879,
+      "temp": "no",
+      "track_id": null,
+      "watermark": "no",
+      "webhook": null,
+      "width": 512
+    }
+  }
+}

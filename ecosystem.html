@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 메타 태그 -->
+    <meta name="description" content="유치원 친구들을 위한 곤충 생태계 교육 - 곤충들의 역할과 생태계에서의 중요성을 배워보아요">
+    <meta name="keywords" content="곤충, 유치원, 어린이, 생태계, 환경, 교육">
+    <meta name="author" content="curiofish (이진우)">
+    
+    <title>곤충 생태계 교육 - 신나는 곤충 백과사전 🌿</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ecosystem.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
+    
+    <!-- 헤더 섹션 -->
+    <header class="main-header">
+        <div class="header-logo">
+            <a href="/" class="logo-link">
+                <img src="images/logo.webp" alt="신나는 곤충 백과사전 로고" class="logo-image" width="60" height="60">
+                <h1>🐞 신나는 곤충 백과사전 🦋</h1>
+            </a>
+        </div>
+
+        <div class="header-search">
+            <form class="search-form" role="search" action="/search.html" method="get">
+                <div class="search-wrapper">
+                    <input type="search" 
+                           id="insect-search" 
+                           name="q" 
+                           placeholder="찾고 싶은 곤충 이름을 입력해보세요!"
+                           aria-label="곤충 검색"
+                           autocomplete="off">
+                    <button type="submit" class="search-button">
+                        🔍
+                        <span class="sr-only">검색</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="top-nav">
+            <a href="/" class="home-button" title="홈으로 가기">
+                <span class="home-icon">🏠</span>
+                <span class="home-text">홈</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main id="main-content" class="ecosystem-content">
+        <h2 class="page-title">🌿 곤충들의 신나는 생태계 여행 🌿</h2>
+        
+        <!-- 생태계 소개 -->
+        <section class="ecosystem-intro">
+            <h3>곤충은 우리의 소중한 친구예요!</h3>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <p>곤충들은 우리 주변 어디에나 있어요. 작지만 매우 중요한 일을 하고 있답니다!</p>
+                    <p>꽃가루를 옮기고, 흙을 기름지게 만들고, 다른 생물들의 먹이가 되어주기도 해요.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="images/ecosystem/intro.webp" alt="다양한 곤충들의 모습" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- 곤충의 역할 -->
+        <section class="insect-roles">
+            <h3>곤충들이 하는 일</h3>
+            <div class="roles-grid">
+                <article class="role-card">
+                    <div class="role-icon">🌺</div>
+                    <h4>식물 도우미</h4>
+                    <p>꿀벌과 나비는 꽃가루를 옮겨서 식물이 열매를 맺을 수 있게 도와줘요</p>
+                </article>
+                <article class="role-card">
+                    <div class="role-icon">🌱</div>
+                    <h4>흙 지키미</h4>
+                    <p>개미와 딱정벌레는 흙을 기름지게 만들어 식물이 잘 자랄 수 있게 해줘요</p>
+                </article>
+                <article class="role-card">
+                    <div class="role-icon">🍽️</div>
+                    <h4>먹이 제공</h4>
+                    <p>곤충들은 새와 다른 동물들의 중요한 먹이가 되어줘요</p>
+                </article>
+                <article class="role-card">
+                    <div class="role-icon">🧹</div>
+                    <h4>청소부</h4>
+                    <p>쇠똥구리는 동물의 똥을 치워서 자연을 깨끗하게 만들어줘요</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 생태계 이야기 -->
+        <section class="ecosystem-story">
+            <h3>곤충들의 이야기</h3>
+            <div class="story-timeline">
+                <article class="story-card">
+                    <div class="story-image">
+                        <img src="images/ecosystem/pollination.webp" alt="꽃가루받이 하는 곤충" loading="lazy">
+                    </div>
+                    <div class="story-content">
+                        <h4>꽃과 곤충의 우정</h4>
+                        <p>꿀벌과 나비는 꿀을 먹으러 꽃을 찾아가요. 그리고 꽃가루를 다른 꽃으로 옮겨줘요.</p>
+                    </div>
+                </article>
+                <article class="story-card">
+                    <div class="story-image">
+                        <img src="images/ecosystem/soil.webp" alt="흙 속의 곤충들" loading="lazy">
+                    </div>
+                    <div class="story-content">
+                        <h4>땅 속 작은 농부들</h4>
+                        <p>개미와 딱정벌레는 땅 속에서 열심히 일해요. 흙을 부드럽게 만들고 영양분을 섞어줘요.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 생태계 보호하기 -->
+        <section class="ecosystem-protection">
+            <h3>우리가 할 수 있는 일</h3>
+            <div class="protection-grid">
+                <article class="protection-card">
+                    <div class="protection-icon">🌿</div>
+                    <h4>자연을 지켜요</h4>
+                    <ul>
+                        <li>쓰레기를 함부로 버리지 않아요</li>
+                        <li>곤충을 함부로 잡지 않아요</li>
+                        <li>식물을 소중히 해요</li>
+                    </ul>
+                </article>
+                <article class="protection-card">
+                    <div class="protection-icon">🏡</div>
+                    <h4>곤충 집을 만들어요</h4>
+                    <ul>
+                        <li>정원에 꽃을 심어요</li>
+                        <li>곤충 호텔을 만들어요</li>
+                        <li>물과 먹이를 제공해요</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- 퀴즈 섹션 -->
+        <section class="ecosystem-quiz">
+            <h3>재미있는 생태계 퀴즈</h3>
+            <div class="quiz-container">
+                <!-- 퀴즈는 JavaScript로 동적 생성됩니다 -->
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="main-footer">
+        <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="/">홈으로</a></li>
+                <li><a href="/seasonal.html">계절별 곤충</a></li>
+                <li><a href="/#quiz">퀴즈</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            <p>© 2024 신나는 곤충 백과사전</p>
+            <p>제작: curiofish (이진우) | 문의: <a href="mailto:fishcurio@gmail.com">fishcurio@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <!-- 스크롤 탑 버튼 -->
+    <button class="scroll-top" aria-label="맨 위로 이동" title="맨 위로 이동">
+        <div class="scroll-icon">
+            <span class="arrow">⬆️</span>
+            <span class="text">위로</span>
+        </div>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/ecosystem.js"></script>
+</body>
+</html> 

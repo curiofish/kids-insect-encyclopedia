@@ -1,0 +1,53 @@
+{
+  "insect_info": {
+    "name": "Rhinoceros Beetle",
+    "korean_name": "장수풍뎅이",
+    "scientific_name": "Allomyrina dichotoma",
+    "colors": "dark brown to black",
+    "viewpoint": "varied angles",
+    "pose": "beetles gathering around tree sap",
+    "features": "social interaction, natural behavior, size comparison"
+  },
+  "prompt": "Create exactly one single Rhinoceros Beetle (Allomyrina dichotoma) in vintage scientific illustration style. \n        Key requirements:\n        1. Child-friendly appearance while maintaining scientific accuracy\n        2. Clear, clean lines with educational value\n        3. Precise anatomical details but not scary or intimidating\n        4. Use precise fine black ink lines to define form and structure\n        5. Apply subtle dark brown to black watercolor washes\n        6. Position in varied angles view showing beetles gathering around tree sap\n        7. Show detailed features: social interaction, natural behavior, size comparison\n        8. Pure white background\n        9. Match the style of 19th century scientific illustration\n        10. Ensure the entire insect is visible\n        \n        Style reference: Classic natural history illustration with educational focus.",
+  "result": {
+    "status": "success",
+    "tip": "Get 20x faster image generation using enterprise plan. Click here : https://stablediffusionapi.com/enterprise",
+    "generationTime": 1.03,
+    "id": 130266230,
+    "output": [
+      "https://modelslab-bom.s3.amazonaws.com/modelslab/fb992ab2-41e8-43f8-a2b8-5aeffa9be59b-0.jpg"
+    ],
+    "proxy_links": [
+      "https://modelslab-bom.s3.amazonaws.com/modelslab/fb992ab2-41e8-43f8-a2b8-5aeffa9be59b-0.jpg"
+    ],
+    "nsfw_content_detected": "",
+    "meta": {
+      "base64": "no",
+      "enhance_prompt": "no",
+      "enhance_style": null,
+      "file_prefix": "fb992ab2-41e8-43f8-a2b8-5aeffa9be59b",
+      "guidance_scale": 0,
+      "height": 512,
+      "id": null,
+      "instant_response": "no",
+      "n_samples": 1,
+      "negative_prompt": "groups, pairs, pattern, collection, \n        collage, specimen plate, decorative border, text, labels, numbers, \n        botanical elements, leaves, flowers, creative interpretation, modern style, \n        digital effects, filters, heavy shading, dark colors, artistic freedom, \n        symmetrical arrangement, repeating elements, mirror images, kaleidoscope effect, \n        scary details, intimidating features, partial views, cropped images",
+      "opacity": 0.7,
+      "outdir": "out",
+      "padding_down": 10,
+      "padding_right": 10,
+      "pag_scale": 0.1,
+      "prompt": "Create exactly one single Rhinoceros Beetle (Allomyrina dichotoma) in vintage scientific illustration style. Key requirements: 1. Child-friendly appearance while maintaining scientific accuracy 2. Clear, clean lines with educational value 3. Precise anatomical details but not scary or intimidating 4. Use precise fine black ink lines to define form and structure 5. Apply subtle dark brown to black watercolor washes 6. Position in varied angles view showing beetles gathering around tree sap 7. Show detailed features: social interaction, natural behavior, size comparison 8. Pure white background 9. Match the style of 19th century scientific illustration 10",
+      "rescale": "yes",
+      "safety_checker": "yes",
+      "safety_checker_type": "black",
+      "scale_down": 6,
+      "seed": 3188964721,
+      "temp": "no",
+      "track_id": null,
+      "watermark": "no",
+      "webhook": null,
+      "width": 512
+    }
+  }
+}

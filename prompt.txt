@@ -1,0 +1,196 @@
+# 곤충 세밀화 이미지 생성 가이드
+
+## 이미지 생성 방법
+1. Stable Diffusion API 웹사이트(https://stablediffusionapi.com/)에 접속
+2. 상단 메뉴에서 "Playground" 버튼 클릭
+3. API 키로 로그인
+4. Playground 설정:
+   - 프롬프트와 네거티브 프롬프트 입력
+   - 모델 선택 (SDXL 1.0 추천)
+   - 이미지 크기: 1024x1024
+   - Steps: 30-50
+   - CFG Scale: 7-8
+   - Scheduler: DPM++ 2M Karras
+   - 샘플러: Euler a
+
+## Playground용 프롬프트 예시
+### 기본 프롬프트 템플릿
+```
+masterpiece, professional, highly detailed scientific illustration of a single [insect name], vintage entomological study, precise anatomical details, fine black ink lines, subtle watercolor, pure white background, 19th century natural history art style, John James Audubon inspired, scientific accuracy, museum quality, encyclopedic illustration, anatomically correct, detailed wing structure, segmented body parts, (detailed leg joints), (fine antennae details)
+```
+
+### 네거티브 프롬프트 템플릿
+```
+multiple insects, text, labels, numbers, border, frame, blurry, duplicate, low quality, signature, watermark, out of frame, extra digits, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, extra antennae, extra legs, extra body parts, deformed, disfigured, mutation, photographic, modern, digital art
+```
+
+### 무당벌레 예시 프롬프트
+```
+masterpiece, professional, highly detailed scientific illustration of a single ladybug (Coccinella septempunctata), vintage entomological study, precise anatomical details, fine black ink lines, subtle red and black watercolor, pure white background, 19th century natural history art style, scientific accuracy, museum quality, top-down 3/4 view, walking pose with slightly opened wings, seven black spots on red elytra, black head with white markings, detailed leg joints, fine antennae details
+```
+
+## 기본 프롬프트
+"Create exactly one single [곤충 영문명] ([학명]) in vintage scientific illustration style. Strict requirement: only one [곤충] in the entire image. Use precise fine black ink lines to define form and structure, then apply subtle [주요 색상] watercolor washes. The [곤충] must be positioned in [시점] view with [특징적인 자세], showing detailed anatomical features: [해당 곤충의 주요 특징들 나열]. Match the traditional natural history illustration style with meticulous line work and controlled watercolor technique. Pure white background with absolutely no decorative elements. Reference style: 19th century entomological illustration techniques."
+
+## 네거티브 프롬프트
+"multiple insects, groups, pairs, pattern, collection, collage, specimen plate, decorative border, text, labels, numbers, botanical elements, leaves, flowers, creative interpretation, modern style, digital effects, filters, heavy shading, dark colors, artistic freedom, symmetrical arrangement, repeating elements, mirror images, kaleidoscope effect"
+
+## 이미지 저장 경로 및 파일명 리스트
+images/insects/
+
+### 딱정벌레목
+1. ladybug.jpg (무당벌레)
+2. rhinoceros-beetle.jpg (장수풍뎅이)
+3. stag-beetle.jpg (사슴벌레)
+4. ground-beetle.jpg (딱정벌레)
+5. jewel-beetle.jpg (비단벌레)
+6. longhorn-beetle.jpg (하늘소)
+7. diving-beetle.jpg (물방개)
+8. firefly.jpg (반딧불이)
+9. tiger-beetle.jpg (길앞잡이)
+10. dung-beetle.jpg (소똥구리)
+11. leaf-beetle.jpg (잎벌레)
+12. weevil.jpg (바구미)
+13. click-beetle.jpg (방아벌레)
+14. flour-beetle.jpg (거위벌레)
+15. whirligig-beetle.jpg (물맴이)
+
+### 나비목
+16. swallowtail-butterfly.jpg (호랑나비)
+17. cabbage-butterfly.jpg (배추흰나비)
+18. peacock-butterfly.jpg (공작나비)
+19. admiral-butterfly.jpg (청띠신선나비)
+20. morpho-butterfly.jpg (모르포나비)
+21. atlas-moth.jpg (산누에나방)
+22. luna-moth.jpg (달누에나방)
+23. hawk-moth.jpg (박각시)
+24. tiger-moth.jpg (호랑나방)
+25. silkworm-moth.jpg (누에나방)
+26. comma-butterfly.jpg (네발나비)
+27. red-admiral.jpg (작은멋쟁이나비)
+28. painted-lady.jpg (작은멋쟁이나비)
+29. monarch-butterfly.jpg (제왕나비)
+30. white-butterfly.jpg (흰나비)
+
+### 메뚜기목
+31. grasshopper.jpg (메뚜기)
+32. katydid.jpg (여치)
+33. cricket.jpg (귀뚜라미)
+34. mole-cricket.jpg (땅강아지)
+35. locust.jpg (풀무치)
+36. bush-cricket.jpg (베짱이)
+37. cave-cricket.jpg (꼽등이)
+38. field-cricket.jpg (방울벌레)
+39. tree-cricket.jpg (긴꼬리쌕쌔기)
+40. shield-backed-katydid.jpg (방패메뚜기)
+
+### 잠자리목
+41. dragonfly.jpg (잠자리)
+42. damselfly.jpg (실잠자리)
+43. broad-winged-damselfly.jpg (청실잠자리)
+44. skimmer-dragonfly.jpg (고추잠자리)
+45. hawker-dragonfly.jpg (왕잠자리)
+
+### 벌목
+46. honeybee.jpg (꿀벌)
+47. bumblebee.jpg (호박벌)
+48. carpenter-bee.jpg (왕벌)
+49. paper-wasp.jpg (쌍살벌)
+50. hornet.jpg (말벌)
+51. mud-dauber.jpg (나나니벌)
+52. potter-wasp.jpg (호리병벌)
+53. ichneumon-wasp.jpg (맵시벌)
+54. sawfly.jpg (잎벌)
+55. velvet-ant.jpg (벨벳개미)
+
+### 파리목
+56. housefly.jpg (집파리)
+57. fruit-fly.jpg (초파리)
+58. crane-fly.jpg (각다귀)
+59. horse-fly.jpg (등에)
+60. robber-fly.jpg (파리매)
+61. hover-fly.jpg (꽃등에)
+62. bee-fly.jpg (재니등에)
+63. mosquito.jpg (모기)
+64. midge.jpg (깔따구)
+65. flesh-fly.jpg (쉬파리)
+
+### 매미목
+66. cicada.jpg (매미)
+67. leafhopper.jpg (매미충)
+68. planthopper.jpg (멸구)
+69. treehopper.jpg (뿔매미)
+70. aphid.jpg (진딧물)
+71. scale-insect.jpg (깍지벌레)
+72. spittlebug.jpg (거품벌레)
+73. cicadella.jpg (쐐기나방)
+74. fulgorid.jpg (꽃매미)
+75. whitefly.jpg (가루이)
+
+### 사마귀목
+76. mantis.jpg (사마귀)
+77. flower-mantis.jpg (꽃사마귀)
+78. giant-mantis.jpg (왕사마귀)
+79. stick-mantis.jpg (대사마귀)
+80. shield-mantis.jpg (방패사마귀)
+
+### 바퀴목
+81. cockroach.jpg (바퀴벌레)
+82. wood-cockroach.jpg (산바퀴)
+83. giant-cockroach.jpg (왕바퀴)
+84. oriental-cockroach.jpg (동양바퀴)
+85. german-cockroach.jpg (독일바퀴)
+
+### 기타 곤충목
+86. earwig.jpg (집게벌레)
+87. silverfish.jpg (좀벌레)
+88. walking-stick.jpg (대벌레)
+89. lacewing.jpg (풀잠자리)
+90. antlion.jpg (명주잠자리)
+91. termite.jpg (흰개미)
+92. mayfly.jpg (하루살이)
+93. stonefly.jpg (강도래)
+94. scorpionfly.jpg (밑들이)
+95. caddisfly.jpg (날도래)
+96. thrips.jpg (총채벌레)
+97. webspinner.jpg (날개치레)
+98. booklouse.jpg (다듬이벌레)
+99. springtail.jpg (톡토기)
+100. firebrat.jpg (좀솔벌레)
+
+## 이미지 생성 시 주의사항
+1. 모든 곤충은 동일한 스타일로 통일감 있게 생성 (한 작가가 그린 것처럼)
+2. 각 곤충의 해부학적 특징이 정확하게 표현되어야 함
+3. 배경은 순수한 흰색으로 통일
+4. 이미지 해상도: 1024x1024 픽셀
+5. 파일 형식: JPG (고품질)
+6. 각 곤충당 1장의 이미지만 생성
+
+## 곤충별 상세 정보 예시 (대표적인 곤충들)
+### 무당벌레 (Ladybug)
+- 학명: Coccinella septempunctata
+- 주요 색상: Red, black
+- 시점: Top-down 3/4 view
+- 특징적인 자세: Walking pose with slightly opened wings
+- 주요 특징: Seven black spots on red elytra, black head with white markings, detailed leg joints
+
+### 호랑나비 (Asian Swallowtail)
+- 학명: Papilio xuthus
+- 주요 색상: Yellow, black
+- 시점: Dorsal view with spread wings
+- 특징적인 자세: Wings fully spread display pose
+- 주요 특징: Tiger-like black stripes on yellow wings, distinctive tail-like wing extensions
+
+### 장수풍뎅이 (Japanese Rhinoceros Beetle)
+- 학명: Allomyrina dichotoma
+- 주요 색상: Dark brown, black
+- 시점: Side view slightly angled
+- 특징적인 자세: Alert pose with raised head
+- 주요 특징: Prominent horn on head, robust body structure, detailed leg segments
+
+### 사마귀 (Praying Mantis)
+- 학명: Tenodera sinensis
+- 주요 색상: Green, brown
+- 시점: Front view slightly angled
+- 특징적인 자세: Prayer pose with raised forelegs
+- 주요 특징: Triangular head, raptorial forelegs, long body, detailed wing venation 
