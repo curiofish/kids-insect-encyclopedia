@@ -119,7 +119,58 @@ const quizData = [
         ],
         correct: 1,
         explanation: "잠자리는 앞으로도, 뒤로도 날 수 있어요! 대단하죠?"
-    }
+    },
+    {
+        question: "곤충의 날개는 몇 쌍일까요?",
+        image: "images/quiz/날개.png",
+        options: [
+            "1쌍",
+            "2쌍",
+            "3쌍",
+            "4쌍"
+        ],
+        correct: 1,
+        explanation: "대부분의 곤충은 두 쌍의 날개를 가지고 있어요!"
+    },
+    {
+        question: "곤충의 수명은 보통 얼마나 될까요?",
+        image: "images/quiz/수명.png",
+        options: [
+            "몇 주",
+            "몇 달",
+            "몇 년",
+            "몇 십 년"
+        ],
+        correct: 0,
+        explanation: "곤충의 수명은 보통 몇 주에서 몇 달 정도입니다."
+    },
+    {
+        question: "곤충의 눈은 어떤 구조로 되어 있나요?",
+        image: "images/quiz/눈.png",
+        options: [
+            "단안",
+            "복안",
+            "망막",
+            "렌즈"
+        ],
+        correct: 1,
+        explanation: "곤충의 눈은 복안으로 되어 있어요."
+    },
+    // Add more questions here to reach a total of 50
+    // Example:
+    // {
+    //     question: "새로운 질문",
+    //     image: "images/quiz/new-question.png",
+    //     options: [
+    //         "옵션 1",
+    //         "옵션 2",
+    //         "옵션 3",
+    //         "옵션 4"
+    //     ],
+    //     correct: 0,
+    //     explanation: "정답에 대한 설명"
+    // },
+    // Repeat until 50 questions are added
 ];
 
 // 전역 변수
@@ -146,7 +197,7 @@ const retryButton = document.getElementById('retry-quiz');
 // 퀴즈 시작
 function startQuiz() {
     quizStarted = true;
-    currentQuestion = 0;
+    currentQuestion = Math.floor(Math.random() * quizData.length); // 랜덤한 첫 질문 선택
     score = 0;
     showQuestion();
     startButton.style.display = 'none';

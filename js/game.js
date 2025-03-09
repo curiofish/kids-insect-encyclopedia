@@ -84,7 +84,7 @@ const gameState = {
                 '자기 몸무게의 50배나 되는 물건을 들 수 있어요',
                 '여왕개미와 일개미, 수개미로 나뉘어 살아요'
             ],
-            image: 'images/insects/velvet-ant.jpg'
+            image: 'images/insects/ant.jpg'
         },
         {
             name: '불개미',
@@ -274,7 +274,19 @@ const gameState = {
                 '환경 정화에 도움을 줘요'
             ],
             image: 'images/insects/dung-beetle.jpg'
-        }
+        },
+        // Add more insects here up to 100, ensuring each has an English name for the image
+        // Example:
+        // {
+        //     name: 'New Insect',
+        //     hints: [
+        //         'Hint 1',
+        //         'Hint 2',
+        //         'Hint 3'
+        //     ],
+        //     image: 'images/insects/new-insect.jpg'
+        // },
+        // Repeat for each new insect
     ]
 };
 

@@ -42,146 +42,59 @@
 
         <nav class="main-nav">
             <ul class="nav-list">
-                <li class="nav-item"><a href="#meet-insects" class="nav-link">곤충 친구들 만나기</a></li>
-                <li class="nav-item"><a href="#fun-games" class="nav-link">재미있는 게임</a></li>
-                <li class="nav-item"><a href="#quiz" class="nav-link">곤충 퀴즈</a></li>
+                <li class="nav-item"><a href="#bees" class="nav-link">벌</a></li>
+                <li class="nav-item"><a href="#mantis" class="nav-link">사마귀</a></li>
+                <li class="nav-item"><a href="#ants" class="nav-link">개미</a></li>
+                <!-- Add more categories as needed -->
             </ul>
         </nav>
+
+        <div class="search-container">
+            <input type="text" placeholder="곤충 검색..." class="search-input">
+            <button class="search-button">검색</button>
+        </div>
     </header>
 
     <main>
-        <!-- 히어로 섹션 -->
-        <section class="hero-section">
+        <!-- 곤충의 특별한 점 소개 섹션 -->
+        <section class="special-intro-section">
             <div class="container">
-                <div class="hero-content grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-                    <div class="hero-text">
-                        <h2 class="text-3xl font-bold mb-4">안녕하세요, 꼬마 탐험가! 🌈</h2>
-                        <p class="text-xl mb-4">신기한 <span class="rainbow-text font-bold">곤충 친구들</span>의 세상으로 함께 떠나볼까요?</p>
-                        <div class="hero-buttons">
-                            <a href="#meet-insects" class="btn btn-primary pulse">곤충 친구들 만나러 가기!</a>
-                        </div>
+                <h2 class="section-title">곤충의 특별한 점 🌟</h2>
+                <p>곤충들은 지구상에서 가장 다양한 생물군으로, 각기 다른 환경에서 독특한 방식으로 살아가고 있습니다.</p>
+            </div>
+        </section>
+
+        <!-- 곤충 분류 섹션 -->
+        <section class="insect-categories-section">
+            <div class="container">
+                <h2 class="section-title">곤충 분류와 더 알아보기 🐜</h2>
+                <div class="category-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Example category -->
+                    <div class="category-card">
+                        <img src="images/insects/bee.jpg" alt="벌" class="category-image">
+                        <h3>벌</h3>
+                        <p>벌은 꽃가루를 옮기며 생태계에 중요한 역할을 합니다.</p>
+                        <button class="btn btn-secondary">더 알아보기</button>
                     </div>
-                    <div class="hero-image-container">
-                        <!-- 이미지 플레이스홀더 -->
-                        <div class="image-placeholder" style="width: 100%; height: 300px; background-color: #E8F5E9; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
-                            <div style="animation: float 3s ease-in-out infinite;">🦋</div>
-                            <div style="animation: float 4s ease-in-out infinite; animation-delay: 0.5s;">🐞</div>
-                            <div style="animation: float 3.5s ease-in-out infinite; animation-delay: 1s;">🐜</div>
-                        </div>
-                    </div>
+                    <!-- Add more categories as needed -->
                 </div>
             </div>
         </section>
 
-        <!-- 곤충 친구들 소개 섹션 -->
-        <section id="meet-insects" class="meet-insects-section">
+        <!-- 곤충이 아닌 동물들 섹션 -->
+        <section class="non-insects-section">
             <div class="container">
-                <h2 class="section-title">오늘의 곤충 친구들을 소개합니다! 🎉</h2>
-                <div class="insect-cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- 무당벌레 카드 -->
-                    <div class="insect-card">
-                        <div class="insect-image-container">
-                            <!-- 이미지 플레이스홀더 -->
-                            <div class="image-placeholder" style="width: 100%; height: 200px; background-color: #FFEBEE; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
-                                <div style="animation: float 3s ease-in-out infinite;">🐞</div>
-                            </div>
-                        </div>
-                        <div class="insect-content">
-                            <h3>귀여운 무당벌레</h3>
-                            <p>빨간 옷을 입은 작은 수호천사!</p>
-                            <button class="btn btn-secondary">더 알아보기</button>
-                        </div>
-                    </div>
-
-                    <!-- 나비 카드 -->
-                    <div class="insect-card">
-                        <div class="insect-image-container">
-                            <!-- 이미지 플레이스홀더 -->
-                            <div class="image-placeholder" style="width: 100%; height: 200px; background-color: #E8F5E9; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
-                                <div style="animation: float 3.5s ease-in-out infinite;">🦋</div>
-                            </div>
-                        </div>
-                        <div class="insect-content">
-                            <h3>예쁜 나비</h3>
-                            <p>알록달록 춤추는 공중 댄서!</p>
-                            <button class="btn btn-secondary">더 알아보기</button>
-                        </div>
-                    </div>
-
-                    <!-- 매미 카드 -->
-                    <div class="insect-card">
-                        <div class="insect-image-container">
-                            <!-- 이미지 플레이스홀더 -->
-                            <div class="image-placeholder" style="width: 100%; height: 200px; background-color: #F3E5F5; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
-                                <div style="animation: float 4s ease-in-out infinite;">🦗</div>
-                            </div>
-                        </div>
-                        <div class="insect-content">
-                            <h3>시끌벅적 매미</h3>
-                            <p>여름의 신나는 노래자랑!</p>
-                            <button class="btn btn-secondary">더 알아보기</button>
-                        </div>
-                    </div>
-                </div>
+                <h2 class="section-title">곤충이 아닌 동물들 🦎</h2>
+                <p>곤충 외에도 다양한 동물들이 자연 속에서 함께 살아가고 있습니다.</p>
             </div>
         </section>
 
-        <!-- 재미있는 게임 섹션 -->
-        <section id="fun-games" class="fun-games-section">
+        <!-- 곤충 퀴즈 섹션 -->
+        <section class="insect-quiz-section">
             <div class="container">
-                <h2 class="section-title">재미있는 곤충 게임! 🎮</h2>
-                <div class="games-grid grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- 곤충 맞추기 게임 -->
-                    <div class="game-card">
-                        <div class="game-image-container">
-                            <!-- 이미지 플레이스홀더 -->
-                            <div class="image-placeholder" style="width: 100%; height: 250px; background-color: #FFF3E0; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
-                                🔍 곤충 맞추기
-                            </div>
-                        </div>
-                        <div class="game-content">
-                            <h3>곤충 맞추기</h3>
-                            <p>숨어있는 곤충 친구를 찾아보세요!</p>
-                            <a href="game.html" class="btn btn-primary">게임 시작하기</a>
-                        </div>
-                    </div>
-
-                    <!-- 곤충 퀴즈 -->
-                    <div class="game-card">
-                        <div class="game-image-container">
-                            <!-- 이미지 플레이스홀더 -->
-                            <div class="image-placeholder" style="width: 100%; height: 250px; background-color: #E3F2FD; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
-                                ❓ 곤충 퀴즈
-                            </div>
-                        </div>
-                        <div class="game-content">
-                            <h3>곤충 퀴즈</h3>
-                            <p>재미있는 곤충 퀴즈를 풀어보세요!</p>
-                            <a href="quiz.html" class="btn btn-primary">퀴즈 풀기</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 재미있는 사실 섹션 -->
-        <section class="fun-facts-section">
-            <div class="container">
-                <h2 class="section-title">신기한 곤충 이야기! 🌟</h2>
-                <div class="fun-facts-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div class="fun-fact-card">
-                        <div class="fun-fact-icon">🦗</div>
-                        <h3>메뚜기는 자기 몸길이의 20배나 되는 높이를 뛸 수 있어요!</h3>
-                    </div>
-                    <div class="fun-fact-card">
-                        <div class="fun-fact-icon">🐜</div>
-                        <h3>개미는 자기 몸무게의 50배나 되는 무게를 들 수 있어요!</h3>
-                    </div>
-                    <div class="fun-fact-card">
-                        <div class="fun-fact-icon">🐝</div>
-                        <h3>꿀벌은 춤을 추면서 다른 벌들에게 꿀이 있는 곳을 알려줘요!</h3>
-                    </div>
-                </div>
+                <h2 class="section-title">곤충 퀴즈 ❓</h2>
+                <p>재미있는 퀴즈를 통해 곤충에 대해 더 알아보세요!</p>
+                <a href="quiz.html" class="btn btn-primary">퀴즈 풀기</a>
             </div>
         </section>
     </main>
@@ -191,6 +104,7 @@
             <div class="footer-content text-center">
                 <p>🌈 유치원 친구들을 위한 신나는 곤충 탐험 🌈</p>
                 <p>곤충 친구들과 함께 놀면서 배워요!</p>
+                <p>© 2024 curiofish. All rights reserved.</p>
             </div>
         </div>
     </footer>
