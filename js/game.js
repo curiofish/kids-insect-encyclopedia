@@ -258,13 +258,13 @@ const gameState = {
             image: 'images/insects/aphid.jpg'
         },
         {
-            name: '귀뚜라미',
+            name: '개미귀신',
             hints: [
-                '밤에 울어요',
-                '뒷다리가 튼튼해서 높이 뛸 수 있어요',
-                '더듬이가 길어요'
+                '모래 구덩이를 파서 개미를 잡아먹어요',
+                '몸이 길쭉하고 큰 턱을 가졌어요',
+                '애벌레 때는 천사로, 성충이 되면 잠자리처럼 보여요'
             ],
-            image: 'images/insects/cricket.jpg'
+            image: 'images/insects/antlion.jpg'
         },
         {
             name: '쇠똥구리',
