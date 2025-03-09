@@ -372,4 +372,177 @@ body {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+/* 놀라운 곤충의 세계 페이지 스타일 */
+.intro-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--color-background-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.intro-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.intro-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.intro-text li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.intro-text li::before {
+    content: "🔍";
+    position: absolute;
+    left: 0;
+}
+
+.feature-section {
+    margin-bottom: 3rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background-color: var(--color-background-light);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.feature-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+}
+
+.habitat-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--color-background-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.habitat-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.habitat-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.habitat-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.habitat-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.habitat-text li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.habitat-text li::before {
+    content: "🌿";
+    position: absolute;
+    left: 0;
+}
+
+.importance-section {
+    margin-bottom: 3rem;
+}
+
+.importance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.importance-card {
+    background-color: var(--color-background-light);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.importance-card:hover {
+    transform: translateY(-5px);
+}
+
+.importance-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .intro-content,
+    .habitat-content {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .importance-grid {
+        grid-template-columns: 1fr;
+    }
 } 
