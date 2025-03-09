@@ -84,7 +84,7 @@ const gameState = {
                 '자기 몸무게의 50배나 되는 물건을 들 수 있어요',
                 '여왕개미와 일개미, 수개미로 나뉘어 살아요'
             ],
-            image: 'images/insects/ant.jpg'
+            image: 'images/insects/velvet-ant.jpg'
         },
         {
             name: '불개미',
@@ -103,6 +103,177 @@ const gameState = {
                 '땅 속에 개미집을 만들고 작은 언덕처럼 보여요'
             ],
             image: 'images/insects/black-garden-ant.jpg'
+        },
+        {
+            name: '꿀벌',
+            hints: [
+                '노란색과 검은색 무늬가 있어요',
+                '꽃가루를 모으고 꿀을 만들어요',
+                '벌집에서 여왕벌, 일벌, 수벌로 나뉘어 살아요'
+            ],
+            image: 'images/insects/honeybee.jpg'
+        },
+        {
+            name: '호랑나비',
+            hints: [
+                '노란색 바탕에 검은색 줄무늬가 있어요',
+                '날개가 크고 화려해요',
+                '식물의 꽃에서 꿀을 빨아 먹어요'
+            ],
+            image: 'images/insects/swallowtail-butterfly.jpg'
+        },
+        {
+            name: '모나크나비',
+            hints: [
+                '오렌지색 날개에 검은 테두리가 있어요',
+                '매년 멀리 이동해요',
+                '독성이 있는 식물을 먹고 자라요'
+            ],
+            image: 'images/insects/monarch-butterfly.jpg'
+        },
+        {
+            name: '잠자리',
+            hints: [
+                '빠르게 날 수 있어요',
+                '두 쌍의 큰 날개가 있어요',
+                '물가에서 자라요'
+            ],
+            image: 'images/insects/dragonfly.jpg'
+        },
+        {
+            name: '청동잠자리',
+            hints: [
+                '몸이 가늘고 길쭉해요',
+                '날개를 접고 앉아요',
+                '물가에서 살아요'
+            ],
+            image: 'images/insects/damselfly.jpg'
+        },
+        {
+            name: '귀뚜라미',
+            hints: [
+                '밤에 울어요',
+                '뒷다리가 튼튼해서 높이 뛸 수 있어요',
+                '더듬이가 길어요'
+            ],
+            image: 'images/insects/cricket.jpg'
+        },
+        {
+            name: '메뚜기',
+            hints: [
+                '풀밭에서 살아요',
+                '뒷다리가 강해서 멀리 뛸 수 있어요',
+                '식물의 잎을 먹어요'
+            ],
+            image: 'images/insects/grasshopper.jpg'
+        },
+        {
+            name: '우리하늘소',
+            hints: [
+                '날개가 아름다운 색깔을 가졌어요',
+                '더듬이가 몸보다 길어요',
+                '딱딱한 껍질이 있어요'
+            ],
+            image: 'images/insects/jewel-beetle.jpg'
+        },
+        {
+            name: '풍뎅이',
+            hints: [
+                '둥글고 단단한 몸을 가졌어요',
+                '땅 속에서 애벌레로 자라요',
+                '식물의 잎을 먹어요'
+            ],
+            image: 'images/insects/dung-beetle.jpg'
+        },
+        {
+            name: '딱정벌레',
+            hints: [
+                '단단한 앞날개가 있어요',
+                '땅 위를 빠르게 움직여요',
+                '다른 작은 곤충을 잡아먹어요'
+            ],
+            image: 'images/insects/ground-beetle.jpg'
+        },
+        {
+            name: '바퀴벌레',
+            hints: [
+                '납작한 갈색 몸을 가졌어요',
+                '빛을 피해 어두운 곳에 숨어요',
+                '아주 빠르게 달릴 수 있어요'
+            ],
+            image: 'images/insects/cockroach.jpg'
+        },
+        {
+            name: '나방',
+            hints: [
+                '밤에 활동해요',
+                '털이 많은 몸을 가졌어요',
+                '불빛에 모여들어요'
+            ],
+            image: 'images/insects/atlas-moth.jpg'
+        },
+        {
+            name: '호박벌',
+            hints: [
+                '노란색과 검은색 털이 많은 몸을 가졌어요',
+                '크고 둥글둥글해요',
+                '꽃가루를 옮기는 데 중요한 역할을 해요'
+            ],
+            image: 'images/insects/bumblebee.jpg'
+        },
+        {
+            name: '말벌',
+            hints: [
+                '노란색과 검은색 무늬가 있어요',
+                '통증이 심한 독침이 있어요',
+                '종이 같은 벌집을 만들어요'
+            ],
+            image: 'images/insects/hornet.jpg'
+        },
+        {
+            name: '파리',
+            hints: [
+                '한 쌍의 날개만 있어요',
+                '빠르게 날아다녀요',
+                '음식물에 모여들어요'
+            ],
+            image: 'images/insects/housefly.jpg'
+        },
+        {
+            name: '모기',
+            hints: [
+                '가늘고 긴 몸을 가졌어요',
+                '피를 빨아 먹어요',
+                '물에서 애벌레로 자라요'
+            ],
+            image: 'images/insects/mosquito.jpg'
+        },
+        {
+            name: '진딧물',
+            hints: [
+                '작고 연한 녹색이에요',
+                '식물의 즙을 빨아 먹어요',
+                '무당벌레의 먹이가 돼요'
+            ],
+            image: 'images/insects/aphid.jpg'
+        },
+        {
+            name: '귀뚜라미',
+            hints: [
+                '밤에 울어요',
+                '뒷다리가 튼튼해서 높이 뛸 수 있어요',
+                '더듬이가 길어요'
+            ],
+            image: 'images/insects/cricket.jpg'
+        },
+        {
+            name: '쇠똥구리',
+            hints: [
+                '동그란 분변 덩어리를 굴려요',
+                '검은색 단단한 몸을 가졌어요',
+                '환경 정화에 도움을 줘요'
+            ],
+            image: 'images/insects/dung-beetle.jpg'
         }
     ]
 };
