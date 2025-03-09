@@ -1,1 +1,133 @@
-<!DOCTYPE html>...
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 메타 태그 -->
+    <meta name="description" content="유치원 친구들을 위한 신나는 곤충 맞추기 게임 - 힌트를 보고 곤충의 이름을 맞춰보세요!">
+    <meta name="keywords" content="곤충, 유치원, 어린이, 게임, 퀴즈, 나비, 무당벌레, 매미">
+    <meta name="author" content="curiofish (이진우)">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:title" content="신나는 곤충 맞추기 게임 🎮">
+    <meta property="og:description" content="유치원 친구들을 위한 신나는 곤충 맞추기 게임 - 힌트를 보고 곤충의 이름을 맞춰보세요!">
+    <meta property="og:image" content="/images/og-image.webp">
+    <meta property="og:url" content="https://your-domain.com/game.html">
+    <meta property="og:type" content="website">
+    
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <title>신나는 곤충 맞추기! 🎮 - 유치원 친구들을 위한 재미있는 곤충 게임</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <a href="#game" class="skip-link">게임으로 바로가기</a>
+    
+    <header class="main-header">
+        <div class="header-logo">
+            <a href="/" class="logo-link">
+                <div class="logo-placeholder" style="width: 60px; height: 60px; background-color: #FFE0B2; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    🐞
+                </div>
+                <h1>신나는 곤충 탐험! 🦋</h1>
+            </a>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="/" class="nav-link">홈으로</a></li>
+                <li class="nav-item"><a href="#game" class="nav-link">게임하기</a></li>
+                <li class="nav-item"><a href="quiz.html" class="nav-link">곤충 퀴즈</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="game">
+        <section class="game-section">
+            <div class="container">
+                <h2 class="section-title">신나는 곤충 맞추기! 🎮</h2>
+                
+                <!-- 게임 설명 -->
+                <div class="game-intro">
+                    <p class="game-description">
+                        안녕하세요, 꼬마 탐험가! 🌟<br>
+                        숨어있는 곤충 친구를 찾아볼까요?<br>
+                        힌트를 잘 읽고 곤충의 이름을 맞춰보세요!
+                    </p>
+                </div>
+
+                <!-- 게임 카드 -->
+                <div class="game-container">
+                    <div class="game-card">
+                        <div class="game-image-wrapper">
+                            <div class="game-image-container">
+                                <img id="insect-image" src="" alt="맞춰볼 곤충" class="game-image">
+                            </div>
+                        </div>
+                        
+                        <div class="game-controls">
+                            <div class="hint-box">
+                                <p id="game-hint" class="hint">힌트를 기다리고 있어요...</p>
+                            </div>
+                            
+                            <div class="input-group">
+                                <input type="text" 
+                                       id="guess-input" 
+                                       class="game-input" 
+                                       placeholder="곤충 이름을 입력해보세요!"
+                                       autocomplete="off"
+                                       aria-label="곤충 이름 입력">
+                                <button id="submit-guess" class="btn btn-primary">맞추기</button>
+                            </div>
+                            
+                            <div class="result-box">
+                                <p id="game-result" class="result" aria-live="polite"></p>
+                            </div>
+                            
+                            <div class="game-buttons">
+                                <button id="show-hint" class="btn btn-secondary">힌트 보기</button>
+                                <button id="next-insect" class="btn btn-secondary">다음 곤충</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 점수판 -->
+                <div class="score-board">
+                    <div class="score-container">
+                        <p>맞춘 개수: <span id="correct-count">0</span></p>
+                        <p>도전 횟수: <span id="total-count">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content text-center">
+                <p>🌈 유치원 친구들을 위한 신나는 곤충 탐험 🌈</p>
+                <p>곤충 친구들과 함께 놀면서 배워요!</p>
+                <nav class="footer-nav">
+                    <ul class="footer-links">
+                        <li><a href="/">홈</a></li>
+                        <li><a href="game.html">게임</a></li>
+                        <li><a href="quiz.html">퀴즈</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 스크롤 탑 버튼 -->
+    <button class="scroll-top" aria-label="맨 위로 이동">
+        <div class="scroll-icon">⬆️</div>
+    </button>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

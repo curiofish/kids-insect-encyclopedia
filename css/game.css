@@ -1,0 +1,260 @@
+/* 게임 섹션 스타일 */
+.game-section {
+    padding: 2rem 0;
+    background-color: var(--color-background-alt);
+    min-height: calc(100vh - 200px);
+}
+
+.game-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid var(--color-primary-light);
+}
+
+.game-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+/* 게임 카드 스타일 */
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.game-card {
+    background-color: var(--color-white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.game-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%; /* 4:3 비율 */
+    margin-bottom: 2rem;
+    background-color: var(--color-background-alt);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid var(--color-primary-light);
+}
+
+.game-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.game-image:hover {
+    transform: scale(1.05);
+}
+
+/* 게임 컨트롤 스타일 */
+.game-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hint-box {
+    background-color: var(--color-secondary-light);
+    padding: 1.2rem;
+    border-radius: 10px;
+    text-align: center;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-secondary);
+}
+
+.hint {
+    font-size: 1.2rem;
+    color: var(--color-secondary-dark);
+    margin: 0;
+    font-weight: 600;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.game-input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+    border: 2px solid var(--color-gray-300);
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.result-box {
+    text-align: center;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.result.correct {
+    color: var(--color-success);
+    animation: pulse 0.5s ease;
+}
+
+.result.wrong {
+    color: var(--color-error);
+}
+
+.game-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* 점수판 스타일 */
+.score-board {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.score-container {
+    display: inline-flex;
+    gap: 2.5rem;
+    background-color: var(--color-white);
+    padding: 1rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid var(--color-primary-light);
+}
+
+.score-container p {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.score-container span {
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: 1.4rem;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 0.5rem;
+    }
+
+    .game-card {
+        padding: 1.5rem;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .game-buttons {
+        flex-direction: column;
+    }
+
+    .score-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* 애니메이션 */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.correct-animation {
+    animation: bounce 0.5s ease;
+}
+
+/* 접근성 */
+.game-input:focus,
+.btn:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* 게임 버튼에 호버 효과 추가 */
+.game-buttons .btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* 고대비 모드 */
+@media (prefers-contrast: high) {
+    .game-card {
+        border: 3px solid #000;
+    }
+
+    .hint-box {
+        border: 3px solid #000;
+    }
+
+    .game-input {
+        border: 3px solid #000;
+    }
+    
+    .result.correct {
+        color: #006400;
+    }
+    
+    .result.wrong {
+        color: #8B0000;
+    }
+}
