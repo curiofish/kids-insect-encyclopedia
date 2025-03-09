@@ -410,4 +410,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         lastScroll = currentScroll;
     });
+
+    // 곤충 퀴즈 데이터
+    const quizQuestions = [
+        { question: "무당벌레는 몇 개의 점을 가지고 있을까요?", options: ["5개", "7개", "9개"], answer: "7개" },
+        { question: "호랑나비의 날개는 어떤 색인가요?", options: ["노란색과 검은색", "파란색과 흰색", "빨간색과 검은색"], answer: "노란색과 검은색" },
+        // ... 48개의 추가 질문 ...
+        { question: "장수풍뎅이는 어떤 곤충인가요?", options: ["딱정벌레", "나비", "잠자리"], answer: "딱정벌레" }
+    ];
+
+    // 랜덤 퀴즈 질문 선택
+    function getRandomQuestion() {
+        const randomIndex = Math.floor(Math.random() * quizQuestions.length);
+        return quizQuestions[randomIndex];
+    }
+
+    // 퀴즈 초기화
+    function initializeQuiz() {
+        const quizContainer = document.querySelector('.insect-quiz-section');
+        const questionData = getRandomQuestion();
+        const questionElement = document.createElement('div');
+        questionElement.classList.add('quiz-question');
+        questionElement.innerHTML = `<h3>${questionData.question}</h3>`;
+
+        const optionsList = document.createElement('ul');
+        optionsList.classList.add('quiz-options');
+        questionData.options.forEach(option => {
+            const optionItem = document.createElement('li');
+            optionItem.textContent = option;
+            optionItem.addEventListener('click', () => {
+                if (option === questionData.answer) {
+                    alert('정답입니다!');
+                } else {
+                    alert('틀렸습니다. 다시 시도해보세요.');
+                }
+            });
+            optionsList.appendChild(optionItem);
+        });
+
+        quizContainer.appendChild(questionElement);
+        quizContainer.appendChild(optionsList);
+    }
+
+    // DOMContentLoaded 이벤트 리스너
+    initializeQuiz();
 }); 
