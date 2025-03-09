@@ -85,6 +85,24 @@ const gameState = {
                 '여왕개미와 일개미, 수개미로 나뉘어 살아요'
             ],
             image: 'images/insects/ant.jpg'
+        },
+        {
+            name: '불개미',
+            hints: [
+                '붉은 갈색을 띠는 작은 개미예요',
+                '쏘면 따끔따끔 아프고 붓기도 해요',
+                '서로 협동해서 큰 개미집을 만들어요'
+            ],
+            image: 'images/insects/fire-ant.jpg'
+        },
+        {
+            name: '일본왕개미',
+            hints: [
+                '크고 검은색 또는 적갈색을 띠는 개미예요',
+                '나무 속에 집을 짓는 경우가 많아요',
+                '한국에서 흔히 볼 수 있는 큰 개미예요'
+            ],
+            image: 'images/insects/carpenter-ant.jpg'
         }
     ]
 };
