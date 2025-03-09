@@ -130,16 +130,16 @@
 
     <nav class="main-nav" aria-label="메인 메뉴">
         <ul class="nav-list">
-            <li class="nav-item"><a href="index.html" class="nav-link active">🏠 처음으로</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">🏠 처음으로</a></li>
             <li class="nav-item"><a href="intro.html" class="nav-link">🌟 놀라운 곤충의 세계</a></li>
             <li class="nav-item">
-                <a href="insects.html" class="nav-link">📚 곤충 도감</a>
+                <a href="#" class="nav-link" aria-expanded="false">📚 곤충 도감</a>
                 <ul class="sub-nav-list">
                     <li><a href="butterflies.html" class="nav-link">나비와 나방</a></li>
                     <li><a href="beetles.html" class="nav-link">딱정벌레</a></li>
-                    <li><a href="orthoptera.html" class="nav-link">메뚜기와 귀뚜라미</a></li>
+                    <li><a href="grasshoppers.html" class="nav-link">메뚜기와 귀뚜라미</a></li>
                     <li><a href="dragonflies.html" class="nav-link">잠자리</a></li>
-                    <li><a href="hymenoptera.html" class="nav-link">벌과 개미</a></li>
+                    <li><a href="bees_moths.html" class="nav-link">벌과 개미</a></li>
                     <li><a href="hemiptera.html" class="nav-link">노린재와 매미</a></li>
                 </ul>
             </li>
@@ -150,47 +150,98 @@
 
     <main class="main-content">
         <section class="hero-section">
-            <h2>어린이 여러분, 신기한 곤충의 세계로 떠나볼까요?</h2>
-            <p>작지만 놀라운 능력을 가진 곤충들의 이야기를 들려드릴게요!</p>
+            <div class="hero-content">
+                <h2>어린이 여러분, 신기한 곤충의 세계로 떠나볼까요?</h2>
+                <p>작지만 놀라운 능력을 가진 곤충들의 이야기를 들려드릴게요!</p>
+            </div>
+            <picture class="hero-image">
+                <source srcset="images/intro/hero.webp" type="image/webp">
+                <img src="images/intro/hero.png" alt="다양한 곤충들" loading="lazy" width="600" height="400">
+            </picture>
         </section>
 
-        <div class="feature-grid">
-            <article class="feature-card">
-                <img src="images/intro/곤충소개.webp" alt="다양한 곤충들의 모습" class="feature-image" loading="lazy" width="280" height="200">
-                <div class="feature-content">
-                    <h3 class="feature-title">놀라운 곤충의 세계</h3>
-                    <p class="feature-description">곤충들의 특별한 능력과 신기한 생활을 알아보아요!</p>
-                    <a href="intro.html" class="feature-link" aria-label="곤충의 세계 알아보기">알아보기</a>
-                </div>
-            </article>
+        <section class="features">
+            <h2 class="section-title">무엇을 배워볼까요?</h2>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <picture>
+                        <source srcset="images/intro/곤충소개.webp" type="image/webp">
+                        <img src="images/intro/곤충소개.png" alt="다양한 곤충들의 모습" class="feature-image" loading="lazy" width="280" height="200">
+                    </picture>
+                    <div class="feature-content">
+                        <h3 class="feature-title">놀라운 곤충의 세계</h3>
+                        <p class="feature-description">곤충들의 특별한 능력과 신기한 생활을 알아보아요!</p>
+                        <a href="intro.html" class="feature-link" aria-label="곤충의 세계 알아보기">알아보기</a>
+                    </div>
+                </article>
 
-            <article class="feature-card">
-                <img src="images/intro/곤충도감.webp" alt="곤충 도감" class="feature-image" loading="lazy" width="280" height="200">
-                <div class="feature-content">
-                    <h3 class="feature-title">50종류 곤충 도감</h3>
-                    <p class="feature-description">우리 주변의 다양한 곤충 친구들을 만나보세요!</p>
-                    <a href="insects.html" class="feature-link" aria-label="곤충 도감 보기">도감 보기</a>
-                </div>
-            </article>
+                <article class="feature-card">
+                    <picture>
+                        <source srcset="images/intro/곤충도감.webp" type="image/webp">
+                        <img src="images/intro/곤충도감.png" alt="곤충 도감" class="feature-image" loading="lazy" width="280" height="200">
+                    </picture>
+                    <div class="feature-content">
+                        <h3 class="feature-title">50종류 곤충 도감</h3>
+                        <p class="feature-description">우리 주변의 다양한 곤충 친구들을 만나보세요!</p>
+                        <a href="insects.html" class="feature-link" aria-label="곤충 도감 보기">도감 보기</a>
+                    </div>
+                </article>
 
-            <article class="feature-card">
-                <img src="images/not-insects/거미.webp" alt="거미줄을 치는 거미" class="feature-image" loading="lazy" width="280" height="200">
-                <div class="feature-content">
-                    <h3 class="feature-title">곤충이 아닌 동물들</h3>
-                    <p class="feature-description">곤충처럼 보이지만 곤충이 아닌 친구들을 알아보아요!</p>
-                    <a href="not-insects.html" class="feature-link" aria-label="곤충이 아닌 동물들 알아보기">알아보기</a>
-                </div>
-            </article>
+                <article class="feature-card">
+                    <picture>
+                        <source srcset="images/not-insects/거미.webp" type="image/webp">
+                        <img src="images/not-insects/거미.png" alt="거미줄을 치는 거미" class="feature-image" loading="lazy" width="280" height="200">
+                    </picture>
+                    <div class="feature-content">
+                        <h3 class="feature-title">곤충이 아닌 동물들</h3>
+                        <p class="feature-description">곤충처럼 보이지만 곤충이 아닌 친구들을 알아보아요!</p>
+                        <a href="not-insects.html" class="feature-link" aria-label="곤충이 아닌 동물들 알아보기">알아보기</a>
+                    </div>
+                </article>
 
-            <article class="feature-card">
-                <img src="images/quiz/quiz.webp" alt="곤충 퀴즈" class="feature-image" loading="lazy" width="280" height="200">
-                <div class="feature-content">
-                    <h3 class="feature-title">재미있는 곤충 퀴즈</h3>
-                    <p class="feature-description">곤충에 대해 배운 내용을 퀴즈로 풀어보아요!</p>
-                    <a href="quiz.html" class="feature-link" aria-label="곤충 퀴즈 풀기">퀴즈 풀기</a>
-                </div>
-            </article>
-        </div>
+                <article class="feature-card">
+                    <picture>
+                        <source srcset="images/quiz/quiz.webp" type="image/webp">
+                        <img src="images/quiz/quiz.png" alt="곤충 퀴즈" class="feature-image" loading="lazy" width="280" height="200">
+                    </picture>
+                    <div class="feature-content">
+                        <h3 class="feature-title">재미있는 곤충 퀴즈</h3>
+                        <p class="feature-description">곤충에 대해 배운 내용을 퀴즈로 풀어보아요!</p>
+                        <a href="quiz.html" class="feature-link" aria-label="곤충 퀴즈 풀기">퀴즈 풀기</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="quick-links">
+            <h2 class="section-title">곤충 친구들을 만나보세요!</h2>
+            <div class="quick-links-grid">
+                <a href="butterflies.html" class="quick-link">
+                    <i class="fas fa-butterfly"></i>
+                    <span>나비와 나방</span>
+                </a>
+                <a href="beetles.html" class="quick-link">
+                    <i class="fas fa-bug"></i>
+                    <span>딱정벌레</span>
+                </a>
+                <a href="grasshoppers.html" class="quick-link">
+                    <i class="fas fa-leaf"></i>
+                    <span>메뚜기와 귀뚜라미</span>
+                </a>
+                <a href="dragonflies.html" class="quick-link">
+                    <i class="fas fa-wind"></i>
+                    <span>잠자리</span>
+                </a>
+                <a href="bees_moths.html" class="quick-link">
+                    <i class="fas fa-bee"></i>
+                    <span>벌과 개미</span>
+                </a>
+                <a href="hemiptera.html" class="quick-link">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>노린재와 매미</span>
+                </a>
+            </div>
+        </section>
     </main>
 
     <footer class="main-footer">
@@ -202,6 +253,10 @@
             <a href="contact.html" class="footer-link">문의하기</a>
         </nav>
     </footer>
+
+    <button class="scroll-top" aria-label="맨 위로 이동">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="js/script.js"></script>
 </body>
