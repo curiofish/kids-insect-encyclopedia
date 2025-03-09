@@ -76,6 +76,15 @@ const gameState = {
                 '색깔이 다양하고 아름다워요'
             ],
             image: 'images/insects/longhorn-beetle.jpg'
+        },
+        {
+            name: '개미',
+            hints: [
+                '작지만 매우 강하고 협동해서 일해요',
+                '자기 몸무게의 50배나 되는 물건을 들 수 있어요',
+                '여왕개미와 일개미, 수개미로 나뉘어 살아요'
+            ],
+            image: 'images/insects/ant.jpg'
         }
     ]
 };
