@@ -15,13 +15,13 @@ const gameState = {
             image: 'images/insects/ladybug.jpg'
         },
         {
-            name: '나비',
+            name: '배추흰나비',
             hints: [
-                '알록달록한 날개를 가졌어요',
-                '꽃에서 꽃으로 날아다녀요',
-                '애벌레가 자라서 되는 곤충이에요'
+                '흰색 날개에 검은 점이 있어요',
+                '배추를 좋아해요',
+                '봄과 여름에 많이 볼 수 있어요'
             ],
-            image: 'images/insects/swallowtail-butterfly.jpg'
+            image: 'images/insects/white-butterfly.jpg'
         },
         {
             name: '매미',
