@@ -29,25 +29,46 @@
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preload" href="fonts/your-font.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
     
     <header class="main-header">
-        <h1>🦋 유치원 곤충 백과사전 🐞</h1>
-        <nav class="main-nav">
+        <nav class="top-nav">
+            <button class="mobile-menu-button" id="mobile-menu-button" aria-label="메뉴 열기">☰</button>
             <ul class="nav-list">
-                <li><a href="/index.html">처음으로</a></li>
-                <li><a href="/categories/all.html">곤충 도감</a></li>
-                <li><a href="/about.html">소개</a></li>
-                <li><a href="/contact.html">문의하기</a></li>
+                <li class="nav-item"><a href="/index.html" class="nav-link">처음으로</a></li>
+                <li class="nav-item"><a href="/categories/all.html" class="nav-link">곤충 도감</a></li>
+                <li class="nav-item"><a href="/guide.html" class="nav-link">사용법</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" id="search-trigger">찾아보기</a></li>
             </ul>
         </nav>
-        <div class="search-container">
-            <input type="text" placeholder="어떤 곤충을 찾고 있나요? 🔍" class="search-input">
+        
+        <!-- 모바일 메뉴 -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="/index.html" class="mobile-nav-link">처음으로</a></li>
+                <li class="mobile-nav-item"><a href="/categories/all.html" class="mobile-nav-link">곤충 도감</a></li>
+                <li class="mobile-nav-item"><a href="/guide.html" class="mobile-nav-link">사용법</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="mobile-search-trigger">찾아보기</a></li>
+            </ul>
+        </div>
+        
+        <div class="title-container">
+            <h1 class="main-title">유치원 곤충 백과사전</h1>
         </div>
     </header>
+
+    <!-- 검색 팝업 -->
+    <div class="search-popup" id="search-popup">
+        <div class="search-popup-content">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="어떤 곤충을 찾고 있나요?">
+                <button class="search-close" id="search-close">✕</button>
+            </div>
+        </div>
+    </div>
 
     <main id="main-content" class="container">
         <section class="intro fade-in">
@@ -57,9 +78,12 @@
             </div>
             <div class="intro-content">
                 <div class="intro-text">
-                    <p>곤충들은 지구상에서 가장 다양한 생물군으로, 각기 다른 환경에서 독특한 방식으로 살아가고 있어요.</p>
-                    <p>곤충은 몸이 <strong>머리, 가슴, 배</strong> 세 부분으로 나뉘어 있고, <strong>다리가 6개</strong>인 동물이에요.</p>
-                    <p>대부분의 곤충은 <strong>날개가 2쌍</strong>이고, <strong>더듬이</strong>가 있어요.</p>
+                    <p style="margin-bottom: 1.5rem;">곤충들은 지구상에서 가장 다양한 생물군으로, 각기 다른 환경에서 독특한 방식으로 살아가고 있어요.</p>
+
+                    <p style="margin-bottom: 1.5rem;">곤충은 몸이 <strong>머리, 가슴, 배</strong> 세 부분으로 나뉘어 있고, <strong>다리가 6개</strong>인 동물이에요.</p>
+
+                    <p style="margin-bottom: 1.5rem;">대부분의 곤충은 <strong>날개가 2쌍</strong>이고, <strong>더듬이</strong>가 있어요.</p>
+
                     <p>곤충은 우리 생활과 자연에 매우 중요한 역할을 해요. 꽃가루를 옮겨주고, 흙을 비옥하게 만들어주고, 다른 동물들의 먹이가 되기도 해요.</p>
                 </div>
                 <div class="intro-detail-image">
@@ -68,32 +92,44 @@
             </div>
         </section>
 
-        <section class="meet-insects">
+        <section class="meet-insects fade-in">
             <h2>곤충친구들 만나기 🦋</h2>
-            <div class="random-insects">
-                <div class="random-insect">
-                    <img src="images/insects/ladybug.jpg" alt="오늘의 곤충 1" id="random-insect-1">
-                    <p class="insect-description" id="random-insect-desc-1">오늘의 곤충을 소개합니다!</p>
-                </div>
-                <div class="random-insect">
-                    <img src="images/insects/butterfly.jpg" alt="오늘의 곤충 2" id="random-insect-2">
-                    <p class="insect-description" id="random-insect-desc-2">오늘의 곤충을 소개합니다!</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="insect-categories fade-in">
-            <h2>곤충 친구들 만나기 🐜</h2>
             <div class="grid">
                 <div class="card random-insect">
-                    <img src="images/insects/random1.webp" alt="오늘의 곤충 1" id="random-insect-1">
-                    <h3 id="random-insect-title-1">오늘의 곤충 1</h3>
-                    <p id="random-insect-desc-1">이 곤충에 대해 더 알아보세요!</p>
+                    <a href="#" class="insect-link" id="random-insect-link-1">
+                        <img src="images/insects/ladybug.jpg" alt="오늘의 곤충" id="random-insect-1">
+                        <span class="insect-description">이 곤충에 대해 더 알아보세요!</span>
+                    </a>
                 </div>
                 <div class="card random-insect">
-                    <img src="images/insects/random2.webp" alt="오늘의 곤충 2" id="random-insect-2">
-                    <h3 id="random-insect-title-2">오늘의 곤충 2</h3>
-                    <p id="random-insect-desc-2">이 곤충에 대해 더 알아보세요!</p>
+                    <a href="#" class="insect-link" id="random-insect-link-2">
+                        <img src="images/insects/swallowtail-butterfly.jpg" alt="오늘의 곤충" id="random-insect-2">
+                        <span class="insect-description">이 곤충에 대해 더 알아보세요!</span>
+                    </a>
+                </div>
+                <div class="card random-insect">
+                    <a href="#" class="insect-link" id="random-insect-link-3">
+                        <img src="images/insects/mantis.jpg" alt="오늘의 곤충" id="random-insect-3">
+                        <span class="insect-description">이 곤충에 대해 더 알아보세요!</span>
+                    </a>
+                </div>
+                <div class="card random-insect">
+                    <a href="#" class="insect-link" id="random-insect-link-4">
+                        <img src="images/insects/honeybee.jpg" alt="오늘의 곤충" id="random-insect-4">
+                        <span class="insect-description">이 곤충에 대해 더 알아보세요!</span>
+                    </a>
+                </div>
+                <div class="card random-insect">
+                    <a href="#" class="insect-link" id="random-insect-link-5">
+                        <img src="images/insects/dragonfly.jpg" alt="오늘의 곤충" id="random-insect-5">
+                        <span class="insect-description">이 곤충에 대해 더 알아보세요!</span>
+                    </a>
+                </div>
+                <div class="card random-insect">
+                    <a href="#" class="insect-link" id="random-insect-link-6">
+                        <img src="images/insects/cricket.jpg" alt="오늘의 곤충" id="random-insect-6">
+                        <span class="insect-description">이 곤충에 대해 더 알아보세요!</span>
+                    </a>
                 </div>
             </div>
             <div class="explore-more">
@@ -119,16 +155,126 @@
         </section>
 
         <section class="not-insects fade-in">
-            <h2>곤충이 아닌 동물들 🕷️</h2>
-            <div class="card">
-                <p>곤충처럼 보이지만 사실은 곤충이 아닌 동물들도 있어요!</p>
-                <ul>
-                    <li><strong>거미</strong>: 다리가 8개이고 몸이 머리가슴과 배 두 부분으로 나뉘어 있어요.</li>
-                    <li><strong>지네</strong>: 다리가 많고 몸이 여러 마디로 이루어져 있어요.</li>
-                    <li><strong>전갈</strong>: 8개의 다리와 집게발, 그리고 독침이 있어요.</li>
-                    <li><strong>진드기</strong>: 아주 작고 8개의 다리를 가지고 있어요.</li>
-                </ul>
-                <a href="not-insects.html" class="button">더 알아보기</a>
+            <h2>곤충이 아닌 동물들</h2>
+            <div class="content-wrapper">
+                <div class="intro-card card">
+                    <p class="intro-text">곤충처럼 보이지만 사실은 곤충이 아닌 동물들도 있어요! 이런 동물들은 절지동물이라고 해요. 다리가 많거나, 8개인 동물들이 많답니다.</p>
+                </div>
+                
+                <div class="grid">
+                    <div class="card">
+                        <img src="images/not-insects/Spider.png" alt="거미" class="creature-image">
+                        <h3>거미</h3>
+                        <ul>
+                            <li>다리가 8개예요</li>
+                            <li>몸이 머리가슴과 배 두 부분으로 나뉘어 있어요</li>
+                            <li>거미줄을 만들어 집을 짓고 먹이를 잡아요</li>
+                            <li>곤충들을 잡아먹어서 자연의 균형을 지켜줘요</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/not-insects/Centipede.png" alt="지네" class="creature-image">
+                        <h3>지네</h3>
+                        <ul>
+                            <li>마디마다 다리가 한 쌍씩 있어요</li>
+                            <li>몸이 여러 마디로 이루어져 있어요</li>
+                            <li>밤에 활동하는 것을 좋아해요</li>
+                            <li>작은 벌레들을 잡아먹어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/not-insects/Scorpion.png" alt="전갈" class="creature-image">
+                        <h3>전갈</h3>
+                        <ul>
+                            <li>8개의 다리와 2개의 집게발이 있어요</li>
+                            <li>꼬리 끝에 독침이 있어요</li>
+                            <li>주로 밤에 활동해요</li>
+                            <li>작은 동물들을 잡아먹어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/not-insects/Mite.png" alt="진드기" class="creature-image">
+                        <h3>진드기</h3>
+                        <ul>
+                            <li>아주 작고 8개의 다리가 있어요</li>
+                            <li>몸이 한 덩어리로 되어 있어요</li>
+                            <li>식물이나 동물에 붙어서 살아요</li>
+                            <li>현미경으로 봐야 잘 보일 만큼 작아요</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/not-insects/Crab.png" alt="게" class="creature-image">
+                        <h3>게</h3>
+                        <ul>
+                            <li>8개의 다리와 2개의 집게발이 있어요</li>
+                            <li>단단한 껍데기로 몸을 보호해요</li>
+                            <li>옆으로 걸어다녀요</li>
+                            <li>바다나 민물에서 살아요</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/not-insects/Shrimp.png" alt="새우" class="creature-image">
+                        <h3>새우</h3>
+                        <ul>
+                            <li>여러 쌍의 다리가 있어요</li>
+                            <li>긴 더듬이와 꼬리가 있어요</li>
+                            <li>물속에서 헤엄치며 살아요</li>
+                            <li>작은 물고기나 플랑크톤을 먹어요</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/not-insects/PillBug.png" alt="노래기" class="creature-image">
+                        <h3>노래기</h3>
+                        <ul>
+                            <li>마디마다 다리가 두 쌍씩 있어요</li>
+                            <li>몸이 둥글고 길어요</li>
+                            <li>죽은 식물을 먹어요</li>
+                            <li>위험할 때는 동그랗게 말려요</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <img src="images/not-insects/HorseshoeCrab.png" alt="투구게" class="creature-image">
+                        <h3>투구게</h3>
+                        <ul>
+                            <li>투구 모양의 단단한 등껍질이 있어요</li>
+                            <li>5억년 전부터 거의 변하지 않았어요</li>
+                            <li>바다 밑바닥을 기어다녀요</li>
+                            <li>작은 해양생물을 먹어요</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="fun-facts card">
+                    <h3>재미있는 사실</h3>
+                    <ul>
+                        <li>거미는 거미줄로 집도 짓고, 먹이도 잡고, 새끼도 보호해요!</li>
+                        <li>지네는 다리가 15쌍에서 191쌍까지 있을 수 있어요!</li>
+                        <li>전갈은 어두운 곳에서도 잘 볼 수 있는 특별한 눈을 가지고 있어요!</li>
+                        <li>진드기는 너무 작아서 맨눈으로는 잘 보이지 않지만, 지구 어디에나 살고 있어요!</li>
+                        <li>게는 옆으로 걸으면서도 먹이를 잘 찾아요!</li>
+                        <li>새우는 꼬리로 빠르게 헤엄칠 수 있어요!</li>
+                        <li>노래기는 천적을 만나면 동그랗게 말려서 보호해요!</li>
+                        <li>투구게의 파란 피는 의약품을 만드는 데 사용돼요!</li>
+                    </ul>
+                </div>
+
+                <div class="differences card">
+                    <h3>곤충과 다른 점</h3>
+                    <ul>
+                        <li>곤충은 다리가 6개지만, 이 동물들은 8개 이상이에요</li>
+                        <li>곤충은 몸이 머리, 가슴, 배로 나뉘지만, 이 동물들은 다르게 생겼어요</li>
+                        <li>곤충은 더듬이가 있지만, 이 동물들은 없거나 다른 모양이에요</li>
+                        <li>곤충은 대부분 날개가 있지만, 이 동물들은 날개가 없어요</li>
+                        <li>곤충은 주로 땅에서 살지만, 이 동물들은 물속이나 다양한 환경에서 살아요</li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
