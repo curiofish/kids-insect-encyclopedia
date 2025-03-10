@@ -95,29 +95,50 @@ document.addEventListener('DOMContentLoaded', () => {
         elements.scrollProgress.style.width = `${scrolled}%`;
     }
 
-    // 스크롤 탑 버튼 - 스로틀링 적용
-    const toggleScrollTopButton = throttle(() => {
-        requestAnimationFrame(() => {
-            if (window.scrollY > 300) {
-                elements.scrollTopButton.classList.add('show');
+    // 스크롤 이벤트 처리
+    const header = document.querySelector('.main-header');
+    
+    function handleScroll() {
+        const currentScroll = window.pageYOffset;
+        
+        // 스크롤 위치에 따라 헤더 상태 변경
+        if (currentScroll > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+
+    // 스크롤 이벤트에 스로틀링 적용
+    window.addEventListener('scroll', throttle(handleScroll, 100));
+
+    // 위로 가기 버튼 설정
+    const scrollTopButton = document.querySelector('.scroll-top');
+    if (scrollTopButton) {
+        // 화살표 아이콘 추가
+        scrollTopButton.innerHTML = '↑';
+        
+        // 스크롤 위치에 따라 버튼 표시/숨김
+        const toggleScrollTopButton = () => {
+            if (window.pageYOffset > 300) {
+                scrollTopButton.classList.add('visible');
             } else {
-                elements.scrollTopButton.classList.remove('show');
+                scrollTopButton.classList.remove('visible');
             }
+        };
+
+        // 스크롤 이벤트에 스로틀링 적용
+        window.addEventListener('scroll', throttle(toggleScrollTopButton, 100));
+
+        // 클릭 이벤트 처리
+        scrollTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
-    }, 100);
-
-    window.addEventListener('scroll', toggleScrollTopButton, { passive: true });
-
-    const scrollToTop = (e) => {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-        });
-    };
-
-    elements.scrollTopButton.addEventListener('click', scrollToTop);
-    elements.scrollTopButton.addEventListener('touchend', scrollToTop);
+    }
 
     // 외부 클릭 시 메뉴 닫기 - 이벤트 위임 사용
     const closeMenuOnOutsideClick = (e) => {
@@ -218,7 +239,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 페이지 로드 완료 시 애니메이션 시작
     updateScrollProgress();
-    toggleScrollTopButton();
     
     // 페이지 로드 애니메이션
     document.body.classList.add('loaded');
@@ -405,7 +425,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 성능 최적화: 스크롤 이벤트 쓰로틀링
     window.addEventListener('scroll', throttle(() => {
         updateScrollProgress();
-        toggleScrollTopButton();
     }, 100));
 
     // 이미지 레이지 로딩 처리
@@ -630,22 +649,4 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenuButton.textContent = '☰';
         }
     });
-});
-
-// 스크롤 시 헤더 숨기기/보이기
-let lastScrollTop = 0;
-const header = document.querySelector('.main-header');
-
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > lastScrollTop) {
-        // 아래로 스크롤
-        header.style.transform = 'translateY(-100%)';
-    } else {
-        // 위로 스크롤
-        header.style.transform = 'translateY(0)';
-    }
-    
-    lastScrollTop = scrollTop;
 }); 
