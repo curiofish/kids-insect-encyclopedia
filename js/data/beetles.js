@@ -2,7 +2,7 @@ export const beetles = [
     {
         id: 'ladybug',
         title: '무당벌레',
-        image: '/images/insects/무당벌레/main.webp',
+        image: '/images/insects/ladybug.jpg',
         description: '무당벌레는 빨간 날개에 검은 점이 있는 귀여운 딱정벌레예요.',
         facts: [
             '빨간 날개에 검은 점이 있어요',
@@ -20,7 +20,7 @@ export const beetles = [
     {
         id: 'stag-beetle',
         title: '장수풍뎅이',
-        image: '/images/insects/장수풍뎅이/main.webp',
+        image: '/images/insects/stag-beetle.jpg',
         description: '장수풍뎅이는 큰 뿔이 있는 강한 딱정벌레예요.',
         facts: [
             '수컷은 큰 뿔이 있어요',
@@ -37,7 +37,7 @@ export const beetles = [
     {
         id: 'rhinoceros-beetle',
         title: '사슴벌레',
-        image: '/images/insects/사슴벌레/main.webp',
+        image: '/images/insects/rhinoceros-beetle.jpg',
         description: '사슴벌레는 사슴 뿔처럼 생긴 큰 턱을 가진 딱정벌레예요.',
         facts: [
             '큰 턱으로 싸워요',

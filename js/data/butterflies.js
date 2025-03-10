@@ -2,7 +2,7 @@ export const butterflies = [
     {
         id: 'swallowtail',
         title: '호랑나비',
-        image: '/images/insects/호랑나비/main.webp',
+        image: '/images/insects/swallowtail-butterfly.jpg',
         description: '호랑나비는 호랑이 무늬를 가진 아름다운 나비예요.',
         facts: [
             '날개에 호랑이 무늬가 있어요',
@@ -20,7 +20,7 @@ export const butterflies = [
     {
         id: 'cabbage-white',
         title: '배추흰나비',
-        image: '/images/insects/배추흰나비/main.webp',
+        image: '/images/insects/painted-lady.jpg',
         description: '배추흰나비는 하얀색 날개를 가진 작은 나비예요.',
         facts: [
             '하얀색 날개가 예뻐요',
@@ -37,7 +37,7 @@ export const butterflies = [
     {
         id: 'peacock-butterfly',
         title: '공작나비',
-        image: '/images/insects/공작나비/main.webp',
+        image: '/images/insects/peacock-butterfly.jpg',
         description: '공작나비는 화려한 색의 날개를 가진 나비예요.',
         facts: [
             '날개에 예쁜 무늬가 있어요',

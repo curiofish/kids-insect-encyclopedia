@@ -2,7 +2,7 @@ export const ants = [
     {
         id: 'carpenter-ant',
         title: '일개미',
-        image: '/images/insects/일개미/main.webp',
+        image: '/images/insects/black-garden-ant.jpg',
         description: '일개미는 열심히 일하며 여왕개미와 새끼 개미들을 돌봐요.',
         facts: [
             '먹이를 찾아 긴 줄을 만들어요',
@@ -20,7 +20,7 @@ export const ants = [
     {
         id: 'queen-ant',
         title: '여왕개미',
-        image: '/images/insects/여왕개미/main.webp',
+        image: '/images/insects/queen-ant.jpg',
         description: '여왕개미는 개미집의 여왕으로 알을 낳아요.',
         facts: [
             '새로운 개미집을 만들어요',
@@ -37,7 +37,7 @@ export const ants = [
     {
         id: 'fire-ant',
         title: '불개미',
-        image: '/images/insects/불개미/main.webp',
+        image: '/images/insects/fire-ant.jpg',
         description: '불개미는 쏘면 따끔한 독을 가진 개미예요.',
         facts: [
             '강한 독침이 있어요',

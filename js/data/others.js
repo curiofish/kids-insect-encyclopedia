@@ -2,7 +2,7 @@ export const others = [
     {
         id: 'cicada',
         title: '매미',
-        image: '/images/insects/매미/main.webp',
+        image: '/images/insects/cicada.jpg',
         description: '매미는 여름에 시끄럽게 우는 곤충이에요.',
         facts: [
             '나무에서 울어요',
@@ -20,7 +20,7 @@ export const others = [
     {
         id: 'stinkbug',
         title: '노린재',
-        image: '/images/insects/노린재/main.webp',
+        image: '/images/insects/shield-backed-katydid.jpg',
         description: '노린재는 특이한 냄새를 내는 곤충이에요.',
         facts: [
             '위험할 때 냄새를 내요',
@@ -37,7 +37,7 @@ export const others = [
     {
         id: 'firefly',
         title: '반딧불이',
-        image: '/images/insects/반딧불이/main.webp',
+        image: '/images/insects/firefly.jpg',
         description: '반딧불이는 밤에 빛나는 아름다운 곤충이에요.',
         facts: [
             '배에서 빛이 나요',

@@ -2,7 +2,7 @@ export const grasshoppers = [
     {
         id: 'rice-grasshopper',
         title: '벼메뚜기',
-        image: '/images/insects/벼메뚜기/main.webp',
+        image: '/images/insects/grasshopper.jpg',
         description: '벼메뚜기는 논에서 사는 초록색 메뚜기예요.',
         facts: [
             '논에서 많이 볼 수 있어요',
@@ -20,7 +20,7 @@ export const grasshoppers = [
     {
         id: 'long-horned-grasshopper',
         title: '여치',
-        image: '/images/insects/여치/main.webp',
+        image: '/images/insects/katydid.jpg',
         description: '여치는 긴 더듬이를 가진 메뚜기예요.',
         facts: [
             '더듬이가 몸보다 길어요',
@@ -37,7 +37,7 @@ export const grasshoppers = [
     {
         id: 'katydid',
         title: '베짱이',
-        image: '/images/insects/베짱이/main.webp',
+        image: '/images/insects/cricket.jpg',
         description: '베짱이는 여름밤에 우는 소리로 유명한 메뚜기예요.',
         facts: [
             '날개로 소리를 내요',

@@ -2,7 +2,7 @@ export const mantises = [
     {
         id: 'praying-mantis',
         title: '사마귀',
-        image: '/images/insects/사마귀/main.webp',
+        image: '/images/insects/mantis.jpg',
         description: '사마귀는 앞다리로 먹이를 잡는 사냥꾼이에요.',
         facts: [
             '앞다리로 먹이를 잡아요',
@@ -20,7 +20,7 @@ export const mantises = [
     {
         id: 'flower-mantis',
         title: '꽃사마귀',
-        image: '/images/insects/꽃사마귀/main.webp',
+        image: '/images/insects/flower-mantis.jpg',
         description: '꽃사마귀는 꽃처럼 생겨서 먹이를 속여요.',
         facts: [
             '꽃잎처럼 예쁜 색깔을 가지고 있어요',
@@ -37,7 +37,7 @@ export const mantises = [
     {
         id: 'giant-mantis',
         title: '왕사마귀',
-        image: '/images/insects/왕사마귀/main.webp',
+        image: '/images/insects/giant-mantis.jpg',
         description: '왕사마귀는 우리나라에서 가장 큰 사마귀예요.',
         facts: [
             '큰 몸집으로 작은 동물도 잡아요',

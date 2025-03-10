@@ -2,7 +2,7 @@ export const dragonflies = [
     {
         id: 'red-dragonfly',
         title: '고추잠자리',
-        image: '/images/insects/고추잠자리/main.webp',
+        image: '/images/insects/dragonfly.jpg',
         description: '고추잠자리는 빨간색 몸을 가진 예쁜 잠자리예요.',
         facts: [
             '빨간색 몸이 고추처럼 생겼어요',
@@ -20,7 +20,7 @@ export const dragonflies = [
     {
         id: 'blue-dragonfly',
         title: '청실잠자리',
-        image: '/images/insects/청실잠자리/main.webp',
+        image: '/images/insects/damselfly.jpg',
         description: '청실잠자리는 파란색 몸을 가진 아름다운 잠자리예요.',
         facts: [
             '파란색 몸이 예뻐요',
@@ -37,7 +37,7 @@ export const dragonflies = [
     {
         id: 'emperor-dragonfly',
         title: '왕잠자리',
-        image: '/images/insects/왕잠자리/main.webp',
+        image: '/images/insects/hawker-dragonfly.jpg',
         description: '왕잠자리는 우리나라에서 가장 큰 잠자리예요.',
         facts: [
             '큰 몸집을 가졌어요',
