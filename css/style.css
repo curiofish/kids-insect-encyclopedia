@@ -2970,3 +2970,267 @@ footer a {
         gap: 3rem;
     }
 }
+
+/* 곤충 도감 스타일 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.category-nav {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 20px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.category-link:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+/* 랜덤 곤충 소개 섹션 */
+.featured-insect {
+    background-color: #f0f7f0;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* 곤충 섹션 공통 스타일 */
+.insect-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.insect-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.insect-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.insect-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.insect-image:hover {
+    transform: scale(1.05);
+}
+
+.insect-info {
+    padding: 1rem;
+}
+
+.insect-info h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.insect-facts {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.insect-facts li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.insect-facts li::before {
+    content: '🌿';
+    position: absolute;
+    left: 0;
+}
+
+.more-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.more-button:hover {
+    background-color: #45a049;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .insect-content {
+        grid-template-columns: 1fr;
+    }
+
+    .category-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    .insect-section {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 15px;
+    }
+
+    .insect-content {
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .container {
+        padding: 30px;
+    }
+
+    .insect-content {
+        gap: 3rem;
+    }
+}
+
+/* 애니메이션 효과 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 곤충 카테고리 상세 페이지 스타일 */
+.insect-intro {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+.insect-types {
+    display: grid;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.insect-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.insect-card:hover {
+    transform: translateY(-5px);
+}
+
+.facts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.fact-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.fact-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .insect-card {
+        grid-template-columns: 1fr;
+    }
+
+    .insect-image-container {
+        height: 200px;
+    }
+
+    .insect-image {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .fact-card {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .insect-card {
+        gap: 1.5rem;
+    }
+}

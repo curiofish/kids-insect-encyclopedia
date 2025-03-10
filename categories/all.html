@@ -31,22 +31,43 @@
                 <li><a href="#beetles" class="category-link">딱정벌레</a></li>
                 <li><a href="#dragonflies" class="category-link">잠자리</a></li>
                 <li><a href="#grasshoppers" class="category-link">메뚜기</a></li>
+                <li><a href="#others" class="category-link">기타 곤충</a></li>
             </ul>
         </nav>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" class="container">
+        <!-- 랜덤 곤충 소개 섹션 -->
+        <section class="featured-insect">
+            <h2>오늘의 곤충 소개 🌟</h2>
+            <div class="insect-content" id="random-insect-container">
+                <div class="insect-image-container">
+                    <img src="" alt="" id="featured-insect-image" class="insect-image">
+                </div>
+                <div class="insect-info">
+                    <h3 id="featured-insect-title"></h3>
+                    <div id="featured-insect-description"></div>
+                    <a href="#" id="featured-insect-link" class="button more-button">더 자세히 알아보기</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 곤충 카테고리 섹션들 -->
         <section id="bees" class="insect-section">
             <h2>벌 🐝</h2>
             <div class="insect-content">
-                <img src="../images/insects/꿀벌/main.webp" alt="꿀벌" class="insect-image">
+                <div class="insect-image-container">
+                    <img src="../images/insects/꿀벌/main.webp" alt="꿀벌" class="insect-image">
+                </div>
                 <div class="insect-info">
+                    <h3>꿀벌</h3>
                     <p>벌은 꽃가루를 옮기며 생태계에 매우 중요한 역할을 하는 곤충이에요.</p>
                     <ul class="insect-facts">
                         <li>꿀을 만들어 저장해요</li>
                         <li>여왕벌, 일벌, 수벌로 나뉘어 살아요</li>
                         <li>식물의 수분을 도와줘요</li>
                     </ul>
+                    <a href="bees/index.html" class="button more-button">더 많은 벌 보기</a>
                 </div>
             </div>
         </section>
@@ -66,7 +87,29 @@
             </div>
         </section>
 
-        <!-- 다른 곤충 섹션들도 비슷한 형식으로 추가 -->
+        <section id="ants" class="insect-section">
+            <!-- 개미 섹션 내용 -->
+        </section>
+
+        <section id="butterflies" class="insect-section">
+            <!-- 나비 섹션 내용 -->
+        </section>
+
+        <section id="beetles" class="insect-section">
+            <!-- 딱정벌레 섹션 내용 -->
+        </section>
+
+        <section id="dragonflies" class="insect-section">
+            <!-- 잠자리 섹션 내용 -->
+        </section>
+
+        <section id="grasshoppers" class="insect-section">
+            <!-- 메뚜기 섹션 내용 -->
+        </section>
+
+        <section id="others" class="insect-section">
+            <!-- 기타 곤충 섹션 내용 -->
+        </section>
 
         <div class="navigation-guide">
             <p>👆 위의 메뉴를 클릭하면 다른 곤충들도 찾아볼 수 있어요!</p>

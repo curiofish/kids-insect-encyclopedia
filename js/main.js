@@ -304,44 +304,63 @@ document.addEventListener('DOMContentLoaded', () => {
         const gameResult = document.getElementById('game-result');
 
         // 곤충 데이터
-        const insects = [
-            {
-                id: 'bee',
-                title: '꿀벌',
-                image: 'images/insects/꿀벌/main.webp',
-                description: '꽃가루를 옮기고 꿀을 만드는 부지런한 곤충이에요.'
-            },
-            {
-                id: 'mantis',
-                title: '사마귀',
-                image: 'images/insects/사마귀/main.webp',
-                description: '앞다리로 먹이를 잡는 멋진 사냥꾼이에요.'
-            },
-            {
-                id: 'butterfly',
-                title: '호랑나비',
-                image: 'images/insects/호랑나비/main.webp',
-                description: '아름다운 날개를 가진 나비예요.'
-            },
-            {
-                id: 'ant',
-                title: '개미',
-                image: 'images/insects/ant.jpg',
-                description: '함께 협력하여 일하는 사회성 곤충이에요.'
-            },
-            {
-                id: 'ladybug',
-                title: '무당벌레',
-                image: 'images/insects/ladybug.jpg',
-                description: '빨간 날개에 검은 점이 있는 귀여운 딱정벌레예요.'
-            }
-        ];
+        const insects = {
+            bees: [
+                {
+                    id: 'honeybee',
+                    title: '꿀벌',
+                    image: '../images/insects/꿀벌/main.webp',
+                    description: '꽃가루를 옮기고 꿀을 만드는 부지런한 곤충이에요.',
+                    category: '벌',
+                    facts: [
+                        '꿀을 만들어 저장해요',
+                        '여왕벌, 일벌, 수벌로 나뉘어 살아요',
+                        '식물의 수분을 도와줘요'
+                    ]
+                }
+                // 다른 벌 종류들...
+            ],
+            mantis: [
+                {
+                    id: 'mantis',
+                    title: '사마귀',
+                    image: '../images/insects/사마귀/main.webp',
+                    description: '앞다리로 먹이를 잡는 멋진 사냥꾼이에요.',
+                    category: '사마귀',
+                    facts: [
+                        '강한 앞다리로 먹이를 잡아요',
+                        '초록색이나 갈색으로 위장해요',
+                        '머리를 180도 돌릴 수 있어요'
+                    ]
+                }
+                // 다른 사마귀 종류들...
+            ],
+            // 다른 곤충 카테고리들...
+            others: [
+                {
+                    id: 'cricket',
+                    title: '귀뚜라미',
+                    image: '../images/insects/귀뚜라미/main.webp',
+                    description: '밤에 울음소리를 내는 특별한 곤충이에요.',
+                    category: '기타 곤충',
+                    facts: [
+                        '앞날개를 비벼서 소리를 내요',
+                        '밤에 활동하는 야행성이에요',
+                        '뒷다리로 멀리 뛸 수 있어요'
+                    ]
+                }
+                // 다른 기타 곤충들...
+            ]
+        };
+
+        // 모든 곤충 목록을 하나의 배열로 만들기
+        const allInsects = Object.values(insects).flat();
 
         let currentInsect = null;
 
         // 랜덤 곤충 선택
         function selectRandomInsect() {
-            currentInsect = insects[Math.floor(Math.random() * insects.length)];
+            currentInsect = allInsects[Math.floor(Math.random() * allInsects.length)];
             insectImage.src = currentInsect.image;
             insectImage.alt = '맞춰볼 곤충';
             gameHint.textContent = `힌트: ${currentInsect.description}`;
@@ -415,24 +434,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 모바일에서 스크롤시 헤더 숨기기/보이기
     let lastScroll = 0;
-    const header = document.querySelector('.main-header');
+    const mainHeader = document.querySelector('.main-header');
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         
         if (currentScroll <= 0) {
-            header.classList.remove('scroll-up');
+            mainHeader.classList.remove('scroll-up');
             return;
         }
         
-        if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+        if (currentScroll > lastScroll && !mainHeader.classList.contains('scroll-down')) {
             // 아래로 스크롤
-            header.classList.remove('scroll-up');
-            header.classList.add('scroll-down');
-        } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+            mainHeader.classList.remove('scroll-up');
+            mainHeader.classList.add('scroll-down');
+        } else if (currentScroll < lastScroll && mainHeader.classList.contains('scroll-down')) {
             // 위로 스크롤
-            header.classList.remove('scroll-down');
-            header.classList.add('scroll-up');
+            mainHeader.classList.remove('scroll-down');
+            mainHeader.classList.add('scroll-up');
         }
         lastScroll = currentScroll;
     });
@@ -484,6 +503,48 @@ document.addEventListener('DOMContentLoaded', () => {
     // 페이지 로드 시 랜덤 곤충 표시
     const randomInsects = getRandomInsects(2);
     displayRandomInsects(randomInsects);
+
+    // 랜덤 곤충 선택 함수
+    function getRandomInsect() {
+        const randomIndex = Math.floor(Math.random() * allInsects.length);
+        return allInsects[randomIndex];
+    }
+
+    // 랜덤 곤충 표시 함수
+    function displayRandomInsect() {
+        const insect = getRandomInsect();
+        const imageEl = document.getElementById('featured-insect-image');
+        const titleEl = document.getElementById('featured-insect-title');
+        const descEl = document.getElementById('featured-insect-description');
+        const linkEl = document.getElementById('featured-insect-link');
+
+        if (imageEl && titleEl && descEl && linkEl) {
+            imageEl.src = insect.image;
+            imageEl.alt = insect.title;
+            titleEl.textContent = `${insect.title} (${insect.category})`;
+            
+            // 설명과 특징을 HTML로 구성
+            let descriptionHTML = `
+                <p>${insect.description}</p>
+                <ul class="insect-facts">
+                    ${insect.facts.map(fact => `<li>${fact}</li>`).join('')}
+                </ul>
+            `;
+            descEl.innerHTML = descriptionHTML;
+            
+            // 더 자세히 보기 링크 업데이트
+            const categoryId = Object.keys(insects).find(key => 
+                insects[key].some(i => i.id === insect.id)
+            );
+            linkEl.href = `#${categoryId}`;
+        }
+    }
+
+    // 페이지 로드 시 랜덤 곤충 표시
+    displayRandomInsect();
+    
+    // 30초마다 새로운 랜덤 곤충 표시
+    setInterval(displayRandomInsect, 30000);
 });
 
 // 랜덤으로 n개의 곤충 선택
