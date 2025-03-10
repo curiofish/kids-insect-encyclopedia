@@ -303,12 +303,38 @@ document.addEventListener('DOMContentLoaded', () => {
         const gameHint = document.getElementById('game-hint');
         const gameResult = document.getElementById('game-result');
 
-        // 곤충 데이터 (실제 구현시 더 많은 곤충 추가 필요)
+        // 곤충 데이터
         const insects = [
-            { name: '무당벌레', hint: '빨간색 겉날개에 검은 점이 있어요', image: 'images/insects/ladybug.webp' },
-            { name: '나비', hint: '알록달록한 날개를 가졌어요', image: 'images/insects/butterfly.webp' },
-            { name: '매미', hint: '여름에 시끄럽게 우는 곤충이에요', image: 'images/insects/cicada.webp' },
-            // 더 많은 곤충 추가
+            {
+                id: 'bee',
+                title: '꿀벌',
+                image: 'images/insects/꿀벌/main.webp',
+                description: '꽃가루를 옮기고 꿀을 만드는 부지런한 곤충이에요.'
+            },
+            {
+                id: 'mantis',
+                title: '사마귀',
+                image: 'images/insects/사마귀/main.webp',
+                description: '앞다리로 먹이를 잡는 멋진 사냥꾼이에요.'
+            },
+            {
+                id: 'butterfly',
+                title: '호랑나비',
+                image: 'images/insects/호랑나비/main.webp',
+                description: '아름다운 날개를 가진 나비예요.'
+            },
+            {
+                id: 'ant',
+                title: '개미',
+                image: 'images/insects/ant.jpg',
+                description: '함께 협력하여 일하는 사회성 곤충이에요.'
+            },
+            {
+                id: 'ladybug',
+                title: '무당벌레',
+                image: 'images/insects/ladybug.jpg',
+                description: '빨간 날개에 검은 점이 있는 귀여운 딱정벌레예요.'
+            }
         ];
 
         let currentInsect = null;
@@ -318,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
             currentInsect = insects[Math.floor(Math.random() * insects.length)];
             insectImage.src = currentInsect.image;
             insectImage.alt = '맞춰볼 곤충';
-            gameHint.textContent = `힌트: ${currentInsect.hint}`;
+            gameHint.textContent = `힌트: ${currentInsect.description}`;
             gameResult.textContent = '';
             guessInput.value = '';
             guessInput.focus();
@@ -327,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 정답 체크
         submitGuess?.addEventListener('click', () => {
             const guess = guessInput.value.trim();
-            if (guess === currentInsect.name) {
+            if (guess === currentInsect.title) {
                 gameResult.textContent = '정답입니다! 🎉';
                 gameResult.className = 'result correct';
             } else {
@@ -454,4 +480,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // DOMContentLoaded 이벤트 리스너
     initializeQuiz();
+
+    // 페이지 로드 시 랜덤 곤충 표시
+    const randomInsects = getRandomInsects(2);
+    displayRandomInsects(randomInsects);
+});
+
+// 랜덤으로 n개의 곤충 선택
+function getRandomInsects(n) {
+    const shuffled = [...insects].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, n);
+}
+
+// 선택된 곤충 표시
+function displayRandomInsects(selectedInsects) {
+    selectedInsects.forEach((insect, index) => {
+        const imageEl = document.getElementById(`random-insect-${index + 1}`);
+        const titleEl = document.getElementById(`random-insect-title-${index + 1}`);
+        const descEl = document.getElementById(`random-insect-desc-${index + 1}`);
+
+        if (imageEl && titleEl && descEl) {
+            imageEl.src = insect.image;
+            imageEl.alt = insect.title;
+            titleEl.textContent = insect.title;
+            descEl.textContent = insect.description;
+        }
+    });
+}
+
+// 스크롤 시 헤더 숨기기/보이기
+let lastScrollTop = 0;
+const header = document.querySelector('.main-header');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop) {
+        // 아래로 스크롤
+        header.style.transform = 'translateY(-100%)';
+    } else {
+        // 위로 스크롤
+        header.style.transform = 'translateY(0)';
+    }
+    
+    lastScrollTop = scrollTop;
 }); 

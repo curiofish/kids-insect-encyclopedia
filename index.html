@@ -33,10 +33,6 @@
     
     <header class="main-header">
         <h1>🦋 유치원 곤충 백과사전 🐞</h1>
-        <div class="search-container">
-            <input type="text" placeholder="어떤 곤충을 찾고 있나요? 🔍" class="search-input">
-            <button class="search-button">찾아보기</button>
-        </div>
         <nav class="main-nav">
             <ul class="nav-list">
                 <li class="nav-item"><a href="categories/bees.html" class="nav-link">벌</a></li>
@@ -49,6 +45,9 @@
                 <li class="nav-item"><a href="categories/all.html" class="nav-link">모든 곤충</a></li>
             </ul>
         </nav>
+        <div class="search-container">
+            <input type="text" placeholder="어떤 곤충을 찾고 있나요? 🔍" class="search-input">
+        </div>
     </header>
 
     <main id="main-content">
@@ -73,30 +72,20 @@
         <section class="insect-categories fade-in">
             <h2>곤충 친구들 만나기 🐜</h2>
             <div class="grid">
-                <div class="card">
-                    <img src="images/insects/꿀벌/main.webp" alt="꿀벌">
-                    <h3>벌</h3>
-                    <p>벌은 꽃가루를 옮기며 생태계에 중요한 역할을 해요.</p>
-                    <a href="categories/bees.html" class="button">더 알아보기</a>
+                <div class="card random-insect">
+                    <img src="images/insects/random1.webp" alt="오늘의 곤충 1" id="random-insect-1">
+                    <h3 id="random-insect-title-1">오늘의 곤충 1</h3>
+                    <p id="random-insect-desc-1">이 곤충에 대해 더 알아보세요!</p>
                 </div>
-                <div class="card">
-                    <img src="images/insects/사마귀/main.webp" alt="사마귀">
-                    <h3>사마귀</h3>
-                    <p>사마귀는 앞다리로 먹이를 잡는 사냥꾼이에요.</p>
-                    <a href="categories/mantis.html" class="button">더 알아보기</a>
+                <div class="card random-insect">
+                    <img src="images/insects/random2.webp" alt="오늘의 곤충 2" id="random-insect-2">
+                    <h3 id="random-insect-title-2">오늘의 곤충 2</h3>
+                    <p id="random-insect-desc-2">이 곤충에 대해 더 알아보세요!</p>
                 </div>
-                <div class="card">
-                    <img src="https://raw.githubusercontent.com/curiofish/kids-insect-encyclopedia/gh-pages/images/insects/ant.jpg" alt="개미" loading="lazy">
-                    <h3>개미</h3>
-                    <p>개미는 함께 협력하여 일하는 사회성 곤충이에요.</p>
-                    <a href="categories/ants.html" class="button">더 알아보기</a>
-                </div>
-                <div class="card">
-                    <img src="images/insects/호랑나비/main.webp" alt="나비">
-                    <h3>나비</h3>
-                    <p>나비는 아름다운 날개를 가진 곤충이에요.</p>
-                    <a href="categories/butterflies.html" class="button">더 알아보기</a>
-                </div>
+            </div>
+            <div class="explore-more">
+                <a href="categories/all.html" class="button explore-button">곤충 도감 더 보러가기 🔍</a>
+                <p class="explore-text">더 많은 곤충 친구들을 만나보세요!</p>
             </div>
         </section>
 

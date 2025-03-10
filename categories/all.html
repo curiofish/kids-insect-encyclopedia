@@ -12,7 +12,7 @@
     <meta name="copyright" content="© 2024 curiofish. All rights reserved.">
     <meta name="robots" content="index, follow">
     
-    <title>모든 곤충 - 유치원 곤충 백과사전</title>
+    <title>곤충 도감 - 유치원 곤충 백과사전</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/category.css">
     <link rel="stylesheet" href="../css/all-insects.css">
@@ -21,489 +21,57 @@
     <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
     
     <header class="main-header">
-        <h1>모든 곤충 백과사전</h1>
-        <nav class="main-nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a href="../index.html" class="nav-link">홈으로</a></li>
-                <li class="nav-item"><a href="bees.html" class="nav-link">벌</a></li>
-                <li class="nav-item"><a href="mantis.html" class="nav-link">사마귀</a></li>
-                <li class="nav-item"><a href="ants.html" class="nav-link">개미</a></li>
-                <li class="nav-item"><a href="butterflies.html" class="nav-link">나비</a></li>
-                <li class="nav-item"><a href="beetles.html" class="nav-link">딱정벌레</a></li>
-                <li class="nav-item"><a href="dragonflies.html" class="nav-link">잠자리</a></li>
-                <li class="nav-item"><a href="grasshoppers.html" class="nav-link">메뚜기</a></li>
-                <li class="nav-item"><a href="all.html" class="nav-link active">모든 곤충</a></li>
+        <h1>🦋 곤충 도감 🐞</h1>
+        <nav class="category-nav">
+            <ul class="category-list">
+                <li><a href="#bees" class="category-link">벌</a></li>
+                <li><a href="#mantis" class="category-link">사마귀</a></li>
+                <li><a href="#ants" class="category-link">개미</a></li>
+                <li><a href="#butterflies" class="category-link">나비</a></li>
+                <li><a href="#beetles" class="category-link">딱정벌레</a></li>
+                <li><a href="#dragonflies" class="category-link">잠자리</a></li>
+                <li><a href="#grasshoppers" class="category-link">메뚜기</a></li>
             </ul>
         </nav>
-        <div class="search-container">
-            <input type="text" placeholder="곤충 검색..." class="search-input">
-            <button class="search-button">검색</button>
-        </div>
     </header>
 
     <main id="main-content">
-        <!-- 소개 섹션 -->
-        <section class="category-intro-section">
-            <div class="container">
-                <h2 class="section-title">100가지 곤충 친구들을 만나보세요! 🐞</h2>
-                <div class="intro-content">
-                    <div class="intro-text">
-                        <p>지구상에는 약 500만 종류의 곤충이 살고 있어요. 그 중에서 100가지 재미있는 곤충 친구들을 소개해 드릴게요!</p>
-                        <p>곤충은 <strong>머리, 가슴, 배</strong> 세 부분으로 나뉘어 있고, <strong>다리가 6개</strong>인 동물이에요.</p>
-                        <p>곤충은 우리 생활과 자연에 매우 중요한 역할을 해요. 꽃가루를 옮겨주고, 흙을 비옥하게 만들어주고, 다른 동물들의 먹이가 되기도 해요.</p>
-                        <p>아래에서 다양한 곤충들을 카테고리별로 만나보세요!</p>
-                    </div>
-                    <div class="intro-image">
-                        <img src="../images/insects/ladybug.jpg" alt="무당벌레" class="rounded-image">
-                    </div>
+        <section id="bees" class="insect-section">
+            <h2>벌 🐝</h2>
+            <div class="insect-content">
+                <img src="../images/insects/꿀벌/main.webp" alt="꿀벌" class="insect-image">
+                <div class="insect-info">
+                    <p>벌은 꽃가루를 옮기며 생태계에 매우 중요한 역할을 하는 곤충이에요.</p>
+                    <ul class="insect-facts">
+                        <li>꿀을 만들어 저장해요</li>
+                        <li>여왕벌, 일벌, 수벌로 나뉘어 살아요</li>
+                        <li>식물의 수분을 도와줘요</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 카테고리 필터 섹션 -->
-        <section class="filter-section">
-            <div class="container">
-                <h2 class="section-title">곤충 카테고리</h2>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">모두 보기</button>
-                    <button class="filter-btn" data-filter="bees">벌</button>
-                    <button class="filter-btn" data-filter="butterflies">나비</button>
-                    <button class="filter-btn" data-filter="beetles">딱정벌레</button>
-                    <button class="filter-btn" data-filter="ants">개미</button>
-                    <button class="filter-btn" data-filter="mantis">사마귀</button>
-                    <button class="filter-btn" data-filter="dragonflies">잠자리</button>
-                    <button class="filter-btn" data-filter="grasshoppers">메뚜기</button>
-                    <button class="filter-btn" data-filter="others">기타 곤충</button>
+        <section id="mantis" class="insect-section">
+            <h2>사마귀 🦗</h2>
+            <div class="insect-content">
+                <img src="../images/insects/사마귀/main.webp" alt="사마귀" class="insect-image">
+                <div class="insect-info">
+                    <p>사마귀는 앞다리로 먹이를 잡는 멋진 사냥꾼이에요.</p>
+                    <ul class="insect-facts">
+                        <li>강한 앞다리로 먹이를 잡아요</li>
+                        <li>초록색이나 갈색으로 위장해요</li>
+                        <li>머리를 180도 돌릴 수 있어요</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 모든 곤충 그리드 섹션 -->
-        <section class="all-insects-section">
-            <div class="container">
-                <div class="insects-grid">
-                    <!-- 벌 카테고리 -->
-                    <div class="insect-item" data-category="bees">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/honeybee.jpg" alt="꿀벌">
-                            </div>
-                            <div class="insect-info">
-                                <h3>꿀벌</h3>
-                                <p>꿀을 모으고 꽃가루를 옮기는 중요한 일을 해요.</p>
-                                <a href="bees.html#honeybee" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
+        <!-- 다른 곤충 섹션들도 비슷한 형식으로 추가 -->
 
-                    <div class="insect-item" data-category="bees">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/bumblebee.jpg" alt="호박벌">
-                            </div>
-                            <div class="insect-info">
-                                <h3>호박벌</h3>
-                                <p>몸집이 크고 털이 많은 벌이에요.</p>
-                                <a href="bees.html#bumblebee" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="bees">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/carpenter-bee.jpg" alt="목수벌">
-                            </div>
-                            <div class="insect-info">
-                                <h3>목수벌</h3>
-                                <p>나무에 구멍을 뚫고 그 안에 집을 만들어요.</p>
-                                <a href="bees.html#carpenter-bee" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="bees">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/hornet.jpg" alt="말벌">
-                            </div>
-                            <div class="insect-info">
-                                <h3>말벌</h3>
-                                <p>크고 노란색과 검은색 줄무늬가 있는 벌이에요.</p>
-                                <a href="bees.html#hornet" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 나비 카테고리 -->
-                    <div class="insect-item" data-category="butterflies">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/monarch-butterfly.jpg" alt="제왕나비">
-                            </div>
-                            <div class="insect-info">
-                                <h3>제왕나비</h3>
-                                <p>주황색과 검은색 무늬가 아름다운 나비에요.</p>
-                                <a href="butterflies.html#monarch" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="butterflies">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/swallowtail-butterfly.jpg" alt="호랑나비">
-                            </div>
-                            <div class="insect-info">
-                                <h3>호랑나비</h3>
-                                <p>노란색 바탕에 검은색 무늬가 있는 큰 나비에요.</p>
-                                <a href="butterflies.html#swallowtail" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="butterflies">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/peacock-butterfly.jpg" alt="공작나비">
-                            </div>
-                            <div class="insect-info">
-                                <h3>공작나비</h3>
-                                <p>날개에 공작새 깃털 같은 무늬가 있는 나비에요.</p>
-                                <a href="butterflies.html#peacock" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="butterflies">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/morpho-butterfly.jpg" alt="모르포나비">
-                            </div>
-                            <div class="insect-info">
-                                <h3>모르포나비</h3>
-                                <p>남아메리카에 사는 큰 나비로, 날개가 파란색으로 반짝여요. 날개 폭이 15cm까지 자라며, 햇빛에 따라 색이 변하는 신기한 특징이 있어요.</p>
-                                <a href="butterflies.html#morpho" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="butterflies">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/atlas-moth.jpg" alt="아틀라스나방">
-                            </div>
-                            <div class="insect-info">
-                                <h3>아틀라스나방</h3>
-                                <p>세계에서 가장 큰 나방으로, 날개 폭이 25-30cm에 달해요. 날개에는 뱀의 머리처럼 생긴 무늬가 있어서 적을 놀라게 할 수 있어요. 성충은 입이 없어서 먹이를 먹지 않고 살아요.</p>
-                                <a href="butterflies.html#atlas-moth" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 딱정벌레 카테고리 -->
-                    <div class="insect-item" data-category="beetles">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/ladybug.jpg" alt="무당벌레">
-                            </div>
-                            <div class="insect-info">
-                                <h3>무당벌레</h3>
-                                <p>빨간색 날개에 검은 점이 있는 귀여운 딱정벌레에요.</p>
-                                <a href="beetles.html#ladybug" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="beetles">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/stag-beetle.jpg" alt="사슴벌레">
-                            </div>
-                            <div class="insect-info">
-                                <h3>사슴벌레</h3>
-                                <p>수컷은 사슴 뿔처럼 생긴 큰 턱을 가지고 있어요.</p>
-                                <a href="beetles.html#stag-beetle" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="beetles">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/rhinoceros-beetle.jpg" alt="장수풍뎅이">
-                            </div>
-                            <div class="insect-info">
-                                <h3>장수풍뎅이</h3>
-                                <p>수컷은 코뿔소처럼 생긴 뿔이 있는 큰 딱정벌레에요.</p>
-                                <a href="beetles.html#rhinoceros-beetle" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="beetles">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/hercules-beetle.jpg" alt="헤라클레스장수풍뎅이">
-                            </div>
-                            <div class="insect-info">
-                                <h3>헤라클레스장수풍뎅이</h3>
-                                <p>세계에서 가장 큰 딱정벌레로, 수컷의 몸길이가 17cm까지 자라요. 수컷은 긴 뿔로 다른 수컷과 싸워 영역을 지키고, 자기 몸무게의 850배나 되는 무게를 들 수 있는 힘이 있어요.</p>
-                                <a href="beetles.html#hercules" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="beetles">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/jewel-beetle.jpg" alt="비단벌레">
-                            </div>
-                            <div class="insect-info">
-                                <h3>비단벌레</h3>
-                                <p>반짝이는 금속성 색깔을 가진 아름다운 딱정벌레에요.</p>
-                                <a href="beetles.html#jewel" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 개미 카테고리 -->
-                    <div class="insect-item" data-category="ants">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/black-garden-ant.jpg" alt="정원개미">
-                            </div>
-                            <div class="insect-info">
-                                <h3>정원개미</h3>
-                                <p>정원이나 집 주변에서 흔히 볼 수 있는 검은 개미에요.</p>
-                                <a href="ants.html#garden-ant" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="ants">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/fire-ant.jpg" alt="불개미">
-                            </div>
-                            <div class="insect-info">
-                                <h3>불개미</h3>
-                                <p>붉은색을 띠며 쏘면 아픈 개미에요.</p>
-                                <a href="ants.html#fire-ant" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 사마귀 카테고리 -->
-                    <div class="insect-item" data-category="mantis">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/mantis.jpg" alt="사마귀">
-                            </div>
-                            <div class="insect-info">
-                                <h3>사마귀</h3>
-                                <p>앞다리로 먹이를 잡는 사냥꾼이에요.</p>
-                                <a href="mantis.html#mantis" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="mantis">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/flower-mantis.jpg" alt="꽃사마귀">
-                            </div>
-                            <div class="insect-info">
-                                <h3>꽃사마귀</h3>
-                                <p>꽃처럼 생겨서 먹이를 속이는 사마귀에요.</p>
-                                <a href="mantis.html#flower-mantis" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 잠자리 카테고리 -->
-                    <div class="insect-item" data-category="dragonflies">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/dragonfly.jpg" alt="잠자리">
-                            </div>
-                            <div class="insect-info">
-                                <h3>잠자리</h3>
-                                <p>빠르게 날아다니며 다른 곤충을 잡아먹는 사냥꾼이에요.</p>
-                                <a href="dragonflies.html#dragonfly" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="dragonflies">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/damselfly.jpg" alt="실잠자리">
-                            </div>
-                            <div class="insect-info">
-                                <h3>실잠자리</h3>
-                                <p>잠자리보다 몸이 가늘고 날개를 접을 수 있어요.</p>
-                                <a href="dragonflies.html#damselfly" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 메뚜기 카테고리 -->
-                    <div class="insect-item" data-category="grasshoppers">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/grasshopper.jpg" alt="메뚜기">
-                            </div>
-                            <div class="insect-info">
-                                <h3>메뚜기</h3>
-                                <p>뒷다리가 발달해서 높이 뛸 수 있는 곤충이에요.</p>
-                                <a href="grasshoppers.html#grasshopper" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="grasshoppers">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/cricket.jpg" alt="귀뚜라미">
-                            </div>
-                            <div class="insect-info">
-                                <h3>귀뚜라미</h3>
-                                <p>밤에 울음소리를 내는 곤충이에요.</p>
-                                <a href="grasshoppers.html#cricket" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="grasshoppers">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/katydid.jpg" alt="여치">
-                            </div>
-                            <div class="insect-info">
-                                <h3>여치</h3>
-                                <p>긴 더듬이를 가진 초록색 메뚜기로, 밤에 우는 소리를 내요.</p>
-                                <a href="grasshoppers.html#katydid" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 기타 곤충 카테고리 -->
-                    <div class="insect-item" data-category="others">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/cicada.jpg" alt="매미">
-                            </div>
-                            <div class="insect-info">
-                                <h3>매미</h3>
-                                <p>여름에 시끄럽게 우는 곤충이에요.</p>
-                                <a href="others.html#cicada" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="others">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/firefly.jpg" alt="반딧불이">
-                            </div>
-                            <div class="insect-info">
-                                <h3>반딧불이</h3>
-                                <p>밤에 빛을 내는 신기한 곤충이에요.</p>
-                                <a href="others.html#firefly" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="others">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/praying-mantis.jpg" alt="꽃무늬사마귀">
-                            </div>
-                            <div class="insect-info">
-                                <h3>꽃무늬사마귀</h3>
-                                <p>꽃잎을 닮은 화려한 무늬와 색깔을 가진 사마귀예요. 꽃 위에 숨어서 먹이를 기다리는 뛰어난 사냥꾼이에요. 앞다리로 재빨리 먹이를 잡을 수 있어요.</p>
-                                <a href="mantis.html#flower-mantis" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="others">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/stick-insect.jpg" alt="대벌레">
-                            </div>
-                            <div class="insect-info">
-                                <h3>대벌레</h3>
-                                <p>나뭇가지를 닮은 위장의 달인이에요. 몸이 가늘고 길며, 움직임도 나뭇가지가 흔들리는 것처럼 천천히 해요. 암컷은 수컷 없이도 알을 낳을 수 있는 신기한 능력이 있어요.</p>
-                                <a href="others.html#stick-insect" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="others">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/rhinoceros-beetle.jpg" alt="투구풍뎅이">
-                            </div>
-                            <div class="insect-info">
-                                <h3>투구풍뎅이</h3>
-                                <p>머리에 투구 모양의 뿔이 있는 딱정벌레예요.</p>
-                                <a href="beetles.html#rhinoceros" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="others">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/luna-moth.jpg" alt="달나방">
-                            </div>
-                            <div class="insect-info">
-                                <h3>달나방</h3>
-                                <p>연두색 날개를 가진 아름다운 큰나방이에요. 날개 끝에 긴 꼬리가 있으며, 날개 폭이 11cm까지 자라요. 밤에 활동하며 달빛에 비친 모습이 아름다워서 '달나방'이라고 불러요.</p>
-                                <a href="butterflies.html#luna-moth" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="others">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/giant-water-bug.jpg" alt="물장군">
-                            </div>
-                            <div class="insect-info">
-                                <h3>물장군</h3>
-                                <p>우리나라의 천연기념물인 큰 물벌레예요. 몸길이가 5-7cm이며, 앞다리로 작은 물고기나 올챙이를 잡아먹어요. 수컷이 등에 알을 지고 다니면서 보살피는 특이한 습성이 있어요.</p>
-                                <a href="others.html#water-bug" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="insect-item" data-category="others">
-                        <div class="insect-card">
-                            <div class="insect-image">
-                                <img src="../images/insects/leaf-insect.jpg" alt="잎벌레">
-                            </div>
-                            <div class="insect-info">
-                                <h3>잎벌레</h3>
-                                <p>나뭇잎처럼 생겨서 적으로부터 숨을 수 있어요.</p>
-                                <a href="others.html#leaf-insect" class="btn btn-small">자세히 보기</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 더 많은 곤충들을 추가할 수 있습니다 -->
-                </div>
-            </div>
-        </section>
-
-        <!-- 더 많은 곤충 보기 버튼 -->
-        <section class="load-more-section">
-            <div class="container text-center">
-                <button id="load-more" class="btn btn-primary">더 많은 곤충 보기</button>
-            </div>
-        </section>
+        <div class="navigation-guide">
+            <p>👆 위의 메뉴를 클릭하면 다른 곤충들도 찾아볼 수 있어요!</p>
+            <a href="../index.html" class="button home-button">처음으로 돌아가기 🏠</a>
+        </div>
     </main>
 
     <footer class="main-footer">
