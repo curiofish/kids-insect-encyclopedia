@@ -11,7 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
         submenuToggles: document.querySelectorAll('.submenu-toggle'),
         scrollTopButton: document.querySelector('.scroll-top'),
         header: document.querySelector('.main-header'),
-        scrollProgress: document.querySelector('.progress-bar')
+        scrollProgress: document.querySelector('.progress-bar'),
+        searchInput: document.getElementById('searchInput'),
+        searchButton: document.getElementById('searchButton'),
+        searchResults: document.getElementById('searchResults')
     };
 
     // 디바운스 함수
@@ -220,111 +223,137 @@ document.addEventListener('DOMContentLoaded', () => {
     // 페이지 로드 애니메이션
     document.body.classList.add('loaded');
 
-    // 곤충 데이터 (자동 완성용)
+    // 곤충 데이터
     const insects = [
         {
             id: 'honeybee',
             title: '꿀벌',
-            image: 'images/insects/honeybee.jpg',
             description: '꽃가루를 옮기고 꿀을 만드는 부지런한 곤충이에요.',
-            category: '벌'
+            image: '/images/insects/honeybee.jpg',
+            category: 'bees'
         },
         {
             id: 'mantis',
             title: '사마귀',
-            image: 'images/insects/mantis.jpg',
             description: '앞다리로 먹이를 잡는 멋진 사냥꾼이에요.',
-            category: '사마귀'
+            image: '/images/insects/mantis.jpg',
+            category: 'mantises'
         },
         {
             id: 'ladybug',
             title: '무당벌레',
-            image: 'images/insects/ladybug.jpg',
             description: '빨간색 겉날개에 검은 점이 있는 귀여운 곤충이에요.',
-            category: '딱정벌레'
+            image: '/images/insects/ladybug.jpg',
+            category: 'beetles'
         },
         {
             id: 'swallowtail',
             title: '호랑나비',
-            image: 'images/insects/swallowtail-butterfly.jpg',
             description: '노란색 날개에 검은 무늬가 있는 아름다운 나비예요.',
-            category: '나비'
+            image: '/images/insects/swallowtail-butterfly.jpg',
+            category: 'butterflies'
         },
         {
             id: 'dragonfly',
             title: '잠자리',
-            image: 'images/insects/dragonfly.jpg',
             description: '빠르게 날아다니며 공중에서 먹이를 잡는 곤충이에요.',
-            category: '잠자리'
+            image: '/images/insects/dragonfly.jpg',
+            category: 'dragonflies'
         },
         {
             id: 'cricket',
             title: '귀뚜라미',
-            image: 'images/insects/cricket.jpg',
             description: '밤에 울음소리를 내는 특별한 곤충이에요.',
-            category: '메뚜기'
+            image: '/images/insects/cricket.jpg',
+            category: 'crickets'
         }
     ];
 
-    // 자동완성 UI 생성
-    const createAutocompleteUI = () => {
-        const existingList = document.querySelector('.autocomplete-list');
-        if (existingList) {
-            existingList.remove();
-        }
-        
-        const list = document.createElement('ul');
-        list.className = 'autocomplete-list';
-        return list;
-    };
+    // 검색 기능 초기화
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+    const searchResults = document.getElementById('searchResults');
 
-    // 검색어 필터링
-    const filterInsects = (searchTerm) => {
-        if (!searchTerm) return [];
-        const term = searchTerm.toLowerCase();
-        return insects.filter(insect => 
-            insect.title.toLowerCase().includes(term)
-        ).slice(0, 5); // 최대 5개까지만 표시
-    };
-
-    // 자동완성 처리
-    const handleAutocomplete = debounce((e) => {
-        const searchTerm = e.target.value.trim();
-        const searchWrapper = e.target.closest('.search-wrapper');
-        const existingList = document.querySelector('.autocomplete-list');
+    // 검색 실행 함수
+    function performSearch() {
+        const query = searchInput.value.trim().toLowerCase();
         
-        if (existingList) {
-            existingList.remove();
+        // 검색어가 없으면 결과 숨기기
+        if (query.length < 1) {
+            searchResults.style.display = 'none';
+            return;
         }
+
+        // 검색 결과 초기화
+        searchResults.innerHTML = '';
         
-        if (searchTerm.length < 1) return;
-        
-        const filtered = filterInsects(searchTerm);
-        if (filtered.length === 0) return;
-        
-        const list = createAutocompleteUI();
-        filtered.forEach(insect => {
-            const li = document.createElement('li');
-            li.textContent = insect.title;
-            li.addEventListener('click', () => {
-                searchInput.value = insect.title;
-                list.remove();
-                searchForm.submit();
+        // 곤충 데이터에서 검색
+        const results = insects.filter(insect => 
+            insect.title.toLowerCase().includes(query) ||
+            insect.description.toLowerCase().includes(query)
+        );
+
+        // 검색 결과 표시
+        if (results.length > 0) {
+            const resultsList = document.createElement('div');
+            resultsList.className = 'search-results-list';
+            
+            results.forEach(insect => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'search-result-item';
+                resultItem.innerHTML = `
+                    <div class="result-content">
+                        <img src="${insect.image}" alt="${insect.title}" class="result-image">
+                        <div class="result-info">
+                            <h3>${insect.title}</h3>
+                            <p>${insect.description}</p>
+                        </div>
+                    </div>
+                `;
+                resultItem.addEventListener('click', () => {
+                    window.location.href = `/categories/${insect.category}/index.html#${insect.id}`;
+                });
+                resultsList.appendChild(resultItem);
             });
-            list.appendChild(li);
-        });
-        
-        searchWrapper.appendChild(list);
-    }, 300);
+            
+            searchResults.appendChild(resultsList);
+            searchResults.style.display = 'block';
+        } else {
+            searchResults.innerHTML = `
+                <div class="no-results">
+                    <p>검색 결과가 없습니다. 다른 검색어로 시도해보세요!</p>
+                </div>
+            `;
+            searchResults.style.display = 'block';
+        }
+    }
 
     // 이벤트 리스너 등록
-    searchInput.addEventListener('input', handleAutocomplete);
+    if (searchInput) {
+        // 입력할 때마다 검색 실행 (디바운스 적용)
+        searchInput.addEventListener('input', debounce(performSearch, 300));
+        
+        // 엔터키 입력 이벤트
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                performSearch();
+            }
+        });
+    }
 
-    // 검색창 외부 클릭시 자동완성 닫기
+    // 검색 버튼 클릭 이벤트
+    if (searchButton) {
+        searchButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            performSearch();
+        });
+    }
+
+    // 검색창 외부 클릭시 결과 숨기기
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('.search-wrapper')) {
-            const list = document.querySelector('.autocomplete-list');
-            if (list) list.remove();
+        if (!e.target.closest('.search-container') && !e.target.closest('.search-results')) {
+            searchResults.style.display = 'none';
         }
     });
 
@@ -508,7 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     '딱정벌레': 'beetles',
                     '나비': 'butterflies',
                     '잠자리': 'dragonflies',
-                    '메뚜기': 'grasshoppers'
+                    '메뚜기': 'crickets'
                 };
                 
                 const category = categoryPath[insect.category] || 'others';
@@ -539,64 +568,60 @@ document.addEventListener('DOMContentLoaded', () => {
         displayRandomInsects(newRandomInsects);
     }, 120000);  // 120000ms = 2분
 
-    // Search Popup Functionality
+    // 검색 팝업 기능
     const searchTrigger = document.getElementById('search-trigger');
+    const mobileSearchTrigger = document.getElementById('mobile-search-trigger');
     const searchPopup = document.getElementById('search-popup');
     const searchClose = document.getElementById('search-close');
-    const searchInput = document.querySelector('.search-input');
 
-    // Open search popup
-    searchTrigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        searchPopup.classList.add('active');
-        searchInput.focus();
-    });
+    // 검색 팝업 열기
+    if (searchTrigger) {
+        searchTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            elements.searchPopup.classList.add('active');
+            elements.searchInput.focus();
+        });
+    }
 
-    // Close search popup
-    searchClose.addEventListener('click', () => {
-        searchPopup.classList.remove('active');
-    });
+    if (mobileSearchTrigger) {
+        mobileSearchTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            elements.searchPopup.classList.add('active');
+            elements.searchInput.focus();
+        });
+    }
 
-    // Close popup when clicking outside
-    searchPopup.addEventListener('click', (e) => {
-        if (e.target === searchPopup) {
-            searchPopup.classList.remove('active');
-        }
-    });
+    // 검색 팝업 닫기
+    if (searchClose) {
+        searchClose.addEventListener('click', () => {
+            elements.searchPopup.classList.remove('active');
+        });
+    }
 
-    // Close popup when pressing Escape key
+    // 팝업 외부 클릭 시 닫기
+    if (elements.searchPopup) {
+        elements.searchPopup.addEventListener('click', (e) => {
+            if (e.target === elements.searchPopup) {
+                elements.searchPopup.classList.remove('active');
+            }
+        });
+    }
+
+    // ESC 키로 팝업 닫기
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && searchPopup.classList.contains('active')) {
-            searchPopup.classList.remove('active');
+        if (e.key === 'Escape' && elements.searchPopup.classList.contains('active')) {
+            elements.searchPopup.classList.remove('active');
         }
     });
 
     // 모바일 메뉴 토글 기능
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    const mobileSearchTrigger = document.getElementById('mobile-search-trigger');
 
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('active');
         mobileMenuButton.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
     });
-
-    // 모바일 메뉴에서 검색 트리거
-    if (mobileSearchTrigger) {
-        mobileSearchTrigger.addEventListener('click', (e) => {
-            e.preventDefault();
-            mobileMenu.classList.remove('active');
-            mobileMenuButton.textContent = '☰';
-            const searchPopup = document.getElementById('search-popup');
-            if (searchPopup) {
-                searchPopup.classList.add('active');
-                const searchInput = searchPopup.querySelector('.search-input');
-                if (searchInput) {
-                    searchInput.focus();
-                }
-            }
-        });
-    }
 
     // 화면 크기가 변경될 때 모바일 메뉴 상태 초기화
     window.addEventListener('resize', () => {

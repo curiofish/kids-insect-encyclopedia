@@ -41,7 +41,6 @@
                 <li class="nav-item"><a href="/index.html" class="nav-link">처음으로</a></li>
                 <li class="nav-item"><a href="/categories/all.html" class="nav-link">곤충 도감</a></li>
                 <li class="nav-item"><a href="/guide.html" class="nav-link">사용법</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" id="search-trigger">찾아보기</a></li>
             </ul>
         </nav>
         
@@ -51,24 +50,23 @@
                 <li class="mobile-nav-item"><a href="/index.html" class="mobile-nav-link">처음으로</a></li>
                 <li class="mobile-nav-item"><a href="/categories/all.html" class="mobile-nav-link">곤충 도감</a></li>
                 <li class="mobile-nav-item"><a href="/guide.html" class="mobile-nav-link">사용법</a></li>
-                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link" id="mobile-search-trigger">찾아보기</a></li>
             </ul>
         </div>
         
         <div class="title-container">
             <h1 class="main-title">유치원 곤충 백과사전</h1>
+            <!-- 새로운 검색창 추가 -->
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="곤충 이름을 입력해보세요">
+                <button class="search-button" id="searchButton">
+                    <span>검색</span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- 검색 팝업 -->
-    <div class="search-popup" id="search-popup">
-        <div class="search-popup-content">
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="어떤 곤충을 찾고 있나요?">
-                <button class="search-close" id="search-close">✕</button>
-            </div>
-        </div>
-    </div>
+    <!-- 검색 결과 컨테이너 -->
+    <div class="search-results" id="searchResults"></div>
 
     <main id="main-content" class="container">
         <section class="intro fade-in">
