@@ -3,93 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 메타 태그 -->
+    <meta name="description" content="유치원 친구들을 위한 벌의 세계 - 꿀벌, 호박벌 등 다양한 벌들의 이야기를 만나보세요!">
+    <meta name="keywords" content="곤충, 유치원, 어린이, 백과사전, 벌, 꿀벌, 호박벌, 말벌">
+    <meta name="author" content="curiofish (이진우)">
+    <meta name="contact" content="fishcurio@gmail.com">
+    <meta name="copyright" content="© 2024 curiofish. All rights reserved.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:title" content="벌의 세계 - 유치원 곤충 백과사전">
+    <meta property="og:description" content="유치원 친구들을 위한 벌의 세계 - 꿀벌, 호박벌 등 다양한 벌들의 이야기를 만나보세요!">
+    <meta property="og:image" content="/images/insects/꿀벌/main.webp">
+    <meta property="og:url" content="https://curiofish.github.io/kids-insect-encyclopedia/categories/bees/">
+    <meta property="og:type" content="website">
+    
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
     <title>벌의 세계 - 유치원 곤충 백과사전</title>
-    <link rel="stylesheet" href="../../css/style.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/pages/category.css">
+    
+    <!-- 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
     
     <header class="main-header">
-        <h1>🐝 벌의 세계 🌸</h1>
+        <h1>🐝 벌의 세계 🌺</h1>
         <nav class="main-nav">
-            <a href="../../index.html" class="nav-link">처음으로</a>
-            <a href="../all.html" class="nav-link">곤충 도감으로</a>
+            <ul class="nav-list">
+                <li><a href="/index.html">처음으로</a></li>
+                <li><a href="/categories/all.html">곤충 도감</a></li>
+                <li><a href="/about.html">소개</a></li>
+                <li><a href="/contact.html">문의하기</a></li>
+            </ul>
         </nav>
+        <div class="search-container">
+            <input type="text" placeholder="어떤 벌을 찾고 있나요? 🔍" class="search-input">
+        </div>
     </header>
 
     <main id="main-content" class="container">
-        <section class="insect-intro">
+        <section class="insect-intro fade-in">
             <h2>벌에 대해 알아보아요</h2>
             <p class="intro-text">
-                벌은 자연에서 매우 중요한 역할을 하는 곤충이에요. 
-                꽃가루를 옮기고, 꿀을 만들며, 다른 생물들과 조화롭게 살아가요.
+                벌은 꽃가루를 옮기며 생태계에 매우 중요한 역할을 하는 곤충이에요.
+                여왕벌, 일벌, 수벌이 함께 살면서 각자의 역할을 해요.
             </p>
+            <div class="intro-image">
+                <img src="/images/insects/꿀벌/life.webp" alt="벌의 생활" class="full-width-image">
+            </div>
         </section>
 
-        <section class="insect-types">
+        <section class="insect-types fade-in">
             <h2>다양한 벌 친구들</h2>
-            
-            <div class="insect-card">
-                <div class="insect-image-container">
-                    <img src="../../images/insects/꿀벌/main.webp" alt="꿀벌" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>꿀벌</h3>
-                    <p>꿀벌은 꽃에서 꿀을 모으고 꽃가루를 옮기는 중요한 일을 해요.</p>
-                    <ul class="insect-facts">
-                        <li>여왕벌, 일벌, 수벌로 나뉘어 살아요</li>
-                        <li>벌집에서 함께 생활해요</li>
-                        <li>꽃가루를 모아 꿀을 만들어요</li>
-                        <li>식물의 수분을 도와줘요</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="insect-card">
-                <div class="insect-image-container">
-                    <img src="../../images/insects/호박벌/main.webp" alt="호박벌" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>호박벌</h3>
-                    <p>호박벌은 몸집이 크고 털이 많은 벌이에요.</p>
-                    <ul class="insect-facts">
-                        <li>큰 몸집으로 추운 날씨에도 활동할 수 있어요</li>
-                        <li>혼자 사는 것을 좋아해요</li>
-                        <li>호박, 토마토 같은 작물의 수분을 도와줘요</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="insect-card">
-                <div class="insect-image-container">
-                    <img src="../../images/insects/말벌/main.webp" alt="말벌" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>말벌</h3>
-                    <p>말벌은 강한 턱을 가진 사냥꾼이에요.</p>
-                    <ul class="insect-facts">
-                        <li>다른 곤충을 잡아먹어요</li>
-                        <li>종이 같은 벌집을 만들어요</li>
-                        <li>여왕벌과 일벌이 함께 살아요</li>
-                    </ul>
-                </div>
+            <div class="grid" id="bees-container">
+                <!-- 벌 데이터는 JavaScript로 동적 로드됩니다 -->
             </div>
         </section>
 
-        <section class="fun-facts">
+        <section class="fun-facts fade-in">
             <h2>재미있는 사실들</h2>
             <div class="facts-container">
                 <div class="fact-card">
-                    <h3>🍯 꿀벌의 춤</h3>
-                    <p>꿀벌은 춤을 추면서 다른 벌들에게 꿀이 있는 곳을 알려줘요!</p>
+                    <h3>🍯 꿀 수집가</h3>
+                    <p>벌들은 꽃의 꿀을 모아 벌집에 저장해요!</p>
                 </div>
                 <div class="fact-card">
-                    <h3>👑 여왕벌</h3>
-                    <p>여왕벌은 하루에 최대 2,000개의 알을 낳을 수 있어요!</p>
+                    <h3>👥 협동의 달인</h3>
+                    <p>벌들은 서로 도우며 큰 집단을 이루어 살아요!</p>
                 </div>
                 <div class="fact-card">
-                    <h3>🌺 꽃가루 바구니</h3>
-                    <p>일벌의 뒷다리에는 꽃가루를 모을 수 있는 특별한 주머니가 있어요!</p>
+                    <h3>💃 춤의 고수</h3>
+                    <p>벌들은 춤을 추면서 꿀이 있는 장소를 알려줘요!</p>
                 </div>
             </div>
         </section>
@@ -103,9 +98,9 @@
                     <p>곤충 친구들과 함께 놀면서 배워요!</p>
                 </div>
                 <div class="footer-links">
-                    <a href="../../terms.html">이용약관</a>
-                    <a href="../../privacy.html">개인정보처리방침</a>
-                    <a href="../../contact.html">문의하기</a>
+                    <a href="/terms.html">이용약관</a>
+                    <a href="/privacy.html">개인정보처리방침</a>
+                    <a href="/contact.html">문의하기</a>
                 </div>
                 <div class="footer-copyright">
                     <p>© 2024 curiofish. All rights reserved.</p>
@@ -118,6 +113,10 @@
         <div class="scroll-icon">⬆️</div>
     </button>
 
-    <script src="../../js/main.js"></script>
+    <!-- JavaScript -->
+    <script src="/js/common.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/data/insects.js"></script>
+    <script src="/js/pages/category.js"></script>
 </body>
 </html> 

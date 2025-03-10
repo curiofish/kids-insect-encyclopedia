@@ -3,8 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 메타 태그 -->
+    <meta name="description" content="유치원 친구들을 위한 사마귀의 세계 - 사마귀, 꽃사마귀, 왕사마귀의 이야기를 만나보세요!">
+    <meta name="keywords" content="곤충, 유치원, 어린이, 백과사전, 사마귀, 꽃사마귀, 왕사마귀">
+    <meta name="author" content="curiofish (이진우)">
+    <meta name="contact" content="fishcurio@gmail.com">
+    <meta name="copyright" content="© 2024 curiofish. All rights reserved.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:title" content="사마귀의 세계 - 유치원 곤충 백과사전">
+    <meta property="og:description" content="유치원 친구들을 위한 사마귀의 세계 - 사마귀, 꽃사마귀, 왕사마귀의 이야기를 만나보세요!">
+    <meta property="og:image" content="/images/insects/사마귀/main.webp">
+    <meta property="og:url" content="https://curiofish.github.io/kids-insect-encyclopedia/categories/mantis/">
+    <meta property="og:type" content="website">
+    
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
     <title>사마귀의 세계 - 유치원 곤충 백과사전</title>
-    <link rel="stylesheet" href="../../css/style.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/pages/category.css">
+    
+    <!-- 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
@@ -12,84 +40,51 @@
     <header class="main-header">
         <h1>🦗 사마귀의 세계 🌿</h1>
         <nav class="main-nav">
-            <a href="../../index.html" class="nav-link">처음으로</a>
-            <a href="../all.html" class="nav-link">곤충 도감으로</a>
+            <ul class="nav-list">
+                <li><a href="/index.html">처음으로</a></li>
+                <li><a href="/categories/all.html">곤충 도감</a></li>
+                <li><a href="/about.html">소개</a></li>
+                <li><a href="/contact.html">문의하기</a></li>
+            </ul>
         </nav>
+        <div class="search-container">
+            <input type="text" placeholder="어떤 사마귀를 찾고 있나요? 🔍" class="search-input">
+        </div>
     </header>
 
     <main id="main-content" class="container">
-        <section class="insect-intro">
+        <section class="insect-intro fade-in">
             <h2>사마귀에 대해 알아보아요</h2>
             <p class="intro-text">
-                사마귀는 뛰어난 사냥 실력을 가진 곤충이에요.
-                강한 앞다리와 빠른 움직임으로 먹이를 잡아요.
+                사마귀는 앞다리로 먹이를 잡는 멋진 사냥꾼이에요.
+                나뭇가지처럼 보이는 몸으로 숨어 있다가 먹이를 잡아요.
             </p>
+            <div class="intro-image">
+                <img src="/images/insects/사마귀/life.webp" alt="사마귀의 생활" class="full-width-image">
+            </div>
         </section>
 
-        <section class="insect-types">
+        <section class="insect-types fade-in">
             <h2>다양한 사마귀 친구들</h2>
-            
-            <div class="insect-card">
-                <div class="insect-image-container">
-                    <img src="../../images/insects/사마귀/main.webp" alt="사마귀" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>왕사마귀</h3>
-                    <p>우리나라에서 가장 큰 사마귀예요.</p>
-                    <ul class="insect-facts">
-                        <li>앞다리로 먹이를 재빨리 잡아요</li>
-                        <li>초록색이나 갈색으로 위장해요</li>
-                        <li>머리를 180도 돌릴 수 있어요</li>
-                        <li>날개가 있지만 잘 날지 않아요</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="insect-card">
-                <div class="insect-image-container">
-                    <img src="../../images/insects/꽃사마귀/main.webp" alt="꽃사마귀" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>꽃사마귀</h3>
-                    <p>꽃처럼 생긴 예쁜 사마귀예요.</p>
-                    <ul class="insect-facts">
-                        <li>꽃잎처럼 생겨서 숨기 쉬워요</li>
-                        <li>작은 곤충들을 잡아먹어요</li>
-                        <li>분홍색이나 하얀색을 띄어요</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="insect-card">
-                <div class="insect-image-container">
-                    <img src="../../images/insects/낫사마귀/main.webp" alt="낫사마귀" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>낫사마귀</h3>
-                    <p>앞다리가 낫처럼 생긴 사마귀예요.</p>
-                    <ul class="insect-facts">
-                        <li>날카로운 앞다리로 먹이를 잡아요</li>
-                        <li>나뭇가지 사이에 숨어 지내요</li>
-                        <li>재빠르게 움직일 수 있어요</li>
-                    </ul>
-                </div>
+            <div class="grid" id="mantises-container">
+                <!-- 사마귀 데이터는 JavaScript로 동적 로드됩니다 -->
             </div>
         </section>
 
-        <section class="fun-facts">
+        <section class="fun-facts fade-in">
             <h2>재미있는 사실들</h2>
             <div class="facts-container">
                 <div class="fact-card">
-                    <h3>👀 특별한 눈</h3>
-                    <p>사마귀는 두 개의 큰 겹눈으로 먹이를 잘 볼 수 있어요!</p>
+                    <h3>👀 회전하는 머리</h3>
+                    <p>사마귀는 머리를 180도 돌릴 수 있어요!</p>
                 </div>
                 <div class="fact-card">
-                    <h3>🎭 위장의 달인</h3>
-                    <p>사마귀는 주변 환경에 맞춰 몸 색깔을 바꿀 수 있어요!</p>
+                    <h3>🌿 위장의 달인</h3>
+                    <p>나뭇가지나 꽃처럼 보이게 변신할 수 있어요!</p>
                 </div>
                 <div class="fact-card">
                     <h3>💪 강한 앞다리</h3>
-                    <p>사마귀의 앞다리는 0.05초 만에 먹이를 잡을 수 있어요!</p>
+                    <p>앞다리로 먹이를 재빠르게 잡을 수 있어요!</p>
                 </div>
             </div>
         </section>
@@ -103,9 +98,9 @@
                     <p>곤충 친구들과 함께 놀면서 배워요!</p>
                 </div>
                 <div class="footer-links">
-                    <a href="../../terms.html">이용약관</a>
-                    <a href="../../privacy.html">개인정보처리방침</a>
-                    <a href="../../contact.html">문의하기</a>
+                    <a href="/terms.html">이용약관</a>
+                    <a href="/privacy.html">개인정보처리방침</a>
+                    <a href="/contact.html">문의하기</a>
                 </div>
                 <div class="footer-copyright">
                     <p>© 2024 curiofish. All rights reserved.</p>
@@ -118,6 +113,10 @@
         <div class="scroll-icon">⬆️</div>
     </button>
 
-    <script src="../../js/main.js"></script>
+    <!-- JavaScript -->
+    <script src="/js/common.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/data/insects.js"></script>
+    <script src="/js/pages/mantis.js"></script>
 </body>
 </html> 

@@ -5,31 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO 메타 태그 -->
-    <meta name="description" content="유치원 친구들을 위한 개미의 세계 - 일개미, 여왕개미, 불개미의 이야기를 만나보세요!">
-    <meta name="keywords" content="곤충, 유치원, 어린이, 백과사전, 개미, 일개미, 여왕개미, 불개미">
+    <meta name="description" content="유치원 친구들을 위한 신나는 곤충 백과사전 - 100가지 곤충들의 재미있는 이야기를 만나보세요!">
+    <meta name="keywords" content="곤충, 유치원, 어린이, 백과사전, 나비, 무당벌레, 매미, 곤충 퀴즈, 곤충 게임">
     <meta name="author" content="curiofish (이진우)">
     <meta name="contact" content="fishcurio@gmail.com">
     <meta name="copyright" content="© 2024 curiofish. All rights reserved.">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph 메타 태그 -->
-    <meta property="og:title" content="개미의 세계 - 유치원 곤충 백과사전">
-    <meta property="og:description" content="유치원 친구들을 위한 개미의 세계 - 일개미, 여왕개미, 불개미의 이야기를 만나보세요!">
-    <meta property="og:image" content="/images/insects/일개미/main.webp">
-    <meta property="og:url" content="https://curiofish.github.io/kids-insect-encyclopedia/categories/ants/">
+    <meta property="og:title" content="[페이지 제목] - 유치원 곤충 백과사전">
+    <meta property="og:description" content="유치원 친구들을 위한 신나는 곤충 이야기 - 100가지 곤충들의 재미있는 이야기를 만나보세요!">
+    <meta property="og:image" content="/images/og-image.webp">
+    <meta property="og:url" content="https://curiofish.github.io/kids-insect-encyclopedia/">
     <meta property="og:type" content="website">
     
     <!-- 파비콘 -->
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     
-    <title>개미의 세계 - 유치원 곤충 백과사전</title>
+    <title>[페이지 제목] - 유치원 곤충 백과사전</title>
     
     <!-- CSS -->
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="/css/components.css">
-    <link rel="stylesheet" href="/css/pages/category.css">
+    <!-- 페이지별 CSS -->
+    <link rel="stylesheet" href="/css/pages/[페이지].css">
     
     <!-- 폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -38,7 +39,7 @@
     <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
     
     <header class="main-header">
-        <h1>🐜 개미의 세계 🏰</h1>
+        <h1>🦋 유치원 곤충 백과사전 🐞</h1>
         <nav class="main-nav">
             <ul class="nav-list">
                 <li><a href="/index.html">처음으로</a></li>
@@ -48,46 +49,12 @@
             </ul>
         </nav>
         <div class="search-container">
-            <input type="text" placeholder="어떤 개미를 찾고 있나요? 🔍" class="search-input">
+            <input type="text" placeholder="어떤 곤충을 찾고 있나요? 🔍" class="search-input">
         </div>
     </header>
 
     <main id="main-content" class="container">
-        <section class="insect-intro fade-in">
-            <h2>개미에 대해 알아보아요</h2>
-            <p class="intro-text">
-                개미는 협동심이 뛰어난 곤충이에요.
-                여왕개미와 일개미가 함께 살면서 서로 도와가며 살아요.
-            </p>
-            <div class="intro-image">
-                <img src="/images/insects/일개미/life.webp" alt="개미의 생활" class="full-width-image">
-            </div>
-        </section>
-
-        <section class="insect-types fade-in">
-            <h2>다양한 개미 친구들</h2>
-            <div class="grid" id="ants-container">
-                <!-- 개미 데이터는 JavaScript로 동적 로드됩니다 -->
-            </div>
-        </section>
-
-        <section class="fun-facts fade-in">
-            <h2>재미있는 사실들</h2>
-            <div class="facts-container">
-                <div class="fact-card">
-                    <h3>👑 여왕개미</h3>
-                    <p>여왕개미는 15년까지 살 수 있어요!</p>
-                </div>
-                <div class="fact-card">
-                    <h3>🏃 협동의 달인</h3>
-                    <p>개미들은 서로 도우며 먹이를 나르고 집을 지어요!</p>
-                </div>
-                <div class="fact-card">
-                    <h3>👃 냄새로 소통</h3>
-                    <p>개미들은 페로몬이라는 냄새로 이야기를 나눠요!</p>
-                </div>
-            </div>
-        </section>
+        <!-- 페이지별 콘텐츠 -->
     </main>
 
     <footer class="main-footer">
@@ -116,7 +83,7 @@
     <!-- JavaScript -->
     <script src="/js/common.js"></script>
     <script src="/js/components.js"></script>
-    <script src="/js/data/insects.js"></script>
-    <script src="/js/pages/ants.js"></script>
+    <!-- 페이지별 JavaScript -->
+    <script src="/js/pages/[페이지].js"></script>
 </body>
 </html> 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO 메타 태그 -->
-    <meta name="description" content="유치원 친구들을 위한 신나는 곤충 백과사전 - 100가지 곤충들의 재미있는 이야기, 곤충 퀴즈, 곤충 맞추기 게임이 있어요!">
+    <meta name="description" content="유치원 친구들을 위한 신나는 곤충 백과사전 - 100가지 곤충들의 재미있는 이야기를 만나보세요!">
     <meta name="keywords" content="곤충, 유치원, 어린이, 백과사전, 나비, 무당벌레, 매미, 곤충 퀴즈, 곤충 게임">
     <meta name="author" content="curiofish (이진우)">
     <meta name="contact" content="fishcurio@gmail.com">
@@ -23,8 +23,11 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     
-    <title>유치원 곤충 백과사전</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>유치원 곤충 백과사전 - 신나는 곤충 탐험</title>
+    
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="preload" href="fonts/your-font.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -35,14 +38,10 @@
         <h1>🦋 유치원 곤충 백과사전 🐞</h1>
         <nav class="main-nav">
             <ul class="nav-list">
-                <li class="nav-item"><a href="categories/bees.html" class="nav-link">벌</a></li>
-                <li class="nav-item"><a href="categories/mantis.html" class="nav-link">사마귀</a></li>
-                <li class="nav-item"><a href="categories/ants.html" class="nav-link">개미</a></li>
-                <li class="nav-item"><a href="categories/butterflies.html" class="nav-link">나비</a></li>
-                <li class="nav-item"><a href="categories/beetles.html" class="nav-link">딱정벌레</a></li>
-                <li class="nav-item"><a href="categories/dragonflies.html" class="nav-link">잠자리</a></li>
-                <li class="nav-item"><a href="categories/grasshoppers.html" class="nav-link">메뚜기</a></li>
-                <li class="nav-item"><a href="categories/all.html" class="nav-link">모든 곤충</a></li>
+                <li><a href="/index.html">처음으로</a></li>
+                <li><a href="/categories/all.html">곤충 도감</a></li>
+                <li><a href="/about.html">소개</a></li>
+                <li><a href="/contact.html">문의하기</a></li>
             </ul>
         </nav>
         <div class="search-container">
@@ -50,7 +49,7 @@
         </div>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" class="container">
         <section class="intro fade-in">
             <h2>곤충의 특별한 점 🌟</h2>
             <div class="intro-main-image">
@@ -128,9 +127,9 @@
                     <p>곤충 친구들과 함께 놀면서 배워요!</p>
                 </div>
                 <div class="footer-links">
-                    <a href="terms.html">이용약관</a>
-                    <a href="privacy.html">개인정보처리방침</a>
-                    <a href="contact.html">문의하기</a>
+                    <a href="/terms.html">이용약관</a>
+                    <a href="/privacy.html">개인정보처리방침</a>
+                    <a href="/contact.html">문의하기</a>
                 </div>
                 <div class="footer-copyright">
                     <p>© 2024 curiofish. All rights reserved.</p>
@@ -144,6 +143,6 @@
         <div class="scroll-icon">⬆️</div>
     </button>
 
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html> 

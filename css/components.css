@@ -1,0 +1,131 @@
+/* 버튼 스타일 */
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+/* 검색 컴포넌트 */
+.search-container {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* 카드 컴포넌트 */
+.insect-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.insect-card .image-container {
+    margin-bottom: 1rem;
+}
+
+.insect-card h3 {
+    margin: 0.5rem 0;
+    color: var(--primary-color);
+}
+
+.insect-facts {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.insect-facts li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.insect-facts li::before {
+    content: "🌿";
+    position: absolute;
+    left: 0;
+}
+
+/* 네비게이션 컴포넌트 */
+.category-nav {
+    margin: 2rem 0;
+}
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.category-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.category-link:hover {
+    background-color: var(--secondary-color-dark);
+}
+
+/* 애니메이션 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 반응형 컴포넌트 */
+@media (max-width: 768px) {
+    .search-input {
+        max-width: 100%;
+    }
+
+    .category-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-link {
+        width: 100%;
+        text-align: center;
+    }
+} 

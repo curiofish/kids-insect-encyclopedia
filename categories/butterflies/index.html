@@ -3,93 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 메타 태그 -->
+    <meta name="description" content="유치원 친구들을 위한 나비의 세계 - 호랑나비, 배추흰나비, 공작나비의 이야기를 만나보세요!">
+    <meta name="keywords" content="곤충, 유치원, 어린이, 백과사전, 나비, 호랑나비, 배추흰나비, 공작나비">
+    <meta name="author" content="curiofish (이진우)">
+    <meta name="contact" content="fishcurio@gmail.com">
+    <meta name="copyright" content="© 2024 curiofish. All rights reserved.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:title" content="나비의 세계 - 유치원 곤충 백과사전">
+    <meta property="og:description" content="유치원 친구들을 위한 나비의 세계 - 호랑나비, 배추흰나비, 공작나비의 이야기를 만나보세요!">
+    <meta property="og:image" content="/images/insects/호랑나비/main.webp">
+    <meta property="og:url" content="https://curiofish.github.io/kids-insect-encyclopedia/categories/butterflies/">
+    <meta property="og:type" content="website">
+    
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
     <title>나비의 세계 - 유치원 곤충 백과사전</title>
-    <link rel="stylesheet" href="../../css/style.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/pages/category.css">
+    
+    <!-- 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
     
     <header class="main-header">
-        <h1>🦋 나비의 세계 🌺</h1>
+        <h1>🦋 나비의 세계 🌸</h1>
         <nav class="main-nav">
-            <a href="../../index.html" class="nav-link">처음으로</a>
-            <a href="../all.html" class="nav-link">곤충 도감으로</a>
+            <ul class="nav-list">
+                <li><a href="/index.html">처음으로</a></li>
+                <li><a href="/categories/all.html">곤충 도감</a></li>
+                <li><a href="/about.html">소개</a></li>
+                <li><a href="/contact.html">문의하기</a></li>
+            </ul>
         </nav>
+        <div class="search-container">
+            <input type="text" placeholder="어떤 나비를 찾고 있나요? 🔍" class="search-input">
+        </div>
     </header>
 
     <main id="main-content" class="container">
-        <section class="insect-intro">
+        <section class="insect-intro fade-in">
             <h2>나비에 대해 알아보아요</h2>
             <p class="intro-text">
                 나비는 아름다운 날개를 가진 곤충이에요.
                 꽃에서 꽃으로 날아다니며 꿀을 먹고 꽃가루를 옮겨요.
             </p>
+            <div class="intro-image">
+                <img src="/images/insects/호랑나비/life.webp" alt="나비의 생활" class="full-width-image">
+            </div>
         </section>
 
-        <section class="insect-types">
+        <section class="insect-types fade-in">
             <h2>다양한 나비 친구들</h2>
-            
-            <div class="insect-card">
-                <div class="insect-image-container">
-                    <img src="../../images/insects/호랑나비/main.webp" alt="호랑나비" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>호랑나비</h3>
-                    <p>호랑이 무늬를 닮은 큰 나비예요.</p>
-                    <ul class="insect-facts">
-                        <li>노란색 바탕에 검은 줄무늬가 있어요</li>
-                        <li>우아하게 날아다녀요</li>
-                        <li>봄부터 가을까지 볼 수 있어요</li>
-                        <li>날개를 활짝 펴면 매우 커요</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="insect-card">
-                <div class="insect-image-container">
-                    <img src="../../images/insects/배추흰나비/main.webp" alt="배추흰나비" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>배추흰나비</h3>
-                    <p>하얀 날개를 가진 작은 나비예요.</p>
-                    <ul class="insect-facts">
-                        <li>하얀색 날개가 예뻐요</li>
-                        <li>배추를 좋아해요</li>
-                        <li>봄에 많이 볼 수 있어요</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="insect-card">
-                <div class="insect-image-container">
-                    <img src="../../images/insects/제비나비/main.webp" alt="제비나비" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>제비나비</h3>
-                    <p>제비처럼 긴 꼬리가 있는 나비예요.</p>
-                    <ul class="insect-facts">
-                        <li>뒷날개에 긴 꼬리가 있어요</li>
-                        <li>우아하게 날아다녀요</li>
-                        <li>검은색과 파란색이 섞여 있어요</li>
-                    </ul>
-                </div>
+            <div class="grid" id="butterflies-container">
+                <!-- 나비 데이터는 JavaScript로 동적 로드됩니다 -->
             </div>
         </section>
 
-        <section class="fun-facts">
+        <section class="fun-facts fade-in">
             <h2>재미있는 사실들</h2>
             <div class="facts-container">
                 <div class="fact-card">
-                    <h3>🐛 변신의 달인</h3>
-                    <p>나비는 애벌레에서 번데기를 거쳐 아름다운 나비가 돼요!</p>
+                    <h3>🐛 신기한 변신</h3>
+                    <p>애벌레가 고치를 만들고 나비로 변해요!</p>
+                </div>
+                <div class="fact-card">
+                    <h3>🌈 예쁜 날개</h3>
+                    <p>나비의 날개는 작은 비늘로 덮여있어요!</p>
                 </div>
                 <div class="fact-card">
                     <h3>👅 긴 주둥이</h3>
-                    <p>나비는 돌돌 말린 긴 주둥이로 꽃의 꿀을 빨아먹어요!</p>
-                </div>
-                <div class="fact-card">
-                    <h3>🌈 비늘 날개</h3>
-                    <p>나비의 날개는 작은 비늘로 덮여 있어서 반짝반짝 빛나요!</p>
+                    <p>나비는 긴 주둥이로 꽃꿀을 빨아먹어요!</p>
                 </div>
             </div>
         </section>
@@ -103,9 +98,9 @@
                     <p>곤충 친구들과 함께 놀면서 배워요!</p>
                 </div>
                 <div class="footer-links">
-                    <a href="../../terms.html">이용약관</a>
-                    <a href="../../privacy.html">개인정보처리방침</a>
-                    <a href="../../contact.html">문의하기</a>
+                    <a href="/terms.html">이용약관</a>
+                    <a href="/privacy.html">개인정보처리방침</a>
+                    <a href="/contact.html">문의하기</a>
                 </div>
                 <div class="footer-copyright">
                     <p>© 2024 curiofish. All rights reserved.</p>
@@ -118,6 +113,10 @@
         <div class="scroll-icon">⬆️</div>
     </button>
 
-    <script src="../../js/main.js"></script>
+    <!-- JavaScript -->
+    <script src="/js/common.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/data/insects.js"></script>
+    <script src="/js/pages/butterflies.js"></script>
 </body>
 </html> 
