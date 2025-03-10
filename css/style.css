@@ -2870,3 +2870,103 @@ footer a {
     margin: 0;
     list-style: none;
 }
+
+/* 곤충의 특별한 점 섹션 스타일 */
+.intro {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--section-shadow);
+}
+
+.intro-main-image {
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.full-width-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.intro-text p {
+    margin-bottom: 1rem;
+}
+
+.intro-text strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.intro-detail-image {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.detail-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* 모바일 반응형 스타일 */
+@media (max-width: 768px) {
+    .intro {
+        padding: 1rem;
+    }
+
+    .intro-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    .intro-main-image {
+        margin-bottom: 1.5rem;
+    }
+
+    .full-width-image {
+        aspect-ratio: 4/3;
+    }
+}
+
+/* 태블릿 반응형 스타일 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .intro-content {
+        gap: 1.5rem;
+    }
+}
+
+/* 큰 화면 최적화 */
+@media (min-width: 1200px) {
+    .intro {
+        padding: 3rem;
+    }
+
+    .intro-content {
+        gap: 3rem;
+    }
+}
