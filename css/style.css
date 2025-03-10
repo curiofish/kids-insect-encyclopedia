@@ -2761,4 +2761,112 @@ footer a {
 
 .fade-in {
     animation: fadeIn 0.5s ease forwards;
-} 
+}
+
+/* 검색 컨테이너 스타일 */
+.search-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    border: 3px solid var(--primary-color);
+    border-radius: 50px;
+    background-color: white;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.search-input::placeholder {
+    color: var(--gray-400);
+    font-size: 1.1rem;
+}
+
+.search-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    color: white;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    white-space: nowrap;
+}
+
+.search-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+}
+
+/* 반응형 검색창 */
+@media (max-width: 768px) {
+    .search-container {
+        padding: 0 0.5rem;
+        flex-direction: column;
+    }
+
+    .search-input {
+        padding: 0.8rem 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .search-button {
+        width: 100%;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* 헤더 레이아웃 조정 */
+.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    background-color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.main-header h1 {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+/* 네비게이션 스타일 조정 */
+.main-nav {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
