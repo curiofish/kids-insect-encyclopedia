@@ -144,6 +144,10 @@
     --radius-md: 16px;
     --radius-lg: 24px;
     --radius-full: 9999px;
+
+    --section-padding: 1.5rem;
+    --section-margin: 1.5rem;
+    --section-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Base Styles */
@@ -163,7 +167,7 @@ html {
 }
 
 body {
-    font-family: 'Comic Sans MS', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     background-color: var(--color-background);
     color: var(--color-text);
     line-height: 1.6;
@@ -2470,4 +2474,266 @@ a:hover {
     50% {
         background-position: 100% 50%;
     }
+}
+
+/* 기본 스타일 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* 컨테이너 스타일 */
+.container {
+    max-width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+/* 섹션 공통 스타일 */
+section {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: var(--section-padding);
+    margin: var(--section-margin) 0;
+    box-shadow: var(--section-shadow);
+    position: relative;
+}
+
+/* 섹션 구분선 */
+section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 네비게이션 스타일 */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* 제목 스타일 */
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* 이미지 스타일 */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    display: block;
+    margin: 1rem auto;
+}
+
+/* 카드 스타일 */
+.card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: var(--section-shadow);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* 버튼 스타일 */
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.button:hover, .button:focus {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* 그리드 레이아웃 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: white;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 1rem;
+        --section-margin: 1rem;
+    }
+
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    nav {
+        gap: 0.3rem;
+    }
+
+    nav a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        margin: 0.5rem 0;
+    }
+}
+
+/* 터치 인터랙션 개선 */
+@media (hover: none) {
+    .button, nav a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .button:active, nav a:active {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .card:active {
+        transform: translateY(-2px);
+    }
+}
+
+/* 접근성 개선 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+/* 로딩 상태 표시 */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
 } 
