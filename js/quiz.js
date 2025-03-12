@@ -590,7 +590,7 @@ function startQuiz() {
 // 문제 표시
 function showQuestion() {
     const question = quizData[currentQuestion];
-    questionNumber.textContent = currentQuestion + 1;
+    questionNumber.textContent = `${currentQuestion + 1}번 문제`;
     questionText.textContent = question.question;
     
     // 이미지 업데이트
