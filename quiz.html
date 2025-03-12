@@ -4,151 +4,252 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>곤충 퀴즈 - 곤충 백과사전</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<!-- SEO 메타 태그 -->
+<meta content="어린이를 위한 재미있는 곤충 퀴즈 - 곤충에 대해 배우면서 퀴즈를 풀어보아요!" name="description"/>
+<meta content="곤충 퀴즈, 어린이 퀴즈, 곤충 학습" name="keywords"/>
+<meta content="curiofish (이진우)" name="author"/>
+<meta content="fishcurio@gmail.com" name="contact"/>
+<meta content="© 2024 curiofish. All rights reserved." name="copyright"/>
+<meta content="index, follow" name="robots"/>
+<!-- Open Graph 메타 태그 -->
+<meta content="곤충 퀴즈 - 유치원 곤충 백과사전" property="og:title"/>
+<meta content="재미있는 곤충 퀴즈로 곤충에 대해 더 자세히 알아보아요!" property="og:description"/>
+<meta content="images/quiz-thumbnail.webp" property="og:image"/>
+<meta content="https://curiofish.github.io/kids-insect-encyclopedia/quiz.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- 파비콘 -->
+<link href="images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<title>곤충 퀴즈 - 유치원 곤충 백과사전</title>
+<link href="css/common.css" rel="stylesheet"/>
 <link href="css/style.css" rel="stylesheet"/>
-</head>
-<body><header>
-<div class="header">
-<div class="logo">
-<a href="index.html">
-<img alt="Kids Insect Encyclopedia" src="images/logo.jpg"/>
-</a>
-</div>
-<nav class="menu">
-<ul class="main-menu">
-<li>
-<a href="#">곤충 도감</a>
-<ul class="sub-menu">
-<li><a href="categories/beetle.html">딱정벌레</a></li>
-<li><a href="categories/butterfly.html">나비</a></li>
-<li><a href="categories/dragonfly.html">잠자리</a></li>
-<li><a href="categories/cricket.html">메뚜기</a></li>
-<li><a href="categories/mantis.html">사마귀</a></li>
-</ul>
-</li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
-</ul>
-</nav>
-<div class="search-container">
-<input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
-<button id="searchButton">검색</button>
-</div>
-<div class="mobile-menu-button">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</div>
-</header>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Gaegu:wght@400;700&family=Jua&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<style>
+    .quiz-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1rem;
+        font-family: 'Jua', sans-serif;
+    }
 
-<nav aria-label="메인 메뉴" class="main-nav">
-<ul class="nav-list">
-<li class="nav-item"><a class="nav-link" href="index.html">🏠 처음으로</a></li>
-<li class="nav-item"><a class="nav-link" href="intro.html">🌟 놀라운 곤충의 세계</a></li>
-<li class="nav-item">
-<a aria-expanded="false" class="nav-link" href="#">📚 곤충 도감</a>
-<ul class="sub-nav-list">
-<li><a class="nav-link" href="butterflies.html">나비와 나방</a></li>
-<li><a class="nav-link" href="beetles.html">딱정벌레</a></li>
-<li><a class="nav-link" href="grasshoppers.html">메뚜기와 귀뚜라미</a></li>
-<li><a class="nav-link" href="dragonflies.html">잠자리</a></li>
-<li><a class="nav-link" href="bees_moths.html">벌과 개미</a></li>
-<li><a class="nav-link" href="hemiptera.html">노린재와 매미</a></li>
-</ul>
-</li>
-<li class="nav-item"><a class="nav-link" href="not-insects.html">❗ 곤충이 아닌 동물들</a></li>
-<li class="nav-item"><a aria-current="page" class="nav-link active" href="quiz.html">🎯 곤충 퀴즈</a></li>
-</ul>
-</nav>
-<main class="main-content">
+    .quiz-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .quiz-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .quiz-question {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        color: #333;
+        font-family: 'Jua', sans-serif;
+    }
+
+    .quiz-options {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .quiz-option {
+        padding: 1rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Jua', sans-serif;
+        font-size: 1.1rem;
+    }
+
+    .quiz-option:hover {
+        background-color: #f5f5f5;
+        border-color: #ccc;
+    }
+
+    .quiz-option.selected {
+        background-color: #e3f2fd;
+        border-color: #2196f3;
+    }
+
+    .quiz-option.correct {
+        background-color: #c8e6c9;
+        border-color: #4caf50;
+    }
+
+    .quiz-option.wrong {
+        background-color: #ffcdd2;
+        border-color: #f44336;
+    }
+
+    .quiz-feedback {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        border-radius: 10px;
+        display: none;
+    }
+
+    .quiz-feedback.correct {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+        display: block;
+    }
+
+    .quiz-feedback.wrong {
+        background-color: #ffebee;
+        color: #c62828;
+        display: block;
+    }
+
+    .quiz-progress {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .quiz-progress-bar {
+        width: 100%;
+        height: 10px;
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .quiz-progress-fill {
+        height: 100%;
+        background-color: #4caf50;
+        transition: width 0.3s ease;
+    }
+
+    .quiz-score {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        color: #333;
+    }
+
+    .quiz-controls {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+
+    .quiz-button {
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Jua', sans-serif;
+    }
+
+    .quiz-button.next {
+        background-color: #2196f3;
+        color: white;
+    }
+
+    .quiz-button.next:hover {
+        background-color: #1976d2;
+    }
+
+    .quiz-button.restart {
+        background-color: #f5f5f5;
+        color: #333;
+    }
+
+    .quiz-button.restart:hover {
+        background-color: #e0e0e0;
+    }
+
+    .quiz-result {
+        text-align: center;
+        padding: 2rem;
+        display: none;
+    }
+
+    .quiz-result.show {
+        display: block;
+    }
+
+    .result-emoji {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .result-message {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+
+    @media (max-width: 768px) {
+        .quiz-container {
+            padding: 0.5rem;
+        }
+
+        .quiz-card {
+            padding: 1rem;
+        }
+
+        .quiz-question {
+            font-size: 1.2rem;
+        }
+
+        .quiz-option {
+            font-size: 1rem;
+        }
+    }
+</style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+
+<main class="main-content" id="main-content">
 <div class="container">
-<section class="quiz-intro">
-<h2>재미있는 곤충 퀴즈!</h2>
-<p>곤충에 대해 얼마나 알고 있는지 퀴즈를 풀어보세요.</p>
-<div class="quiz-stats">
-<div class="quiz-score">
-<span>점수:</span>
-<span id="score">0</span>
-</div>
+<div class="quiz-container">
+<h1>재미있는 곤충 퀴즈</h1>
+<p>곤충에 대해 얼마나 알고 있는지 퀴즈를 풀어보세요!</p>
+
 <div class="quiz-progress">
-<span>진행:</span>
-<span id="progress">0/50</span>
+<div class="quiz-progress-bar">
+<div class="quiz-progress-fill" style="width: 0%"></div>
 </div>
+<div class="quiz-score">진행: 0/10</div>
 </div>
-</section>
-<section class="quiz-container">
-<div class="quiz-box" id="quiz-box">
+
+<div class="quiz-card">
 <div class="quiz-question">
-<h3>문제 <span id="question-number">1</span></h3>
-<p id="question-text">퀴즈를 시작하려면 아래 버튼을 눌러주세요!</p>
-</div>
-<div class="quiz-image-container">
-<picture>
-<source srcset="images/quiz/시작.webp" type="image/webp"/>
-<img alt="퀴즈 시작 이미지" class="quiz-image" id="question-image" loading="lazy" src="images/quiz/시작.png"/>
-</picture>
+곤충에 대해 알아보세요!
 </div>
 <div class="quiz-options">
-<button class="quiz-option" data-answer="1">1번 답</button>
-<button class="quiz-option" data-answer="2">2번 답</button>
-<button class="quiz-option" data-answer="3">3번 답</button>
-<button class="quiz-option" data-answer="4">4번 답</button>
+<!-- 퀴즈 옵션들이 여기에 동적으로 추가됩니다 -->
 </div>
-<div class="quiz-feedback" id="feedback">
-<p>정답을 선택해주세요!</p>
+<div class="quiz-feedback"></div>
 </div>
-<button class="quiz-button" id="start-quiz">퀴즈 시작하기</button>
-<button class="quiz-button" id="next-question" style="display: none;">다음 문제</button>
+
+<div class="quiz-controls">
+<button class="quiz-button restart">다시 시작</button>
+<button class="quiz-button next">다음 문제</button>
 </div>
-</section>
-<section class="quiz-result" style="display: none;">
-<h2>퀴즈 결과</h2>
-<div class="result-content">
-<div class="result-score">
-<h3>최종 점수</h3>
-<p><span id="final-score">0</span> / 500</p>
+
+<div class="quiz-result">
+<div class="result-emoji">🎉</div>
+<div class="result-message"></div>
+<button class="quiz-button restart">다시 도전하기</button>
 </div>
-<div class="result-message">
-<p id="result-text">열심히 공부해서 다시 도전해보세요!</p>
 </div>
-<button class="quiz-button" id="retry-quiz">다시 도전하기</button>
-</div>
-</section>
 </div>
 </main>
-<button aria-label="맨 위로 이동" class="scroll-top">
-<i class="fas fa-arrow-up"></i>
-</button>
 
-<script src="js/script.js"></script>
+<div id="footer-placeholder"></div>
+
+<script src="js/common.js"></script>
 <script src="js/quiz.js"></script>
-<footer>
-<div class="footer">
-<div class="footer-content">
-<div class="footer-section">
-<h3>Kids Insect Encyclopedia</h3>
-<p>어린이들을 위한 재미있는 곤충 백과사전</p>
-</div>
-<div class="footer-section">
-<h3>바로가기</h3>
-<ul>
-<li><a href="index.html">홈</a></li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>연락처</h3>
-<p>Email: contact@kidsinsects.com</p>
-<p>Tel: 02-123-4567</p>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2024 Kids Insect Encyclopedia. All rights reserved.</p>
-</div>
-</div>
-</footer></body>
+</body>
 </html> 

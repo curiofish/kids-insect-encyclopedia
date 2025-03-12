@@ -1,138 +1,132 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="ko">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- SEO 메타 태그 -->
-<meta content="유치원 친구들을 위한 개미의 세계 - 일개미, 여왕개미, 불개미의 이야기를 만나보세요!" name="description"/>
-<meta content="곤충, 유치원, 어린이, 백과사전, 개미, 일개미, 여왕개미, 불개미" name="keywords"/>
+<meta content="어린이를 위한 개미의 세계 - 일개미와 여왕개미의 이야기를 만나보세요" name="description"/>
+<meta content="곤충, 어린이 백과사전, 개미, 일개미, 여왕개미" name="keywords"/>
 <meta content="curiofish (이진우)" name="author"/>
 <meta content="fishcurio@gmail.com" name="contact"/>
 <meta content="© 2024 curiofish. All rights reserved." name="copyright"/>
 <meta content="index, follow" name="robots"/>
 <!-- Open Graph 메타 태그 -->
-<meta content="개미의 세계 - 유치원 곤충 백과사전" property="og:title"/>
-<meta content="유치원 친구들을 위한 개미의 세계 - 일개미, 여왕개미, 불개미의 이야기를 만나보세요!" property="og:description"/>
-<meta content="/images/insects/일개미/main.webp" property="og:image"/>
+<meta content="개미의 세계 - 어린이 곤충 백과사전" property="og:title"/>
+<meta content="어린이 친구들을 위한 개미의 세계 - 일개미와 여왕개미의 이야기를 만나보세요" property="og:description"/>
+<meta content="../../images/insects/ant-main.jpg" property="og:image"/>
 <meta content="https://curiofish.github.io/kids-insect-encyclopedia/categories/ants/" property="og:url"/>
 <meta content="website" property="og:type"/>
 <!-- 파비콘 -->
-<link href="/images/favicon.png" rel="icon" type="image/png"/>
-<link href="/images/apple-touch-icon.png" rel="apple-touch-icon"/>
-<title>개미의 세계 - 유치원 곤충 백과사전</title>
+<link href="../../images/favicon.png" rel="icon" type="image/png"/>
+<link href="../../images/apple-touch-icon.png" rel="apple-touch-icon"/>
+<title>개미의 세계 - 어린이 곤충 백과사전</title>
 <!-- CSS -->
-<link href="/css/common.css" rel="stylesheet"/>
-<link href="/css/layout.css" rel="stylesheet"/>
-<link href="/css/components.css" rel="stylesheet"/>
-<link href="/css/pages/category.css" rel="stylesheet"/>
+<link href="../../css/common.css" rel="stylesheet"/>
+<link href="../../css/layout.css" rel="stylesheet"/>
+<link href="../../css/components.css" rel="stylesheet"/>
+<link href="../../css/pages/category.css" rel="stylesheet"/>
 <!-- 폰트 -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet"/>
 </head>
-<body><header>
-<div class="header">
+<body>
+<header class="header">
+<div class="container">
 <div class="logo">
-<a href="index.html">
-<img alt="Kids Insect Encyclopedia" src="images/logo.jpg"/>
+<a href="../../index.html">
+<img alt="Kids Insect Encyclopedia" src="../../images/logo.jpg"/>
 </a>
 </div>
 <nav class="menu">
 <ul class="main-menu">
 <li>
-<a href="#">곤충 도감</a>
+<a href="#">곤충 카테고리</a>
 <ul class="sub-menu">
-<li><a href="categories/beetle.html">딱정벌레</a></li>
-<li><a href="categories/butterfly.html">나비</a></li>
-<li><a href="categories/dragonfly.html">잠자리</a></li>
-<li><a href="categories/cricket.html">메뚜기</a></li>
-<li><a href="categories/mantis.html">사마귀</a></li>
+<li><a href="../beetles/index.html">딱정벌레</a></li>
+<li><a href="../butterflies/index.html">나비</a></li>
+<li><a href="../dragonflies/index.html">잠자리</a></li>
+<li><a href="../grasshoppers/index.html">메뚜기</a></li>
+<li><a href="../mantis/index.html">사마귀</a></li>
+<li><a href="../bees/index.html">벌</a></li>
+<li><a href="../ants/index.html">개미</a></li>
+<li><a href="../others/index.html">기타</a></li>
 </ul>
 </li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
+<li><a href="../../about.html">소개</a></li>
+<li><a href="../../contact.html">문의하기</a></li>
 </ul>
 </nav>
 <div class="search-container">
 <input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
 <button id="searchButton">검색</button>
 </div>
-<div class="mobile-menu-button">
+<button class="mobile-menu-button">
 <span></span>
 <span></span>
 <span></span>
-</div>
+</button>
 </div>
 </header>
-<a class="skip-link" href="#main-content">메인 콘텐츠로 바로가기</a>
 
-<main class="container" id="main-content">
-<section class="insect-intro fade-in">
-<h2>개미에 대해 알아보아요</h2>
-<p class="intro-text">
-                개미는 협동심이 뛰어난 곤충이에요.
-                여왕개미와 일개미가 함께 살면서 서로 도와가며 살아요.
-            </p>
-<div class="intro-image">
-<img alt="개미의 생활" class="full-width-image" src="../../images/insects/일개미/life.webp"/>
-</div>
-</section>
-<section class="insect-types fade-in">
-<h2>다양한 개미 친구들</h2>
-<div class="grid" id="ants-container">
-<!-- 개미 데이터는 JavaScript로 동적 로드됩니다 -->
-</div>
-</section>
-<section class="fun-facts fade-in">
-<h2>재미있는 사실들</h2>
-<div class="facts-container">
-<div class="fact-card">
-<h3>👑 여왕개미</h3>
-<p>여왕개미는 15년까지 살 수 있어요!</p>
-</div>
-<div class="fact-card">
-<h3>🏃 협동의 달인</h3>
-<p>개미들은 서로 도우며 먹이를 나르고 집을 지어요!</p>
-</div>
-<div class="fact-card">
-<h3>👃 냄새로 소통</h3>
-<p>개미들은 페로몬이라는 냄새로 이야기를 나눠요!</p>
-</div>
-</div>
-</section>
-</main>
-
-<button aria-label="맨 위로 이동" class="scroll-top">
-<div class="scroll-icon">⬆️</div>
-</button>
-<!-- JavaScript -->
-<script src="/js/common.js"></script>
-<script src="/js/components.js"></script>
-<script src="/js/data/insects.js"></script>
-<script src="/js/pages/ants.js"></script>
-<footer>
-<div class="footer">
-<div class="footer-content">
-<div class="footer-section">
-<h3>Kids Insect Encyclopedia</h3>
-<p>어린이들을 위한 재미있는 곤충 백과사전</p>
-</div>
-<div class="footer-section">
-<h3>바로가기</h3>
+<nav class="breadcrumb">
+<div class="container">
 <ul>
-<li><a href="index.html">홈</a></li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
+<li><a href="../../index.html">홈</a></li>
+<li>개미</li>
 </ul>
 </div>
-<div class="footer-section">
-<h3>연락처</h3>
-<p>Email: contact@kidsinsects.com</p>
-<p>Tel: 02-123-4567</p>
+</nav>
+
+<main class="main-content">
+<div class="container">
+<section class="category-intro">
+<h1>개미의 세계</h1>
+<p>개미는 사회성이 뛰어난 곤충이에요. 일개미와 여왕개미가 함께 살면서 서로 도와가며 살아가요. 개미들은 페로몬이라는 특별한 물질로 서로 대화를 나누고, 먹이를 찾으면 다른 개미들에게 알려주어요.</p>
+</section>
+
+<section class="insect-list">
+<h2>개미 종류</h2>
+<div class="grid">
+<article class="card">
+<img alt="일개미" class="creature-image" src="../../images/insects/worker-ant.jpg"/>
+<h3>일개미</h3>
+<p>일개미는 개미 사회의 대부분을 차지하는 일꾼이에요. 먹이를 구하고, 둥지를 짓고, 알과 애벌레를 돌보는 일을 해요.</p>
+<a class="button" href="worker-ant.html">자세히 보기</a>
+</article>
+<article class="card">
+<img alt="여왕개미" class="creature-image" src="../../images/insects/queen-ant.jpg"/>
+<h3>여왕개미</h3>
+<p>여왕개미는 개미 사회의 리더예요. 알을 낳아 새로운 개미들을 만들어내는 중요한 역할을 해요.</p>
+<a class="button" href="queen-ant.html">자세히 보기</a>
+</article>
+</div>
+</section>
+
+<div class="category-navigation">
+<a class="prev" href="../bees/index.html">← 벌</a>
+<a class="next" href="../others/index.html">기타 →</a>
 </div>
 </div>
-<div class="footer-bottom">
+</main>
+
+<footer class="main-footer">
+<div class="container">
+<div class="footer-content">
 <p>© 2024 Kids Insect Encyclopedia. All rights reserved.</p>
+<div class="footer-links">
+<a href="../../about.html">소개</a>
+<a href="../../contact.html">문의하기</a>
+<a href="../../privacy.html">개인정보처리방침</a>
 </div>
 </div>
-</footer></body>
+</div>
+</footer>
+
+<button class="scroll-top" aria-label="맨 위로 이동">
+<i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- JavaScript -->
+<script src="../../js/common.js"></script>
+</body>
 </html> 

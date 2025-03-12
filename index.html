@@ -14,7 +14,7 @@
 <!-- Open Graph 메타 태그 -->
 <meta content="신나는 곤충 백과사전 🐞" property="og:title"/>
 <meta content="유치원 친구들을 위한 신나는 곤충 이야기 - 100가지 곤충들의 재미있는 이야기를 만나보세요!" property="og:description"/>
-<meta content="/images/og-image.webp" property="og:image"/>
+<meta content="images/og-image.webp" property="og:image"/>
 <meta content="https://your-domain.com" property="og:url"/>
 <meta content="website" property="og:type"/>
 <!-- 파비콘 -->
@@ -31,45 +31,13 @@
 <!-- Font Awesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
 </head>
-<body><header>
-<div class="header">
-<div class="logo">
-<a href="index.html">
-<img alt="Kids Insect Encyclopedia" src="images/logo.jpg"/>
-</a>
-</div>
-<nav class="menu">
-<ul class="main-menu">
-<li>
-<a href="#">곤충 도감</a>
-<ul class="sub-menu">
-<li><a href="categories/beetle.html">딱정벌레</a></li>
-<li><a href="categories/butterfly.html">나비</a></li>
-<li><a href="categories/dragonfly.html">잠자리</a></li>
-<li><a href="categories/cricket.html">메뚜기</a></li>
-<li><a href="categories/mantis.html">사마귀</a></li>
-</ul>
-</li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
-</ul>
-</nav>
-<div class="search-container">
-<input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
-<button id="searchButton">검색</button>
-</div>
-<div class="mobile-menu-button">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</div>
-</header>
+<body>
 <a class="skip-link" href="#main-content">메인 콘텐츠로 바로가기</a>
 
-<!-- 검색 결과 컨테이너 -->
-<div class="search-results" id="searchResults"></div>
-<main class="main-content">
+<!-- 헤더 플레이스홀더 -->
+<div id="header-placeholder"></div>
+
+<main class="main-content" id="main-content">
 <div class="container">
 <section class="intro fade-in">
 <h2>곤충의 특별한 점 🌟</h2>
@@ -92,39 +60,39 @@
 <h2>곤충친구들 만나기 🦋</h2>
 <div class="grid">
 <div class="card random-insect">
-<a class="insect-link" href="#" id="random-insect-link-1">
-<img alt="오늘의 곤충" id="random-insect-1" src="images/insects/ladybug.jpg"/>
-<span class="insect-description">이 곤충에 대해 더 알아보세요!</span>
+<a class="insect-link" href="categories/beetles/index.html">
+<img alt="장수풍뎅이" src="images/insects/rhinoceros-beetle.jpg"/>
+<span class="insect-description">장수풍뎅이에 대해 더 알아보세요!</span>
 </a>
 </div>
 <div class="card random-insect">
-<a class="insect-link" href="#" id="random-insect-link-2">
-<img alt="오늘의 곤충" id="random-insect-2" src="images/insects/swallowtail-butterfly.jpg"/>
-<span class="insect-description">이 곤충에 대해 더 알아보세요!</span>
+<a class="insect-link" href="categories/butterflies/index.html">
+<img alt="호랑나비" src="images/insects/swallowtail-butterfly.jpg"/>
+<span class="insect-description">호랑나비에 대해 더 알아보세요!</span>
 </a>
 </div>
 <div class="card random-insect">
-<a class="insect-link" href="#" id="random-insect-link-3">
-<img alt="오늘의 곤충" id="random-insect-3" src="images/insects/mantis.jpg"/>
-<span class="insect-description">이 곤충에 대해 더 알아보세요!</span>
+<a class="insect-link" href="categories/mantis/index.html">
+<img alt="사마귀" src="images/insects/mantis.jpg"/>
+<span class="insect-description">사마귀에 대해 더 알아보세요!</span>
 </a>
 </div>
 <div class="card random-insect">
-<a class="insect-link" href="#" id="random-insect-link-4">
-<img alt="오늘의 곤충" id="random-insect-4" src="images/insects/honeybee.jpg"/>
-<span class="insect-description">이 곤충에 대해 더 알아보세요!</span>
+<a class="insect-link" href="categories/bees/index.html">
+<img alt="꿀벌" src="images/insects/honeybee.jpg"/>
+<span class="insect-description">꿀벌에 대해 더 알아보세요!</span>
 </a>
 </div>
 <div class="card random-insect">
-<a class="insect-link" href="#" id="random-insect-link-5">
-<img alt="오늘의 곤충" id="random-insect-5" src="images/insects/dragonfly.jpg"/>
-<span class="insect-description">이 곤충에 대해 더 알아보세요!</span>
+<a class="insect-link" href="categories/dragonflies/index.html">
+<img alt="잠자리" src="images/insects/dragonfly.jpg"/>
+<span class="insect-description">잠자리에 대해 더 알아보세요!</span>
 </a>
 </div>
 <div class="card random-insect">
-<a class="insect-link" href="#" id="random-insect-link-6">
-<img alt="오늘의 곤충" id="random-insect-6" src="images/insects/cricket.jpg"/>
-<span class="insect-description">이 곤충에 대해 더 알아보세요!</span>
+<a class="insect-link" href="categories/grasshoppers/index.html">
+<img alt="메뚜기" src="images/insects/cricket.jpg"/>
+<span class="insect-description">메뚜기에 대해 더 알아보세요!</span>
 </a>
 </div>
 </div>
@@ -264,35 +232,16 @@
 </div>
 </main>
 
+<!-- 푸터 플레이스홀더 -->
+<div id="footer-placeholder"></div>
+
 <!-- 스크롤 탑 버튼 -->
-<button aria-label="맨 위로 이동" class="scroll-top">
-<i class="fas fa-chevron-up"></i>
+<button class="scroll-top" aria-label="맨 위로 이동">
+<i class="fas fa-arrow-up"></i>
 </button>
-<script src="js/main.js"></script>
-<footer>
-<div class="footer">
-<div class="footer-content">
-<div class="footer-section">
-<h3>Kids Insect Encyclopedia</h3>
-<p>어린이들을 위한 재미있는 곤충 백과사전</p>
-</div>
-<div class="footer-section">
-<h3>바로가기</h3>
-<ul>
-<li><a href="index.html">홈</a></li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>연락처</h3>
-<p>Email: contact@kidsinsects.com</p>
-<p>Tel: 02-123-4567</p>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2024 Kids Insect Encyclopedia. All rights reserved.</p>
-</div>
-</div>
-</footer></body>
+
+<!-- JavaScript -->
+<script src="js/common.js"></script>
+<script src="js/script.js"></script>
+</body>
 </html> 

@@ -1,138 +1,253 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="ko">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- SEO 메타 태그 -->
-<meta content="유치원 친구들을 위한 사마귀의 세계 - 사마귀, 꽃사마귀, 왕사마귀의 이야기를 만나보세요!" name="description"/>
-<meta content="곤충, 유치원, 어린이, 백과사전, 사마귀, 꽃사마귀, 왕사마귀" name="keywords"/>
-<meta content="curiofish (이진우)" name="author"/>
+<meta content="어린이를 위한 사마귀류 곤충 설명 - 사마귀의 특징과 생활을 알아보아요" name="description"/>
+<meta content="사마귀, 곤충, 어린이" name="keywords"/>
+<meta content="curiofish (진실)" name="author"/>
 <meta content="fishcurio@gmail.com" name="contact"/>
 <meta content="© 2024 curiofish. All rights reserved." name="copyright"/>
 <meta content="index, follow" name="robots"/>
 <!-- Open Graph 메타 태그 -->
-<meta content="사마귀의 세계 - 유치원 곤충 백과사전" property="og:title"/>
-<meta content="유치원 친구들을 위한 사마귀의 세계 - 사마귀, 꽃사마귀, 왕사마귀의 이야기를 만나보세요!" property="og:description"/>
-<meta content="/images/insects/사마귀/main.webp" property="og:image"/>
-<meta content="https://curiofish.github.io/kids-insect-encyclopedia/categories/mantis/" property="og:url"/>
+<meta content="사마귀류 - 어린이 곤충 백과사전" property="og:title"/>
+<meta content="어린이 친구들을 위한 사마귀류 이야기 - 사마귀의 특징과 생활을 알아보아요" property="og:description"/>
+<meta content="/images/insects/mantis.jpg" property="og:image"/>
+<meta content="https://curiofish.github.io/kids-insect-encyclopedia/categories/mantis/index.html" property="og:url"/>
 <meta content="website" property="og:type"/>
-<!-- 파비콘 -->
-<link href="/images/favicon.png" rel="icon" type="image/png"/>
-<link href="/images/apple-touch-icon.png" rel="apple-touch-icon"/>
-<title>사마귀의 세계 - 유치원 곤충 백과사전</title>
+<!-- ?占쎈퉬占?-->
+<link href="../../images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../../images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<title>사마귀류 - 어린이 곤충 백과사전</title>
 <!-- CSS -->
-<link href="/css/common.css" rel="stylesheet"/>
-<link href="/css/layout.css" rel="stylesheet"/>
-<link href="/css/components.css" rel="stylesheet"/>
-<link href="/css/pages/category.css" rel="stylesheet"/>
-<!-- 폰트 -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/common.css" rel="stylesheet"/>
+<link href="../../css/style.css" rel="stylesheet"/>
+<!-- ?占쏀듃 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Gaegu:wght@400;700&display=swap" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<style>
+    .breadcrumb {
+        margin: 1rem 0 2rem;
+        padding: 0.5rem 0;
+    }
+
+    .breadcrumb ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .breadcrumb li {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .breadcrumb li:not(:last-child)::after {
+        content: ">";
+        margin: 0 0.5rem;
+        color: #999;
+    }
+
+    .breadcrumb a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover {
+        color: #333;
+    }
+
+    .breadcrumb li:last-child {
+        color: #333;
+        font-weight: 500;
+    }
+
+    .insect-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .insect-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .insect-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .insect-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .insect-card-content {
+        padding: 1.5rem;
+    }
+
+    .insect-card h3 {
+        margin: 0 0 1rem;
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .insect-card p {
+        margin: 0;
+        color: #666;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .insect-card a {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+    }
+
+    .insect-card a:hover {
+        background-color: #388E3C;
+    }
+</style>
 </head>
-<body><header>
-<div class="header">
-<div class="logo">
-<a href="index.html">
-<img alt="Kids Insect Encyclopedia" src="images/logo.jpg"/>
-</a>
-</div>
-<nav class="menu">
-<ul class="main-menu">
-<li>
-<a href="#">곤충 도감</a>
-<ul class="sub-menu">
-<li><a href="categories/beetle.html">딱정벌레</a></li>
-<li><a href="categories/butterfly.html">나비</a></li>
-<li><a href="categories/dragonfly.html">잠자리</a></li>
-<li><a href="categories/cricket.html">메뚜기</a></li>
-<li><a href="categories/mantis.html">사마귀</a></li>
-</ul>
-</li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
-</ul>
-</nav>
-<div class="search-container">
-<input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
-<button id="searchButton">검색</button>
-</div>
-<div class="mobile-menu-button">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</div>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="../../index.html">
+                <img alt="어린이 곤충 백과사전" src="../../images/logo.jpg"/>
+            </a>
+        </div>
+        <nav class="menu">
+            <ul class="main-menu">
+                <li>
+                    <a href="#">곤충 카테고리</a>
+                    <ul class="sub-menu">
+                        <li><a href="../beetles/index.html">딱정벌레</a></li>
+                        <li><a href="../butterflies/index.html">나비</a></li>
+                        <li><a href="../dragonflies/index.html">잠자리</a></li>
+                        <li><a href="../grasshoppers/index.html">메뚜기</a></li>
+                        <li><a href="../mantis/index.html">사마귀</a></li>
+                        <li><a href="../bees/index.html">꿀벌</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../about.html">소개</a></li>
+                <li><a href="../../contact.html">문의하기</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
+            <button id="searchButton">검색</button>
+        </div>
+        <button class="mobile-menu-button" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
 </header>
+
 <a class="skip-link" href="#main-content">메인 콘텐츠로 바로가기</a>
 
-<main class="container" id="main-content">
-<section class="insect-intro fade-in">
-<h2>사마귀에 대해 알아보아요</h2>
-<p class="intro-text">
-                사마귀는 앞다리로 먹이를 잡는 멋진 사냥꾼이에요.
-                나뭇가지처럼 보이는 몸으로 숨어 있다가 먹이를 잡아요.
-            </p>
-<div class="intro-image">
-<img alt="사마귀의 생활" class="full-width-image" src="../../images/insects/사마귀/life.webp"/>
-</div>
+<div class="search-results" id="searchResults"></div>
+
+<main class="main-content" id="main-content">
+<nav class="breadcrumb" aria-label="페이지 경로">
+    <ol>
+        <li><a href="../../index.html">홈</a></li>
+        <li><a href="../all.html">곤충 카테고리</a></li>
+        <li>사마귀류</li>
+    </ol>
+</nav>
+
+<h1>사마귀류 곤충들</h1>
+
+<section class="category-intro">
+    <p>
+        사마귀는 앞다리가 특별히 발달한 곤충이에요.
+        앞다리로 다른 곤충을 잡아먹는 사냥꾼이에요.
+        초록색이나 갈색으로 주변 환경과 비슷해서 숨기 쉬워요.
+        어떤 사마귀는 꽃을 닮아 위장하기도 해요.
+    </p>
 </section>
-<section class="insect-types fade-in">
-<h2>다양한 사마귀 친구들</h2>
-<div class="grid" id="mantises-container">
-<!-- 사마귀 데이터는 JavaScript로 동적 로드됩니다 -->
-</div>
+
+<section class="insect-list">
+    <div class="insect-grid">
+        <div class="insect-card">
+            <img alt="사마귀" src="../../images/insects/mantis.jpg"/>
+            <div class="insect-card-content">
+                <h3>사마귀</h3>
+                <p>앞다리가 낫처럼 생긴 사마귀는 숨어서 먹이를 기다리는 곤충이에요.</p>
+                <a href="mantis.html">자세히 보기</a>
+            </div>
+        </div>
+        <div class="insect-card">
+            <img alt="꽃사마귀" src="../../images/insects/flower-mantis.jpg"/>
+            <div class="insect-card-content">
+                <h3>꽃사마귀</h3>
+                <p>아름다운 꽃을 닮은 사마귀로, 꽃 위에 숨어서 먹이를 기다려요.</p>
+                <a href="flower-mantis.html">자세히 보기</a>
+            </div>
+        </div>
+    </div>
 </section>
-<section class="fun-facts fade-in">
-<h2>재미있는 사실들</h2>
-<div class="facts-container">
-<div class="fact-card">
-<h3>👀 회전하는 머리</h3>
-<p>사마귀는 머리를 180도 돌릴 수 있어요!</p>
-</div>
-<div class="fact-card">
-<h3>🌿 위장의 달인</h3>
-<p>나뭇가지나 꽃처럼 보이게 변신할 수 있어요!</p>
-</div>
-<div class="fact-card">
-<h3>💪 강한 앞다리</h3>
-<p>앞다리로 먹이를 재빠르게 잡을 수 있어요!</p>
-</div>
-</div>
-</section>
+
+<nav class="category-navigation">
+    <div class="nav-links">
+        <a class="prev" href="../grasshoppers/index.html">
+            <span>이전 카테고리</span>
+            <span>메뚜기류</span>
+        </a>
+        <a class="next" href="../bees/index.html">
+            <span>다음 카테고리</span>
+            <span>꿀벌류</span>
+        </a>
+    </div>
+</nav>
 </main>
 
-<button aria-label="맨 위로 이동" class="scroll-top">
-<div class="scroll-icon">⬆️</div>
+<footer class="main-footer">
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>어린이 곤충 백과사전</h3>
+                <p>어린이들을 위한 재미있는 곤충 백과사전</p>
+            </div>
+            <div class="footer-section">
+                <h3>연락처</h3>
+                <p>Email: <a href="mailto:fishcurio@gmail.com">fishcurio@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 curiofish. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top" aria-label="맨 위로 이동">
+    <i class="fas fa-arrow-up"></i>
 </button>
 <!-- JavaScript -->
-<script src="/js/common.js"></script>
-<script src="/js/components.js"></script>
-<script src="/js/data/insects.js"></script>
-<script src="/js/pages/mantis.js"></script>
-<footer>
-<div class="footer">
-<div class="footer-content">
-<div class="footer-section">
-<h3>Kids Insect Encyclopedia</h3>
-<p>어린이들을 위한 재미있는 곤충 백과사전</p>
-</div>
-<div class="footer-section">
-<h3>바로가기</h3>
-<ul>
-<li><a href="index.html">홈</a></li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>연락처</h3>
-<p>Email: contact@kidsinsects.com</p>
-<p>Tel: 02-123-4567</p>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2024 Kids Insect Encyclopedia. All rights reserved.</p>
-</div>
-</div>
-</footer></body>
+<script src="../../js/script.js"></script>
+</body>
 </html> 

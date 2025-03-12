@@ -1,138 +1,125 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="ko">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- SEO 메타 태그 -->
-<meta content="유치원 친구들을 위한 잠자리의 세계 - 고추잠자리, 청실잠자리, 왕잠자리의 이야기를 만나보세요!" name="description"/>
-<meta content="곤충, 유치원, 어린이, 백과사전, 잠자리, 고추잠자리, 청실잠자리, 왕잠자리" name="keywords"/>
+<meta content="어린이를 위한 잠자리 도감 - 고추잠자리, 실잠자리 등 다양한 잠자리들을 만나보세요" name="description"/>
+<meta content="잠자리, 고추잠자리, 실잠자리, 잠자리채, 곤충, 어린이" name="keywords"/>
 <meta content="curiofish (이진우)" name="author"/>
 <meta content="fishcurio@gmail.com" name="contact"/>
 <meta content="© 2024 curiofish. All rights reserved." name="copyright"/>
 <meta content="index, follow" name="robots"/>
 <!-- Open Graph 메타 태그 -->
-<meta content="잠자리의 세계 - 유치원 곤충 백과사전" property="og:title"/>
-<meta content="유치원 친구들을 위한 잠자리의 세계 - 고추잠자리, 청실잠자리, 왕잠자리의 이야기를 만나보세요!" property="og:description"/>
-<meta content="/images/insects/고추잠자리/main.webp" property="og:image"/>
+<meta content="잠자리의 세계 - 어린이 곤충 백과사전" property="og:title"/>
+<meta content="어린이 친구들을 위한 잠자리의 세계 - 고추잠자리, 실잠자리의 이야기를 만나보세요" property="og:description"/>
+<meta content="/images/insects/dragonflies/main.webp" property="og:image"/>
 <meta content="https://curiofish.github.io/kids-insect-encyclopedia/categories/dragonflies/" property="og:url"/>
 <meta content="website" property="og:type"/>
-<!-- 파비콘 -->
-<link href="/images/favicon.png" rel="icon" type="image/png"/>
-<link href="/images/apple-touch-icon.png" rel="apple-touch-icon"/>
-<title>잠자리의 세계 - 유치원 곤충 백과사전</title>
+<!-- ?占쎈퉬占?-->
+<link href="../../images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../../images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<title>잠자리 - 어린이 곤충 백과사전</title>
 <!-- CSS -->
-<link href="/css/common.css" rel="stylesheet"/>
-<link href="/css/layout.css" rel="stylesheet"/>
-<link href="/css/components.css" rel="stylesheet"/>
-<link href="/css/pages/category.css" rel="stylesheet"/>
-<!-- 폰트 -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/common.css" rel="stylesheet"/>
+<link href="../../css/style.css" rel="stylesheet"/>
+<!-- ?占쏀듃 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Gaegu:wght@400;700&display=swap" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
 </head>
-<body><header>
-<div class="header">
+<body>
+<header class="header">
+<div class="container">
 <div class="logo">
-<a href="index.html">
-<img alt="Kids Insect Encyclopedia" src="images/logo.jpg"/>
+<a href="../../index.html">
+<img alt="Kids Insect Encyclopedia" src="../../images/logo.jpg"/>
 </a>
 </div>
 <nav class="menu">
 <ul class="main-menu">
 <li>
-<a href="#">곤충 도감</a>
+<a href="#">곤충 카테고리</a>
 <ul class="sub-menu">
-<li><a href="categories/beetle.html">딱정벌레</a></li>
-<li><a href="categories/butterfly.html">나비</a></li>
-<li><a href="categories/dragonfly.html">잠자리</a></li>
-<li><a href="categories/cricket.html">메뚜기</a></li>
-<li><a href="categories/mantis.html">사마귀</a></li>
+<li><a href="../beetles/index.html">딱정벌레</a></li>
+<li><a href="../butterflies/index.html">나비</a></li>
+<li><a href="../dragonflies/index.html">잠자리</a></li>
+<li><a href="../grasshoppers/index.html">메뚜기</a></li>
+<li><a href="../mantis/index.html">사마귀</a></li>
+<li><a href="../bees/index.html">벌</a></li>
+<li><a href="../ants/index.html">개미</a></li>
+<li><a href="../others/index.html">기타 곤충</a></li>
 </ul>
 </li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
+<li><a href="../../about.html">소개</a></li>
+<li><a href="../../contact.html">문의하기</a></li>
 </ul>
 </nav>
 <div class="search-container">
 <input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
 <button id="searchButton">검색</button>
 </div>
-<div class="mobile-menu-button">
+<button class="mobile-menu-button" aria-label="메뉴 열기">
 <span></span>
 <span></span>
 <span></span>
-</div>
+</button>
 </div>
 </header>
-<a class="skip-link" href="#main-content">메인 콘텐츠로 바로가기</a>
 
-<main class="container" id="main-content">
-<section class="insect-intro fade-in">
-<h2>잠자리에 대해 알아보아요</h2>
-<p class="intro-text">
-                잠자리는 공중에서 자유롭게 날아다니는 곤충이에요.
-                물가에서 살며 작은 곤충들을 잡아먹어요.
+<div class="search-results" id="searchResults"></div>
+
+<main class="main-content" id="main-content">
+<section class="category-intro fade-in">
+<h1>잠자리 도감 소개</h1>
+<p class="category-description">
+                잠자리는 날카로운 눈과 빠른 날개를 가진 곤충이에요. 
+                물가에서 살아가는 유충에서 자라나 작은 벌레들을 잡아먹고 살아요.
             </p>
-<div class="intro-image">
-<img alt="잠자리의 생활" class="full-width-image" src="../../images/insects/고추잠자리/life.webp"/>
-</div>
 </section>
-<section class="insect-types fade-in">
-<h2>다양한 잠자리 친구들</h2>
-<div class="grid" id="dragonflies-container">
-<!-- 잠자리 데이터는 JavaScript로 동적 로드됩니다 -->
+<section class="insect-list fade-in">
+<div class="grid">
+<div class="card">
+<img alt="고추잠자리" src="../../images/insects/common-dragonfly.jpg"/>
+<h2>고추잠자리</h2>
+<p>빨간 배를 가진 잠자리예요. 가을이 되면 많이 볼 수 있어요.</p>
+<a class="button" href="common-dragonfly.html">자세히 보기</a>
 </div>
-</section>
-<section class="fun-facts fade-in">
-<h2>재미있는 사실들</h2>
-<div class="facts-container">
-<div class="fact-card">
-<h3>🚁 헬리콥터 같아요</h3>
-<p>잠자리는 제자리에서 멈춰 날 수 있어요!</p>
-</div>
-<div class="fact-card">
-<h3>👀 큰 눈</h3>
-<p>잠자리는 큰 겹눈으로 먹이를 잘 찾아요!</p>
-</div>
-<div class="fact-card">
-<h3>💨 빠른 비행</h3>
-<p>잠자리는 시속 50km로 날 수 있어요!</p>
+<div class="card">
+<img alt="실잠자리" src="../../images/insects/damselfly.jpg"/>
+<h2>실잠자리</h2>
+<p>실처럼 가는 몸을 가진 잠자리예요. 날개를 접을 수 있어요.</p>
+<a class="button" href="damselfly.html">자세히 보기</a>
 </div>
 </div>
 </section>
 </main>
 
-<button aria-label="맨 위로 이동" class="scroll-top">
-<div class="scroll-icon">⬆️</div>
-</button>
-<!-- JavaScript -->
-<script src="/js/common.js"></script>
-<script src="/js/components.js"></script>
-<script src="/js/data/insects.js"></script>
-<script src="/js/pages/dragonflies.js"></script>
-<footer>
+<footer class="main-footer">
 <div class="footer">
 <div class="footer-content">
 <div class="footer-section">
-<h3>Kids Insect Encyclopedia</h3>
-<p>어린이들을 위한 재미있는 곤충 백과사전</p>
-</div>
-<div class="footer-section">
-<h3>바로가기</h3>
-<ul>
-<li><a href="index.html">홈</a></li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
-</ul>
+<h3>어린이 곤충 백과사전</h3>
+<p>어린이들을 위한 재미있는 곤충 이야기</p>
 </div>
 <div class="footer-section">
 <h3>연락처</h3>
-<p>Email: contact@kidsinsects.com</p>
-<p>Tel: 02-123-4567</p>
+<p>Email: <a href="mailto:fishcurio@gmail.com">fishcurio@gmail.com</a></p>
 </div>
 </div>
 <div class="footer-bottom">
-<p>© 2024 Kids Insect Encyclopedia. All rights reserved.</p>
+<p>© 2024 curiofish. All rights reserved.</p>
 </div>
 </div>
-</footer></body>
+</footer>
+
+<button class="scroll-top" aria-label="맨 위로 이동">
+<i class="fas fa-arrow-up"></i>
+</button>
+<!-- JavaScript -->
+<script src="../../js/common.js"></script>
+<script src="../../js/script.js"></script>
+</body>
 </html> 

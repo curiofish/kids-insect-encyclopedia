@@ -1,138 +1,79 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="ko">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- SEO 메타 태그 -->
-<meta content="유치원 친구들을 위한 나비의 세계 - 호랑나비, 배추흰나비, 공작나비의 이야기를 만나보세요!" name="description"/>
-<meta content="곤충, 유치원, 어린이, 백과사전, 나비, 호랑나비, 배추흰나비, 공작나비" name="keywords"/>
-<meta content="curiofish (이진우)" name="author"/>
+<meta content="어린이를 위한 나비 도감 - 호랑나비, 제비나비, 공작나비 등 아름다운 나비들을 만나보세요" name="description"/>
+<meta content="나비, 호랑나비, 제비나비, 공작나비, 곤충, 어린이" name="keywords"/>
+<meta content="curiofish (진실)" name="author"/>
 <meta content="fishcurio@gmail.com" name="contact"/>
 <meta content="© 2024 curiofish. All rights reserved." name="copyright"/>
 <meta content="index, follow" name="robots"/>
 <!-- Open Graph 메타 태그 -->
-<meta content="나비의 세계 - 유치원 곤충 백과사전" property="og:title"/>
-<meta content="유치원 친구들을 위한 나비의 세계 - 호랑나비, 배추흰나비, 공작나비의 이야기를 만나보세요!" property="og:description"/>
-<meta content="/images/insects/호랑나비/main.webp" property="og:image"/>
+<meta content="나비의 세계 - 어린이 곤충 백과사전" property="og:title"/>
+<meta content="어린이 친구들을 위한 나비의 세계 - 호랑나비, 제비나비, 공작나비의 이야기를 만나보세요" property="og:description"/>
+<meta content="/images/insects/butterflies/swallowtail.jpg" property="og:image"/>
 <meta content="https://curiofish.github.io/kids-insect-encyclopedia/categories/butterflies/" property="og:url"/>
 <meta content="website" property="og:type"/>
-<!-- 파비콘 -->
-<link href="/images/favicon.png" rel="icon" type="image/png"/>
-<link href="/images/apple-touch-icon.png" rel="apple-touch-icon"/>
-<title>나비의 세계 - 유치원 곤충 백과사전</title>
+<!-- ?占쎈퉬占?-->
+<link href="../../images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../../images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<title>?占쎈퉬 ?占쎄컧 - ?占쎌튂??怨ㅼ땐 諛깃낵?占쎌쟾</title>
 <!-- CSS -->
-<link href="/css/common.css" rel="stylesheet"/>
-<link href="/css/layout.css" rel="stylesheet"/>
-<link href="/css/components.css" rel="stylesheet"/>
-<link href="/css/pages/category.css" rel="stylesheet"/>
-<!-- 폰트 -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/common.css" rel="stylesheet"/>
+<link href="../../css/style.css" rel="stylesheet"/>
+<!-- ?占쏀듃 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Gaegu:wght@400;700&display=swap" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
 </head>
-<body><header>
-<div class="header">
-<div class="logo">
-<a href="index.html">
-<img alt="Kids Insect Encyclopedia" src="images/logo.jpg"/>
-</a>
-</div>
-<nav class="menu">
-<ul class="main-menu">
-<li>
-<a href="#">곤충 도감</a>
-<ul class="sub-menu">
-<li><a href="categories/beetle.html">딱정벌레</a></li>
-<li><a href="categories/butterfly.html">나비</a></li>
-<li><a href="categories/dragonfly.html">잠자리</a></li>
-<li><a href="categories/cricket.html">메뚜기</a></li>
-<li><a href="categories/mantis.html">사마귀</a></li>
-</ul>
-</li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
-</ul>
-</nav>
-<div class="search-container">
-<input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
-<button id="searchButton">검색</button>
-</div>
-<div class="mobile-menu-button">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</div>
-</header>
-<a class="skip-link" href="#main-content">메인 콘텐츠로 바로가기</a>
+<body>
+<div id="header-placeholder"></div>
 
-<main class="container" id="main-content">
-<section class="insect-intro fade-in">
-<h2>나비에 대해 알아보아요</h2>
-<p class="intro-text">
-                나비는 아름다운 날개를 가진 곤충이에요.
-                꽃에서 꽃으로 날아다니며 꿀을 먹고 꽃가루를 옮겨요.
+<div class="search-results" id="searchResults"></div>
+
+<main class="main-content" id="main-content">
+<section class="category-intro fade-in">
+<h1>나비 도감 소개</h1>
+<p class="category-description">
+                나비는 아름다운 날개를 가진 곤충이에요. 
+                꽃에서 꽃으로 날아다니며 꿀을 먹고, 애벌레에서 거쳐 번데기가 되어 예쁜 나비가 된답니다.
             </p>
-<div class="intro-image">
-<img alt="나비의 생활" class="full-width-image" src="../../images/insects/호랑나비/life.webp"/>
-</div>
 </section>
-<section class="insect-types fade-in">
-<h2>다양한 나비 친구들</h2>
-<div class="grid" id="butterflies-container">
-<!-- 나비 데이터는 JavaScript로 동적 로드됩니다 -->
+<section class="insect-list fade-in">
+<div class="grid">
+<div class="card">
+<img alt="호랑나비" src="../../images/insects/butterflies/swallowtail.jpg"/>
+<h2>호랑나비</h2>
+<p>검은 줄무늬가 호랑이 무늬처럼 생겼어요. 크고 아름답게 날아다녀요.</p>
+<a class="button" href="swallowtail.html">자세히 보기</a>
 </div>
-</section>
-<section class="fun-facts fade-in">
-<h2>재미있는 사실들</h2>
-<div class="facts-container">
-<div class="fact-card">
-<h3>🐛 신기한 변신</h3>
-<p>애벌레가 고치를 만들고 나비로 변해요!</p>
+<div class="card">
+<img alt="제비나비" src="../../images/insects/butterflies/monarch.jpg"/>
+<h2>제비나비</h2>
+<p>날개가 제비꼬리처럼 생겼어요. 봄이 되면 가장 먼저 만날 수 있어요.</p>
+<a class="button" href="monarch.html">자세히 보기</a>
 </div>
-<div class="fact-card">
-<h3>🌈 예쁜 날개</h3>
-<p>나비의 날개는 작은 비늘로 덮여있어요!</p>
-</div>
-<div class="fact-card">
-<h3>👅 긴 주둥이</h3>
-<p>나비는 긴 주둥이로 꽃꿀을 빨아먹어요!</p>
+<div class="card">
+<img alt="공작나비" src="../../images/insects/butterflies/peacock.jpg"/>
+<h2>공작나비</h2>
+<p>날개에 아름다운 눈 모양 무늬가 있어서 공작새의 깃털처럼 예뻐요.</p>
+<a class="button" href="peacock.html">자세히 보기</a>
 </div>
 </div>
 </section>
 </main>
 
-<button aria-label="맨 위로 이동" class="scroll-top">
-<div class="scroll-icon">⬆️</div>
+<div id="footer-placeholder"></div>
+
+<button class="scroll-top" aria-label="맨 위로 이동">
+<i class="fas fa-arrow-up"></i>
 </button>
 <!-- JavaScript -->
-<script src="/js/common.js"></script>
-<script src="/js/components.js"></script>
-<script src="/js/data/insects.js"></script>
-<script src="/js/pages/butterflies.js"></script>
-<footer>
-<div class="footer">
-<div class="footer-content">
-<div class="footer-section">
-<h3>Kids Insect Encyclopedia</h3>
-<p>어린이들을 위한 재미있는 곤충 백과사전</p>
-</div>
-<div class="footer-section">
-<h3>바로가기</h3>
-<ul>
-<li><a href="index.html">홈</a></li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>연락처</h3>
-<p>Email: contact@kidsinsects.com</p>
-<p>Tel: 02-123-4567</p>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2024 Kids Insect Encyclopedia. All rights reserved.</p>
-</div>
-</div>
-</footer></body>
+<script src="../../js/common.js"></script>
+<script src="../../js/script.js"></script>
+</body>
 </html> 

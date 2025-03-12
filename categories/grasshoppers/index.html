@@ -1,138 +1,396 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="ko">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- SEO 메타 태그 -->
-<meta content="유치원 친구들을 위한 메뚜기의 세계 - 벼메뚜기, 여치, 베짱이의 이야기를 만나보세요!" name="description"/>
-<meta content="곤충, 유치원, 어린이, 백과사전, 메뚜기, 벼메뚜기, 여치, 베짱이" name="keywords"/>
+<meta content="메뚜기와 귀뚜라미, 베짱이 등 뛰어다니고 소리 내는 곤충들을 알아보아요" name="description"/>
+<meta content="곤충, 어린이 백과사전, 메뚜기, 귀뚜라미, 베짱이" name="keywords"/>
 <meta content="curiofish (이진우)" name="author"/>
 <meta content="fishcurio@gmail.com" name="contact"/>
 <meta content="© 2024 curiofish. All rights reserved." name="copyright"/>
 <meta content="index, follow" name="robots"/>
 <!-- Open Graph 메타 태그 -->
-<meta content="메뚜기의 세계 - 유치원 곤충 백과사전" property="og:title"/>
-<meta content="유치원 친구들을 위한 메뚜기의 세계 - 벼메뚜기, 여치, 베짱이의 이야기를 만나보세요!" property="og:description"/>
-<meta content="/images/insects/벼메뚜기/main.webp" property="og:image"/>
-<meta content="https://curiofish.github.io/kids-insect-encyclopedia/categories/grasshoppers/" property="og:url"/>
-<meta content="website" property="og:type"/>
+<meta content="메뚜기 - 어린이 곤충 백과사전" property="og:title"/>
+<meta content="메뚜기와 귀뚜라미, 베짱이 등 뛰어다니고 소리 내는 곤충들을 알아보아요" property="og:description"/>
+<meta content="../../images/insects/grasshopper.jpg" property="og:image"/>
+<meta content="https://curiofish.github.io/kids-insect-encyclopedia/categories/grasshoppers/index.html" property="og:url"/>
+<meta content="article" property="og:type"/>
 <!-- 파비콘 -->
-<link href="/images/favicon.png" rel="icon" type="image/png"/>
-<link href="/images/apple-touch-icon.png" rel="apple-touch-icon"/>
-<title>메뚜기의 세계 - 유치원 곤충 백과사전</title>
+<link href="../../images/favicon.png" rel="icon" type="image/png"/>
+<link href="../../images/apple-touch-icon.png" rel="apple-touch-icon"/>
+<title>메뚜기 - 어린이 곤충 백과사전</title>
 <!-- CSS -->
-<link href="/css/common.css" rel="stylesheet"/>
-<link href="/css/layout.css" rel="stylesheet"/>
-<link href="/css/components.css" rel="stylesheet"/>
-<link href="/css/pages/category.css" rel="stylesheet"/>
+<link href="../../css/common.css" rel="stylesheet"/>
+<link href="../../css/layout.css" rel="stylesheet"/>
+<link href="../../css/components.css" rel="stylesheet"/>
+<link href="../../css/pages/category.css" rel="stylesheet"/>
 <!-- 폰트 -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet"/>
 </head>
-<body><header>
-<div class="header">
-<div class="logo">
-<a href="index.html">
-<img alt="Kids Insect Encyclopedia" src="images/logo.jpg"/>
-</a>
-</div>
-<nav class="menu">
-<ul class="main-menu">
-<li>
-<a href="#">곤충 도감</a>
-<ul class="sub-menu">
-<li><a href="categories/beetle.html">딱정벌레</a></li>
-<li><a href="categories/butterfly.html">나비</a></li>
-<li><a href="categories/dragonfly.html">잠자리</a></li>
-<li><a href="categories/cricket.html">메뚜기</a></li>
-<li><a href="categories/mantis.html">사마귀</a></li>
-</ul>
-</li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
-</ul>
-</nav>
-<div class="search-container">
-<input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
-<button id="searchButton">검색</button>
-</div>
-<div class="mobile-menu-button">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</div>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="../../index.html">
+                <img alt="Kids Insect Encyclopedia" src="../../images/logo.jpg"/>
+            </a>
+        </div>
+        <nav class="menu">
+            <ul class="main-menu">
+                <li>
+                    <a href="#">곤충 카테고리</a>
+                    <ul class="sub-menu">
+                        <li><a href="../beetles/index.html">딱정벌레</a></li>
+                        <li><a href="../butterflies/index.html">나비</a></li>
+                        <li><a href="../dragonflies/index.html">잠자리</a></li>
+                        <li><a href="../grasshoppers/index.html">메뚜기</a></li>
+                        <li><a href="../mantis/index.html">사마귀</a></li>
+                        <li><a href="../bees/index.html">벌</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../about.html">소개</a></li>
+                <li><a href="../../contact.html">문의하기</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
+            <button id="searchButton">검색</button>
+        </div>
+        <button class="mobile-menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
 </header>
-<a class="skip-link" href="#main-content">메인 콘텐츠로 바로가기</a>
 
-<main class="container" id="main-content">
-<section class="insect-intro fade-in">
-<h2>메뚜기에 대해 알아보아요</h2>
-<p class="intro-text">
-                메뚜기는 긴 뒷다리로 멀리 뛸 수 있는 곤충이에요.
-                풀밭이나 논에서 살며 풀을 먹고 살아요.
-            </p>
-<div class="intro-image">
-<img alt="메뚜기의 생활" class="full-width-image" src="../../images/insects/벼메뚜기/life.webp"/>
-</div>
-</section>
-<section class="insect-types fade-in">
-<h2>다양한 메뚜기 친구들</h2>
-<div class="grid" id="grasshoppers-container">
-<!-- 메뚜기 데이터는 JavaScript로 동적 로드됩니다 -->
-</div>
-</section>
-<section class="fun-facts fade-in">
-<h2>재미있는 사실들</h2>
-<div class="facts-container">
-<div class="fact-card">
-<h3>🦿 점프의 달인</h3>
-<p>메뚜기는 자기 몸길이의 20배나 멀리 뛸 수 있어요!</p>
-</div>
-<div class="fact-card">
-<h3>🎵 음악가</h3>
-<p>메뚜기는 날개를 비벼서 소리를 내요!</p>
-</div>
-<div class="fact-card">
-<h3>👂 귀는 배에</h3>
-<p>메뚜기의 귀는 배에 있어요!</p>
-</div>
-</div>
-</section>
+<nav class="breadcrumb">
+    <div class="container">
+        <ul>
+            <li><a href="../../index.html">홈</a></li>
+            <li>메뚜기</li>
+        </ul>
+    </div>
+</nav>
+
+<main class="main-content">
+    <div class="container">
+        <h1>메뚜기</h1>
+        
+        <section class="category-intro">
+            <div class="category-image">
+                <img alt="메뚜기" src="../../images/insects/grasshopper.jpg"/>
+            </div>
+            <div class="category-description">
+                <p>메뚜기는 긴 다리로 멀리 뛰어다니고, 귀뚜라미와 베짱이는 아름다운 소리를 내는 곤충들이에요. 이 곤충들은 어떻게 살아가는지 함께 알아볼까요?</p>
+            </div>
+        </section>
+
+        <section class="insect-list">
+            <h2>메뚜기 친구들</h2>
+            <div class="insect-grid">
+                <div class="insect-card">
+                    <div class="insect-image">
+                        <img alt="메뚜기" src="../../images/insects/grasshopper.jpg"/>
+                    </div>
+                    <div class="insect-info">
+                        <h3>메뚜기</h3>
+                        <p>긴 다리로 멀리 뛰어다니는 메뚜기는 풀을 먹고 살아요.</p>
+                        <ul class="insect-features">
+                            <li>크기: 3~5cm</li>
+                            <li>특징: 긴 뒷다리로 잘 뛰어요</li>
+                            <li>먹이: 풀과 나뭇잎</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="insect-card">
+                    <div class="insect-image">
+                        <img alt="귀뚜라미" src="../../images/insects/cricket.jpg"/>
+                    </div>
+                    <div class="insect-info">
+                        <h3>귀뚜라미</h3>
+                        <p>밤에 울음소리를 내는 귀뚜라미는 앞날개를 비벼서 소리를 내요.</p>
+                        <ul class="insect-features">
+                            <li>크기: 2~3cm</li>
+                            <li>특징: 아름다운 울음소리</li>
+                            <li>활동: 주로 밤에 활동해요</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="insect-card">
+                    <div class="insect-image">
+                        <img alt="베짱이" src="../../images/insects/cicada.jpg"/>
+                    </div>
+                    <div class="insect-info">
+                        <h3>베짱이</h3>
+                        <p>여름에 큰 소리를 내는 베짱이는 나무 위에서 살아요.</p>
+                        <ul class="insect-features">
+                            <li>크기: 3~4cm</li>
+                            <li>특징: 큰 울음소리</li>
+                            <li>서식지: 나무 위</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fun-facts">
+            <h2>재미있는 사실</h2>
+            <ul>
+                <li>메뚜기는 자기 몸길이의 20배나 되는 거리를 뛸 수 있어요.</li>
+                <li>귀뚜라미는 앞날개를 비벼서 소리를 내는데, 이것을 '귀뚜귀뚜' 소리라고 해요.</li>
+                <li>베짱이는 여름에 나무 위에서 큰 소리로 노래를 불러요.</li>
+                <li>이 곤충들은 모두 뒷다리가 길어서 잘 뛸 수 있어요.</li>
+            </ul>
+        </section>
+    </div>
 </main>
 
-<button aria-label="맨 위로 이동" class="scroll-top">
-<div class="scroll-icon">⬆️</div>
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>© 2024 Kids Insect Encyclopedia. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="../../about.html">소개</a>
+<meta content="메뚜기류 - 어린이 곤충 백과사전" property="og:title"/>
+<meta content="어린이 친구들을 위한 메뚜기류 이야기 - 메뚜기와 귀뚜라미의 특징과 생활을 알아보아요" property="og:description"/>
+<meta content="/images/insects/grasshopper.jpg" property="og:image"/>
+<meta content="https://curiofish.github.io/kids-insect-encyclopedia/categories/grasshoppers/index.html" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- ?占쎈퉬占?-->
+<link href="../../images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../../images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<title>메뚜기류 - 어린이 곤충 백과사전</title>
+<!-- CSS -->
+<link href="../../css/common.css" rel="stylesheet"/>
+<link href="../../css/style.css" rel="stylesheet"/>
+<!-- ?占쏀듃 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Gaegu:wght@400;700&display=swap" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<style>
+    .breadcrumb {
+        margin: 1rem 0 2rem;
+        padding: 0.5rem 0;
+    }
+
+    .breadcrumb ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .breadcrumb li {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .breadcrumb li:not(:last-child)::after {
+        content: ">";
+        margin: 0 0.5rem;
+        color: #999;
+    }
+
+    .breadcrumb a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .breadcrumb a:hover {
+        color: #333;
+    }
+
+    .breadcrumb li:last-child {
+        color: #333;
+        font-weight: 500;
+    }
+
+    .insect-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .insect-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .insect-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .insect-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .insect-card-content {
+        padding: 1.5rem;
+    }
+
+    .insect-card h3 {
+        margin: 0 0 1rem;
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .insect-card p {
+        margin: 0;
+        color: #666;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .insect-card a {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+    }
+
+    .insect-card a:hover {
+        background-color: #388E3C;
+    }
+</style>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="../../index.html">
+                <img alt="어린이 곤충 백과사전" src="../../images/logo.jpg"/>
+            </a>
+        </div>
+        <nav class="menu">
+            <ul class="main-menu">
+                <li>
+                    <a href="#">곤충 카테고리</a>
+                    <ul class="sub-menu">
+                        <li><a href="../beetles/index.html">딱정벌레</a></li>
+                        <li><a href="../butterflies/index.html">나비</a></li>
+                        <li><a href="../dragonflies/index.html">잠자리</a></li>
+                        <li><a href="../grasshoppers/index.html">메뚜기</a></li>
+                        <li><a href="../mantis/index.html">사마귀</a></li>
+                        <li><a href="../bees/index.html">꿀벌</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../about.html">소개</a></li>
+                <li><a href="../../contact.html">문의하기</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
+            <button id="searchButton">검색</button>
+        </div>
+        <button class="mobile-menu-button" aria-label="메뉴 열기">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<a class="skip-link" href="#main-content">메인 콘텐츠로 바로가기</a>
+
+<div class="search-results" id="searchResults"></div>
+
+<main class="main-content" id="main-content">
+<nav class="breadcrumb" aria-label="페이지 경로">
+    <ol>
+        <li><a href="../../index.html">홈</a></li>
+        <li><a href="../all.html">곤충 카테고리</a></li>
+        <li>메뚜기류</li>
+    </ol>
+</nav>
+
+<h1>메뚜기류 곤충들</h1>
+
+<section class="category-intro">
+    <p>
+        메뚜기류는 긴 다리로 멀리 뛰어다니는 곤충들이에요.
+        메뚜기와 귀뚜라미가 대표적인 곤충이에요.
+        이 곤충들은 특별한 방법으로 소리를 내어 의사소통을 해요.
+    </p>
+</section>
+
+<section class="insect-list">
+    <div class="insect-grid">
+        <div class="insect-card">
+            <img alt="메뚜기" src="../../images/insects/grasshopper.jpg"/>
+            <div class="insect-card-content">
+                <h3>메뚜기</h3>
+                <p>긴 다리로 멀리 뛰어다니는 메뚜기는 풀밭에서 살며 풀을 먹고 자라요.</p>
+                <a href="grasshopper.html">자세히 보기</a>
+            </div>
+        </div>
+        <div class="insect-card">
+            <img alt="귀뚜라미" src="../../images/insects/cricket.jpg"/>
+            <div class="insect-card-content">
+                <h3>귀뚜라미</h3>
+                <p>가을밤을 대표하는 곤충으로, 수컷이 앞날개를 비벼서 '귀뚜르 귀뚜르' 소리를 내요.</p>
+                <a href="cricket.html">자세히 보기</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<nav class="category-navigation">
+    <div class="nav-links">
+        <a class="prev" href="../dragonflies/index.html">
+            <span>이전 카테고리</span>
+            <span>잠자리류</span>
+        </a>
+        <a class="next" href="../mantis/index.html">
+            <span>다음 카테고리</span>
+            <span>사마귀류</span>
+        </a>
+    </div>
+</nav>
+</main>
+
+<footer class="main-footer">
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>어린이 곤충 백과사전</h3>
+                <p>어린이들을 위한 재미있는 곤충 백과사전</p>
+            </div>
+            <div class="footer-section">
+                <h3>연락처</h3>
+                <p>Email: <a href="mailto:fishcurio@gmail.com">fishcurio@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 curiofish. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top" aria-label="맨 위로 이동">
+    <i class="fas fa-arrow-up"></i>
 </button>
 <!-- JavaScript -->
-<script src="/js/common.js"></script>
-<script src="/js/components.js"></script>
-<script src="/js/data/insects.js"></script>
-<script src="/js/pages/grasshoppers.js"></script>
-<footer>
-<div class="footer">
-<div class="footer-content">
-<div class="footer-section">
-<h3>Kids Insect Encyclopedia</h3>
-<p>어린이들을 위한 재미있는 곤충 백과사전</p>
-</div>
-<div class="footer-section">
-<h3>바로가기</h3>
-<ul>
-<li><a href="index.html">홈</a></li>
-<li><a href="about.html">소개</a></li>
-<li><a href="contact.html">문의하기</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>연락처</h3>
-<p>Email: contact@kidsinsects.com</p>
-<p>Tel: 02-123-4567</p>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2024 Kids Insect Encyclopedia. All rights reserved.</p>
-</div>
-</div>
-</footer></body>
+<script src="../../js/script.js"></script>
+</body>
 </html> 
