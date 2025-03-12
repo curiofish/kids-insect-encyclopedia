@@ -69,9 +69,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // 검색 기능
+    function setupSearch() {
+        const searchButton = document.getElementById('searchButton');
+        const searchInput = document.getElementById('searchInput');
+        
+        if (!searchButton || !searchInput) {
+            console.warn('Search elements not found');
+            return;
+        }
+
+        searchButton.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    }
+
+    function performSearch() {
+        const query = elements.searchInput.value.trim().toLowerCase();
+        if (!query) return;
+
+        // 검색 결과 표시 로직
+        elements.searchResults.style.display = 'block';
+        // ... 검색 로직 구현
+    }
+
     // 이미지 로딩 최적화
     function setupImageLoading() {
         const images = document.querySelectorAll('img');
+        if (!images.length) {
+            console.warn('No images found for optimization');
+            return;
+        }
         
         images.forEach(img => {
             // 이미지 로딩 에러 처리
@@ -103,25 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
             img.src = fallbackImage;
             img.alt = '이미지를 불러올 수 없습니다';
         }
-    }
-
-    // 검색 기능
-    function setupSearch() {
-        elements.searchButton.addEventListener('click', performSearch);
-        elements.searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                performSearch();
-            }
-        });
-    }
-
-    function performSearch() {
-        const query = elements.searchInput.value.trim().toLowerCase();
-        if (!query) return;
-
-        // 검색 결과 표시 로직
-        elements.searchResults.style.display = 'block';
-        // ... 검색 로직 구현
     }
 
     // 이벤트 리스너 등록

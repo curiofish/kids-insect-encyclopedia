@@ -93,23 +93,26 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(`${basePath}components/${name}.html`)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`Failed to load ${name} component`);
+                    console.error(`Failed to load ${name} component: ${response.status} ${response.statusText}`);
+                    return Promise.reject(`Failed to load ${name} component`);
                 }
                 return response.text();
             })
             .then(html => {
-                // 상대 경로 조정
+                // GitHub Pages의 baseURL에 맞게 경로 조정
                 html = html.replace(/src="\//g, `src="${basePath}`);
                 html = html.replace(/href="\//g, `href="${basePath}`);
                 
-                // 컴포넌트 삽입
                 const placeholder_element = document.querySelector(placeholder);
                 if (placeholder_element) {
                     placeholder_element.innerHTML = html;
                     
-                    // 헤더인 경우 현재 페이지 메뉴 활성화
                     if (name === 'header') {
                         highlightCurrentPage();
+                        // 헤더 로드 후 검색 기능 초기화
+                        if (typeof setupSearch === 'function') {
+                            setupSearch();
+                        }
                     }
                 }
             })
