@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나비와 나방 - 곤충 백과사전</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>나비와 나방 - 곤충 백과사전</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<style>
         :root {
             --primary-color: #8bc34a;
             --secondary-color: #689f38;
@@ -132,129 +133,168 @@
         }
     </style>
 </head>
-<body>
-    <a href="index.html" class="back-to-home">
-        <i class="fas fa-arrow-left"></i> 처음으로
+<body><header>
+<div class="header">
+<div class="logo">
+<a href="index.html">
+<img alt="Kids Insect Encyclopedia" src="images/logo.jpg"/>
+</a>
+</div>
+<nav class="menu">
+<ul class="main-menu">
+<li>
+<a href="#">곤충 도감</a>
+<ul class="sub-menu">
+<li><a href="categories/beetle.html">딱정벌레</a></li>
+<li><a href="categories/butterfly.html">나비</a></li>
+<li><a href="categories/dragonfly.html">잠자리</a></li>
+<li><a href="categories/cricket.html">메뚜기</a></li>
+<li><a href="categories/mantis.html">사마귀</a></li>
+</ul>
+</li>
+<li><a href="about.html">소개</a></li>
+<li><a href="contact.html">문의하기</a></li>
+</ul>
+</nav>
+<div class="search-container">
+<input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
+<button id="searchButton">검색</button>
+</div>
+<div class="mobile-menu-button">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</header>
+<a class="back-to-home" href="index.html">
+<i class="fas fa-arrow-left"></i> 처음으로
     </a>
 
-    <header>
-        <h1>🦋 나비와 나방 🦋</h1>
-        <div class="subtitle">아름다운 날개를 가진 친구들을 만나보아요!</div>
-    </header>
+<div class="container">
+<section class="insect-card">
+<div class="insect-header">
+<h2>멋진 호랑나비</h2>
+</div>
+<div class="insect-content">
+<picture>
+<source srcset="images/butterflies/호랑나비.webp" type="image/webp"/>
+<img alt="호랑나비" class="insect-image" loading="lazy" src="images/butterflies/호랑나비.png"/>
+</picture>
+<div class="insect-info">
+<div class="info-section">
+<h3>호랑나비 소개</h3>
+<p>호랑나비는 우리나라에서 볼 수 있는 가장 큰 나비 중 하나예요. 노란색 바탕에 검은색 줄무늬가 있어서 호랑이를 닮았다고 해서 이름이 붙었답니다.</p>
+<p>날개를 펼치면 10-12cm나 되는 큰 나비예요!</p>
+</div>
+<div class="info-section">
+<h3>호랑나비의 생활</h3>
+<ul>
+<li>봄부터 가을까지 볼 수 있어요</li>
+<li>제비꽃의 잎을 먹고 자라요</li>
+<li>꽃의 꿀을 먹어요</li>
+<li>알에서 애벌레, 번데기를 거쳐 나비가 돼요</li>
+</ul>
+</div>
+<div class="fun-fact">
+<h3>재미있는 사실!</h3>
+<p>호랑나비는 산과 들에 사는 제비꽃을 특히 좋아해요. 애벌레는 제비꽃의 잎을 먹고 자라고, 어른 나비는 제비꽃의 꿀을 먹어요.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="insect-card">
+<div class="insect-header">
+<h2>하얀 배추흰나비</h2>
+</div>
+<div class="insect-content">
+<picture>
+<source srcset="images/butterflies/배추흰나비.webp" type="image/webp"/>
+<img alt="배추흰나비" class="insect-image" loading="lazy" src="images/butterflies/배추흰나비.png"/>
+</picture>
+<div class="insect-info">
+<div class="info-section">
+<h3>배추흰나비 소개</h3>
+<p>배추흰나비는 하얀색 날개를 가진 작고 귀여운 나비예요. 우리 주변에서 가장 흔하게 볼 수 있는 나비랍니다.</p>
+<p>날개를 펼치면 4-5cm 정도의 크기예요.</p>
+</div>
+<div class="info-section">
+<h3>배추흰나비의 생활</h3>
+<ul>
+<li>봄부터 가을까지 볼 수 있어요</li>
+<li>배추, 무의 잎을 먹고 자라요</li>
+<li>꽃밭에서 꿀을 먹어요</li>
+<li>도시에서도 잘 살아요</li>
+</ul>
+</div>
+<div class="fun-fact">
+<h3>재미있는 사실!</h3>
+<p>배추흰나비의 애벌레는 초록색이에요. 배추잎 위에 있으면 잘 보이지 않아 적으로부터 숨을 수 있답니다!</p>
+</div>
+</div>
+</div>
+</section>
+<section class="insect-card">
+<div class="insect-header">
+<h2>큰 산누에나방</h2>
+</div>
+<div class="insect-content">
+<picture>
+<source srcset="images/butterflies/산누에나방.webp" type="image/webp"/>
+<img alt="산누에나방" class="insect-image" loading="lazy" src="images/butterflies/산누에나방.png"/>
+</picture>
+<div class="insect-info">
+<div class="info-section">
+<h3>산누에나방 소개</h3>
+<p>산누에나방은 세계에서 가장 큰 나방 중 하나예요. 날개를 펼치면 25cm나 되는 거대한 크기랍니다!</p>
+<p>아름다운 무늬가 있는 큰 날개를 가지고 있어요.</p>
+</div>
+<div class="info-section">
+<h3>산누에나방의 생활</h3>
+<ul>
+<li>밤에 활동하는 야행성이에요</li>
+<li>애벌레는 나뭇잎을 먹고 자라요</li>
+<li>어른 나방은 먹이를 먹지 않아요</li>
+<li>큰 날개로 천천히 날아다녀요</li>
+</ul>
+</div>
+<div class="fun-fact">
+<h3>재미있는 사실!</h3>
+<p>산누에나방은 어른이 되면 먹이를 먹지 않아요! 애벌레 때 저장한 영양분으로 살아간답니다.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<button aria-label="맨 위로 이동" class="scroll-top">
+<i class="fas fa-arrow-up"></i>
+</button>
 
-    <div class="container">
-        <section class="insect-card">
-            <div class="insect-header">
-                <h2>멋진 호랑나비</h2>
-            </div>
-            <div class="insect-content">
-                <picture>
-                    <source srcset="images/butterflies/호랑나비.webp" type="image/webp">
-                    <img src="images/butterflies/호랑나비.png" alt="호랑나비" class="insect-image" loading="lazy">
-                </picture>
-                <div class="insect-info">
-                    <div class="info-section">
-                        <h3>호랑나비 소개</h3>
-                        <p>호랑나비는 우리나라에서 볼 수 있는 가장 큰 나비 중 하나예요. 노란색 바탕에 검은색 줄무늬가 있어서 호랑이를 닮았다고 해서 이름이 붙었답니다.</p>
-                        <p>날개를 펼치면 10-12cm나 되는 큰 나비예요!</p>
-                    </div>
-
-                    <div class="info-section">
-                        <h3>호랑나비의 생활</h3>
-                        <ul>
-                            <li>봄부터 가을까지 볼 수 있어요</li>
-                            <li>제비꽃의 잎을 먹고 자라요</li>
-                            <li>꽃의 꿀을 먹어요</li>
-                            <li>알에서 애벌레, 번데기를 거쳐 나비가 돼요</li>
-                        </ul>
-                    </div>
-
-                    <div class="fun-fact">
-                        <h3>재미있는 사실!</h3>
-                        <p>호랑나비는 산과 들에 사는 제비꽃을 특히 좋아해요. 애벌레는 제비꽃의 잎을 먹고 자라고, 어른 나비는 제비꽃의 꿀을 먹어요.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="insect-card">
-            <div class="insect-header">
-                <h2>하얀 배추흰나비</h2>
-            </div>
-            <div class="insect-content">
-                <picture>
-                    <source srcset="images/butterflies/배추흰나비.webp" type="image/webp">
-                    <img src="images/butterflies/배추흰나비.png" alt="배추흰나비" class="insect-image" loading="lazy">
-                </picture>
-                <div class="insect-info">
-                    <div class="info-section">
-                        <h3>배추흰나비 소개</h3>
-                        <p>배추흰나비는 하얀색 날개를 가진 작고 귀여운 나비예요. 우리 주변에서 가장 흔하게 볼 수 있는 나비랍니다.</p>
-                        <p>날개를 펼치면 4-5cm 정도의 크기예요.</p>
-                    </div>
-
-                    <div class="info-section">
-                        <h3>배추흰나비의 생활</h3>
-                        <ul>
-                            <li>봄부터 가을까지 볼 수 있어요</li>
-                            <li>배추, 무의 잎을 먹고 자라요</li>
-                            <li>꽃밭에서 꿀을 먹어요</li>
-                            <li>도시에서도 잘 살아요</li>
-                        </ul>
-                    </div>
-
-                    <div class="fun-fact">
-                        <h3>재미있는 사실!</h3>
-                        <p>배추흰나비의 애벌레는 초록색이에요. 배추잎 위에 있으면 잘 보이지 않아 적으로부터 숨을 수 있답니다!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="insect-card">
-            <div class="insect-header">
-                <h2>큰 산누에나방</h2>
-            </div>
-            <div class="insect-content">
-                <picture>
-                    <source srcset="images/butterflies/산누에나방.webp" type="image/webp">
-                    <img src="images/butterflies/산누에나방.png" alt="산누에나방" class="insect-image" loading="lazy">
-                </picture>
-                <div class="insect-info">
-                    <div class="info-section">
-                        <h3>산누에나방 소개</h3>
-                        <p>산누에나방은 세계에서 가장 큰 나방 중 하나예요. 날개를 펼치면 25cm나 되는 거대한 크기랍니다!</p>
-                        <p>아름다운 무늬가 있는 큰 날개를 가지고 있어요.</p>
-                    </div>
-
-                    <div class="info-section">
-                        <h3>산누에나방의 생활</h3>
-                        <ul>
-                            <li>밤에 활동하는 야행성이에요</li>
-                            <li>애벌레는 나뭇잎을 먹고 자라요</li>
-                            <li>어른 나방은 먹이를 먹지 않아요</li>
-                            <li>큰 날개로 천천히 날아다녀요</li>
-                        </ul>
-                    </div>
-
-                    <div class="fun-fact">
-                        <h3>재미있는 사실!</h3>
-                        <p>산누에나방은 어른이 되면 먹이를 먹지 않아요! 애벌레 때 저장한 영양분으로 살아간답니다.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <button class="scroll-top" aria-label="맨 위로 이동">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <footer>
-        <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
-        <p>더 많은 곤충 친구들을 알고 싶다면, 곤충도감이나 자연 관찰을 해보세요!</p>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
+<script src="js/script.js"></script>
+<footer>
+<div class="footer">
+<div class="footer-content">
+<div class="footer-section">
+<h3>Kids Insect Encyclopedia</h3>
+<p>어린이들을 위한 재미있는 곤충 백과사전</p>
+</div>
+<div class="footer-section">
+<h3>바로가기</h3>
+<ul>
+<li><a href="index.html">홈</a></li>
+<li><a href="about.html">소개</a></li>
+<li><a href="contact.html">문의하기</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>연락처</h3>
+<p>Email: contact@kidsinsects.com</p>
+<p>Tel: 02-123-4567</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Kids Insect Encyclopedia. All rights reserved.</p>
+</div>
+</div>
+</footer></body>
 </html> 

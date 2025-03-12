@@ -1,123 +1,126 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO 메타 태그 -->
-    <meta name="description" content="유치원 친구들을 위한 신나는 곤충 백과사전 - 곤충 검색 결과">
-    <meta name="keywords" content="곤충, 유치원, 어린이, 백과사전, 곤충 검색">
-    <meta name="author" content="curiofish (이진우)">
-    <meta name="contact" content="fishcurio@gmail.com">
-    <meta name="copyright" content="© 2024 curiofish. All rights reserved.">
-    <meta name="robots" content="noindex, follow">
-    
-    <!-- Open Graph 메타 태그 -->
-    <meta property="og:title" content="곤충 검색 결과 - 신나는 곤충 백과사전">
-    <meta property="og:description" content="찾고 싶은 곤충의 검색 결과입니다.">
-    <meta property="og:image" content="/images/og-image.webp">
-    <meta property="og:url" content="https://your-domain.com/search">
-    <meta property="og:type" content="website">
-    
-    <title>곤충 검색 결과 - 신나는 곤충 백과사전 🔍</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/search.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- SEO 메타 태그 -->
+<meta content="유치원 친구들을 위한 신나는 곤충 백과사전 - 곤충 검색 결과" name="description"/>
+<meta content="곤충, 유치원, 어린이, 백과사전, 곤충 검색" name="keywords"/>
+<meta content="curiofish (이진우)" name="author"/>
+<meta content="fishcurio@gmail.com" name="contact"/>
+<meta content="© 2024 curiofish. All rights reserved." name="copyright"/>
+<meta content="noindex, follow" name="robots"/>
+<!-- Open Graph 메타 태그 -->
+<meta content="곤충 검색 결과 - 신나는 곤충 백과사전" property="og:title"/>
+<meta content="찾고 싶은 곤충의 검색 결과입니다." property="og:description"/>
+<meta content="/images/og-image.webp" property="og:image"/>
+<meta content="https://your-domain.com/search" property="og:url"/>
+<meta content="website" property="og:type"/>
+<title>곤충 검색 결과 - 신나는 곤충 백과사전 🔍</title>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/search.css" rel="stylesheet"/>
 </head>
-<body>
-    <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
-    
-    <!-- 헤더 섹션 -->
-    <header class="main-header">
-        <div class="header-logo">
-            <a href="/" class="logo-link">
-                <img src="images/logo.webp" alt="신나는 곤충 백과사전 로고" class="logo-image" width="60" height="60">
-                <h1>🐞 신나는 곤충 백과사전 🦋</h1>
-            </a>
-        </div>
+<body><header>
+<div class="header">
+<div class="logo">
+<a href="index.html">
+<img alt="Kids Insect Encyclopedia" src="images/logo.jpg"/>
+</a>
+</div>
+<nav class="menu">
+<ul class="main-menu">
+<li>
+<a href="#">곤충 도감</a>
+<ul class="sub-menu">
+<li><a href="categories/beetle.html">딱정벌레</a></li>
+<li><a href="categories/butterfly.html">나비</a></li>
+<li><a href="categories/dragonfly.html">잠자리</a></li>
+<li><a href="categories/cricket.html">메뚜기</a></li>
+<li><a href="categories/mantis.html">사마귀</a></li>
+</ul>
+</li>
+<li><a href="about.html">소개</a></li>
+<li><a href="contact.html">문의하기</a></li>
+</ul>
+</nav>
+<div class="search-container">
+<input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
+<button id="searchButton">검색</button>
+</div>
+<div class="mobile-menu-button">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</header>
+<a class="skip-link" href="#main-content">메인 콘텐츠로 바로가기</a>
+<!-- 헤더 섹션 -->
 
-        <div class="header-search">
-            <form class="search-form" role="search" action="/search.html" method="get">
-                <div class="search-wrapper">
-                    <input type="search" 
-                           id="insect-search" 
-                           name="q" 
-                           placeholder="찾고 싶은 곤충 이름을 입력해보세요!"
-                           aria-label="곤충 검색"
-                           autocomplete="off">
-                    <button type="submit" class="search-button">
-                        🔍
-                        <span class="sr-only">검색</span>
-                    </button>
-                </div>
-            </form>
-        </div>
+<!-- 스크롤 진행바 -->
+<div class="scroll-progress">
+<div class="progress-bar"></div>
+</div>
+<!-- 메인 콘텐츠 -->
+<main class="search-content" id="main-content">
+<section class="search-results">
+<h2 class="search-title">곤충 검색 결과</h2>
+<p class="search-info">검색어: "<span id="search-term"></span>"</p>
+<div class="results-container">
+<!-- 검색 결과가 여기에 동적으로 추가됩니다 -->
+<div class="loading-spinner">
+<div class="spinner"></div>
+<p>곤충을 찾고 있어요...</p>
+</div>
+</div>
+<div class="no-results hidden">
+<h3>앗! 찾으시는 곤충이 없네요 😢</h3>
+<p>다른 곤충 이름으로 다시 검색해보세요!</p>
+<div class="suggestion-box">
+<h4>이런 곤충은 어떠세요?</h4>
+<ul class="suggestion-list">
+<!-- 추천 곤충이 여기에 동적으로 추가됩니다 -->
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- 푸터 -->
 
-        <div class="top-nav">
-            <a href="/" class="home-button" title="홈으로 가기">
-                <span class="home-icon">🏠</span>
-                <span class="home-text">홈</span>
-            </a>
-        </div>
-    </header>
-
-    <!-- 스크롤 진행바 -->
-    <div class="scroll-progress">
-        <div class="progress-bar"></div>
-    </div>
-
-    <!-- 메인 콘텐츠 -->
-    <main id="main-content" class="search-content">
-        <section class="search-results">
-            <h2 class="search-title">곤충 검색 결과</h2>
-            <p class="search-info">검색어: "<span id="search-term"></span>"</p>
-            
-            <div class="results-container">
-                <!-- 검색 결과가 여기에 동적으로 추가됩니다 -->
-                <div class="loading-spinner">
-                    <div class="spinner"></div>
-                    <p>곤충을 찾고 있어요...</p>
-                </div>
-            </div>
-
-            <div class="no-results hidden">
-                <h3>앗! 찾으시는 곤충이 없네요 😢</h3>
-                <p>다른 곤충 이름으로 다시 검색해보세요!</p>
-                <div class="suggestion-box">
-                    <h4>이런 곤충은 어떠세요?</h4>
-                    <ul class="suggestion-list">
-                        <!-- 추천 곤충이 여기에 동적으로 추가됩니다 -->
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 푸터 -->
-    <footer class="main-footer">
-        <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
-        <nav class="footer-nav">
-            <ul>
-                <li><a href="/">홈으로</a></li>
-                <li><a href="/#intro">소개</a></li>
-                <li><a href="/#quiz">퀴즈</a></li>
-            </ul>
-        </nav>
-        <div class="copyright">
-            <p>© 2024 신나는 곤충 백과사전</p>
-            <p>제작: curiofish (이진우) | 문의: <a href="mailto:fishcurio@gmail.com">fishcurio@gmail.com</a></p>
-            <p>모든 콘텐츠의 저작권은 제작자에게 있습니다.</p>
-        </div>
-    </footer>
-
-    <!-- 스크롤 탑 버튼 -->
-    <button class="scroll-top" aria-label="맨 위로 이동" title="맨 위로 이동">
-        <div class="scroll-icon">
-            <span class="arrow">⬆️</span>
-            <span class="text">위로</span>
-        </div>
-    </button>
-
-    <script src="js/main.js"></script>
-    <script src="js/search.js"></script>
-</body>
+<!-- 스크롤 탑 버튼 -->
+<button aria-label="맨 위로 이동" class="scroll-top" title="맨 위로 이동">
+<div class="scroll-icon">
+<span class="arrow">⬆️</span>
+<span class="text">위로</span>
+</div>
+</button>
+<script src="js/main.js"></script>
+<script src="js/search.js"></script>
+<footer>
+<div class="footer">
+<div class="footer-content">
+<div class="footer-section">
+<h3>Kids Insect Encyclopedia</h3>
+<p>어린이들을 위한 재미있는 곤충 백과사전</p>
+</div>
+<div class="footer-section">
+<h3>바로가기</h3>
+<ul>
+<li><a href="index.html">홈</a></li>
+<li><a href="about.html">소개</a></li>
+<li><a href="contact.html">문의하기</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>연락처</h3>
+<p>Email: contact@kidsinsects.com</p>
+<p>Tel: 02-123-4567</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Kids Insect Encyclopedia. All rights reserved.</p>
+</div>
+</div>
+</footer></body>
 </html> 

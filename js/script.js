@@ -21,10 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (subNav) {
             const link = item.querySelector('.nav-link');
             link.addEventListener('click', function(e) {
-                e.preventDefault();
-                subNav.classList.toggle('active');
-                const isExpanded = link.getAttribute('aria-expanded') === 'true';
-                link.setAttribute('aria-expanded', !isExpanded);
+                // 서브메뉴가 있는 경우에만 기본 동작을 막음
+                if (subNav) {
+                    e.preventDefault();
+                    subNav.classList.toggle('active');
+                    const isExpanded = link.getAttribute('aria-expanded') === 'true';
+                    link.setAttribute('aria-expanded', !isExpanded);
+                }
             });
         }
     });

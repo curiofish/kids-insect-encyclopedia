@@ -1,242 +1,254 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO 메타 태그 -->
-    <meta name="description" content="유치원 친구들을 위한 신나는 곤충 백과사전 - 100가지 곤충들의 재미있는 이야기를 만나보세요!">
-    <meta name="keywords" content="곤충, 유치원, 어린이, 백과사전, 나비, 무당벌레, 매미, 곤충 퀴즈, 곤충 게임">
-    <meta name="author" content="curiofish (이진우)">
-    <meta name="contact" content="fishcurio@gmail.com">
-    <meta name="copyright" content="© 2024 curiofish. All rights reserved.">
-    <meta name="robots" content="index, follow">
-    
-    <title>곤충 도감 - 유치원 곤충 백과사전</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/category.css">
-    <link rel="stylesheet" href="../css/all-insects.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- SEO 메타 태그 -->
+<meta content="유치원 친구들을 위한 신나는 곤충 백과사전 - 100가지 곤충들의 재미있는 이야기를 만나보세요!" name="description"/>
+<meta content="곤충, 유치원, 어린이, 백과사전, 나비, 무당벌레, 매미, 곤충 퀴즈, 곤충 게임" name="keywords"/>
+<meta content="curiofish (이진우)" name="author"/>
+<meta content="fishcurio@gmail.com" name="contact"/>
+<meta content="© 2024 curiofish. All rights reserved." name="copyright"/>
+<meta content="index, follow" name="robots"/>
+<title>곤충 도감 - 유치원 곤충 백과사전</title>
+<link href="../css/style.css" rel="stylesheet"/>
+<link href="../css/category.css" rel="stylesheet"/>
+<link href="../css/all-insects.css" rel="stylesheet"/>
 </head>
-<body>
-    <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
-    
-    <header class="main-header">
-        <h1>🦋 곤충 도감 🐞</h1>
-        <nav class="category-nav">
-            <ul class="category-list">
-                <li><a href="#bees" class="category-link">벌</a></li>
-                <li><a href="#mantis" class="category-link">사마귀</a></li>
-                <li><a href="#ants" class="category-link">개미</a></li>
-                <li><a href="#butterflies" class="category-link">나비</a></li>
-                <li><a href="#beetles" class="category-link">딱정벌레</a></li>
-                <li><a href="#dragonflies" class="category-link">잠자리</a></li>
-                <li><a href="#grasshoppers" class="category-link">메뚜기</a></li>
-                <li><a href="#others" class="category-link">기타 곤충</a></li>
-            </ul>
-        </nav>
-    </header>
+<body><header>
+<div class="header">
+<div class="logo">
+<a href="index.html">
+<img alt="Kids Insect Encyclopedia" src="images/logo.jpg"/>
+</a>
+</div>
+<nav class="menu">
+<ul class="main-menu">
+<li>
+<a href="#">곤충 도감</a>
+<ul class="sub-menu">
+<li><a href="categories/beetle.html">딱정벌레</a></li>
+<li><a href="categories/butterfly.html">나비</a></li>
+<li><a href="categories/dragonfly.html">잠자리</a></li>
+<li><a href="categories/cricket.html">메뚜기</a></li>
+<li><a href="categories/mantis.html">사마귀</a></li>
+</ul>
+</li>
+<li><a href="about.html">소개</a></li>
+<li><a href="contact.html">문의하기</a></li>
+</ul>
+</nav>
+<div class="search-container">
+<input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
+<button id="searchButton">검색</button>
+</div>
+<div class="mobile-menu-button">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</header>
+<a class="skip-link" href="#main-content">메인 콘텐츠로 바로가기</a>
 
-    <main id="main-content" class="container">
-        <!-- 랜덤 곤충 소개 섹션 -->
-        <section class="featured-insect">
-            <h2>오늘의 곤충 소개 🌟</h2>
-            <div class="insect-content" id="random-insect-container">
-                <div class="insect-image-container">
-                    <img src="" alt="" id="featured-insect-image" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3 id="featured-insect-title"></h3>
-                    <div id="featured-insect-description"></div>
-                    <a href="#" id="featured-insect-link" class="button more-button">더 자세히 알아보기</a>
-                </div>
-            </div>
-        </section>
+<main class="container" id="main-content">
+<!-- 랜덤 곤충 소개 섹션 -->
+<section class="featured-insect">
+<h2>오늘의 곤충 소개 🌟</h2>
+<div class="insect-content" id="random-insect-container">
+<div class="insect-image-container">
+<img alt="" class="insect-image" id="featured-insect-image" src=""/>
+</div>
+<div class="insect-info">
+<h3 id="featured-insect-title"></h3>
+<div id="featured-insect-description"></div>
+<a class="button more-button" href="#" id="featured-insect-link">더 자세히 알아보기</a>
+</div>
+</div>
+</section>
+<!-- 곤충 카테고리 섹션들 -->
+<section class="insect-section" id="bees">
+<h2>벌 🐝</h2>
+<div class="insect-content">
+<div class="insect-image-container">
+<img alt="꿀벌" class="insect-image" src="../images/insects/꿀벌/main.webp"/>
+</div>
+<div class="insect-info">
+<h3>꿀벌</h3>
+<p>벌은 꽃가루를 옮기며 생태계에 매우 중요한 역할을 하는 곤충이에요.</p>
+<ul class="insect-facts">
+<li>꿀을 만들어 저장해요</li>
+<li>여왕벌, 일벌, 수벌로 나뉘어 살아요</li>
+<li>식물의 수분을 도와줘요</li>
+</ul>
+<a class="button more-button" href="bees/index.html">더 많은 벌 보기</a>
+</div>
+</div>
+</section>
+<section class="insect-section" id="mantis">
+<h2>사마귀 🦗</h2>
+<div class="insect-content">
+<div class="insect-image-container">
+<img alt="사마귀" class="insect-image" src="../images/insects/사마귀/main.webp"/>
+</div>
+<div class="insect-info">
+<h3>사마귀</h3>
+<p>사마귀는 앞다리로 먹이를 잡는 멋진 사냥꾼이에요.</p>
+<ul class="insect-facts">
+<li>강한 앞다리로 먹이를 잡아요</li>
+<li>초록색이나 갈색으로 위장해요</li>
+<li>머리를 180도 돌릴 수 있어요</li>
+</ul>
+<a class="button more-button" href="mantis/index.html">더 많은 사마귀 보기</a>
+</div>
+</div>
+</section>
+<section class="insect-section" id="ants">
+<h2>개미 🐜</h2>
+<div class="insect-content">
+<div class="insect-image-container">
+<img alt="개미" class="insect-image" src="../images/insects/일개미/main.webp"/>
+</div>
+<div class="insect-info">
+<h3>개미</h3>
+<p>개미는 협동심이 뛰어난 사회성 곤충이에요.</p>
+<ul class="insect-facts">
+<li>여왕개미와 일개미가 함께 살아요</li>
+<li>서로 도우며 일해요</li>
+<li>페로몬으로 의사소통을 해요</li>
+</ul>
+<a class="button more-button" href="ants/index.html">더 많은 개미 보기</a>
+</div>
+</div>
+</section>
+<section class="insect-section" id="butterflies">
+<h2>나비 🦋</h2>
+<div class="insect-content">
+<div class="insect-image-container">
+<img alt="나비" class="insect-image" src="../images/insects/호랑나비/main.webp"/>
+</div>
+<div class="insect-info">
+<h3>나비</h3>
+<p>나비는 아름다운 날개를 가진 곤충이에요.</p>
+<ul class="insect-facts">
+<li>화려한 날개 무늬가 있어요</li>
+<li>꽃의 꿀을 먹어요</li>
+<li>애벌레에서 번데기를 거쳐 나비가 돼요</li>
+</ul>
+<a class="button more-button" href="butterflies/index.html">더 많은 나비 보기</a>
+</div>
+</div>
+</section>
+<section class="insect-section" id="beetles">
+<h2>딱정벌레 🪲</h2>
+<div class="insect-content">
+<div class="insect-image-container">
+<img alt="딱정벌레" class="insect-image" src="../images/insects/무당벌레/main.webp"/>
+</div>
+<div class="insect-info">
+<h3>딱정벌레</h3>
+<p>딱정벌레는 단단한 겉날개를 가진 곤충이에요.</p>
+<ul class="insect-facts">
+<li>단단한 겉날개로 몸을 보호해요</li>
+<li>다양한 크기와 모양이 있어요</li>
+<li>땅에서 주로 생활해요</li>
+</ul>
+<a class="button more-button" href="beetles/index.html">더 많은 딱정벌레 보기</a>
+</div>
+</div>
+</section>
+<section class="insect-section" id="dragonflies">
+<h2>잠자리 💫</h2>
+<div class="insect-content">
+<div class="insect-image-container">
+<img alt="잠자리" class="insect-image" src="../images/insects/고추잠자리/main.webp"/>
+</div>
+<div class="insect-info">
+<h3>잠자리</h3>
+<p>잠자리는 공중에서 자유롭게 날아다니는 곤충이에요.</p>
+<ul class="insect-facts">
+<li>네 개의 큰 날개로 자유롭게 날아요</li>
+<li>큰 겹눈으로 먹이를 잘 찾아요</li>
+<li>연못이나 강가에서 살아요</li>
+</ul>
+<a class="button more-button" href="dragonflies/index.html">더 많은 잠자리 보기</a>
+</div>
+</div>
+</section>
+<section class="insect-section" id="grasshoppers">
+<h2>메뚜기 🦗</h2>
+<div class="insect-content">
+<div class="insect-image-container">
+<img alt="메뚜기" class="insect-image" src="../images/insects/풀무치/main.webp"/>
+</div>
+<div class="insect-info">
+<h3>메뚜기</h3>
+<p>메뚜기는 긴 다리로 멀리 뛰어다니는 곤충이에요.</p>
+<ul class="insect-facts">
+<li>뒷다리로 멀리 뛸 수 있어요</li>
+<li>풀을 먹고 살아요</li>
+<li>날개를 비벼서 소리를 내요</li>
+</ul>
+<a class="button more-button" href="grasshoppers/index.html">더 많은 메뚜기 보기</a>
+</div>
+</div>
+</section>
+<section class="insect-section" id="others">
+<h2>기타 곤충 🐛</h2>
+<div class="insect-content">
+<div class="insect-image-container">
+<img alt="매미" class="insect-image" src="../images/insects/매미/main.webp"/>
+</div>
+<div class="insect-info">
+<h3>다양한 곤충들</h3>
+<p>우리 주변에는 정말 많은 종류의 곤충들이 살고 있어요.</p>
+<ul class="insect-facts">
+<li>매미, 귀뚜라미, 사슴벌레 등이 있어요</li>
+<li>각자 특별한 능력이 있어요</li>
+<li>모두 자연을 아름답게 만들어요</li>
+</ul>
+<a class="button more-button" href="others/index.html">더 많은 곤충 보기</a>
+</div>
+</div>
+</section>
+<div class="navigation-guide">
+<p>👆 위의 메뉴를 클릭하면 다른 곤충들도 찾아볼 수 있어요!</p>
+<a class="button home-button" href="../index.html">처음으로 돌아가기 🏠</a>
+</div>
+</main>
 
-        <!-- 곤충 카테고리 섹션들 -->
-        <section id="bees" class="insect-section">
-            <h2>벌 🐝</h2>
-            <div class="insect-content">
-                <div class="insect-image-container">
-                    <img src="../images/insects/꿀벌/main.webp" alt="꿀벌" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>꿀벌</h3>
-                    <p>벌은 꽃가루를 옮기며 생태계에 매우 중요한 역할을 하는 곤충이에요.</p>
-                    <ul class="insect-facts">
-                        <li>꿀을 만들어 저장해요</li>
-                        <li>여왕벌, 일벌, 수벌로 나뉘어 살아요</li>
-                        <li>식물의 수분을 도와줘요</li>
-                    </ul>
-                    <a href="bees/index.html" class="button more-button">더 많은 벌 보기</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="mantis" class="insect-section">
-            <h2>사마귀 🦗</h2>
-            <div class="insect-content">
-                <div class="insect-image-container">
-                    <img src="../images/insects/사마귀/main.webp" alt="사마귀" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>사마귀</h3>
-                    <p>사마귀는 앞다리로 먹이를 잡는 멋진 사냥꾼이에요.</p>
-                    <ul class="insect-facts">
-                        <li>강한 앞다리로 먹이를 잡아요</li>
-                        <li>초록색이나 갈색으로 위장해요</li>
-                        <li>머리를 180도 돌릴 수 있어요</li>
-                    </ul>
-                    <a href="mantis/index.html" class="button more-button">더 많은 사마귀 보기</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="ants" class="insect-section">
-            <h2>개미 🐜</h2>
-            <div class="insect-content">
-                <div class="insect-image-container">
-                    <img src="../images/insects/일개미/main.webp" alt="개미" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>개미</h3>
-                    <p>개미는 협동심이 뛰어난 사회성 곤충이에요.</p>
-                    <ul class="insect-facts">
-                        <li>여왕개미와 일개미가 함께 살아요</li>
-                        <li>서로 도우며 일해요</li>
-                        <li>페로몬으로 의사소통을 해요</li>
-                    </ul>
-                    <a href="ants/index.html" class="button more-button">더 많은 개미 보기</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="butterflies" class="insect-section">
-            <h2>나비 🦋</h2>
-            <div class="insect-content">
-                <div class="insect-image-container">
-                    <img src="../images/insects/호랑나비/main.webp" alt="나비" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>나비</h3>
-                    <p>나비는 아름다운 날개를 가진 곤충이에요.</p>
-                    <ul class="insect-facts">
-                        <li>화려한 날개 무늬가 있어요</li>
-                        <li>꽃의 꿀을 먹어요</li>
-                        <li>애벌레에서 번데기를 거쳐 나비가 돼요</li>
-                    </ul>
-                    <a href="butterflies/index.html" class="button more-button">더 많은 나비 보기</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="beetles" class="insect-section">
-            <h2>딱정벌레 🪲</h2>
-            <div class="insect-content">
-                <div class="insect-image-container">
-                    <img src="../images/insects/무당벌레/main.webp" alt="딱정벌레" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>딱정벌레</h3>
-                    <p>딱정벌레는 단단한 겉날개를 가진 곤충이에요.</p>
-                    <ul class="insect-facts">
-                        <li>단단한 겉날개로 몸을 보호해요</li>
-                        <li>다양한 크기와 모양이 있어요</li>
-                        <li>땅에서 주로 생활해요</li>
-                    </ul>
-                    <a href="beetles/index.html" class="button more-button">더 많은 딱정벌레 보기</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="dragonflies" class="insect-section">
-            <h2>잠자리 💫</h2>
-            <div class="insect-content">
-                <div class="insect-image-container">
-                    <img src="../images/insects/고추잠자리/main.webp" alt="잠자리" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>잠자리</h3>
-                    <p>잠자리는 공중에서 자유롭게 날아다니는 곤충이에요.</p>
-                    <ul class="insect-facts">
-                        <li>네 개의 큰 날개로 자유롭게 날아요</li>
-                        <li>큰 겹눈으로 먹이를 잘 찾아요</li>
-                        <li>연못이나 강가에서 살아요</li>
-                    </ul>
-                    <a href="dragonflies/index.html" class="button more-button">더 많은 잠자리 보기</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="grasshoppers" class="insect-section">
-            <h2>메뚜기 🦗</h2>
-            <div class="insect-content">
-                <div class="insect-image-container">
-                    <img src="../images/insects/풀무치/main.webp" alt="메뚜기" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>메뚜기</h3>
-                    <p>메뚜기는 긴 다리로 멀리 뛰어다니는 곤충이에요.</p>
-                    <ul class="insect-facts">
-                        <li>뒷다리로 멀리 뛸 수 있어요</li>
-                        <li>풀을 먹고 살아요</li>
-                        <li>날개를 비벼서 소리를 내요</li>
-                    </ul>
-                    <a href="grasshoppers/index.html" class="button more-button">더 많은 메뚜기 보기</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="others" class="insect-section">
-            <h2>기타 곤충 🐛</h2>
-            <div class="insect-content">
-                <div class="insect-image-container">
-                    <img src="../images/insects/매미/main.webp" alt="매미" class="insect-image">
-                </div>
-                <div class="insect-info">
-                    <h3>다양한 곤충들</h3>
-                    <p>우리 주변에는 정말 많은 종류의 곤충들이 살고 있어요.</p>
-                    <ul class="insect-facts">
-                        <li>매미, 귀뚜라미, 사슴벌레 등이 있어요</li>
-                        <li>각자 특별한 능력이 있어요</li>
-                        <li>모두 자연을 아름답게 만들어요</li>
-                    </ul>
-                    <a href="others/index.html" class="button more-button">더 많은 곤충 보기</a>
-                </div>
-            </div>
-        </section>
-
-        <div class="navigation-guide">
-            <p>👆 위의 메뉴를 클릭하면 다른 곤충들도 찾아볼 수 있어요!</p>
-            <a href="../index.html" class="button home-button">처음으로 돌아가기 🏠</a>
-        </div>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <p>🌈 유치원 친구들을 위한 신나는 곤충 탐험 🌈</p>
-                    <p>곤충 친구들과 함께 놀면서 배워요!</p>
-                </div>
-                <div class="footer-links">
-                    <a href="../terms.html">이용약관</a>
-                    <a href="../privacy.html">개인정보처리방침</a>
-                    <a href="../contact.html">문의하기</a>
-                </div>
-                <div class="footer-copyright">
-                    <p>© 2024 curiofish. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- 스크롤 탑 버튼 -->
-    <button class="scroll-top" aria-label="맨 위로 이동">
-        <div class="scroll-icon">⬆️</div>
-    </button>
-
-    <script src="../js/main.js"></script>
-    <script src="../js/category.js"></script>
-    <script src="../js/all-insects.js"></script>
-</body>
+<!-- 스크롤 탑 버튼 -->
+<button aria-label="맨 위로 이동" class="scroll-top">
+<div class="scroll-icon">⬆️</div>
+</button>
+<script src="../js/main.js"></script>
+<script src="../js/category.js"></script>
+<script src="../js/all-insects.js"></script>
+<footer>
+<div class="footer">
+<div class="footer-content">
+<div class="footer-section">
+<h3>Kids Insect Encyclopedia</h3>
+<p>어린이들을 위한 재미있는 곤충 백과사전</p>
+</div>
+<div class="footer-section">
+<h3>바로가기</h3>
+<ul>
+<li><a href="index.html">홈</a></li>
+<li><a href="about.html">소개</a></li>
+<li><a href="contact.html">문의하기</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>연락처</h3>
+<p>Email: contact@kidsinsects.com</p>
+<p>Tel: 02-123-4567</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Kids Insect Encyclopedia. All rights reserved.</p>
+</div>
+</div>
+</footer></body>
 </html> 

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>벌과 개미 - 곤충 백과사전</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>벌과 개미 - 곤충 백과사전</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<style>
         :root {
             --primary-color: #8bc34a;
             --secondary-color: #689f38;
@@ -132,120 +133,159 @@
         }
     </style>
 </head>
-<body>
-    <a href="index.html" class="back-to-home">
-        <i class="fas fa-arrow-left"></i> 처음으로
+<body><header>
+<div class="header">
+<div class="logo">
+<a href="index.html">
+<img alt="Kids Insect Encyclopedia" src="images/logo.jpg"/>
+</a>
+</div>
+<nav class="menu">
+<ul class="main-menu">
+<li>
+<a href="#">곤충 도감</a>
+<ul class="sub-menu">
+<li><a href="categories/beetle.html">딱정벌레</a></li>
+<li><a href="categories/butterfly.html">나비</a></li>
+<li><a href="categories/dragonfly.html">잠자리</a></li>
+<li><a href="categories/cricket.html">메뚜기</a></li>
+<li><a href="categories/mantis.html">사마귀</a></li>
+</ul>
+</li>
+<li><a href="about.html">소개</a></li>
+<li><a href="contact.html">문의하기</a></li>
+</ul>
+</nav>
+<div class="search-container">
+<input id="searchInput" placeholder="검색어를 입력하세요" type="text"/>
+<button id="searchButton">검색</button>
+</div>
+<div class="mobile-menu-button">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</header>
+<a class="back-to-home" href="index.html">
+<i class="fas fa-arrow-left"></i> 처음으로
     </a>
 
-    <header>
-        <h1>🐝 벌과 개미 🐜</h1>
-        <div class="subtitle">부지런하고 협동하는 친구들을 만나보아요!</div>
-    </header>
+<div class="container">
+<section class="insect-card">
+<div class="insect-header">
+<h2>부지런한 꿀벌</h2>
+</div>
+<div class="insect-content">
+<img alt="꿀벌" class="insect-image" src="images/bees_moths/꿀벌.png"/>
+<div class="insect-info">
+<div class="info-section">
+<h3>꿀벌 소개</h3>
+<p>꿀벌은 노란색과 검은색 줄무늬가 있는 작은 곤충이에요. 몸에는 부드러운 털이 나 있어요.</p>
+<p>크기는 1.5cm 정도로 작지만, 아주 부지런하게 일하는 곤충이랍니다!</p>
+</div>
+<div class="info-section">
+<h3>꿀벌의 생활</h3>
+<ul>
+<li>꽃에서 꿀물을 모아와요</li>
+<li>꽃가루를 다른 꽃으로 옮겨줘요</li>
+<li>벌집에서 꿀을 만들어요</li>
+<li>여왕벌과 애벌레를 돌봐요</li>
+</ul>
+</div>
+<div class="fun-fact">
+<h3>재미있는 사실!</h3>
+<p>꿀벌은 춤으로 대화를 해요! 꽃을 찾은 꿀벌이 8자 모양으로 춤을 추면, 다른 꿀벌들은 그 춤을 보고 꽃이 어디에 있는지 알 수 있어요.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="insect-card">
+<div class="insect-header">
+<h2>협동하는 개미</h2>
+</div>
+<div class="insect-content">
+<img alt="개미" class="insect-image" src="images/bees_moths/개미.png"/>
+<div class="insect-info">
+<div class="info-section">
+<h3>개미 소개</h3>
+<p>개미는 작지만 힘이 매우 센 곤충이에요. 자기 몸무게의 50배나 되는 무거운 것을 들 수 있어요!</p>
+<p>크기는 종류에 따라 다양하지만, 보통 3-5mm 정도로 아주 작아요.</p>
+</div>
+<div class="info-section">
+<h3>개미의 생활</h3>
+<ul>
+<li>여러 마리가 함께 살아요</li>
+<li>각자 맡은 일이 있어요</li>
+<li>더듬이로 서로 대화해요</li>
+<li>땅 속에 집을 지어요</li>
+</ul>
+</div>
+<div class="fun-fact">
+<h3>재미있는 사실!</h3>
+<p>개미는 페로몬이라는 특별한 냄새로 길을 찾아요. 먹이를 찾은 개미는 돌아올 때 이 냄새를 남겨서 다른 개미들이 따라올 수 있게 해요!</p>
+</div>
+</div>
+</div>
+</section>
+<section class="insect-card">
+<div class="insect-header">
+<h2>무서운 말벌</h2>
+</div>
+<div class="insect-content">
+<img alt="말벌" class="insect-image" src="images/bees_moths/말벌.png"/>
+<div class="insect-info">
+<div class="info-section">
+<h3>말벌 소개</h3>
+<p>말벌은 꿀벌보다 크고 무서운 곤충이에요. 노란색과 검은색 줄무늬가 있어요.</p>
+<p>크기는 2-3cm 정도로 꿀벌보다 커요.</p>
+</div>
+<div class="info-section">
+<h3>말벌의 생활</h3>
+<ul>
+<li>다른 곤충을 잡아먹어요</li>
+<li>종이처럼 생긴 집을 지어요</li>
+<li>여왕벌과 일벌이 있어요</li>
+<li>가을이 되면 새로운 여왕벌이 태어나요</li>
+</ul>
+</div>
+<div class="fun-fact">
+<h3>재미있는 사실!</h3>
+<p>말벌은 나무를 갉아서 종이처럼 만들어 집을 지어요. 그래서 말벌집은 마치 종이로 만든 것처럼 보인답니다!</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<button aria-label="맨 위로 이동" class="scroll-top">
+<i class="fas fa-arrow-up"></i>
+</button>
 
-    <div class="container">
-        <section class="insect-card">
-            <div class="insect-header">
-                <h2>부지런한 꿀벌</h2>
-            </div>
-            <div class="insect-content">
-                <img src="images/bees_moths/꿀벌.png" alt="꿀벌" class="insect-image">
-                <div class="insect-info">
-                    <div class="info-section">
-                        <h3>꿀벌 소개</h3>
-                        <p>꿀벌은 노란색과 검은색 줄무늬가 있는 작은 곤충이에요. 몸에는 부드러운 털이 나 있어요.</p>
-                        <p>크기는 1.5cm 정도로 작지만, 아주 부지런하게 일하는 곤충이랍니다!</p>
-                    </div>
-
-                    <div class="info-section">
-                        <h3>꿀벌의 생활</h3>
-                        <ul>
-                            <li>꽃에서 꿀물을 모아와요</li>
-                            <li>꽃가루를 다른 꽃으로 옮겨줘요</li>
-                            <li>벌집에서 꿀을 만들어요</li>
-                            <li>여왕벌과 애벌레를 돌봐요</li>
-                        </ul>
-                    </div>
-
-                    <div class="fun-fact">
-                        <h3>재미있는 사실!</h3>
-                        <p>꿀벌은 춤으로 대화를 해요! 꽃을 찾은 꿀벌이 8자 모양으로 춤을 추면, 다른 꿀벌들은 그 춤을 보고 꽃이 어디에 있는지 알 수 있어요.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="insect-card">
-            <div class="insect-header">
-                <h2>협동하는 개미</h2>
-            </div>
-            <div class="insect-content">
-                <img src="images/bees_moths/개미.png" alt="개미" class="insect-image">
-                <div class="insect-info">
-                    <div class="info-section">
-                        <h3>개미 소개</h3>
-                        <p>개미는 작지만 힘이 매우 센 곤충이에요. 자기 몸무게의 50배나 되는 무거운 것을 들 수 있어요!</p>
-                        <p>크기는 종류에 따라 다양하지만, 보통 3-5mm 정도로 아주 작아요.</p>
-                    </div>
-
-                    <div class="info-section">
-                        <h3>개미의 생활</h3>
-                        <ul>
-                            <li>여러 마리가 함께 살아요</li>
-                            <li>각자 맡은 일이 있어요</li>
-                            <li>더듬이로 서로 대화해요</li>
-                            <li>땅 속에 집을 지어요</li>
-                        </ul>
-                    </div>
-
-                    <div class="fun-fact">
-                        <h3>재미있는 사실!</h3>
-                        <p>개미는 페로몬이라는 특별한 냄새로 길을 찾아요. 먹이를 찾은 개미는 돌아올 때 이 냄새를 남겨서 다른 개미들이 따라올 수 있게 해요!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="insect-card">
-            <div class="insect-header">
-                <h2>무서운 말벌</h2>
-            </div>
-            <div class="insect-content">
-                <img src="images/bees_moths/말벌.png" alt="말벌" class="insect-image">
-                <div class="insect-info">
-                    <div class="info-section">
-                        <h3>말벌 소개</h3>
-                        <p>말벌은 꿀벌보다 크고 무서운 곤충이에요. 노란색과 검은색 줄무늬가 있어요.</p>
-                        <p>크기는 2-3cm 정도로 꿀벌보다 커요.</p>
-                    </div>
-
-                    <div class="info-section">
-                        <h3>말벌의 생활</h3>
-                        <ul>
-                            <li>다른 곤충을 잡아먹어요</li>
-                            <li>종이처럼 생긴 집을 지어요</li>
-                            <li>여왕벌과 일벌이 있어요</li>
-                            <li>가을이 되면 새로운 여왕벌이 태어나요</li>
-                        </ul>
-                    </div>
-
-                    <div class="fun-fact">
-                        <h3>재미있는 사실!</h3>
-                        <p>말벌은 나무를 갉아서 종이처럼 만들어 집을 지어요. 그래서 말벌집은 마치 종이로 만든 것처럼 보인답니다!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <button class="scroll-top" aria-label="맨 위로 이동">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <footer>
-        <p>🌈 유치원 어린이를 위한 신나는 곤충 백과사전 🌈</p>
-        <p>더 많은 곤충 친구들을 알고 싶다면, 곤충도감이나 자연 관찰을 해보세요!</p>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
+<script src="js/script.js"></script>
+<footer>
+<div class="footer">
+<div class="footer-content">
+<div class="footer-section">
+<h3>Kids Insect Encyclopedia</h3>
+<p>어린이들을 위한 재미있는 곤충 백과사전</p>
+</div>
+<div class="footer-section">
+<h3>바로가기</h3>
+<ul>
+<li><a href="index.html">홈</a></li>
+<li><a href="about.html">소개</a></li>
+<li><a href="contact.html">문의하기</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>연락처</h3>
+<p>Email: contact@kidsinsects.com</p>
+<p>Tel: 02-123-4567</p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Kids Insect Encyclopedia. All rights reserved.</p>
+</div>
+</div>
+</footer></body>
 </html> 

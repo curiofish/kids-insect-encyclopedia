@@ -362,4 +362,62 @@ body {
         display: block;
         margin: 0 auto;
     }
+}
+
+/* 서브메뉴 스타일 */
+.sub-nav-list {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 0.5rem 0;
+    z-index: 1000;
+}
+
+.sub-nav-list.active {
+    display: block;
+}
+
+.sub-nav-list li {
+    list-style: none;
+}
+
+.sub-nav-list a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.sub-nav-list a:hover {
+    background-color: var(--gray-100);
+    color: var(--primary-color);
+}
+
+.nav-item {
+    position: relative;
+}
+
+.has-submenu::after {
+    content: '▼';
+    font-size: 0.8em;
+    margin-left: 0.5rem;
+}
+
+/* 모바일 스타일 */
+@media (max-width: 768px) {
+    .sub-nav-list {
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        min-width: auto;
+        padding-left: 1rem;
+    }
+
+    .sub-nav-list a {
+        padding: 0.5rem;
+    }
 } 
