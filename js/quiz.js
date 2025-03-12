@@ -557,120 +557,117 @@ const quizData = [
 // 전역 변수
 let currentQuestion = 0;
 let score = 0;
-let quizStarted = false;
+let questions = [];
 
-// DOM 요소
-const quizBox = document.getElementById('quiz-box');
-const questionNumber = document.getElementById('question-number');
+// DOM 요소들
+const startScreen = document.getElementById('start-screen');
+const quizScreen = document.getElementById('quiz-screen');
+const resultScreen = document.getElementById('result-screen');
+const startButton = document.getElementById('start-button');
+const nextButton = document.getElementById('next-button');
+const retryButton = document.getElementById('retry-button');
 const questionText = document.getElementById('question-text');
 const questionImage = document.getElementById('question-image');
-const options = document.querySelectorAll('.quiz-option');
+const optionsContainer = document.getElementById('options-container');
 const feedback = document.getElementById('feedback');
-const startButton = document.getElementById('start-quiz');
-const nextButton = document.getElementById('next-question');
-const scoreElement = document.getElementById('score');
-const progressElement = document.getElementById('progress');
-const quizResult = document.querySelector('.quiz-result');
-const finalScore = document.getElementById('final-score');
+const progressText = document.getElementById('progress-text');
+const progressFill = document.querySelector('.quiz-progress-fill');
 const resultText = document.getElementById('result-text');
-const retryButton = document.getElementById('retry-quiz');
+const scoreText = document.getElementById('score-text');
 
 // 퀴즈 시작
 function startQuiz() {
-    quizStarted = true;
-    currentQuestion = Math.floor(Math.random() * quizData.length); // 랜덤한 첫 질문 선택
+    // 문제 섞기
+    questions = [...quizData].sort(() => Math.random() - 0.5).slice(0, 10);
+    currentQuestion = 0;
     score = 0;
+    
+    startScreen.style.display = 'none';
+    quizScreen.style.display = 'block';
+    resultScreen.style.display = 'none';
+    
     showQuestion();
-    startButton.style.display = 'none';
-    options.forEach(option => option.style.display = 'block');
-    updateScore();
     updateProgress();
 }
 
 // 문제 표시
 function showQuestion() {
-    const question = quizData[currentQuestion];
-    questionNumber.textContent = `${currentQuestion + 1}번 문제`;
+    const question = questions[currentQuestion];
+    
+    // 문제 텍스트 설정
     questionText.textContent = question.question;
     
-    // 이미지 업데이트
-    if (question.image.endsWith('.webp')) {
-        const picture = questionImage.parentElement;
-        picture.querySelector('source').srcset = question.image;
-        questionImage.src = question.image.replace('.webp', '.png');
-    } else {
-        questionImage.src = question.image;
-    }
+    // 이미지 설정
+    questionImage.src = question.image;
+    questionImage.alt = question.question;
     
-    // 퀴즈 옵션 컨테이너 찾기
-    const optionsContainer = document.querySelector('.quiz-options');
-    // 기존 옵션들 제거
+    // 옵션 버튼 생성
     optionsContainer.innerHTML = '';
-    
-    // 새로운 옵션 버튼들 생성
-    question.options.forEach((optionText, index) => {
+    question.options.forEach((option, index) => {
         const button = document.createElement('button');
         button.className = 'quiz-option';
-        button.textContent = optionText;
-        button.onclick = () => checkAnswer(index);
+        button.textContent = option;
+        button.onclick = () => selectAnswer(index);
         optionsContainer.appendChild(button);
     });
     
-    feedback.className = 'quiz-feedback';
-    feedback.querySelector('p').textContent = '정답을 선택해주세요!';
+    // 피드백 초기화
+    feedback.style.display = 'none';
     nextButton.style.display = 'none';
 }
 
-// 답변 확인
-function checkAnswer(selectedOption) {
-    const question = quizData[currentQuestion];
-    const correct = selectedOption === question.correct;
+// 답변 선택
+function selectAnswer(selectedIndex) {
+    const question = questions[currentQuestion];
+    const options = optionsContainer.children;
+    const isCorrect = selectedIndex === question.correct;
     
-    options.forEach(option => option.disabled = true);
+    // 모든 버튼 비활성화
+    Array.from(options).forEach(button => button.disabled = true);
     
-    if (correct) {
+    // 정답 표시
+    if (isCorrect) {
         score += 10;
-        selectedOption.classList.add('correct');
-        feedback.classList.add('correct');
-        feedback.querySelector('p').textContent = '정답입니다! ' + question.explanation;
+        options[selectedIndex].classList.add('correct');
+        feedback.innerHTML = `<p>정답입니다! ${question.explanation}</p>`;
+        feedback.className = 'quiz-feedback correct';
     } else {
-        selectedOption.classList.add('wrong');
+        options[selectedIndex].classList.add('wrong');
         options[question.correct].classList.add('correct');
-        feedback.classList.add('wrong');
-        feedback.querySelector('p').textContent = '틀렸습니다. ' + question.explanation;
+        feedback.innerHTML = `<p>틀렸습니다. ${question.explanation}</p>`;
+        feedback.className = 'quiz-feedback wrong';
     }
     
-    updateScore();
+    feedback.style.display = 'block';
     nextButton.style.display = 'block';
+    updateProgress();
 }
 
 // 다음 문제로
 function nextQuestion() {
     currentQuestion++;
-    updateProgress();
     
-    if (currentQuestion < quizData.length) {
+    if (currentQuestion < questions.length) {
         showQuestion();
+        updateProgress();
     } else {
         showResult();
     }
 }
 
-// 점수 업데이트
-function updateScore() {
-    scoreElement.textContent = score;
-}
-
 // 진행 상황 업데이트
 function updateProgress() {
-    progressElement.textContent = `${currentQuestion}/${quizData.length}`;
+    const progress = ((currentQuestion + 1) / questions.length) * 100;
+    progressFill.style.width = `${progress}%`;
+    progressText.textContent = `진행: ${currentQuestion + 1}/${questions.length}`;
 }
 
 // 결과 표시
 function showResult() {
-    quizBox.style.display = 'none';
-    quizResult.style.display = 'block';
-    finalScore.textContent = score;
+    quizScreen.style.display = 'none';
+    resultScreen.style.display = 'block';
+    
+    scoreText.textContent = `점수: ${score}점`;
     
     if (score === 100) {
         resultText.textContent = '축하합니다! 당신은 진정한 곤충 박사예요! 🎉';
@@ -683,25 +680,9 @@ function showResult() {
     }
 }
 
-// 퀴즈 다시 시작
-function retryQuiz() {
-    quizBox.style.display = 'block';
-    quizResult.style.display = 'none';
-    startQuiz();
-}
-
-// DOM이 로드된 후 실행
+// 이벤트 리스너 등록
 document.addEventListener('DOMContentLoaded', () => {
-    const startButton = document.querySelector('.quiz-button.restart');
-    const nextButton = document.querySelector('.quiz-button.next');
-    const retryButton = document.querySelector('.quiz-result .quiz-button.restart');
-    const feedback = document.querySelector('.quiz-feedback');
-    
-    if (startButton) startButton.addEventListener('click', startQuiz);
-    if (nextButton) nextButton.addEventListener('click', nextQuestion);
-    if (retryButton) retryButton.addEventListener('click', retryQuiz);
-});
-
-options.forEach((option, index) => {
-    option.addEventListener('click', () => checkAnswer(index));
+    startButton.addEventListener('click', startQuiz);
+    nextButton.addEventListener('click', nextQuestion);
+    retryButton.addEventListener('click', startQuiz);
 }); 
