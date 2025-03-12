@@ -602,10 +602,18 @@ function showQuestion() {
         questionImage.src = question.image;
     }
     
-    options.forEach((option, index) => {
-        option.textContent = question.options[index];
-        option.className = 'quiz-option';
-        option.disabled = false;
+    // 퀴즈 옵션 컨테이너 찾기
+    const optionsContainer = document.querySelector('.quiz-options');
+    // 기존 옵션들 제거
+    optionsContainer.innerHTML = '';
+    
+    // 새로운 옵션 버튼들 생성
+    question.options.forEach((optionText, index) => {
+        const button = document.createElement('button');
+        button.className = 'quiz-option';
+        button.textContent = optionText;
+        button.onclick = () => checkAnswer(index);
+        optionsContainer.appendChild(button);
     });
     
     feedback.className = 'quiz-feedback';
