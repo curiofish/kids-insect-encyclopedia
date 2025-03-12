@@ -75,6 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function() {
     // 현재 페이지의 경로를 기준으로 상대 경로 계산
     function getBasePath() {
+        const repoName = 'kids-insect-encyclopedia';
+        const isGitHubPages = window.location.hostname.includes('github.io');
+        
+        if (isGitHubPages) {
+            return `/${repoName}/`;
+        }
+        
         const path = window.location.pathname;
         const depth = path.split('/').length - 2;
         return depth > 0 ? '../'.repeat(depth) : './';
@@ -82,20 +89,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 헤더와 푸터 로드
     function loadComponent(name, placeholder) {
-        fetch(getBasePath() + `components/${name}.html`)
-            .then(response => response.text())
+        const basePath = getBasePath();
+        fetch(`${basePath}components/${name}.html`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${name} component`);
+                }
+                return response.text();
+            })
             .then(html => {
                 // 상대 경로 조정
-                html = html.replace(/src="\//g, 'src="' + getBasePath());
-                html = html.replace(/href="\//g, 'href="' + getBasePath());
+                html = html.replace(/src="\//g, `src="${basePath}`);
+                html = html.replace(/href="\//g, `href="${basePath}`);
                 
                 // 컴포넌트 삽입
-                document.querySelector(placeholder).innerHTML = html;
-                
-                // 헤더인 경우 현재 페이지 메뉴 활성화
-                if (name === 'header') {
-                    highlightCurrentPage();
+                const placeholder_element = document.querySelector(placeholder);
+                if (placeholder_element) {
+                    placeholder_element.innerHTML = html;
+                    
+                    // 헤더인 경우 현재 페이지 메뉴 활성화
+                    if (name === 'header') {
+                        highlightCurrentPage();
+                    }
                 }
+            })
+            .catch(error => {
+                console.error(`Error loading ${name} component:`, error);
             });
     }
 
