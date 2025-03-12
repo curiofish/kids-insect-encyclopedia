@@ -27,7 +27,7 @@ body {
 
 /* 메인 콘텐츠 영역 */
 .main-content {
-    padding-top: calc(var(--header-height) + 20px);
+    padding-top: var(--header-height);
 }
 
 /* 헤더 스타일 */
@@ -40,41 +40,75 @@ body {
     right: 0;
     z-index: 1000;
     height: var(--header-height);
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
 }
 
 .title-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
 }
 
-.main-title {
-    font-size: 1.2rem;
-    margin: 0;
-    font-weight: 600;
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 100%;
+    padding: 8px 0;
+}
+
+.site-logo {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
 }
 
 .main-nav {
-    margin-left: auto;
+    display: flex;
+    align-items: center;
 }
 
 .nav-list {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
-.nav-list a {
-    text-decoration: none;
+.nav-item a {
     color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
     font-weight: 500;
-    font-size: 0.95rem;
+    padding: 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.nav-item a:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .title-container {
+        padding: 0 15px;
+    }
+
+    .site-logo {
+        height: 80%;
+    }
+
+    .nav-list {
+        gap: 1rem;
+    }
+
+    .nav-item a {
+        font-size: 0.9rem;
+        padding: 0.3rem;
+    }
 }
 
 /* 푸터 스타일 */
@@ -139,32 +173,6 @@ body {
 /* 검색 컨테이너 숨기기 */
 .search-container {
     display: none;
-}
-
-@media (max-width: 768px) {
-    .main-header {
-        padding: 0 15px;
-    }
-
-    .main-title {
-        font-size: 1rem;
-    }
-
-    .nav-list {
-        gap: 1rem;
-    }
-
-    .nav-list a {
-        font-size: 0.9rem;
-    }
-
-    .main-header.scrolled {
-        height: var(--header-height);
-    }
-
-    .main-header.scrolled .main-title {
-        display: block;
-    }
 }
 
 /* 검색 결과 스타일 */
