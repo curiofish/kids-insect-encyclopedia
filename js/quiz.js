@@ -690,10 +690,17 @@ function retryQuiz() {
     startQuiz();
 }
 
-// 이벤트 리스너
-startButton.addEventListener('click', startQuiz);
-nextButton.addEventListener('click', nextQuestion);
-retryButton.addEventListener('click', retryQuiz);
+// DOM이 로드된 후 실행
+document.addEventListener('DOMContentLoaded', () => {
+    const startButton = document.querySelector('.quiz-button.restart');
+    const nextButton = document.querySelector('.quiz-button.next');
+    const retryButton = document.querySelector('.quiz-result .quiz-button.restart');
+    const feedback = document.querySelector('.quiz-feedback');
+    
+    if (startButton) startButton.addEventListener('click', startQuiz);
+    if (nextButton) nextButton.addEventListener('click', nextQuestion);
+    if (retryButton) retryButton.addEventListener('click', retryQuiz);
+});
 
 options.forEach((option, index) => {
     option.addEventListener('click', () => checkAnswer(index));
