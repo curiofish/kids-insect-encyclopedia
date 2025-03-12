@@ -32,15 +32,20 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preload" href="fonts/your-font.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
     
     <header class="main-header">
         <div class="title-container">
-            <a href="/index.html" class="logo-link">
-                <img src="images/logo.png" alt="유치원 곤충 백과사전" class="site-logo">
-            </a>
+            <div class="logo-title-wrapper">
+                <a href="/index.html" class="logo-link">
+                    <img src="images/logo.png" alt="유치원 곤충 백과사전" class="site-logo">
+                </a>
+                <h1 class="site-title">유치원 곤충 백과사전</h1>
+            </div>
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li class="nav-item"><a href="/index.html">처음으로</a></li>
@@ -286,7 +291,7 @@
 
     <!-- 스크롤 탑 버튼 -->
     <button class="scroll-top" aria-label="맨 위로 이동">
-        <div class="scroll-icon">⬆️</div>
+        <i class="fas fa-chevron-up"></i>
     </button>
 
     <script src="/js/main.js"></script>
