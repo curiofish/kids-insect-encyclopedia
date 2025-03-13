@@ -172,82 +172,47 @@
 <div class="search-results" id="searchResults"></div>
 
 <main class="main-content" id="main-content">
-<nav class="breadcrumb" aria-label="페이지 경로">
-    <ol>
-        <li><a href="../../index.html">홈</a></li>
-        <li><a href="../all.html">곤충 카테고리</a></li>
-        <li>사마귀류</li>
-    </ol>
-</nav>
-
-<h1>사마귀류 곤충들</h1>
-
-<section class="category-intro">
-    <p>
-        사마귀는 앞다리가 특별히 발달한 곤충이에요.
-        앞다리로 다른 곤충을 잡아먹는 사냥꾼이에요.
-        초록색이나 갈색으로 주변 환경과 비슷해서 숨기 쉬워요.
-        어떤 사마귀는 꽃을 닮아 위장하기도 해요.
-    </p>
-</section>
-
-<section class="insect-list">
-    <div class="insect-grid">
-        <div class="insect-card">
-            <img alt="사마귀" src="../../images/insects/mantis.jpg"/>
-            <div class="insect-card-content">
-                <h3>사마귀</h3>
+    <section class="category-intro fade-in">
+        <h1>사마귀 도감 소개</h1>
+        <p class="category-description">
+            사마귀는 앞다리가 특별히 발달한 곤충이에요.
+            앞다리로 다른 곤충을 잡아먹는 사냥꾼이에요.
+            초록색이나 갈색으로 주변 환경과 비슷해서 숨기 쉬워요.
+            어떤 사마귀는 꽃을 닮아 위장하기도 해요.
+        </p>
+    </section>
+    <section class="insect-list fade-in">
+        <div class="grid">
+            <div class="card">
+                <img alt="사마귀" src="../../images/insects/mantis.jpg"/>
+                <h2>사마귀</h2>
                 <p>앞다리가 낫처럼 생긴 사마귀는 숨어서 먹이를 기다리는 곤충이에요.</p>
-                <a href="mantis.html">자세히 보기</a>
+                <a class="button" href="mantis.html">자세히 보기</a>
             </div>
-        </div>
-        <div class="insect-card">
-            <img alt="꽃사마귀" src="../../images/insects/flower-mantis.jpg"/>
-            <div class="insect-card-content">
-                <h3>꽃사마귀</h3>
+            <div class="card">
+                <img alt="꽃사마귀" src="../../images/insects/flower-mantis.jpg"/>
+                <h2>꽃사마귀</h2>
                 <p>아름다운 꽃을 닮은 사마귀로, 꽃 위에 숨어서 먹이를 기다려요.</p>
-                <a href="flower-mantis.html">자세히 보기</a>
+                <a class="button" href="flower-mantis.html">자세히 보기</a>
             </div>
         </div>
-    </div>
-</section>
-
-<nav class="category-navigation">
-    <div class="nav-links">
-        <a class="prev" href="../grasshoppers/index.html">
-            <span>이전 카테고리</span>
-            <span>메뚜기류</span>
-        </a>
-        <a class="next" href="../bees/index.html">
-            <span>다음 카테고리</span>
-            <span>꿀벌류</span>
-        </a>
-    </div>
-</nav>
+    </section>
 </main>
 
-<footer class="main-footer">
-    <div class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>어린이 곤충 백과사전</h3>
-                <p>어린이들을 위한 재미있는 곤충 백과사전</p>
-            </div>
-            <div class="footer-section">
-                <h3>연락처</h3>
-                <p>Email: <a href="mailto:fishcurio@gmail.com">fishcurio@gmail.com</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2024 curiofish. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+<div id="footer-placeholder"></div>
 
 <button class="scroll-top" aria-label="맨 위로 이동">
     <i class="fas fa-arrow-up"></i>
 </button>
 <!-- JavaScript -->
+<script src="../../js/common.js"></script>
 <script src="../../js/script.js"></script>
+<script>
+    fetch('../../components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
 </body>
 </html> 
