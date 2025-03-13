@@ -2,7 +2,7 @@
 const insects = [
     { name: '사슴벌레', image: 'images/insects/stag-beetle.jpg' },
     { name: '공작나비', image: 'images/insects/swallowtail-butterfly.jpg' },
-    { name: '고추잠자리', image: 'images/insects/red-dragonfly.jpg' },
+    { name: '고추잠자리', image: 'images/insects/common-dragonfly.jpg' },
     { name: '메뚜기', image: 'images/insects/grasshopper.jpg' },
     { name: '사마귀', image: 'images/insects/mantis.jpg' },
     { name: '꿀벌', image: 'images/insects/honeybee.jpg' }

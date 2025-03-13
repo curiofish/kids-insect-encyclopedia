@@ -90,7 +90,6 @@
     .back-face {
         width: 100%;
         height: 100%;
-        padding: 1rem;
         position: absolute;
         border-radius: 10px;
         background: #fff;
@@ -104,17 +103,21 @@
     .front-face {
         transform: rotateY(180deg);
         background-color: #fff;
+        padding: 0;
+        overflow: hidden;
     }
 
     .back-face {
         background-color: #e3f2fd;
         font-size: 2rem;
+        padding: 1rem;
     }
 
     .front-face img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
+        border-radius: 10px;
     }
 
     .game-controls {

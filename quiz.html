@@ -35,6 +35,35 @@
         font-family: 'Noto Sans KR', sans-serif;
     }
 
+    .quiz-intro {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .quiz-main-image {
+        max-width: 300px;
+        margin: 0 auto 2rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .quiz-main-image:hover {
+        transform: scale(1.05);
+    }
+
+    .quiz-intro h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+
+    .quiz-intro p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: #666;
+    }
+
     .quiz-card {
         background: #fff;
         border-radius: 15px;
@@ -174,21 +203,63 @@
         text-align: center;
         padding: 2rem;
         display: none;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        margin: 2rem auto;
+        max-width: 600px;
     }
 
     .quiz-result.show {
         display: block;
+        animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .result-emoji {
-        font-size: 4rem;
-        margin-bottom: 1rem;
+        font-size: 6rem;
+        margin-bottom: 1.5rem;
+        animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
     }
 
     .result-message {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: #333;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: #2196f3;
+        font-weight: 700;
+        line-height: 1.4;
+        padding: 0 1rem;
+    }
+
+    #score-text {
+        font-size: 2.5rem;
+        color: #4caf50;
+        font-weight: 700;
+        margin: 1.5rem 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .quiz-result .quiz-button {
+        font-size: 1.3rem;
+        padding: 1rem 2rem;
+        margin-top: 2rem;
+        background-color: #2196f3;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .quiz-result .quiz-button:hover {
+        background-color: #1976d2;
+        transform: scale(1.05);
     }
 
     @media (max-width: 768px) {
@@ -207,6 +278,18 @@
         .quiz-option {
             font-size: 1rem;
         }
+
+        .result-message {
+            font-size: 1.5rem;
+        }
+
+        #score-text {
+            font-size: 2rem;
+        }
+
+        .result-emoji {
+            font-size: 5rem;
+        }
     }
 </style>
 </head>
@@ -218,11 +301,13 @@
 <main class="main-content" id="main-content">
 <div class="container">
 <div class="quiz-container">
-<h1>재미있는 곤충 퀴즈</h1>
-<p>곤충에 대해 얼마나 알고 있는지 퀴즈를 풀어보세요!</p>
-
 <div id="start-screen">
-    <button id="start-button" class="quiz-button">퀴즈 시작하기</button>
+    <div class="quiz-intro">
+        <img src="images/quiz/quiz-main.png" alt="곤충 퀴즈" class="quiz-main-image">
+        <h1>재미있는 곤충 퀴즈</h1>
+        <p>곤충에 대해 얼마나 알고 있는지 퀴즈를 풀어보세요!</p>
+        <button id="start-button" class="quiz-button">퀴즈 시작하기</button>
+    </div>
 </div>
 
 <div id="quiz-screen" style="display: none;">
@@ -235,9 +320,6 @@
 
     <div class="quiz-card">
         <div id="question-text" class="quiz-question"></div>
-        <div id="question-image-container">
-            <img id="question-image" src="" alt="퀴즈 이미지">
-        </div>
         <div id="options-container" class="quiz-options">
         </div>
         <div id="feedback" class="quiz-feedback">

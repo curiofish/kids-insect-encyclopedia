@@ -2,19 +2,17 @@
 const quizData = [
     {
         question: "곤충의 다리는 몇 개일까요?",
-        image: "images/quiz/다리.png",
         options: [
             "4개",
             "6개",
             "8개",
             "10개"
         ],
-        correct: 1, // 0-based index
+        correct: 1,
         explanation: "곤충은 모두 6개의 다리를 가지고 있어요!"
     },
     {
         question: "곤충의 몸은 몇 부분으로 나누어져 있나요?",
-        image: "images/quiz/몸체.png",
         options: [
             "2부분 (머리, 몸통)",
             "3부분 (머리, 가슴, 배)",
@@ -26,7 +24,6 @@ const quizData = [
     },
     {
         question: "다음 중 곤충이 아닌 것은 무엇일까요?",
-        image: "images/quiz/곤충아님.png",
         options: [
             "나비",
             "메뚜기",
@@ -38,7 +35,6 @@ const quizData = [
     },
     {
         question: "나비가 되기 전에 거치는 단계가 아닌 것은?",
-        image: "images/quiz/나비변태.png",
         options: [
             "알",
             "애벌레",
@@ -50,7 +46,6 @@ const quizData = [
     },
     {
         question: "꿀벌이 하는 일이 아닌 것은?",
-        image: "images/quiz/꿀벌.png",
         options: [
             "꿀 모으기",
             "꽃가루 옮기기",
@@ -62,7 +57,6 @@ const quizData = [
     },
     {
         question: "매미가 우는 시기는 언제일까요?",
-        image: "images/quiz/매미.png",
         options: [
             "봄",
             "여름",
@@ -74,7 +68,6 @@ const quizData = [
     },
     {
         question: "장수풍뎅이의 특징이 아닌 것은?",
-        image: "images/quiz/장수풍뎅이.png",
         options: [
             "수컷의 뿔이 길다",
             "밤에 활동한다",
@@ -86,7 +79,6 @@ const quizData = [
     },
     {
         question: "개미가 의사소통하는 방법은?",
-        image: "images/quiz/개미.png",
         options: [
             "소리로",
             "춤으로",
@@ -98,7 +90,6 @@ const quizData = [
     },
     {
         question: "무당벌레의 특징이 아닌 것은?",
-        image: "images/quiz/무당벌레.png",
         options: [
             "빨간색 날개에 검은 점이 있다",
             "진딧물을 잡아먹는다",
@@ -110,7 +101,6 @@ const quizData = [
     },
     {
         question: "잠자리의 특징으로 맞는 것은?",
-        image: "images/quiz/잠자리.png",
         options: [
             "밤에 활동한다",
             "뒤로 날 수 있다",
@@ -122,7 +112,6 @@ const quizData = [
     },
     {
         question: "곤충의 날개는 몇 쌍일까요?",
-        image: "images/quiz/날개.png",
         options: [
             "1쌍",
             "2쌍",
@@ -134,7 +123,6 @@ const quizData = [
     },
     {
         question: "곤충의 수명은 보통 얼마나 될까요?",
-        image: "images/quiz/수명.png",
         options: [
             "몇 주",
             "몇 달",
@@ -146,7 +134,6 @@ const quizData = [
     },
     {
         question: "곤충의 눈은 어떤 구조로 되어 있나요?",
-        image: "images/quiz/눈.png",
         options: [
             "단안",
             "복안",
@@ -158,7 +145,6 @@ const quizData = [
     },
     {
         question: "반딧불이가 빛을 내는 이유는 무엇일까요?",
-        image: "images/insects/firefly.jpg",
         options: [
             "길을 밝히기 위해",
             "짝을 찾기 위해",
@@ -170,7 +156,6 @@ const quizData = [
     },
     {
         question: "메뚜기가 소리를 내는 방법은?",
-        image: "images/insects/grasshopper.jpg",
         options: [
             "입으로 소리를 낸다",
             "날개를 빠르게 움직인다",
@@ -182,7 +167,6 @@ const quizData = [
     },
     {
         question: "사마귀의 특징이 아닌 것은?",
-        image: "images/insects/mantis.jpg",
         options: [
             "앞다리로 먹이를 잡는다",
             "머리를 180도 돌릴 수 있다",
@@ -194,7 +178,6 @@ const quizData = [
     },
     {
         question: "나비와 나방의 차이점이 아닌 것은?",
-        image: "images/insects/monarch-butterfly.jpg",
         options: [
             "나비는 낮에, 나방은 밤에 활동한다",
             "나비는 앉을 때 날개를 접고, 나방은 펼친다",
@@ -206,7 +189,6 @@ const quizData = [
     },
     {
         question: "개미집에서 알을 낳는 개미는?",
-        image: "images/insects/black-garden-ant.jpg",
         options: [
             "일개미",
             "병정개미",
@@ -218,7 +200,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 빠르게 날 수 있는 곤충은?",
-        image: "images/quiz/빠른곤충.png",
         options: [
             "나비",
             "말벌",
@@ -230,7 +211,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 오래 사는 곤충은?",
-        image: "images/quiz/장수곤충.png",
         options: [
             "개미 여왕",
             "매미",
@@ -242,7 +222,6 @@ const quizData = [
     },
     {
         question: "곤충의 심장은 어디에 있을까요?",
-        image: "images/quiz/심장.png",
         options: [
             "머리",
             "가슴",
@@ -254,7 +233,6 @@ const quizData = [
     },
     {
         question: "곤충의 혈액 색깔은 무슨 색일까요?",
-        image: "images/quiz/혈액.png",
         options: [
             "빨간색",
             "파란색",
@@ -266,7 +244,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 작은 곤충은?",
-        image: "images/quiz/작은곤충.png",
         options: [
             "개미",
             "진딧물",
@@ -278,7 +255,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 큰 곤충은?",
-        image: "images/quiz/큰곤충.png",
         options: [
             "장수풍뎅이",
             "왕사슴벌레",
@@ -290,7 +266,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 많은 알을 낳는 곤충은?",
-        image: "images/quiz/알.png",
         options: [
             "개미 여왕",
             "흰개미 여왕",
@@ -302,7 +277,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 오래 살 수 있는 곤충은?",
-        image: "images/quiz/장수.png",
         options: [
             "매미",
             "흰개미 여왕",
@@ -314,7 +288,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 빠르게 날갯짓을 하는 곤충은?",
-        image: "images/quiz/날갯짓.png",
         options: [
             "나비",
             "모기",
@@ -326,7 +299,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 멀리 이동하는 곤충은?",
-        image: "images/quiz/이동.png",
         options: [
             "제왕나비",
             "메뚜기",
@@ -338,7 +310,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 강한 곤충은?",
-        image: "images/quiz/강한곤충.png",
         options: [
             "사슴벌레",
             "장수풍뎅이",
@@ -350,7 +321,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 독이 강한 곤충은?",
-        image: "images/quiz/독.png",
         options: [
             "말벌",
             "불개미",
@@ -362,7 +332,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 오래된 곤충 화석은 언제 전의 것일까요?",
-        image: "images/quiz/화석.png",
         options: [
             "1백만 년 전",
             "1천만 년 전",
@@ -374,7 +343,6 @@ const quizData = [
     },
     {
         question: "지구상에 존재하는 곤충의 종류는 약 몇 종류일까요?",
-        image: "images/quiz/종류.png",
         options: [
             "10만 종",
             "100만 종",
@@ -386,7 +354,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 긴 곤충은?",
-        image: "images/quiz/긴곤충.png",
         options: [
             "장수풍뎅이",
             "대왕사슴벌레",
@@ -398,7 +365,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 무거운 곤충은?",
-        image: "images/quiz/무거운곤충.png",
         options: [
             "장수풍뎅이",
             "고골리앗하늘소",
@@ -410,7 +376,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 시끄러운 소리를 내는 곤충은?",
-        image: "images/quiz/시끄러운곤충.png",
         options: [
             "매미",
             "귀뚜라미",
@@ -422,7 +387,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 많은 종류가 있는 곤충은?",
-        image: "images/quiz/많은종류.png",
         options: [
             "나비",
             "딱정벌레",
@@ -434,7 +398,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 빠르게 달리는 곤충은?",
-        image: "images/quiz/빠른달리기.png",
         options: [
             "바퀴벌레",
             "개미",
@@ -446,7 +409,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 높이 뛸 수 있는 곤충은?",
-        image: "images/quiz/높이뛰기.png",
         options: [
             "메뚜기",
             "벼룩",
@@ -458,7 +420,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 오래 물속에서 살 수 있는 곤충은?",
-        image: "images/quiz/물속곤충.png",
         options: [
             "물방개",
             "장구벌레",
@@ -470,7 +431,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 추운 곳에서 살 수 있는 곤충은?",
-        image: "images/quiz/추운곳곤충.png",
         options: [
             "남극날개없는파리",
             "북극나방",
@@ -482,7 +442,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 더운 곳에서 살 수 있는 곤충은?",
-        image: "images/quiz/더운곳곤충.png",
         options: [
             "사막개미",
             "사막딱정벌레",
@@ -494,7 +453,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 높은 곳에서 발견된 곤충은?",
-        image: "images/quiz/높은곳곤충.png",
         options: [
             "고산나비",
             "고산파리",
@@ -506,7 +464,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 깊은 땅속에서 사는 곤충은?",
-        image: "images/quiz/땅속곤충.png",
         options: [
             "흰개미",
             "땅강아지",
@@ -518,7 +475,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 오래 숨을 참을 수 있는 곤충은?",
-        image: "images/quiz/숨참기.png",
         options: [
             "물방개",
             "바퀴벌레",
@@ -530,7 +486,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 많은 다리를 가진 곤충은?",
-        image: "images/quiz/다리많은.png",
         options: [
             "개미",
             "메뚜기",
@@ -542,7 +497,6 @@ const quizData = [
     },
     {
         question: "다음 중 가장 많은 눈을 가진 곤충은?",
-        image: "images/quiz/눈많은.png",
         options: [
             "잠자리",
             "파리",
@@ -596,10 +550,6 @@ function showQuestion() {
     
     // 문제 텍스트 설정
     questionText.textContent = question.question;
-    
-    // 이미지 설정
-    questionImage.src = question.image;
-    questionImage.alt = question.question;
     
     // 옵션 버튼 생성
     optionsContainer.innerHTML = '';
@@ -664,6 +614,9 @@ function updateProgress() {
 
 // 결과 표시
 function showResult() {
+    console.log('Showing result screen');
+    console.log('Current score:', score);
+    
     quizScreen.style.display = 'none';
     resultScreen.style.display = 'block';
     
@@ -678,6 +631,9 @@ function showResult() {
     } else {
         resultText.textContent = '괜찮아요! 다시 한 번 도전해보세요! 📚';
     }
+    
+    // 결과 화면이 확실히 보이도록 설정
+    document.querySelector('.quiz-result').style.display = 'block';
 }
 
 // 이벤트 리스너 등록
