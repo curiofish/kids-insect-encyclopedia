@@ -95,23 +95,7 @@
 </section>
 </main>
 
-<footer class="main-footer">
-<div class="footer">
-<div class="footer-content">
-<div class="footer-section">
-<h3>어린이 곤충 백과사전</h3>
-<p>어린이들을 위한 재미있는 곤충 백과사전</p>
-</div>
-<div class="footer-section">
-<h3>연락처</h3>
-<p>Email: <a href="mailto:fishcurio@gmail.com">fishcurio@gmail.com</a></p>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2024 curiofish. All rights reserved.</p>
-</div>
-</div>
-</footer>
+<div id="footer-placeholder"></div>
 
 <button class="scroll-top" aria-label="맨 위로 이동">
 <i class="fas fa-arrow-up"></i>
@@ -119,5 +103,12 @@
 <!-- JavaScript -->
 <script src="../../js/common.js"></script>
 <script src="../../js/script.js"></script>
+<script>
+    fetch('../../components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
 </body>
 </html> 
