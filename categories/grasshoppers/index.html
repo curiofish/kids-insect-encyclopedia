@@ -72,89 +72,52 @@
 <div class="search-results" id="searchResults"></div>
 
 <main class="main-content" id="main-content">
-    <nav class="breadcrumb" aria-label="페이지 경로">
-        <ol>
-            <li><a href="../../index.html">홈</a></li>
-            <li><a href="../all.html">곤충 카테고리</a></li>
-            <li>메뚜기류</li>
-        </ol>
-    </nav>
-
-    <h1>메뚜기류 곤충들</h1>
-
-    <section class="category-intro">
-        <p>
+    <section class="category-intro fade-in">
+        <h1>메뚜기 도감 소개</h1>
+        <p class="category-description">
             메뚜기류는 긴 다리로 멀리 뛰어다니는 곤충들이에요.
             메뚜기와 귀뚜라미가 대표적인 곤충이에요.
             이 곤충들은 특별한 방법으로 소리를 내어 의사소통을 해요.
         </p>
     </section>
-
-    <section class="insect-list">
-        <div class="insect-grid">
-            <div class="insect-card">
+    <section class="insect-list fade-in">
+        <div class="grid">
+            <div class="card">
                 <img alt="메뚜기" src="../../images/insects/grasshopper.jpg"/>
-                <div class="insect-card-content">
-                    <h3>메뚜기</h3>
-                    <p>긴 다리로 멀리 뛰어다니는 메뚜기는 풀밭에서 살며 풀을 먹고 자라요.</p>
-                    <a href="grasshopper.html">자세히 보기</a>
-                </div>
+                <h2>메뚜기</h2>
+                <p>긴 다리로 멀리 뛰어다니는 메뚜기는 풀밭에서 살며 풀을 먹고 자라요.</p>
+                <a class="button" href="grasshopper.html">자세히 보기</a>
             </div>
-            <div class="insect-card">
+            <div class="card">
                 <img alt="귀뚜라미" src="../../images/insects/cricket.jpg"/>
-                <div class="insect-card-content">
-                    <h3>귀뚜라미</h3>
-                    <p>가을밤을 대표하는 곤충으로, 수컷이 앞날개를 비벼서 '귀뚜르 귀뚜르' 소리를 내요.</p>
-                    <a href="cricket.html">자세히 보기</a>
-                </div>
+                <h2>귀뚜라미</h2>
+                <p>가을밤을 대표하는 곤충으로, 수컷이 앞날개를 비벼서 '귀뚜르 귀뚜르' 소리를 내요.</p>
+                <a class="button" href="cricket.html">자세히 보기</a>
             </div>
-            <div class="insect-card">
+            <div class="card">
                 <img alt="베짱이" src="../../images/insects/cicada.jpg"/>
-                <div class="insect-card-content">
-                    <h3>베짱이</h3>
-                    <p>여름에 큰 소리를 내는 베짱이는 나무 위에서 살아요.</p>
-                    <a href="cicada.html">자세히 보기</a>
-                </div>
+                <h2>베짱이</h2>
+                <p>여름에 큰 소리를 내는 베짱이는 나무 위에서 살아요.</p>
+                <a class="button" href="cicada.html">자세히 보기</a>
             </div>
         </div>
     </section>
-
-    <nav class="category-navigation">
-        <div class="nav-links">
-            <a class="prev" href="../dragonflies/index.html">
-                <span>이전 카테고리</span>
-                <span>잠자리류</span>
-            </a>
-            <a class="next" href="../mantis/index.html">
-                <span>다음 카테고리</span>
-                <span>사마귀류</span>
-            </a>
-        </div>
-    </nav>
 </main>
 
-<footer class="main-footer">
-    <div class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>어린이 곤충 백과사전</h3>
-                <p>어린이들을 위한 재미있는 곤충 백과사전</p>
-            </div>
-            <div class="footer-section">
-                <h3>연락처</h3>
-                <p>Email: <a href="mailto:fishcurio@gmail.com">fishcurio@gmail.com</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2024 curiofish. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+<div id="footer-placeholder"></div>
 
 <button class="scroll-top" aria-label="맨 위로 이동">
     <i class="fas fa-arrow-up"></i>
 </button>
 <!-- JavaScript -->
+<script src="../../js/common.js"></script>
 <script src="../../js/script.js"></script>
+<script>
+    fetch('../../components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
 </body>
 </html> 
